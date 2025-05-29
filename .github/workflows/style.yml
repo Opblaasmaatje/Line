@@ -2,8 +2,9 @@ name: Bare Run on various PHP versions
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 jobs:
   bare_run:
