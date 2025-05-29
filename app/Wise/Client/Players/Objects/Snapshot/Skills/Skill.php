@@ -4,6 +4,7 @@ namespace App\Wise\Client\Players\Objects\Snapshot\Skills;
 
 readonly abstract class Skill
 {
+
     public function __construct(
         public string $metric,
         public int $experience,

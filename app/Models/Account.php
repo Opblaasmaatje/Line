@@ -31,7 +31,7 @@ class Account extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function player(): Attribute
+    protected function player(): Attribute
     {
         return Attribute::get(function (){
             /** @var PlayerClient $playerClient */
