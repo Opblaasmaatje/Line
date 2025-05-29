@@ -1,21 +1,29 @@
-name: Style
-
+name: PHP Code style
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
 
-
 jobs:
-  runs-on: ubuntu-latest
+  Pint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+        with:
+          php-version: '8.2'
+      - uses: actions/checkout@v3
+      - name: Copy .env
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      - name: Install Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      - name: Start esc
+        run: vendor/bin/esc --fix
 
-  steps:
-    - uses: actions/checkout@v3
-    - uses: shivammathur/setup-php@v2
-      with:
-        php-version: 8.2
-        coverage: none
-
-    - uses: "ramsey/composer-install@v2"
-    - run: ${{ matrix.actions.run }}
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: PHP Linting (Pint)
+          skip_fetch: true
