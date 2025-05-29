@@ -16,7 +16,7 @@ class QueueTokenDistribution extends Service
         Account::query()->get()->each(function (Account $account){
 
             $this->console()->log("Updating $account->username");
-            
+
             $maxedSkills = $account->details
                 ->latestSnapshot
                 ->data
