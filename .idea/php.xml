@@ -23,6 +23,7 @@
   <component name="PhpCSFixer">
     <phpcsfixer_settings>
       <phpcs_fixer_by_interpreter asDefaultInterpreter="true" interpreter_id="5f3c735e-a129-4280-9900-f74f67246df4" timeout="30000" />
+      <PhpCSFixerConfiguration tool_path="$PROJECT_DIR$/vendor/bin/php-cs-fixer" />
     </phpcsfixer_settings>
   </component>
   <component name="PhpCodeSniffer">
@@ -188,6 +189,12 @@
       <path value="$PROJECT_DIR$/vendor/brick/reflection" />
       <path value="$PROJECT_DIR$/vendor/brick/json-mapper" />
       <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/fidry/cpu-core-counter" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/vendor/clue/ndjson-react" />
+      <path value="$PROJECT_DIR$/vendor/friendsofphp/php-cs-fixer" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
