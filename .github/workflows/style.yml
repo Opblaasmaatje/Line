@@ -6,7 +6,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  Code Style:
+  CS:
     runs-on: ubuntu-latest
     permissions:
       contents: write
