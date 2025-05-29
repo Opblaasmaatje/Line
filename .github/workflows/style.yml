@@ -9,16 +9,21 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
+      - name: Checkout Code
+      - uses: actions/checkout@v3
 
       - name: Install composer packages
         run: composer install
 
-      - name: Run PHP-CS-Fixer Lint
-        run: ./vendor/bin/php-cs-fixer fix
+#      - name: Configure Git
+#        run: |
+#          git config --local user.name "github-actions[bot]"
+#          git config --local user.email "github-actions[bot]@users.no.reply.github.com"
+
+      - name: Run ECS
+        run: ./vendor/bin/ecs --fix
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
