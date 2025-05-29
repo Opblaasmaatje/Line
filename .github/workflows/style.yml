@@ -8,14 +8,6 @@ on:
 
 
 jobs:
-  strategy:
-    fail-fast: false
-    matrix:
-      actions:
-        - name: 'Coding Standard'
-          run: composer fix-cs --ansi
-
-  name: ${{ matrix.actions.name }}
   runs-on: ubuntu-latest
 
   steps:
