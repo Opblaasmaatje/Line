@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -70,5 +69,4 @@ return [
         App\Providers\BotServiceProvider::class,
         \App\Wise\Providers\OldManProvider::class,
     ],
-
 ];

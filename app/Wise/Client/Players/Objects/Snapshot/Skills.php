@@ -7,7 +7,7 @@ use App\Wise\Client\Players\Objects\Snapshot\Skills\Attack;
 use App\Wise\Client\Players\Objects\Snapshot\Skills\Construction;
 use App\Wise\Client\Players\Objects\Snapshot\Skills\Cooking;
 use App\Wise\Client\Players\Objects\Snapshot\Skills\Crafting;
-use App\Wise\Client\Players\Objects\Snapshot\Skills\Defense;
+use App\Wise\Client\Players\Objects\Snapshot\Skills\Defence;
 use App\Wise\Client\Players\Objects\Snapshot\Skills\Farming;
 use App\Wise\Client\Players\Objects\Snapshot\Skills\Firemaking;
 use App\Wise\Client\Players\Objects\Snapshot\Skills\Fishing;
@@ -27,12 +27,12 @@ use App\Wise\Client\Players\Objects\Snapshot\Skills\Strength;
 use App\Wise\Client\Players\Objects\Snapshot\Skills\Thieving;
 use App\Wise\Client\Players\Objects\Snapshot\Skills\Woodcutting;
 
-readonly class Skills
+readonly class Skills extends Basket
 {
     public function __construct(
         public Overall $overall,
         public Attack $attack,
-//        public Defense $defense,
+        public Defence $defence,
         public Strength $strength,
         public Hitpoints $hitpoints,
         public Ranged $ranged,

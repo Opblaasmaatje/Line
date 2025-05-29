@@ -2,28 +2,26 @@
 
 namespace App\Models;
 
-use App\Wise\Client\Players\Objects\Player;
-use App\Wise\Client\Players\PlayerClient;
+use App\Wise\Client\Players\Objects\PlayerObject;
+use App\Wise\Facade\Player;
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Facades\App;
-
 
 /**
  * @property int $id
  * @property string $username
  * @property string $user_id
+ * @property int $tokens
  *
- * @property-read PlayerClient $player
- * @property-read Player $details
+ * @property-read PlayerObject $details
  */
 class Account extends Model
 {
     protected $fillable = [
         'username',
         'user_id',
+        'tokens',
     ];
 
     public function user(): BelongsTo
@@ -31,20 +29,10 @@ class Account extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function player(): Attribute
-    {
-        return Attribute::get(function (){
-            /** @var PlayerClient $playerClient */
-            $playerClient = App::make(PlayerClient::class);
-
-            return $playerClient;
-        });
-    }
-
     public function details(): Attribute
     {
         return Attribute::get(
-            fn() => $this->player->details($this->username)
+            fn() => Player::details($this->username)
         );
     }
 }

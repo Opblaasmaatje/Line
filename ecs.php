@@ -21,10 +21,9 @@ return ECSConfig::configure()
     // add sets - group of rules, from easiest to more complex ones
     // uncomment one, apply one, commit, PR, merge and repeat
     ->withPreparedSets(
-          arrays: true,
+        arrays: true,
         comments: true,
         docblocks: true,
         spaces: true,
         namespaces: true,
-    )
-    ;
+    );

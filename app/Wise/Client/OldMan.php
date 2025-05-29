@@ -2,7 +2,6 @@
 
 namespace App\Wise\Client;
 
-
 use Illuminate\Http\Client\PendingRequest;
 
 class OldMan

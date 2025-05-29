@@ -5,3 +5,4 @@
 .env
 .idea
 .phpunit.cache
+.php-cs-fixer.cache

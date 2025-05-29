@@ -2,7 +2,6 @@
 
 namespace App\Wise\Client\Players\Objects\Snapshot\Skills;
 
-readonly class Defense extends Skill
+readonly class Defence extends Skill
 {
-
 }

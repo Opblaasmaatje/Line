@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->string('username')->unique();
-            $table->boolean('is_primary');
+            $table->bigInteger('tokens')->default(0);
             $table->string('user_id');
             $table->timestamps();
         });

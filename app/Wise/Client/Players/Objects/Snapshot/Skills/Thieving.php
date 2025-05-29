@@ -4,5 +4,4 @@ namespace App\Wise\Client\Players\Objects\Snapshot\Skills;
 
 readonly class Thieving extends Skill
 {
-
 }

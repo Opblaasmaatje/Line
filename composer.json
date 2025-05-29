@@ -13,7 +13,8 @@
     "fakerphp/faker": "^1.23",
     "laravel/pint": "^1.15",
     "mockery/mockery": "^1.6",
-    "phpunit/phpunit": "^11.5"
+    "phpunit/phpunit": "^11.5",
+    "symplify/easy-coding-standard": "^12.5"
   },
   "autoload": {
     "psr-4": {
