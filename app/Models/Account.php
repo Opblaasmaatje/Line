@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\App;
  * @property int $id
  * @property string $username
  * @property string $user_id
+ * @property int $tokens
  *
  * @property-read PlayerObject $details
  */
@@ -24,6 +25,7 @@ class Account extends Model
     protected $fillable = [
         'username',
         'user_id',
+        'tokens'
     ];
 
     public function user(): BelongsTo
