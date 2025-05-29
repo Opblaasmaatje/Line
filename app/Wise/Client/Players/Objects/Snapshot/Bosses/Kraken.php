@@ -2,7 +2,7 @@
 
 namespace App\Wise\Client\Players\Objects\Snapshot\Bosses;
 
-class Kraken
+readonly class Kraken extends Boss
 {
 
 }

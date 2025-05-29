@@ -10,7 +10,7 @@ use App\Wise\Client\Players\Objects\Snapshot\Bosses\Artio;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Barrows;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Bryophyta;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Callisto;
-use App\Wise\Client\Players\Objects\Snapshot\Bosses\Calverion;
+use App\Wise\Client\Players\Objects\Snapshot\Bosses\Calvarion;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Cerberus;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\ChambersOfXeric;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\ChaosElemental;
@@ -23,7 +23,7 @@ use App\Wise\Client\Players\Objects\Snapshot\Bosses\DagannothRex;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\DagannothSupreme;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\DerangedArchaeologist;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\DukeSucellus;
-use App\Wise\Client\Players\Objects\Snapshot\Bosses\GeneralGraador;
+use App\Wise\Client\Players\Objects\Snapshot\Bosses\GeneralGraardor;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\GiantMole;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\GrotesqueGuardians;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Hespori;
@@ -42,7 +42,7 @@ readonly class Bosses
         public Barrows $barrows_chests,
         public Bryophyta $bryophyta,
         public Callisto $callisto,
-        public Calverion $calverion,
+        public Calvarion $calvarion,
         public Cerberus $cerberus,
         public ChambersOfXeric $chambers_of_xeric,
         public ChaosElemental $chaos_elemental,
@@ -55,7 +55,7 @@ readonly class Bosses
         public DagannothSupreme $dagannoth_supreme,
         public DerangedArchaeologist $deranged_archaeologist,
         public DukeSucellus $duke_sucellus,
-        public GeneralGraador $general_graador,
+        public GeneralGraardor $general_graardor,
         public GiantMole $giant_mole,
         public GrotesqueGuardians $grotesque_guardians,
         public Hespori $hespori,

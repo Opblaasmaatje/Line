@@ -2,7 +2,7 @@
 
 namespace App\Wise\Client\Players\Objects\Snapshot\Bosses;
 
-readonly class GeneralGraador extends Boss
+readonly class GeneralGraardor extends Boss
 {
 
 }

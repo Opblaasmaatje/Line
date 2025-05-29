@@ -24,8 +24,6 @@ class PlayerClient
     {
         $data = $this->oldMan->client()->get("players/$username");
 
-        dd($data->json());
-
         return $this->mapper->map($data->body(), Player::class);
     }
 }

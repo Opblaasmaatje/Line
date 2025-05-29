@@ -14,8 +14,8 @@ use Laravel\Sanctum\HasApiTokens;
  * @property string $discord_id
  * @property bool $is_admin
  *
+ * @property Account $account
  * @property Collection $accounts
- * @property Account|null $primaryAccount
  *
  * @property string $highlight
  */
@@ -39,9 +39,9 @@ class User extends Model
         return $this->hasMany(Account::class);
     }
 
-    public function primaryAccount(): HasOne
+    public function account(): HasOne
     {
-        return $this->hasOne(Account::class)->ofMany('is_primary');
+        return $this->hasOne(Account::class);
     }
 
     public function highlight(): Attribute
