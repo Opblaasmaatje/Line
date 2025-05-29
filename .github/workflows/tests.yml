@@ -28,4 +28,4 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: php laracord test
+      run: ./vendor/bin/phpunit

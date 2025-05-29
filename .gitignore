@@ -4,3 +4,4 @@
 *.sqlite
 .env
 .idea
+.phpunit.cache
