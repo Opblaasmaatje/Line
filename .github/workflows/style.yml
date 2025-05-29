@@ -15,16 +15,18 @@ jobs:
         with:
           php-version: '8.2'
       - uses: actions/checkout@v3
+
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+
       - name: Install Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-      - name: Start symplify/easy-coding-standard
+
+      - name: Running Code Style
         run: ./vendor/bin/ecs --fix
 
-      - name: stage changed files
-        run: git add .
-      - name: commit changed files
-        run: git commit -m "Cleaning up files 🚀"
-      - name: push code to master
-        run: git push
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: Updating files
+          committer_name: GitHub Actions
+          committer_email: actions@github.com
