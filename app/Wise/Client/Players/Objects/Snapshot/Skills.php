@@ -27,7 +27,7 @@ use App\Wise\Client\Players\Objects\Snapshot\Skills\Strength;
 use App\Wise\Client\Players\Objects\Snapshot\Skills\Thieving;
 use App\Wise\Client\Players\Objects\Snapshot\Skills\Woodcutting;
 
-readonly class Skills
+readonly class Skills extends Basket
 {
     public function __construct(
         public Overall $overall,

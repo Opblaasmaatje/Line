@@ -65,7 +65,7 @@ use App\Wise\Client\Players\Objects\Snapshot\Bosses\Yama;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Zalcano;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Zulrah;
 
-readonly class Bosses
+readonly class Bosses extends Basket
 {
     public function __construct(
         public AbyssalSire $abyssal_sire,
