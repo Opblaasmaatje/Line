@@ -22,8 +22,9 @@ jobs:
       - name: Start symplify/easy-coding-standard
         run: ./vendor/bin/ecs --fix
 
-      - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: PHP Linting (Pint)
-          skip_fetch: true
+      - name: stage changed files
+        run: git add .
+      - name: commit changed files
+        run: git commit -m "Cleaning up files 🚀"
+      - name: push code to master
+        run: git push
