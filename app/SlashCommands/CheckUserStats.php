@@ -2,9 +2,7 @@
 
 namespace App\SlashCommands;
 
-use App\Models\Account;
 use App\Models\User;
-use Discord\Parts\Interactions\Command\Option;
 use Laracord\Commands\SlashCommand;
 
 class CheckUserStats extends SlashCommand
@@ -40,5 +38,4 @@ class CheckUserStats extends SlashCommand
         );
 
     }
-
 }

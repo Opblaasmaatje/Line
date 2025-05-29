@@ -27,7 +27,6 @@ use App\Wise\Client\Players\Objects\Snapshot\Bosses\GeneralGraardor;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\GiantMole;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\GrotesqueGuardians;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Hespori;
-use App\Wise\Client\Players\Objects\Snapshot\Bosses\TzkalZuk;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\KalphiteQueen;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\KingBlackDragon;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Kraken;
@@ -57,6 +56,7 @@ use App\Wise\Client\Players\Objects\Snapshot\Bosses\TheRoyalTitans;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\TheWhisperer;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\TombsOfAmascut;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\TombsOfAmascutExpert;
+use App\Wise\Client\Players\Objects\Snapshot\Bosses\TzkalZuk;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\TztokJad;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Venenatis;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Vetion;
@@ -116,7 +116,7 @@ readonly class Bosses extends Basket
         public TheHueycoatl $the_hueycoatl,
         public TheLeviathan $the_leviathan,
         public TheRoyalTitans $the_royal_titans,
-        public TheWhisperer  $the_whisperer,
+        public TheWhisperer $the_whisperer,
         public TheatreOfBlood $theatre_of_blood,
         public TheatreOfBloodHardMode $theatre_of_blood_hard_mode,
         public ThermonuclearSmokeDevil $thermonuclear_smoke_devil,

@@ -13,7 +13,6 @@ class ApplyAccountToUser extends SlashCommand
 
     protected $description = 'The Apply Account to User slash command.';
 
-
     protected $permissions = [];
 
     protected $admin = false;
@@ -44,8 +43,12 @@ class ApplyAccountToUser extends SlashCommand
         ]);
 
         Account::query()->updateOrCreate(
-            ['user_id' => $user->getKey()],
-            ['username' => $this->value('account-rsn')]
+            [
+                'user_id' => $user->getKey(),
+            ],
+            [
+                'username' => $this->value('account-rsn'),
+            ]
         );
 
         $interaction->respondWithMessage(
@@ -56,5 +59,4 @@ class ApplyAccountToUser extends SlashCommand
                 ->build()
         );
     }
-
 }

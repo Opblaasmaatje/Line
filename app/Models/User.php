@@ -33,7 +33,6 @@ class User extends Model
         'is_admin' => 'boolean',
     ];
 
-
     public function accounts(): HasMany
     {
         return $this->hasMany(Account::class);
@@ -47,7 +46,7 @@ class User extends Model
     public function highlight(): Attribute
     {
         return Attribute::get(function (){
-           return "<@{$this->discord_id}>" ;
+           return "<@{$this->discord_id}>";
         });
     }
 }

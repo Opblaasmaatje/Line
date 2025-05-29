@@ -29,8 +29,6 @@ class QueueTokenDistribution extends Service
                 $account->save();
         });
 
-
-
         return null;
     }
 }

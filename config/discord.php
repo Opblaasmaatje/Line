@@ -23,11 +23,9 @@ return [
         '173783209069248512',
     ],
 
-
     'commands' => [
         Laracord\Commands\HelpCommand::class,
     ],
-
 
     'menus' => [
         //
@@ -40,5 +38,4 @@ return [
     'events' => [
         //
     ],
-
 ];

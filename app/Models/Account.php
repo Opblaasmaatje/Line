@@ -3,14 +3,10 @@
 namespace App\Models;
 
 use App\Wise\Client\Players\Objects\PlayerObject;
-use App\Wise\Client\Players\PlayerClient;
 use App\Wise\Facade\Player;
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Facades\App;
-
 
 /**
  * @property int $id
@@ -25,7 +21,7 @@ class Account extends Model
     protected $fillable = [
         'username',
         'user_id',
-        'tokens'
+        'tokens',
     ];
 
     public function user(): BelongsTo

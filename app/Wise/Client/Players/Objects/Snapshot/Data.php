@@ -6,7 +6,6 @@ use Illuminate\Support\Collection;
 
 readonly class Data
 {
-
     public function __construct(
         public Skills $skills,
         public Bosses $bosses,
