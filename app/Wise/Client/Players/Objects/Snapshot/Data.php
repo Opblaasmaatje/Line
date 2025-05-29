@@ -19,12 +19,12 @@ readonly class Data
         return Collection::make($basket);
     }
 
-    public function collectSkills()
+    public function collectSkills(): Collection
     {
         return $this->collect($this->skills);
     }
 
-    public function collectBosses()
+    public function collectBosses(): Collection
     {
         return $this->collect($this->bosses);
     }

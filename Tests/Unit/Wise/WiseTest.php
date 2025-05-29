@@ -3,6 +3,7 @@
 namespace Tests\Unit\Wise;
 
 use App\Models\Account;
+use App\Wise\Client\Players\Objects\Snapshot\Skills\Skill;
 use Database\Factories\AccountFactory;
 use Tests\ApplicationCase;
 
