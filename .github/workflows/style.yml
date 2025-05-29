@@ -7,23 +7,26 @@ on:
 
 jobs:
   CS:
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
+      - uses: actions/checkout@v3
+        with:
+          # Ensure the branch is checked out so changes can be pushed
+          fetch-depth: 0
+
       - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
         with:
           php-version: '8.2'
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          
+
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
       - name: Install Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
-      - name: Run Code Style
+      - name: Running Code Style
         run: ./vendor/bin/ecs --fix
 
       - uses: EndBug/add-and-commit@v9
