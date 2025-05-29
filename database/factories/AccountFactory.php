@@ -13,7 +13,6 @@ class AccountFactory extends Factory
     {
         return [
             'username' => $this->faker->name(),
-            'is_primary' => $this->faker->boolean(),
         ];
     }
 }

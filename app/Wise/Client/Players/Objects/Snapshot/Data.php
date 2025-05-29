@@ -7,7 +7,8 @@ readonly class Data
 
     public function __construct(
         public Skills $skills,
-        public Bosses $bosses
+        public Bosses $bosses,
+        public Computed $computed,
     ){
     }
 }

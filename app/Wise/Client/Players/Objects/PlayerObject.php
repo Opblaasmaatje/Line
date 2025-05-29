@@ -5,7 +5,7 @@ namespace App\Wise\Client\Players\Objects;
 use App\Wise\Client\Players\Objects\Snapshot\Snapshot;
 use Illuminate\Support\Carbon;
 
-final readonly class Player
+readonly class PlayerObject
 {
     public function __construct(
         public int       $id,
