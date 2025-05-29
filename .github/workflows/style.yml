@@ -1,10 +1,32 @@
-on: [push, pull_request]
-name: lint
+name: Bare Run on various PHP versions
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  ecs:
-    name: Easy Coding Standard
+  bare_run:
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php_version: 8.2
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Easy Coding Standard Action
-        uses: zingimmick/ecs-action@0.0.4
+      -   uses: actions/checkout@v3
+
+      -
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+          coverage: none
+
+      -   run: mkdir nested-dir
+
+      -   run: composer require symplify/easy-coding-standard --dev --ansi
+          working-directory: nested-dir
+
+      -   run: vendor/bin/ecs list --ansi
+          working-directory: nested-dir
