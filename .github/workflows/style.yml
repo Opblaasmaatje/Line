@@ -7,7 +7,6 @@ on:
 
 jobs:
   CS:
-    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
@@ -15,14 +14,16 @@ jobs:
         with:
           php-version: '8.2'
       - uses: actions/checkout@v3
-
+        with:
+          fetch-depth: 0
+          
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
       - name: Install Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
-      - name: Running Code Style
+      - name: Run Code Style
         run: ./vendor/bin/ecs --fix
 
       - uses: EndBug/add-and-commit@v9
