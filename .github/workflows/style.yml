@@ -1,24 +1,10 @@
-name: Style
-
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
+on: [push, pull_request]
+name: lint
 jobs:
-  style-runner:
-
+  ecs:
+    name: Easy Coding Standard
     runs-on: ubuntu-latest
-
     steps:
-    - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
-      with:
-        php-version: '8.2'
-    - uses: actions/checkout@v4
-    - name: Copy .env
-      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-    - name: Install Dependencies
-      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-    - name: Run ecs
-      run: vendor/bin/ecs
+      - uses: actions/checkout@v2
+      - name: Easy Coding Standard Action
+        uses: zingimmick/ecs-action@0.0.4
