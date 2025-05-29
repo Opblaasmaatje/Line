@@ -3,7 +3,6 @@
 namespace Tests\Unit\Wise;
 
 use App\Models\Account;
-use App\Wise\Client\Players\Objects\Snapshot\Skills\Skill;
 use Database\Factories\AccountFactory;
 use Tests\ApplicationCase;
 
@@ -14,7 +13,7 @@ class WiseTest extends ApplicationCase
         /** @var Account $account */
         $account = AccountFactory::new()->create([
             'username' => 'sus guy',
-            'user_id' => 1
+            'user_id' => 1,
         ]);
 
         $this->assertTrue(true);
