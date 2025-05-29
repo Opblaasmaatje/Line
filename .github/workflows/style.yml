@@ -19,7 +19,7 @@ jobs:
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       - name: Install Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-      - name: Start esc
+      - name: Start symplify/easy-coding-standard
         run: vendor/bin/esc --fix
 
       - name: Commit changes
