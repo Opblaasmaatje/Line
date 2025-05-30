@@ -133,3 +133,139 @@ Skipping env variable PWD
 Skipping env variable HOME
 Skipping env variable SHLVL
 Skipping env variable PATH
+Running php-build composer
+
+WARNING! Your credentials are stored unencrypted in '/home/runner/.docker/config.json'.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/go/credential-store/
+
+Login Succeeded
+Pulling docker.pkg.github.com/opblaasmaatje/line/php-actions_composer_line:php-latest-build2.1.0
+Error response from daemon: manifest unknown
+Dockerfile:
+FROM php:cli-alpine
+RUN apk add --update --no-cache bash coreutils git make openssh patch unzip zip
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile-php-build
+#1 transferring dockerfile: 147B done
+#1 DONE 0.0s
+
+#2 [auth] library/php:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/php:cli-alpine
+#3 DONE 0.7s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 importing cache manifest from docker.pkg.github.com/opblaasmaatje/line/php-actions_composer_line:php-latest-build2.1.0
+#5 ERROR: failed to configure registry cache importer: unexpected status from HEAD request to https://docker.pkg.github.com/v2/opblaasmaatje/line/php-actions_composer_line/manifests/php-latest-build2.1.0: 401 Unauthorized
+
+#6 [1/2] FROM docker.io/library/php:cli-alpine@sha256:1fa610a21422ff214b4e3c598ad24af878211246283d084b15f4764b862c28ef
+#6 resolve docker.io/library/php:cli-alpine@sha256:1fa610a21422ff214b4e3c598ad24af878211246283d084b15f4764b862c28ef done
+#6 sha256:eba240a13bd3e5cf77a99c1b4c9ed1373e9622b0a8ac18fe3e7727c35dc40ded 2.68kB / 2.68kB done
+#6 sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870 3.15MB / 3.64MB 0.2s
+#6 sha256:69f347299a473f0f5d9b5f088e95e92fa5f3fdb929eb8c00e8eee8a5e255fa22 935B / 935B 0.1s done
+#6 sha256:a33c8191db1484b005c5fa5405a7076bdae4e90319fa99dc126e7fc70a360264 0B / 215B 0.2s
+#6 sha256:1fa610a21422ff214b4e3c598ad24af878211246283d084b15f4764b862c28ef 10.30kB / 10.30kB done
+#6 sha256:898b6676d9b92100ad0017b7eb0caa5caab5faff8fd694eefcdddc33c2e10fc7 7.60kB / 7.60kB done
+#6 sha256:50ec51de1f9773447b65e97f0c677dfa7c2c5a643a8e29c2573fa02d440be485 0B / 3.34MB 0.2s
+#6 extracting sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870
+#6 sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870 3.64MB / 3.64MB 0.2s done
+#6 sha256:a33c8191db1484b005c5fa5405a7076bdae4e90319fa99dc126e7fc70a360264 215B / 215B 0.2s done
+#6 sha256:50ec51de1f9773447b65e97f0c677dfa7c2c5a643a8e29c2573fa02d440be485 3.34MB / 3.34MB 0.3s done
+#6 sha256:242d92ffbbeeb68a81285f10e04caea376e536af932c229bac24f4850ead8549 487B / 487B 0.3s done
+#6 sha256:18d5f8d392c5efc498dff46eaccd969d3b99752dc1a40cbdbefd63ae52351c93 0B / 20.96MB 0.3s
+#6 sha256:7c8a488374895485209654e2f20371d2b15edb0b1e6e389ec7439903ae08bb34 3.15MB / 13.64MB 0.3s
+#6 sha256:6d69de2e680c8502b2e77e5bfbf4a6121b21f9356fa9b0058eb0967c21456bad 0B / 2.44kB 0.3s
+#6 extracting sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870 0.1s done
+#6 sha256:7c8a488374895485209654e2f20371d2b15edb0b1e6e389ec7439903ae08bb34 13.64MB / 13.64MB 0.4s done
+#6 sha256:6d69de2e680c8502b2e77e5bfbf4a6121b21f9356fa9b0058eb0967c21456bad 2.44kB / 2.44kB 0.4s done
+#6 extracting sha256:50ec51de1f9773447b65e97f0c677dfa7c2c5a643a8e29c2573fa02d440be485 0.1s
+#6 sha256:e0d926e2db98107193f77ac67f3ebac3c923c205841b5b20f0a86e5c848b2d66 0B / 20.05kB 0.4s
+#6 sha256:18d5f8d392c5efc498dff46eaccd969d3b99752dc1a40cbdbefd63ae52351c93 14.68MB / 20.96MB 0.5s
+#6 extracting sha256:50ec51de1f9773447b65e97f0c677dfa7c2c5a643a8e29c2573fa02d440be485 0.1s done
+#6 sha256:e0d926e2db98107193f77ac67f3ebac3c923c205841b5b20f0a86e5c848b2d66 20.05kB / 20.05kB 0.4s done
+#6 extracting sha256:69f347299a473f0f5d9b5f088e95e92fa5f3fdb929eb8c00e8eee8a5e255fa22
+#6 sha256:18d5f8d392c5efc498dff46eaccd969d3b99752dc1a40cbdbefd63ae52351c93 20.96MB / 20.96MB 0.5s done
+#6 extracting sha256:69f347299a473f0f5d9b5f088e95e92fa5f3fdb929eb8c00e8eee8a5e255fa22 done
+#6 extracting sha256:a33c8191db1484b005c5fa5405a7076bdae4e90319fa99dc126e7fc70a360264 done
+#6 extracting sha256:7c8a488374895485209654e2f20371d2b15edb0b1e6e389ec7439903ae08bb34 0.1s done
+#6 extracting sha256:242d92ffbbeeb68a81285f10e04caea376e536af932c229bac24f4850ead8549 done
+#6 extracting sha256:18d5f8d392c5efc498dff46eaccd969d3b99752dc1a40cbdbefd63ae52351c93 0.1s
+#6 extracting sha256:18d5f8d392c5efc498dff46eaccd969d3b99752dc1a40cbdbefd63ae52351c93 0.5s done
+#6 extracting sha256:6d69de2e680c8502b2e77e5bfbf4a6121b21f9356fa9b0058eb0967c21456bad
+#6 extracting sha256:6d69de2e680c8502b2e77e5bfbf4a6121b21f9356fa9b0058eb0967c21456bad done
+#6 extracting sha256:e0d926e2db98107193f77ac67f3ebac3c923c205841b5b20f0a86e5c848b2d66 done
+#6 DONE 1.5s
+
+#7 [2/2] RUN apk add --update --no-cache bash coreutils git make openssh patch unzip zip
+#7 0.166 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/main/x86_64/APKINDEX.tar.gz
+#7 0.321 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/community/x86_64/APKINDEX.tar.gz
+#7 0.594 (1/24) Installing bash (5.2.37-r0)
+#7 0.622 Executing bash-5.2.37-r0.post-install
+#7 0.625 (2/24) Installing coreutils-env (9.5-r2)
+#7 0.641 (3/24) Installing coreutils-fmt (9.5-r2)
+#7 0.655 (4/24) Installing coreutils-sha512sum (9.5-r2)
+#7 0.670 (5/24) Installing libattr (2.5.2-r2)
+#7 0.684 (6/24) Installing skalibs-libs (2.14.3.0-r0)
+#7 0.700 (7/24) Installing utmps-libs (0.1.2.3-r2)
+#7 0.715 (8/24) Installing coreutils (9.5-r2)
+#7 0.748 (9/24) Installing libexpat (2.7.0-r0)
+#7 0.764 (10/24) Installing pcre2 (10.43-r0)
+#7 0.787 (11/24) Installing git (2.47.2-r0)
+#7 0.868 (12/24) Installing git-init-template (2.47.2-r0)
+#7 0.885 (13/24) Installing make (4.4.1-r2)
+#7 0.901 (14/24) Installing openssh-keygen (9.9_p2-r0)
+#7 0.920 (15/24) Installing libedit (20240808.3.1-r0)
+#7 0.936 (16/24) Installing openssh-client-common (9.9_p2-r0)
+#7 0.965 (17/24) Installing openssh-client-default (9.9_p2-r0)
+#7 0.986 (18/24) Installing openssh-sftp-server (9.9_p2-r0)
+#7 1.002 (19/24) Installing openssh-server-common (9.9_p2-r0)
+#7 1.016 (20/24) Installing openssh-server (9.9_p2-r0)
+#7 1.040 (21/24) Installing openssh (9.9_p2-r0)
+#7 1.057 (22/24) Installing patch (2.7.6-r10)
+#7 1.073 (23/24) Installing unzip (6.0-r15)
+#7 1.090 (24/24) Installing zip (3.0-r13)
+#7 1.109 Executing busybox-1.37.0-r12.trigger
+#7 1.116 OK: 35 MiB in 64 packages
+#7 DONE 1.2s
+
+#8 exporting to image
+#8 exporting layers
+#8 exporting layers 0.5s done
+#8 writing image sha256:2a438e4bbad98e4025f2a7ce8c3a0e53e9cb13f7164a10352b186865c10e6838 done
+#8 naming to docker.pkg.github.com/opblaasmaatje/line/php-actions_composer_line:php-latest-build2.1.0 done
+#8 DONE 0.5s
+------
+ > importing cache manifest from docker.pkg.github.com/opblaasmaatje/line/php-actions_composer_line:php-latest-build2.1.0:
+------
+The push refers to repository [docker.pkg.github.com/opblaasmaatje/line/php-actions_composer_line]
+c9550909c1ba: Preparing
+e35e5b728c35: Preparing
+02c9649fd988: Preparing
+04fe4ba22cc2: Preparing
+bc627b31385d: Preparing
+85f0c5799a31: Preparing
+213b5b8349df: Preparing
+5c30802c6ddd: Preparing
+f98f0187ee42: Preparing
+08000c18d16d: Preparing
+85f0c5799a31: Waiting
+213b5b8349df: Waiting
+5c30802c6ddd: Waiting
+f98f0187ee42: Waiting
+08000c18d16d: Waiting
+denied: installation not allowed to Create organization package
+WARNING: Failed to push Docker image to "docker.pkg.github.com/opblaasmaatje/line/php-actions_composer_line:php-latest-build2.1.0", this is probably due to missing permissions on GitHub.
+Will continue as this is just an optimization to improve speed of next build.
+Docker tag: docker.pkg.github.com/opblaasmaatje/line/php-actions_composer_line:php-latest-build2.1.0
+No private keys supplied
+Command: composer install --no-progress --no-interaction
+Skipping env variable PWD
+Skipping env variable HOME
+Skipping env variable SHLVL
+Skipping env variable PATH
