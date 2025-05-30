@@ -1,7 +1,9 @@
 <?php
 
+use App\Helpers\OldSchoolRuneScape;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Boss;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\CommanderZilyana;
+use App\Wise\Client\Players\Objects\Snapshot\Skills\Skill;
 
 return [
     'bosses' => [
@@ -14,7 +16,10 @@ return [
         ],
     ],
     'skills' => [
-
+        Skill::class => [
+            'per' => OldSchoolRuneScape::LVL99XP,
+            'give' => 10,
+        ]
     ],
 
     //

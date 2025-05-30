@@ -2,7 +2,7 @@
 
 namespace App\Points\Providers;
 
-use App\Points\Configuration\BossPointAllocation;
+use App\Points\Configuration\PointAllocationConfiguration;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 
@@ -10,9 +10,10 @@ class AllocationServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->app->bind(BossPointAllocation::class, function (){
-            return new BossPointAllocation(
-                Config::get('points.bosses')
+        $this->app->bind(PointAllocationConfiguration::class, function (){
+            return new PointAllocationConfiguration(
+                bossConfig: Config::get('points.bosses'),
+                skillConfig: Config::get('points.skills'),
             );
         });
     }

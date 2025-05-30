@@ -1,27 +1,24 @@
 <?php
 
-namespace App\Points\Jobs\Action;
+namespace App\Points\Bosses\Jobs\Action;
 
 use App\Models\Account;
-use App\Points\Configuration\BossPointAllocation;
+use App\Points\Configuration\PointAllocationConfiguration;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Boss;
 
-class GivePointsAction
+class GiveBossPointsAction
 {
     public function __construct(
-        protected BossPointAllocation $config
+        protected PointAllocationConfiguration $config
     ) {
     }
 
-    public function run(
-        Boss $boss,
-        Account $account
-    ): void {
+    public function run(Account $account, Boss $boss): void
+    {
         $thing = $this->config->forBoss($boss);
 
         $account->points()->updateOrCreate(
             [
-                'account_id' => $account->getKey(),
                 'source' => $boss->metric,
             ],
             [

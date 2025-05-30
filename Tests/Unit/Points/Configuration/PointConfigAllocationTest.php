@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Points\Configuration;
 
-use App\Points\Configuration\BossPointAllocation;
+use App\Points\Configuration\PointAllocationConfiguration;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\AlchemicalHydra;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Araxxor;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Boss;
@@ -12,7 +12,7 @@ use App\Wise\Client\Players\Objects\Snapshot\Bosses\TheatreOfBlood;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 
-class BossPointAllocationConfigTest extends ApplicationCase
+class PointConfigAllocationTest extends ApplicationCase
 {
     #[Test]
     public function boss_point_allocation_can_map_to_point_calculator_and_give_points()
@@ -24,7 +24,7 @@ class BossPointAllocationConfigTest extends ApplicationCase
             ehb: 2,
         );
 
-        $config = new BossPointAllocation([
+        $config = new PointAllocationConfiguration([
             CommanderZilyana::class => [
                 'per' => 10,
                 'give' => 4,
@@ -53,7 +53,7 @@ class BossPointAllocationConfigTest extends ApplicationCase
             ehb: 2,
         );
 
-        $config = new BossPointAllocation([
+        $config = new PointAllocationConfiguration([
             Boss::class => [
                 'per' => 1,
                 'give' => 20,
@@ -78,7 +78,7 @@ class BossPointAllocationConfigTest extends ApplicationCase
             ehb: 2,
         );
 
-        $config = new BossPointAllocation([
+        $config = new PointAllocationConfiguration([
             Boss::class => [
                 'per' => 1,
                 'give' => 0.5,
@@ -103,7 +103,7 @@ class BossPointAllocationConfigTest extends ApplicationCase
             ehb: 2,
         );
 
-        $config = new BossPointAllocation([
+        $config = new PointAllocationConfiguration([
             Boss::class => [
                 'per' => 2,
                 'give' => 5,
@@ -128,7 +128,7 @@ class BossPointAllocationConfigTest extends ApplicationCase
             ehb: 2,
         );
 
-        $config = new BossPointAllocation([
+        $config = new PointAllocationConfiguration([
             SolHeredit::class => [],
             Boss::class => [
                 'per' => 1,

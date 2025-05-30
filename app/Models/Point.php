@@ -2,23 +2,28 @@
 
 namespace App\Models;
 
-use App\Points\Source;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @property int $id
  * @property int $amount
- * @property Source $source
+ * @property string $source
  * @property int $account_id
  *
  * @property Account $account
  */
 class Point extends Model
 {
+    protected $fillable = [
+        'account_id',
+        'amount',
+        'source',
+    ];
+
     protected $casts = [
         'amount' => 'int',
-        'source' => Source::class,
+        'source' => 'string',
     ];
 
     public function account(): BelongsTo
