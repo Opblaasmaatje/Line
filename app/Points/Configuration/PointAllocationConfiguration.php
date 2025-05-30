@@ -9,11 +9,17 @@ use Illuminate\Support\Arr;
 class PointAllocationConfiguration
 {
     public function __construct(
-        protected array $bossConfig,
-        protected array $skillConfig,
+        protected array $bossConfig = [],
+        protected array $skillConfig = [],
     ) {
+
         $this->bossConfig = Arr::where(
             array: $this->bossConfig,
+            callback: fn($entry) => Arr::has($entry, ['per', 'give'])
+        );
+
+        $this->skillConfig = Arr::where(
+            array: $this->skillConfig,
             callback: fn($entry) => Arr::has($entry, ['per', 'give'])
         );
     }
