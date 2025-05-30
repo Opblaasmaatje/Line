@@ -7,13 +7,19 @@ class PointCalculator
     public function __construct(
         protected int $per,
         protected float $give,
-    ){
+    ) {
     }
+
 
     public function calculate(int $hasAmountOf): int
     {
-        $amount = $hasAmountOf / $this->per;
+        return rescue(function () use ($hasAmountOf) {
+            $amount = floor($hasAmountOf / $this->per);
 
-        return (int) floor($this->give * $amount);
+            return (int)max(
+                floor($this->give * $amount),
+                0,
+            );
+        }, 0);
     }
 }
