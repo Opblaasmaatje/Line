@@ -6,3 +6,7 @@
 .idea
 .phpunit.cache
 .php-cs-fixer.cache
+DOCKER_ENV
+docker_tag
+Dockerfile-php-build
+output.log
