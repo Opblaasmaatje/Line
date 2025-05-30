@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build-test:
+  php-stan:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,6 +15,7 @@ jobs:
       - uses: php-actions/composer@v6 # or alternative dependency management
       - uses: php-actions/phpstan@v3
         with:
+          level: 3
           path: app/
 
     # ... then your own project steps ...
