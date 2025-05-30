@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @property int $id
- * @property float $amount
+ * @property int $amount
  * @property Source $source
  * @property int $account_id
  *
@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Point extends Model
 {
     protected $casts = [
-        'amount' => 'float',
+        'amount' => 'int',
         'source' => Source::class,
     ];
 

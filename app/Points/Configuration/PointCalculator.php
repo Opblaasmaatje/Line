@@ -10,10 +10,10 @@ class PointCalculator
     ){
     }
 
-    public function calculate(int $hasAmountOf): float
+    public function calculate(int $hasAmountOf): int
     {
-        $amount = floor($hasAmountOf / $this->per);
+        $amount = $hasAmountOf / $this->per;
 
-        return $this->give * $amount;
+        return (int) floor($this->give * $amount);
     }
 }
