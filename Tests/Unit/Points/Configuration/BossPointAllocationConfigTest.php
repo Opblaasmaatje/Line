@@ -53,7 +53,7 @@ class BossPointAllocationConfigTest extends ApplicationCase
         $config = new BossPointAllocation([
             'default' => [
                 'per' => 1,
-                'give' => 20
+                'give' => 20,
             ],
         ]);
 
@@ -77,8 +77,8 @@ class BossPointAllocationConfigTest extends ApplicationCase
 
         $config = new BossPointAllocation([
             'default' => [
-                'per' =>  1,
-                'give' => 0.5
+                'per' => 1,
+                'give' => 0.5,
             ],
         ]);
 
@@ -102,8 +102,8 @@ class BossPointAllocationConfigTest extends ApplicationCase
 
         $config = new BossPointAllocation([
             'default' => [
-                'per' =>  2,
-                'give' => 5
+                'per' => 2,
+                'give' => 5,
             ],
         ]);
 

@@ -6,7 +6,6 @@ use App\Points\Source;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-
 /**
  * @property int $id
  * @property float $amount
