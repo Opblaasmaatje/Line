@@ -38,9 +38,9 @@ class Account extends Model
 
     public function totalPoints(): Attribute
     {
-        return Attribute::get(function (){
-            return $this->points->sum('amount');
-        });
+        return Attribute::get(
+            fn() => $this->points->sum('amount')
+        );
     }
 
     public function details(): Attribute
