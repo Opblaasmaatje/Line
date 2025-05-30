@@ -6,6 +6,10 @@ use App\Models\Account;
 use App\Points\Bosses\Jobs\Action\GiveBossPointsAction;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Boss;
 
+
+/**
+ * @todo add tests
+ */
 class ApplyBossPoints
 {
     public function __construct(

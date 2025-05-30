@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string $username
  * @property string $user_id
  *
+ * @property-read int $total_points
  * @property-read PlayerObject $details
  * @property-read Collection<Point> $points
  */
@@ -33,6 +34,13 @@ class Account extends Model
     public function points(): HasMany
     {
         return $this->hasMany(Point::class);
+    }
+
+    public function totalPoints(): Attribute
+    {
+        return Attribute::get(function (){
+            return $this->points->sum('amount');
+        });
     }
 
     public function details(): Attribute

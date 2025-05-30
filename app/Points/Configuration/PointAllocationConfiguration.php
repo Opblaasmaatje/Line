@@ -6,6 +6,10 @@ use App\Wise\Client\Players\Objects\Snapshot\Bosses\Boss;
 use App\Wise\Client\Players\Objects\Snapshot\Skills\Skill;
 use Illuminate\Support\Arr;
 
+
+/**
+ * @todo find a way to rework this to be cleaner
+ */
 class PointAllocationConfiguration
 {
     public function __construct(

@@ -10,7 +10,7 @@ class PointAllocator
 {
     public function __construct(
         protected ApplyBossPoints $boss,
-        protected ApplySkillPoints $skill
+        protected ApplySkillPoints $skill,
     ){
     }
 
