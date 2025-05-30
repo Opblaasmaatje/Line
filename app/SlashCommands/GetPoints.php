@@ -46,9 +46,8 @@ class GetPoints extends SlashCommand
 
         $chart = new QuickChart([
             'width' => 500,
-            'height' => 300
+            'height' => 300,
         ]);
-
 
         $chart->setConfig([
             'type' => 'pie',
@@ -57,20 +56,19 @@ class GetPoints extends SlashCommand
                     $account->points
                         ->filter(fn(Point $point) => $point->amount !== 0)
                         ->map(fn(Point $point) => $point->source)
-                        ->toArray()
+                        ->toArray(),
                 ],
                 'datasets' => [
                     'data' => [
                         $account->points
                             ->filter(fn(Point $point) => $point->amount !== 0)
                             ->map(fn(Point $point) => $point->amount)
-                            ->toArray()
-                    ]
+                            ->toArray(),
+                    ],
 
                 ],
-            ]
+            ],
         ]);
-
 
         return $interaction->respondWithMessage(
             $this->message()
