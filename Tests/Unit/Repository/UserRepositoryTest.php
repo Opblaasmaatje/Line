@@ -5,7 +5,6 @@ namespace Tests\Unit\Repository;
 use App\Repository\UserRepository;
 use Database\Factories\AccountFactory;
 use Database\Factories\UserFactory;
-use Illuminate\Database\Eloquent\Attributes\UseFactory;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 
@@ -15,7 +14,9 @@ class UserRepositoryTest extends ApplicationCase
     public function it_finds_account_based_on_id()
     {
         UserFactory::new()
-            ->has(AccountFactory::new(['username' => 'this-should-be-found']))
+            ->has(AccountFactory::new([
+                'username' => 'this-should-be-found',
+            ]))
             ->create([
                 'discord_id' => 'some-discord-id',
             ]);

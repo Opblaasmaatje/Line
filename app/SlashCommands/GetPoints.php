@@ -2,7 +2,6 @@
 
 namespace App\SlashCommands;
 
-use App\Models\Point;
 use App\Models\User;
 use Discord\Parts\Interactions\Command\Option;
 use Laracord\Commands\SlashCommand;
