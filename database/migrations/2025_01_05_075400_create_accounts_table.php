@@ -11,17 +11,8 @@ return new class extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->string('username')->unique();
-            $table->bigInteger('tokens')->default(0);
             $table->string('user_id');
             $table->timestamps();
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('accounts');
     }
 };

@@ -8,10 +8,11 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('points', function (Blueprint $table) {
             $table->id();
-            $table->string('discord_id')->index()->unique();
-            $table->boolean('is_admin')->default(false);
+            $table->float('amount');
+            $table->string('source');
+            $table->foreignId('account_id');
             $table->timestamps();
         });
     }
