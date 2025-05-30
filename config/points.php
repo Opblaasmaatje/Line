@@ -1,14 +1,16 @@
 <?php
 
+use App\Wise\Client\Players\Objects\Snapshot\Bosses\Boss;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\CommanderZilyana;
+
+
 
 return [
     'bosses' => [
         CommanderZilyana::class => [
-            'per' => 2,
-            'give' => 3,
+            //
         ],
-        'default' => [
+        Boss::class => [
             'per' => 1,
             'give' => 1,
         ],

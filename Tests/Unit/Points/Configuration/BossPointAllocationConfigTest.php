@@ -5,7 +5,9 @@ namespace Tests\Unit\Points\Configuration;
 use App\Points\Configuration\BossPointAllocation;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\AlchemicalHydra;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Araxxor;
+use App\Wise\Client\Players\Objects\Snapshot\Bosses\Boss;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\CommanderZilyana;
+use App\Wise\Client\Players\Objects\Snapshot\Bosses\SolHeredit;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\TheatreOfBlood;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
@@ -27,8 +29,9 @@ class BossPointAllocationConfigTest extends ApplicationCase
                 'per' => 10,
                 'give' => 4,
             ],
-            'default' => [
-                //
+            Boss::class => [
+                'per' => 1,
+                'give' => 20,
             ],
         ]);
 
@@ -51,7 +54,7 @@ class BossPointAllocationConfigTest extends ApplicationCase
         );
 
         $config = new BossPointAllocation([
-            'default' => [
+            Boss::class => [
                 'per' => 1,
                 'give' => 20,
             ],
@@ -76,7 +79,7 @@ class BossPointAllocationConfigTest extends ApplicationCase
         );
 
         $config = new BossPointAllocation([
-            'default' => [
+            Boss::class => [
                 'per' => 1,
                 'give' => 0.5,
             ],
@@ -101,7 +104,7 @@ class BossPointAllocationConfigTest extends ApplicationCase
         );
 
         $config = new BossPointAllocation([
-            'default' => [
+            Boss::class => [
                 'per' => 2,
                 'give' => 5,
             ],
@@ -111,6 +114,32 @@ class BossPointAllocationConfigTest extends ApplicationCase
 
         $this->assertSame(
             expected: 0,
+            actual: $pointCalculator->calculate($boss->kills)
+        );
+    }
+
+    #[Test]
+    public function it_defaults_when_it_has_a_key_but_no_values_are_set()
+    {
+        $boss = new SolHeredit(
+            metric: 'Araxxor',
+            kills: 2,
+            rank: 2,
+            ehb: 2,
+        );
+
+        $config = new BossPointAllocation([
+            SolHeredit::class => [],
+            Boss::class => [
+                'per' => 1,
+                'give' => 2,
+            ],
+        ]);
+
+        $pointCalculator = $config->forBoss($boss);
+
+        $this->assertSame(
+            expected: 4,
             actual: $pointCalculator->calculate($boss->kills)
         );
     }

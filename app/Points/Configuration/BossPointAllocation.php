@@ -4,13 +4,17 @@ namespace App\Points\Configuration;
 
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Boss;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
 
 class BossPointAllocation
 {
     public function __construct(
         protected array $config
     ) {
-        //
+        $this->config = Arr::where(
+            array: $this->config,
+            callback: fn($entry) => Arr::has($entry, ['per', 'give'])
+        );
     }
 
     public function forBoss(Boss $boss): PointCalculator
@@ -18,7 +22,7 @@ class BossPointAllocation
         $bossSpecific = Arr::get(
             array: $this->config,
             key: $boss::class,
-            default: $this->config['default']
+            default: $this->config[Boss::class]
         );
 
         return new PointCalculator(
