@@ -19,7 +19,7 @@ return [
         Skill::class => [
             'per' => OldSchoolRuneScape::LVL99XP,
             'give' => 10,
-        ]
+        ],
     ],
 
     //

@@ -4,7 +4,6 @@ namespace App\Points\Skills\Jobs\Action;
 
 use App\Models\Account;
 use App\Points\Configuration\PointAllocationConfiguration;
-use App\Wise\Client\Players\Objects\Snapshot\Bosses\Boss;
 use App\Wise\Client\Players\Objects\Snapshot\Skills\Skill;
 
 class GiveSkillPoints
@@ -17,7 +16,6 @@ class GiveSkillPoints
     public function run(Account $account, Skill $skill): void
     {
         $thing = $this->config->forSkill($skill);
-
 
         $account->points()->updateOrCreate(
             [

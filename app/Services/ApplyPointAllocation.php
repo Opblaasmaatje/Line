@@ -10,7 +10,6 @@ class ApplyPointAllocation extends Service
 {
     protected int $interval = 5;
 
-
     public function handle(): void
     {
         $this->console()->log("Starting point allocation");
