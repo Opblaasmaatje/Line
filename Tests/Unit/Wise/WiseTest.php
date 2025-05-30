@@ -16,7 +16,6 @@ class WiseTest extends ApplicationCase
             'user_id' => 1,
         ]);
 
-
         $this->assertTrue(true);
     }
 }

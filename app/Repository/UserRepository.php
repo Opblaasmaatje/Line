@@ -2,9 +2,7 @@
 
 namespace App\Repository;
 
-use App\Bot;
 use App\Models\Account;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 
 class UserRepository

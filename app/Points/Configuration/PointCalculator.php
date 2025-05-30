@@ -10,13 +10,12 @@ class PointCalculator
     ) {
     }
 
-
     public function calculate(int $hasAmountOf): int
     {
         return rescue(function () use ($hasAmountOf) {
             $amount = floor($hasAmountOf / $this->per);
 
-            return (int)max(
+            return (int) max(
                 floor($this->give * $amount),
                 0,
             );

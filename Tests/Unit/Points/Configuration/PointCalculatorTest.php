@@ -2,7 +2,6 @@
 
 namespace Tests\Unit\Points\Configuration;
 
-
 use App\Points\Configuration\PointCalculator;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
@@ -16,7 +15,6 @@ class PointCalculatorTest extends ApplicationCase
             per: 1,
             give: 1
         );
-
 
         $this->assertEquals(
             expected: 0,
