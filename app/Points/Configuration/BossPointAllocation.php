@@ -4,7 +4,6 @@ namespace App\Points\Configuration;
 
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Boss;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Collection;
 
 class BossPointAllocation
 {
