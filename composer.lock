@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9f3e5e6ed440e3ca49122fb37bf6bd43",
+    "content-hash": "7c92c1ab1a8a9eab144e8085895bd1b7",
     "packages": [
         {
             "name": "brick/json-mapper",
@@ -1479,6 +1479,55 @@
                 }
             ],
             "time": "2025-02-03T10:55:03+00:00"
+        },
+        {
+            "name": "ianw/quickchart",
+            "version": "v1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/typpo/quickchart-php.git",
+                "reference": "428e8c406d7af9b31214b510d4bbb23d122d417b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/typpo/quickchart-php/zipball/428e8c406d7af9b31214b510d4bbb23d122d417b",
+                "reference": "428e8c406d7af9b31214b510d4bbb23d122d417b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ian Webster",
+                    "homepage": "https://quickchart.io/"
+                }
+            ],
+            "description": "QuickChart chart API",
+            "homepage": "http://github.com/typpo/quickchart-php",
+            "keywords": [
+                "bar-chart",
+                "chart",
+                "chart-api",
+                "charts",
+                "image",
+                "line-chart"
+            ],
+            "support": {
+                "issues": "https://github.com/typpo/quickchart-php/issues",
+                "source": "https://github.com/typpo/quickchart-php/tree/v1.3.2"
+            },
+            "time": "2024-01-04T16:46:05+00:00"
         },
         {
             "name": "illuminate/bus",

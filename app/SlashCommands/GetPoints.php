@@ -2,9 +2,11 @@
 
 namespace App\SlashCommands;
 
+use App\Models\Point;
 use App\Models\User;
 use Discord\Parts\Interactions\Command\Option;
 use Laracord\Commands\SlashCommand;
+use QuickChart;
 
 class GetPoints extends SlashCommand
 {
@@ -42,11 +44,40 @@ class GetPoints extends SlashCommand
             );
         }
 
+        $chart = new QuickChart([
+            'width' => 500,
+            'height' => 300
+        ]);
+
+
+        $chart->setConfig([
+            'type' => 'pie',
+            'data' => [
+                'labels' => [
+                    $account->points
+                        ->filter(fn(Point $point) => $point->amount !== 0)
+                        ->map(fn(Point $point) => $point->source)
+                        ->toArray()
+                ],
+                'datasets' => [
+                    'data' => [
+                        $account->points
+                            ->filter(fn(Point $point) => $point->amount !== 0)
+                            ->map(fn(Point $point) => $point->amount)
+                            ->toArray()
+                    ]
+
+                ],
+            ]
+        ]);
+
+
         return $interaction->respondWithMessage(
             $this->message()
                 ->info()
                 ->title('These are you total points!')
                 ->field('points', $account->total_points)
+                ->imageUrl($chart->getShortUrl())
                 ->build()
         );
     }
