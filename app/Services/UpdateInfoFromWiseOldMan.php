@@ -14,10 +14,12 @@ class UpdateInfoFromWiseOldMan extends Service
     {
         $this->console()->warn('Updating information from Wise Old Man');
 
-        $this->console->withProgressBar(Account::query()->get(), function (Account $account){
-            $account->raw_details = WiseOldManPlayer::details($account->username);
+        $this->console->withProgressBar(Account::query()->get(), function (Account $account) {
+            rescue(function () use($account) {
+                $account->raw_details = WiseOldManPlayer::details($account->username);
 
-            $account->save();
+                $account->save();
+            });
         });
 
         $this->console()->newLine(2);

@@ -17,5 +17,3 @@ jobs:
         with:
           level: 3
           path: app/
-
-    # ... then your own project steps ...
