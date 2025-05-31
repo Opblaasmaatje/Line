@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Wise\Client\Players\Objects\PlayerObject;
-use App\Wise\Facade\WiseOldManPlayer;
 use Brick\JsonMapper\JsonMapper;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;

@@ -5,7 +5,6 @@ namespace App\Points;
 use App\Models\Account;
 use App\Points\Bosses\Jobs\ApplyBossPoints;
 use App\Points\Skills\ApplySkillPoints;
-use App\Wise\Client\Players\Objects\PlayerObject;
 
 class PointAllocator
 {
