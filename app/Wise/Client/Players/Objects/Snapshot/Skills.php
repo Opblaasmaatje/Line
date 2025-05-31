@@ -46,7 +46,7 @@ readonly class Skills extends Basket
         public Crafting $crafting,
         public Smithing $smithing,
         public Mining $mining,
-        public  Herblore $herblore,
+        public Herblore $herblore,
         public Agility $agility,
         public Thieving $thieving,
         public Slayer $slayer,
@@ -54,6 +54,6 @@ readonly class Skills extends Basket
         public Runecrafting $runecrafting,
         public Hunter $hunter,
         public Construction $construction,
-    ){
+    ) {
     }
 }

@@ -13,6 +13,7 @@ use App\Wise\Client\Players\Objects\Snapshot\Bosses\Callisto;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Calvarion;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Cerberus;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\ChambersOfXeric;
+use App\Wise\Client\Players\Objects\Snapshot\Bosses\ChambersOfXericChallengeMode;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\ChaosElemental;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\ChaosFanatic;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\CommanderZilyana;
@@ -38,6 +39,7 @@ use App\Wise\Client\Players\Objects\Snapshot\Bosses\Nex;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Nightmare;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Obor;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\PhantomMuspah;
+use App\Wise\Client\Players\Objects\Snapshot\Bosses\PhosanisNightmare;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Sarachnis;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Scorpia;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Scurrius;
@@ -58,8 +60,10 @@ use App\Wise\Client\Players\Objects\Snapshot\Bosses\TombsOfAmascut;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\TombsOfAmascutExpert;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\TzkalZuk;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\TztokJad;
+use App\Wise\Client\Players\Objects\Snapshot\Bosses\Vardorvis;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Venenatis;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Vetion;
+use App\Wise\Client\Players\Objects\Snapshot\Bosses\Vorkath;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Wintertodt;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Yama;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Zalcano;
@@ -79,6 +83,7 @@ readonly class Bosses extends Basket
         public Calvarion $calvarion,
         public Cerberus $cerberus,
         public ChambersOfXeric $chambers_of_xeric,
+        public ChambersOfXericChallengeMode $chambers_of_xeric_challenge_mode,
         public ChaosElemental $chaos_elemental,
         public ChaosFanatic $chaos_fanatic,
         public CommanderZilyana $commander_zilyana,
@@ -102,6 +107,7 @@ readonly class Bosses extends Basket
         public Mimic $mimic,
         public Nex $nex,
         public Nightmare $nightmare,
+        public PhosanisNightmare $phosanis_nightmare,
         public Obor $obor,
         public PhantomMuspah $phantom_muspah,
         public Sarachnis $sarachnis,
@@ -125,7 +131,9 @@ readonly class Bosses extends Basket
         public TzkalZuk $tzkal_zuk,
         public TztokJad $tztok_jad,
         public Venenatis $venenatis,
+        public Vardorvis $vardorvis,
         public Vetion $vetion,
+        public Vorkath $vorkath,
         public Wintertodt $wintertodt,
         public Yama $yama,
         public Zalcano $zalcano,

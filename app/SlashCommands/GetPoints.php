@@ -4,7 +4,10 @@ namespace App\SlashCommands;
 
 use App\Models\Point;
 use App\Models\User;
+use Bbsnly\ChartJs\Chart;
+use Bbsnly\ChartJs\Config\Dataset;
 use Discord\Parts\Interactions\Command\Option;
+use Illuminate\Support\Collection;
 use Laracord\Commands\SlashCommand;
 use QuickChart;
 
@@ -44,41 +47,48 @@ class GetPoints extends SlashCommand
             );
         }
 
-        $chart = new QuickChart([
-            'width' => 500,
-            'height' => 300
-        ]);
-
-
-        $chart->setConfig([
-            'type' => 'pie',
-            'data' => [
-                'labels' => [
-                    $account->points
-                        ->filter(fn(Point $point) => $point->amount !== 0)
-                        ->map(fn(Point $point) => $point->source)
-                        ->toArray()
-                ],
-                'datasets' => [
-                    'data' => [
-                        $account->points
-                            ->filter(fn(Point $point) => $point->amount !== 0)
-                            ->map(fn(Point $point) => $point->amount)
-                            ->toArray()
-                    ]
-
-                ],
-            ]
-        ]);
-
-
         return $interaction->respondWithMessage(
             $this->message()
                 ->info()
                 ->title('These are you total points!')
-                ->field('points', $account->total_points)
-                ->imageUrl($chart->getShortUrl())
+                ->field('Points', $account->total_points)
+                ->content("Check some of your highest point contributions!")
+                ->imageUrl($this->buildImage($account->points))
                 ->build()
         );
+    }
+
+    public function buildImage(Collection $points): string
+    {
+        $points = $points
+            ->sortBy(fn(Point $point) => $point->amount, descending: true)
+            ->take(5);
+
+        $quickChart = new QuickChart([
+            'width' => 500,
+            'height' => 300
+        ]);
+
+        $quickChart->setConfig([
+            "type" => "bar",
+            "data" => [
+                "labels" => $points
+                    ->map(fn(Point $point) => $point->title)
+                    ->values()
+                    ->toArray(),
+                "datasets" => [
+                    [
+                        'label' => "Points",
+                        "data" => $points
+                                ->map(fn(Point $point) => $point->amount)
+                                ->values()
+                                ->toArray()
+
+                    ]
+                ]
+            ]
+        ]);
+
+        return $quickChart->getShortUrl();
     }
 }
