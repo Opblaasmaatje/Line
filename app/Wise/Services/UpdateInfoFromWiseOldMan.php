@@ -17,7 +17,8 @@ class UpdateInfoFromWiseOldMan extends Service
         //TODO make sure it doesnt break when not found
         $this->console->withProgressBar(Account::query()->get(), function (Account $account) {
             rescue(function () use($account) {
-                $account->raw_details = WiseOldManPlayer::details($account->username);
+
+                $account->raw_details = WiseOldManPlayer::details($account->username)->toArray();
 
                 $account->save();
             });
