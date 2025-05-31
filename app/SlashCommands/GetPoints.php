@@ -4,8 +4,6 @@ namespace App\SlashCommands;
 
 use App\Models\Point;
 use App\Models\User;
-use Bbsnly\ChartJs\Chart;
-use Bbsnly\ChartJs\Config\Dataset;
 use Discord\Parts\Interactions\Command\Option;
 use Illuminate\Support\Collection;
 use Laracord\Commands\SlashCommand;
@@ -66,7 +64,7 @@ class GetPoints extends SlashCommand
 
         $quickChart = new QuickChart([
             'width' => 500,
-            'height' => 300
+            'height' => 300,
         ]);
 
         $quickChart->setConfig([
@@ -80,13 +78,13 @@ class GetPoints extends SlashCommand
                     [
                         'label' => "Points",
                         "data" => $points
-                                ->map(fn(Point $point) => $point->amount)
-                                ->values()
-                                ->toArray()
+                            ->map(fn(Point $point) => $point->amount)
+                            ->values()
+                            ->toArray(),
 
-                    ]
-                ]
-            ]
+                    ],
+                ],
+            ],
         ]);
 
         return $quickChart->getShortUrl();

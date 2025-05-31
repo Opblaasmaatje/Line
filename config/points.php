@@ -273,7 +273,7 @@ return [
             'per' => 1,
             'give' => 0.025,
         ],
-        TombsOfAmascut::class=> [
+        TombsOfAmascut::class => [
             'per' => 1,
             'give' => 1,
         ],
