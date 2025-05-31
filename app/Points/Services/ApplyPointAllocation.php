@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace App\Points\Services;
 
 use App\Models\Account;
 use App\Points\Facade\PointAllocation;

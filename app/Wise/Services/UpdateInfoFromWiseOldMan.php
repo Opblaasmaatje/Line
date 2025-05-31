@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace App\Wise\Services;
 
 use App\Models\Account;
 use App\Wise\Facade\WiseOldManPlayer;
