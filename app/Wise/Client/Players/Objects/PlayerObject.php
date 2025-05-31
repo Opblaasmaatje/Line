@@ -3,9 +3,10 @@
 namespace App\Wise\Client\Players\Objects;
 
 use App\Wise\Client\Players\Objects\Snapshot\Snapshot;
+use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Carbon;
 
-readonly class PlayerObject
+readonly class PlayerObject implements Arrayable
 {
     public function __construct(
         public int $id,
@@ -20,10 +21,10 @@ readonly class PlayerObject
         public float $ehp,
         public float $ttm,
         public float $tt200m,
-        protected string $registeredAt,
-        protected string|null $updatedAt,
-        protected string|null $lastChangedAt,
-        protected string|null $lastImportedAt,
+        public string $registeredAt,
+        public string|null $updatedAt,
+        public string|null $lastChangedAt,
+        public string|null $lastImportedAt,
         public int $combatLevel,
         public Archive|null $archive,
         public Snapshot|null $latestSnapshot,
@@ -53,5 +54,10 @@ readonly class PlayerObject
     public function getLastImportedAt(): Carbon|null
     {
         return $this->getAsCarbon($this->lastImportedAt);
+    }
+
+    public function toArray(): array
+    {
+        return get_object_vars($this);
     }
 }

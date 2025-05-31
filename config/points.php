@@ -13,6 +13,7 @@ use App\Wise\Client\Players\Objects\Snapshot\Bosses\Callisto;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Calvarion;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Cerberus;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\ChambersOfXeric;
+use App\Wise\Client\Players\Objects\Snapshot\Bosses\ChambersOfXericChallengeMode;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\ChaosElemental;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\ChaosFanatic;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\CommanderZilyana;
@@ -112,7 +113,10 @@ return [
             'per' => 1,
             'give' => 1.5,
         ],
-        //TODO check Chambers of xeric CM
+        ChambersOfXericChallengeMode::class => [
+            'per' => 1,
+            'give' => 2,
+        ],
         ChaosElemental::class => [
             'per' => 1,
             'give' => 0.03,
@@ -122,7 +126,7 @@ return [
             'give' => 0.025,
         ],
         CommanderZilyana::class => [
-            'per' => 3,
+            'per' => 1,
             'give' => 1,
         ],
         CorporealBeast::class => [

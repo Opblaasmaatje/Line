@@ -14,8 +14,8 @@ class ApplyPointAllocation extends Service
     {
         $this->console()->log("Starting point allocation");
 
-        Account::query()->get()->each(function (Account $account){
-            $this->console()->log("Queue Jobs for $account->username");
+        Account::query()->whereNotNull('raw_details')->get()->each(function (Account $account){
+            $this->console()->log("Updating point allocation for [$account->username]");
 
             PointAllocation::boss($account);
             PointAllocation::skill($account);

@@ -11,6 +11,7 @@ return new class extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->string('username')->unique();
+            $table->json('raw_details')->nullable();
             $table->string('user_id');
             $table->timestamps();
         });

@@ -15,6 +15,8 @@ class OldMan
 
     public function client()
     {
+//        app('bot')->console()->log('Using the WiseOldMan API');
+
         return $this->client;
     }
 }

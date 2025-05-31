@@ -4,6 +4,7 @@ namespace App\Points\Bosses\Jobs;
 
 use App\Models\Account;
 use App\Points\Bosses\Jobs\Action\GiveBossPointsAction;
+use App\Wise\Client\Players\Objects\PlayerObject;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Boss;
 
 /**

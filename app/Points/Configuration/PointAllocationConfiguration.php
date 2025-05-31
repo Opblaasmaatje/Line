@@ -15,7 +15,6 @@ class PointAllocationConfiguration
         protected array $bossConfig = [],
         protected array $skillConfig = [],
     ) {
-
         $this->bossConfig = Arr::where(
             array: $this->bossConfig,
             callback: fn($entry) => Arr::has($entry, ['per', 'give'])

@@ -18,8 +18,8 @@ class PointConfigTest extends ApplicationCase
 
         $this->assertIsArray($configuration);
 
-        $this->assertIsInt(Arr::get($configuration, 'give'));
-        $this->assertIsFloat(Arr::get($configuration, 'per'));
+        $this->assertIsInt(Arr::get($configuration, 'per'));
+        $this->assertIsFloat(Arr::get($configuration, 'give'));
     }
 
     #[Test]
@@ -29,7 +29,7 @@ class PointConfigTest extends ApplicationCase
 
         $this->assertIsArray($configuration);
 
-        $this->assertIsInt(Arr::get($configuration, 'give'));
-        $this->assertIsFloat(Arr::get($configuration, 'per'));
+        $this->assertIsInt(Arr::get($configuration, 'per'));
+        $this->assertIsFloat(Arr::get($configuration, 'give'));
     }
 }

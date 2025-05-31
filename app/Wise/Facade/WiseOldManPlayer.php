@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @method static PlayerObject details(string $username)
  */
-class Player extends Facade
+class WiseOldManPlayer extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
