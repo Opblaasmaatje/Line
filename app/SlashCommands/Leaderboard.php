@@ -3,9 +3,6 @@
 namespace App\SlashCommands;
 
 use App\Models\Account;
-use App\Models\Point;
-use App\Models\User;
-use Discord\Parts\Interactions\Command\Option;
 use Illuminate\Support\Collection;
 use Laracord\Commands\SlashCommand;
 use QuickChart;
@@ -22,7 +19,6 @@ class Leaderboard extends SlashCommand
 
     protected $hidden = false;
 
-
     public function handle($interaction)
     {
         $accounts = Account::query()
@@ -33,8 +29,6 @@ class Leaderboard extends SlashCommand
             ->take(5)
             ->reverse()
             ->values();
-
-
 
         return $interaction->respondWithMessage(
             $this->message()
