@@ -11,8 +11,8 @@ readonly class Archive implements Arrayable
         public string $previousName,
         public string $archiveUsername,
         public string $restoredUsername,
-        public string $createdAt, //TODO cast
-        public string $restoredAt, //TODO cast
+        public string $createdAt,
+        public string $restoredAt,
     ){
     }
 

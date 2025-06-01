@@ -9,28 +9,24 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Facades\App;
 
 /**
  * @property int $id
  * @property string $username
- * @property array $raw_details
  * @property string $user_id
  *
- * @property-read int $total_points
- * @property-read PlayerObject|null $details
+ * @property-read User $user
  * @property-read Collection<Point> $points
+ * @property-read Snapshot|null $snapshot
+ * @property-read int $total_points
  */
 class Account extends Model
 {
     protected $fillable = [
         'username',
         'user_id',
-        'raw_details',
-    ];
-
-    protected $casts = [
-        'raw_details' => 'array',
     ];
 
     public function user(): BelongsTo
@@ -43,23 +39,15 @@ class Account extends Model
         return $this->hasMany(Point::class);
     }
 
+    public function snapshot(): HasOne
+    {
+        return $this->hasOne(Snapshot::class)->withDefault();
+    }
+
     public function totalPoints(): Attribute
     {
         return Attribute::get(
             fn() => $this->points->sum('amount')
         );
-    }
-
-    public function details(): Attribute
-    {
-        return Attribute::get(function (){
-            /** @var JsonMapper $mapper */
-            $mapper = App::make(JsonMapper::class);
-
-            return $mapper->map(
-                json_encode($this->raw_details),
-                PlayerObject::class
-            );
-        });
     }
 }

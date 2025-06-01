@@ -8,10 +8,10 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('accounts', function (Blueprint $table) {
+        Schema::create('snapshots', function (Blueprint $table) {
             $table->id();
-            $table->string('username')->unique();
-            $table->string('user_id');
+            $table->json('raw_details');
+            $table->foreignId('account_id');
             $table->timestamps();
         });
     }

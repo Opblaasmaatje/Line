@@ -3,6 +3,7 @@
 namespace App\Points\Services;
 
 use App\Models\Account;
+use App\Models\Snapshot;
 use App\Points\Facade\PointAllocation;
 use Laracord\Services\Service;
 
@@ -14,11 +15,15 @@ class ApplyPointAllocation extends Service
     {
         $this->console()->log("Starting point allocation");
 
-        Account::query()->whereNotNull('raw_details')->get()->each(function (Account $account){
-            $this->console()->log("Updating point allocation for [$account->username]");
+        Snapshot::query()
+            ->with(['account'])
+            ->whereHas('account')
+            ->get()
+            ->each(function (Snapshot $snapshot) {
+                $this->console()->log("Updating point allocation for [{$snapshot->account->username}]");
 
-            PointAllocation::boss($account);
-            PointAllocation::skill($account);
-        });
+                PointAllocation::boss($snapshot);
+                PointAllocation::skill($snapshot);
+            });
     }
 }

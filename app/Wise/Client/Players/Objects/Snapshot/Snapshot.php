@@ -9,7 +9,7 @@ readonly class Snapshot implements Arrayable
     public function __construct(
         public int $id,
         public int $playerId,
-        public string $createdAt, //todo cast
+        public string $createdAt,
         public string|null $importedAt,
         public Data $data,
     ){

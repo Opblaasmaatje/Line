@@ -3,9 +3,14 @@
 namespace App\Points;
 
 use App\Models\Account;
+use App\Models\Snapshot;
 use App\Points\Bosses\Jobs\ApplyBossPoints;
 use App\Points\Skills\ApplySkillPoints;
 
+
+/**
+ * todo rework to work with snapshot
+ */
 class PointAllocator
 {
     public function __construct(
@@ -14,13 +19,13 @@ class PointAllocator
     ){
     }
 
-    public function boss(Account $account): void
+    public function boss(Snapshot $snapshot): void
     {
-        $this->boss->apply($account);
+        $this->boss->apply($snapshot);
     }
 
-    public function skill(Account $account): void
+    public function skill(Snapshot $snapshot): void
     {
-        $this->skill->apply($account);
+        $this->skill->apply($snapshot);
     }
 }
