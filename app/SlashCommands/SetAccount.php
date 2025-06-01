@@ -7,11 +7,11 @@ use App\Models\User;
 use Discord\Parts\Interactions\Command\Option;
 use Laracord\Commands\SlashCommand;
 
-class ApplyAccountToUser extends SlashCommand
+class SetAccount extends SlashCommand
 {
-    protected $name = 'apply-account-to-user';
+    protected $name = 'set-account';
 
-    protected $description = 'The Apply Account to User slash command.';
+    protected $description = 'Set an account to a discord user.';
 
     protected $permissions = [];
 
