@@ -2,7 +2,6 @@
 
 namespace App\Points\Bosses\Jobs;
 
-use App\Models\Account;
 use App\Models\Snapshot;
 use App\Points\Bosses\Jobs\Action\GiveBossPointsAction;
 use App\Wise\Client\Players\Objects\Snapshot\Bosses\Boss;

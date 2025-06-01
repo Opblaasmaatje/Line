@@ -20,9 +20,8 @@ class WiseTest extends ApplicationCase
         $thing = WiseOldManPlayer::details($account->username)->toArray();
 
         $account->snapshot()->updateOrCreate([
-            'raw_details' => $thing
+            'raw_details' => $thing,
         ]);
-
 
         $this->assertTrue(true);
     }

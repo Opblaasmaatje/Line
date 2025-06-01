@@ -2,7 +2,6 @@
 
 namespace App\Points\Facade;
 
-use App\Models\Account;
 use App\Models\Snapshot;
 use App\Points\PointAllocator;
 use Illuminate\Support\Facades\Facade;

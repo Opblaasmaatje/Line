@@ -2,15 +2,12 @@
 
 namespace App\Models;
 
-use App\Wise\Client\Players\Objects\PlayerObject;
-use Brick\JsonMapper\JsonMapper;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-use Illuminate\Support\Facades\App;
 
 /**
  * @property int $id

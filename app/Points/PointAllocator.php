@@ -2,11 +2,9 @@
 
 namespace App\Points;
 
-use App\Models\Account;
 use App\Models\Snapshot;
 use App\Points\Bosses\Jobs\ApplyBossPoints;
 use App\Points\Skills\ApplySkillPoints;
-
 
 /**
  * todo rework to work with snapshot

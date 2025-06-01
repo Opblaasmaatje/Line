@@ -2,7 +2,6 @@
 
 namespace App\Points\Services;
 
-use App\Models\Account;
 use App\Models\Snapshot;
 use App\Points\Facade\PointAllocation;
 use Laracord\Services\Service;

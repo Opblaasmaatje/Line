@@ -16,7 +16,6 @@ class UpdateInfoFromWiseOldMan extends Service
 
         $this->console->withProgressBar(
             totalSteps: Account::query()->get(),
-
             callback: function (Account $account) {
                 $account->snapshot->setAttribute(
                     key: 'raw_details',
@@ -24,7 +23,8 @@ class UpdateInfoFromWiseOldMan extends Service
                 );
 
                 $account->snapshot->push();
-            });
+            }
+        );
 
         $this->console()->newLine(2);
     }
