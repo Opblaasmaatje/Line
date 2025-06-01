@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  *
  * @property-read User $user
  * @property-read Collection<Point> $points
- * @property-read Snapshot|null $snapshot
+ * @property-read Snapshot $snapshot
  * @property-read int $total_points
  */
 class Account extends Model

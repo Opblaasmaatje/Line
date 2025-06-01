@@ -6,7 +6,11 @@ use App\Models\Account;
 use App\Wise\Facade\WiseOldManPlayer;
 use Laracord\Services\Service;
 
-class UpdateInfoFromWiseOldMan extends Service
+
+/**
+ * TODO add error handling for user not found
+ */
+class AddSnapshotToUser extends Service
 {
     protected int $interval = 5;
 
@@ -15,8 +19,11 @@ class UpdateInfoFromWiseOldMan extends Service
         $this->console()->warn('Updating information from Wise Old Man');
 
         $this->console->withProgressBar(
-            totalSteps: Account::query()->get(),
+            totalSteps: Account::query()->with('snapshot')->get(),
             callback: function (Account $account) {
+
+
+
                 $account->snapshot->setAttribute(
                     key: 'raw_details',
                     value: WiseOldManPlayer::details($account->username)->toArray()

@@ -7,6 +7,11 @@ use App\Models\User;
 use Discord\Parts\Interactions\Command\Option;
 use Laracord\Commands\SlashCommand;
 
+
+/**
+ * TODO add button to overwrite discord name with submitted account
+ *
+ */
 class SetAccount extends SlashCommand
 {
     protected $name = 'set-account';
@@ -35,6 +40,7 @@ class SetAccount extends SlashCommand
                 ->setRequired(true),
         ];
     }
+
 
     public function handle($interaction)
     {

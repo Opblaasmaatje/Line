@@ -1,7 +1,7 @@
 <?php
 
 use App\Points\Services\ApplyPointAllocation;
-use App\Wise\Services\UpdateInfoFromWiseOldMan;
+use App\Wise\Services\AddSnapshotToUser;
 use Discord\WebSockets\Intents;
 
 return [
@@ -35,7 +35,7 @@ return [
 
     'services' => [
         ApplyPointAllocation::class,
-        UpdateInfoFromWiseOldMan::class,
+        AddSnapshotToUser::class,
     ],
 
     'events' => [
