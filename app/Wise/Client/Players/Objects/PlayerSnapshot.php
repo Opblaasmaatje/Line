@@ -6,7 +6,7 @@ use App\Wise\Client\Players\Objects\Snapshot\Snapshot;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Carbon;
 
-readonly class PlayerObject implements Arrayable
+readonly class PlayerSnapshot implements Arrayable
 {
     public function __construct(
         public int $id,

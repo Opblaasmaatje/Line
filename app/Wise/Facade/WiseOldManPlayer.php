@@ -2,12 +2,12 @@
 
 namespace App\Wise\Facade;
 
-use App\Wise\Client\Players\Objects\PlayerObject;
+use App\Wise\Client\Players\Objects\PlayerSnapshot;
 use App\Wise\Client\Players\PlayerClient;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static PlayerObject details(string $username)
+ * @method static PlayerSnapshot details(string $username)
  */
 class WiseOldManPlayer extends Facade
 {

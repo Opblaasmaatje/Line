@@ -3,7 +3,7 @@
 namespace App\Wise\Client\Players;
 
 use App\Wise\Client\OldMan;
-use App\Wise\Client\Players\Objects\PlayerObject;
+use App\Wise\Client\Players\Objects\PlayerSnapshot;
 use Brick\JsonMapper\JsonMapper;
 use Brick\JsonMapper\JsonMapperException;
 use Illuminate\Http\Client\ConnectionException;
@@ -20,10 +20,10 @@ class PlayerClient
      * @throws ConnectionException
      * @throws JsonMapperException
      */
-    public function details(string $username): PlayerObject
+    public function details(string $username): PlayerSnapshot
     {
         $data = $this->oldMan->client()->get("players/$username");
 
-        return $this->mapper->map($data->body(), PlayerObject::class);
+        return $this->mapper->map($data->body(), PlayerSnapshot::class);
     }
 }
