@@ -5,7 +5,6 @@ namespace App\Points;
 use App\Models\Snapshot;
 use App\Points\Jobs\AssignPoints;
 
-
 /**
  * todo create test
  */
