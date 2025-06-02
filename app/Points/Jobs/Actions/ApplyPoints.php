@@ -12,8 +12,12 @@ class ApplyPoints
         int $amount,
     ){
         $account->points()->updateOrCreate(
-            ['source' => $metric],
-            ['amount' => $amount],
+            [
+                'source' => $metric,
+            ],
+            [
+                'amount' => $amount,
+            ],
         );
     }
 }
