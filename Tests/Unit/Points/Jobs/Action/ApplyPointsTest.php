@@ -83,12 +83,17 @@ class ApplyPointsTest extends ApplicationCase
     public function it_does_not_overwrite_source_when_using_different_account()
     {
         AccountFactory::new()
-            ->has(PointFactory::new(['source' => 'this-one!']))
-            ->create(['user_id' => 1]);
+            ->has(PointFactory::new([
+                'source' => 'this-one!',
+            ]))
+            ->create([
+                'user_id' => 1,
+            ]);
 
         $account = AccountFactory::new()
-            ->create(['user_id' => 2]);
-
+            ->create([
+                'user_id' => 2,
+            ]);
 
         $this->assertDatabaseCount(Account::class, 2);
 
