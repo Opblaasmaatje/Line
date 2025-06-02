@@ -20,6 +20,11 @@ readonly abstract class Boss implements Arrayable, CanGivePoints
         return $this->kills;
     }
 
+    public function getMetric(): string
+    {
+        return $this->metric;
+    }
+
     public function toArray(): array
     {
         return get_object_vars($this);

@@ -24,7 +24,7 @@ class AssignPoints
         $collection->each(
             fn(CanGivePoints $give) => $this->action->run(
                 account: $account,
-                metric: $give->metric,
+                metric: $give->getMetric(),
                 amount: $this
                     ->config
                     ->getCalculator($give)
