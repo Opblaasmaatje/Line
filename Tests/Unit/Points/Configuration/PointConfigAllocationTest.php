@@ -141,7 +141,6 @@ class PointConfigAllocationTest extends ApplicationCase
 
         $pointCalculator = $config->getCalculator($boss);
 
-
         $this->assertSame(
             expected: 4,
             actual: $pointCalculator->calculate($boss->kills)
@@ -151,7 +150,7 @@ class PointConfigAllocationTest extends ApplicationCase
     #[Test]
     public function it_returns_point_calculator_for_skills()
     {
-        $runecrafting = new Runecrafting(1,1,1,1);
+        $runecrafting = new Runecrafting(1, 1, 1, 1);
 
         $config = new PointAllocationConfiguration(skillConfig: [
             Skill::class => [
