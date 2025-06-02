@@ -10,10 +10,12 @@ class ApplyPoints
         Account $account,
         string $metric,
         int $amount,
-    ){
+    ): self{
         $account->points()->updateOrCreate(
             ['source' => $metric],
             ['amount' => $amount],
         );
+
+        return $this;
     }
 }

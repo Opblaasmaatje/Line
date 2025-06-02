@@ -3,12 +3,15 @@
 namespace Tests\Unit\Points\Configuration;
 
 use App\Points\Configuration\PointAllocationConfiguration;
+use App\Points\Configuration\PointCalculator;
 use App\Wise\Client\Players\DTO\Snapshot\Bosses\AlchemicalHydra;
 use App\Wise\Client\Players\DTO\Snapshot\Bosses\Araxxor;
 use App\Wise\Client\Players\DTO\Snapshot\Bosses\Boss;
 use App\Wise\Client\Players\DTO\Snapshot\Bosses\CommanderZilyana;
 use App\Wise\Client\Players\DTO\Snapshot\Bosses\SolHeredit;
 use App\Wise\Client\Players\DTO\Snapshot\Bosses\TheatreOfBlood;
+use App\Wise\Client\Players\DTO\Snapshot\Skills\Runecrafting;
+use App\Wise\Client\Players\DTO\Snapshot\Skills\Skill;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 
@@ -35,7 +38,7 @@ class PointConfigAllocationTest extends ApplicationCase
             ],
         ]);
 
-        $pointCalculator = $config->forBoss($boss);
+        $pointCalculator = $config->getCalculator($boss);
 
         $this->assertSame(
             expected: 8,
@@ -60,7 +63,7 @@ class PointConfigAllocationTest extends ApplicationCase
             ],
         ]);
 
-        $pointCalculator = $config->forBoss($boss);
+        $pointCalculator = $config->getCalculator($boss);
 
         $this->assertSame(
             expected: 2000,
@@ -85,7 +88,7 @@ class PointConfigAllocationTest extends ApplicationCase
             ],
         ]);
 
-        $pointCalculator = $config->forBoss($boss);
+        $pointCalculator = $config->getCalculator($boss);
 
         $this->assertSame(
             expected: 1,
@@ -110,7 +113,7 @@ class PointConfigAllocationTest extends ApplicationCase
             ],
         ]);
 
-        $pointCalculator = $config->forBoss($boss);
+        $pointCalculator = $config->getCalculator($boss);
 
         $this->assertSame(
             expected: 0,
@@ -136,11 +139,27 @@ class PointConfigAllocationTest extends ApplicationCase
             ],
         ]);
 
-        $pointCalculator = $config->forBoss($boss);
+        $pointCalculator = $config->getCalculator($boss);
+
 
         $this->assertSame(
             expected: 4,
             actual: $pointCalculator->calculate($boss->kills)
         );
+    }
+
+    #[Test]
+    public function it_returns_point_calculator_for_skills()
+    {
+        $runecrafting = new Runecrafting(1,1,1,1);
+
+        $config = new PointAllocationConfiguration(skillConfig: [
+            Skill::class => [
+                'per' => 1,
+                'give' => 2,
+            ],
+        ]);
+
+        $this->assertInstanceOf(PointCalculator::class, $config->getCalculator($runecrafting));
     }
 }
