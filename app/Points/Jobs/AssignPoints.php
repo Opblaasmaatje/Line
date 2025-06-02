@@ -8,9 +8,6 @@ use App\Points\Jobs\Actions\ApplyPoints;
 use App\Wise\Client\Players\DTO\Snapshot\CanGivePoints;
 use Illuminate\Support\Collection;
 
-/**
- * TODO rework with snapshot
- */
 class AssignPoints
 {
     public function __construct(
