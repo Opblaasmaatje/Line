@@ -1,0 +1,692 @@
+{
+  "id": 393285,
+  "username": "sus guy",
+  "displayName": "sus guy",
+  "type": "regular",
+  "build": "main",
+  "status": "active",
+  "country": "NL",
+  "patron": false,
+  "exp": 314946345,
+  "ehp": 554.180161197415,
+  "ehb": 531.9917099999999,
+  "ttm": 382.6794722826377,
+  "tt200m": 11330.17779605011,
+  "registeredAt": "2021-10-06T15:06:56.502Z",
+  "updatedAt": "2025-06-01T09:35:36.241Z",
+  "lastChangedAt": "2025-06-01T09:35:36.241Z",
+  "lastImportedAt": "2023-06-03T10:53:22.044Z",
+  "latestSnapshot": {
+    "id": 242835115,
+    "playerId": 393285,
+    "createdAt": "2025-06-01T09:35:36.241Z",
+    "importedAt": null,
+    "data": {
+      "skills": {
+        "overall": {
+          "metric": "overall",
+          "experience": 314946345,
+          "rank": 153604,
+          "level": 2158,
+          "ehp": 554.180161197415
+        },
+        "attack": {
+          "metric": "attack",
+          "experience": 13828506,
+          "rank": 273687,
+          "level": 99,
+          "ehp": 0
+        },
+        "defence": {
+          "metric": "defence",
+          "experience": 14654980,
+          "rank": 177540,
+          "level": 99,
+          "ehp": 18.370489509187703
+        },
+        "strength": {
+          "metric": "strength",
+          "experience": 37991736,
+          "rank": 68471,
+          "level": 99,
+          "ehp": 0
+        },
+        "hitpoints": {
+          "metric": "hitpoints",
+          "experience": 44044950,
+          "rank": 89737,
+          "level": 99,
+          "ehp": 0.22022474999999997
+        },
+        "ranged": {
+          "metric": "ranged",
+          "experience": 43917887,
+          "rank": 85585,
+          "level": 99,
+          "ehp": 36.90578739495798
+        },
+        "prayer": {
+          "metric": "prayer",
+          "experience": 5378952,
+          "rank": 271966,
+          "level": 90,
+          "ehp": 2.689475999999999
+        },
+        "magic": {
+          "metric": "magic",
+          "experience": 23593608,
+          "rank": 90595,
+          "level": 99,
+          "ehp": 0.11796804000000005
+        },
+        "cooking": {
+          "metric": "cooking",
+          "experience": 8925736,
+          "rank": 465697,
+          "level": 95,
+          "ehp": 10.365068050744696
+        },
+        "woodcutting": {
+          "metric": "woodcutting",
+          "experience": 4069729,
+          "rank": 429508,
+          "level": 87,
+          "ehp": 21.79592496449402
+        },
+        "fletching": {
+          "metric": "fletching",
+          "experience": 5453185,
+          "rank": 429516,
+          "level": 90,
+          "ehp": 0.027265925000000024
+        },
+        "fishing": {
+          "metric": "fishing",
+          "experience": 6014733,
+          "rank": 293537,
+          "level": 91,
+          "ehp": 47.32633670103337
+        },
+        "firemaking": {
+          "metric": "firemaking",
+          "experience": 3260494,
+          "rank": 757209,
+          "level": 85,
+          "ehp": 5.409495351777565
+        },
+        "crafting": {
+          "metric": "crafting",
+          "experience": 13676644,
+          "rank": 83121,
+          "level": 99,
+          "ehp": 31.99369905749535
+        },
+        "smithing": {
+          "metric": "smithing",
+          "experience": 5409119,
+          "rank": 205442,
+          "level": 90,
+          "ehp": 14.937081918505953
+        },
+        "mining": {
+          "metric": "mining",
+          "experience": 3029986,
+          "rank": 470020,
+          "level": 84,
+          "ehp": 35.09447964707397
+        },
+        "herblore": {
+          "metric": "herblore",
+          "experience": 13631497,
+          "rank": 36639,
+          "level": 99,
+          "ehp": 23.977857989751143
+        },
+        "agility": {
+          "metric": "agility",
+          "experience": 3693093,
+          "rank": 238583,
+          "level": 86,
+          "ehp": 60.648576516498906
+        },
+        "thieving": {
+          "metric": "thieving",
+          "experience": 5947597,
+          "rank": 274637,
+          "level": 91,
+          "ehp": 22.162495237028338
+        },
+        "slayer": {
+          "metric": "slayer",
+          "experience": 13555604,
+          "rank": 154035,
+          "level": 99,
+          "ehp": 159.91765127023297
+        },
+        "farming": {
+          "metric": "farming",
+          "experience": 20168038,
+          "rank": 57163,
+          "level": 99,
+          "ehp": 11.02783242992244
+        },
+        "runecrafting": {
+          "metric": "runecrafting",
+          "experience": 4031334,
+          "rank": 192835,
+          "level": 87,
+          "ehp": 16.72092605042019
+        },
+        "hunter": {
+          "metric": "hunter",
+          "experience": 7542318,
+          "rank": 161239,
+          "level": 93,
+          "ehp": 21.384388697683335
+        },
+        "construction": {
+          "metric": "construction",
+          "experience": 13126619,
+          "rank": 65055,
+          "level": 99,
+          "ehp": 13.087135695607088
+        }
+      },
+      "bosses": {
+        "abyssal_sire": {
+          "metric": "abyssal_sire",
+          "kills": 30,
+          "rank": 247331,
+          "ehb": 0.66667
+        },
+        "alchemical_hydra": {
+          "metric": "alchemical_hydra",
+          "kills": 496,
+          "rank": 128675,
+          "ehb": 16.53333
+        },
+        "amoxliatl": {
+          "metric": "amoxliatl",
+          "kills": 20,
+          "rank": 109057,
+          "ehb": 0.28571
+        },
+        "araxxor": {
+          "metric": "araxxor",
+          "kills": 1144,
+          "rank": 18111,
+          "ehb": 30.91892
+        },
+        "artio": {
+          "metric": "artio",
+          "kills": -1,
+          "rank": -1,
+          "ehb": 0
+        },
+        "barrows_chests": {
+          "metric": "barrows_chests",
+          "kills": 25,
+          "rank": 847500,
+          "ehb": 1.13636
+        },
+        "bryophyta": {
+          "metric": "bryophyta",
+          "kills": 5,
+          "rank": 351020,
+          "ehb": 0.55556
+        },
+        "callisto": {
+          "metric": "callisto",
+          "kills": -1,
+          "rank": -1,
+          "ehb": 0
+        },
+        "calvarion": {
+          "metric": "calvarion",
+          "kills": 294,
+          "rank": 42531,
+          "ehb": 5.34545
+        },
+        "cerberus": {
+          "metric": "cerberus",
+          "kills": 186,
+          "rank": 222335,
+          "ehb": 2.86154
+        },
+        "chambers_of_xeric": {
+          "metric": "chambers_of_xeric",
+          "kills": 130,
+          "rank": 129761,
+          "ehb": 37.14286
+        },
+        "chambers_of_xeric_challenge_mode": {
+          "metric": "chambers_of_xeric_challenge_mode",
+          "kills": 14,
+          "rank": 63081,
+          "ehb": 4.66667
+        },
+        "chaos_elemental": {
+          "metric": "chaos_elemental",
+          "kills": 19,
+          "rank": 195387,
+          "ehb": 0.15833
+        },
+        "chaos_fanatic": {
+          "metric": "chaos_fanatic",
+          "kills": -1,
+          "rank": -1,
+          "ehb": 0
+        },
+        "commander_zilyana": {
+          "metric": "commander_zilyana",
+          "kills": 1926,
+          "rank": 3856,
+          "ehb": 33.2069
+        },
+        "corporeal_beast": {
+          "metric": "corporeal_beast",
+          "kills": 100,
+          "rank": 80126,
+          "ehb": 1.66667
+        },
+        "crazy_archaeologist": {
+          "metric": "crazy_archaeologist",
+          "kills": -1,
+          "rank": -1,
+          "ehb": 0
+        },
+        "dagannoth_prime": {
+          "metric": "dagannoth_prime",
+          "kills": 201,
+          "rank": 145619,
+          "ehb": 1.91429
+        },
+        "dagannoth_rex": {
+          "metric": "dagannoth_rex",
+          "kills": 356,
+          "rank": 124797,
+          "ehb": 3.39048
+        },
+        "dagannoth_supreme": {
+          "metric": "dagannoth_supreme",
+          "kills": 198,
+          "rank": 146055,
+          "ehb": 1.88571
+        },
+        "deranged_archaeologist": {
+          "metric": "deranged_archaeologist",
+          "kills": 25,
+          "rank": 105774,
+          "ehb": 0.3125
+        },
+        "duke_sucellus": {
+          "metric": "duke_sucellus",
+          "kills": 264,
+          "rank": 52822,
+          "ehb": 8.8
+        },
+        "general_graardor": {
+          "metric": "general_graardor",
+          "kills": 1401,
+          "rank": 18493,
+          "ehb": 24.15517
+        },
+        "giant_mole": {
+          "metric": "giant_mole",
+          "kills": 242,
+          "rank": 141218,
+          "ehb": 1.936
+        },
+        "grotesque_guardians": {
+          "metric": "grotesque_guardians",
+          "kills": 65,
+          "rank": 206959,
+          "ehb": 1.75676
+        },
+        "hespori": {
+          "metric": "hespori",
+          "kills": 51,
+          "rank": 224168,
+          "ehb": 0.85
+        },
+        "kalphite_queen": {
+          "metric": "kalphite_queen",
+          "kills": 50,
+          "rank": 205068,
+          "ehb": 0.90909
+        },
+        "king_black_dragon": {
+          "metric": "king_black_dragon",
+          "kills": 13,
+          "rank": 640475,
+          "ehb": 0.1
+        },
+        "kraken": {
+          "metric": "kraken",
+          "kills": 672,
+          "rank": 336499,
+          "ehb": 6.72
+        },
+        "kreearra": {
+          "metric": "kreearra",
+          "kills": -1,
+          "rank": -1,
+          "ehb": 0
+        },
+        "kril_tsutsaroth": {
+          "metric": "kril_tsutsaroth",
+          "kills": 65,
+          "rank": 167410,
+          "ehb": 1
+        },
+        "lunar_chests": {
+          "metric": "lunar_chests",
+          "kills": -1,
+          "rank": -1,
+          "ehb": 0
+        },
+        "mimic": {
+          "metric": "mimic",
+          "kills": -1,
+          "rank": -1,
+          "ehb": 0
+        },
+        "nex": {
+          "metric": "nex",
+          "kills": -1,
+          "rank": -1,
+          "ehb": 0
+        },
+        "nightmare": {
+          "metric": "nightmare",
+          "kills": 14,
+          "rank": 89219,
+          "ehb": 1
+        },
+        "phosanis_nightmare": {
+          "metric": "phosanis_nightmare",
+          "kills": -1,
+          "rank": -1,
+          "ehb": 0
+        },
+        "obor": {
+          "metric": "obor",
+          "kills": -1,
+          "rank": -1,
+          "ehb": 0
+        },
+        "phantom_muspah": {
+          "metric": "phantom_muspah",
+          "kills": 662,
+          "rank": 11044,
+          "ehb": 25.46154
+        },
+        "sarachnis": {
+          "metric": "sarachnis",
+          "kills": 6,
+          "rank": 399283,
+          "ehb": 0.075
+        },
+        "scorpia": {
+          "metric": "scorpia",
+          "kills": -1,
+          "rank": -1,
+          "ehb": 0
+        },
+        "scurrius": {
+          "metric": "scurrius",
+          "kills": 164,
+          "rank": 70201,
+          "ehb": 1.92941
+        },
+        "skotizo": {
+          "metric": "skotizo",
+          "kills": 40,
+          "rank": 113597,
+          "ehb": 0.88889
+        },
+        "sol_heredit": {
+          "metric": "sol_heredit",
+          "kills": -1,
+          "rank": -1,
+          "ehb": 0
+        },
+        "spindel": {
+          "metric": "spindel",
+          "kills": 123,
+          "rank": 58923,
+          "ehb": 2.23636
+        },
+        "tempoross": {
+          "metric": "tempoross",
+          "kills": 282,
+          "rank": 59155,
+          "ehb": 0
+        },
+        "the_gauntlet": {
+          "metric": "the_gauntlet",
+          "kills": -1,
+          "rank": -1,
+          "ehb": 0
+        },
+        "the_corrupted_gauntlet": {
+          "metric": "the_corrupted_gauntlet",
+          "kills": 558,
+          "rank": 39584,
+          "ehb": 79.71429
+        },
+        "the_hueycoatl": {
+          "metric": "the_hueycoatl",
+          "kills": -1,
+          "rank": -1,
+          "ehb": 0
+        },
+        "the_leviathan": {
+          "metric": "the_leviathan",
+          "kills": 967,
+          "rank": 9767,
+          "ehb": 32.23333
+        },
+        "the_royal_titans": {
+          "metric": "the_royal_titans",
+          "kills": 200,
+          "rank": 51842,
+          "ehb": 3.33333
+        },
+        "the_whisperer": {
+          "metric": "the_whisperer",
+          "kills": 471,
+          "rank": 15354,
+          "ehb": 22.42857
+        },
+        "theatre_of_blood": {
+          "metric": "theatre_of_blood",
+          "kills": 120,
+          "rank": 48523,
+          "ehb": 37.5
+        },
+        "theatre_of_blood_hard_mode": {
+          "metric": "theatre_of_blood_hard_mode",
+          "kills": -1,
+          "rank": -1,
+          "ehb": 0
+        },
+        "thermonuclear_smoke_devil": {
+          "metric": "thermonuclear_smoke_devil",
+          "kills": 522,
+          "rank": 121714,
+          "ehb": 3.48
+        },
+        "tombs_of_amascut": {
+          "metric": "tombs_of_amascut",
+          "kills": 91,
+          "rank": 63394,
+          "ehb": 26
+        },
+        "tombs_of_amascut_expert": {
+          "metric": "tombs_of_amascut_expert",
+          "kills": 60,
+          "rank": 78920,
+          "ehb": 20
+        },
+        "tzkal_zuk": {
+          "metric": "tzkal_zuk",
+          "kills": -1,
+          "rank": -1,
+          "ehb": 0
+        },
+        "tztok_jad": {
+          "metric": "tztok_jad",
+          "kills": 6,
+          "rank": 195348,
+          "ehb": 2.4
+        },
+        "vardorvis": {
+          "metric": "vardorvis",
+          "kills": 1876,
+          "rank": 9951,
+          "ehb": 50.7027
+        },
+        "venenatis": {
+          "metric": "venenatis",
+          "kills": -1,
+          "rank": -1,
+          "ehb": 0
+        },
+        "vetion": {
+          "metric": "vetion",
+          "kills": 12,
+          "rank": 190141,
+          "ehb": 0.24
+        },
+        "vorkath": {
+          "metric": "vorkath",
+          "kills": 169,
+          "rank": 347534,
+          "ehb": 4.97059
+        },
+        "wintertodt": {
+          "metric": "wintertodt",
+          "kills": 128,
+          "rank": 746952,
+          "ehb": 0
+        },
+        "yama": {
+          "metric": "yama",
+          "kills": 611,
+          "rank": 5882,
+          "ehb": 0
+        },
+        "zalcano": {
+          "metric": "zalcano",
+          "kills": 241,
+          "rank": 55751,
+          "ehb": 0
+        },
+        "zulrah": {
+          "metric": "zulrah",
+          "kills": 1255,
+          "rank": 93355,
+          "ehb": 28.52273
+        }
+      },
+      "activities": {
+        "league_points": {
+          "metric": "league_points",
+          "score": -1,
+          "rank": -1
+        },
+        "bounty_hunter_hunter": {
+          "metric": "bounty_hunter_hunter",
+          "score": -1,
+          "rank": -1
+        },
+        "bounty_hunter_rogue": {
+          "metric": "bounty_hunter_rogue",
+          "score": -1,
+          "rank": -1
+        },
+        "clue_scrolls_all": {
+          "metric": "clue_scrolls_all",
+          "score": 314,
+          "rank": 204306
+        },
+        "clue_scrolls_beginner": {
+          "metric": "clue_scrolls_beginner",
+          "score": 2,
+          "rank": 1188973
+        },
+        "clue_scrolls_easy": {
+          "metric": "clue_scrolls_easy",
+          "score": 8,
+          "rank": 643918
+        },
+        "clue_scrolls_medium": {
+          "metric": "clue_scrolls_medium",
+          "score": 124,
+          "rank": 136091
+        },
+        "clue_scrolls_hard": {
+          "metric": "clue_scrolls_hard",
+          "score": 125,
+          "rank": 203584
+        },
+        "clue_scrolls_elite": {
+          "metric": "clue_scrolls_elite",
+          "score": 49,
+          "rank": 96888
+        },
+        "clue_scrolls_master": {
+          "metric": "clue_scrolls_master",
+          "score": 6,
+          "rank": 230754
+        },
+        "last_man_standing": {
+          "metric": "last_man_standing",
+          "score": 674,
+          "rank": 148451
+        },
+        "pvp_arena": {
+          "metric": "pvp_arena",
+          "score": -1,
+          "rank": -1
+        },
+        "soul_wars_zeal": {
+          "metric": "soul_wars_zeal",
+          "score": 359,
+          "rank": 169237
+        },
+        "guardians_of_the_rift": {
+          "metric": "guardians_of_the_rift",
+          "score": 199,
+          "rank": 173105
+        },
+        "colosseum_glory": {
+          "metric": "colosseum_glory",
+          "score": 5302,
+          "rank": 92536
+        },
+        "collections_logged": {
+          "metric": "collections_logged",
+          "score": -1,
+          "rank": -1
+        }
+      },
+      "computed": {
+        "ehp": {
+          "metric": "ehp",
+          "value": 554.180161197415,
+          "rank": 161443
+        },
+        "ehb": {
+          "metric": "ehb",
+          "value": 531.9917099999999,
+          "rank": 62288
+        }
+      }
+    }
+  },
+  "annotations": [],
+  "combatLevel": 125,
+  "archive": null
+}

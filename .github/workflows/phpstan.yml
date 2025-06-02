@@ -15,7 +15,5 @@ jobs:
       - uses: php-actions/composer@v6
       - uses: php-actions/phpstan@v3
         with:
-          level: 3
+          level: 5
           path: app/
-
-    # ... then your own project steps ...

@@ -2,15 +2,14 @@
 
 namespace App\Models;
 
+use App\Repository\UserRepository;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Laravel\Sanctum\HasApiTokens;
 
 /**
- * @property string $username
  * @property string $discord_id
  * @property bool $is_admin
  *
@@ -24,7 +23,6 @@ class User extends Model
     use HasApiTokens;
 
     protected $fillable = [
-        'username',
         'discord_id',
         'is_admin',
     ];
@@ -33,9 +31,9 @@ class User extends Model
         'is_admin' => 'boolean',
     ];
 
-    public function accounts(): HasMany
+    public static function repository(): UserRepository
     {
-        return $this->hasMany(Account::class);
+        return new UserRepository;
     }
 
     public function account(): HasOne

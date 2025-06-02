@@ -3,6 +3,7 @@
 namespace Tests\Unit\Wise;
 
 use App\Models\Account;
+use App\Wise\Facade\WiseOldManPlayer;
 use Database\Factories\AccountFactory;
 use Tests\ApplicationCase;
 
@@ -16,6 +17,15 @@ class WiseTest extends ApplicationCase
             'user_id' => 1,
         ]);
 
+        $thing = WiseOldManPlayer::details($account->username)->toArray();
+
+        $account->snapshot()->updateOrCreate([
+            'raw_details' => $thing,
+        ]);
+
+        /**
+         * @phpstan-ignore method.alreadyNarrowedType
+         */
         $this->assertTrue(true);
     }
 }
