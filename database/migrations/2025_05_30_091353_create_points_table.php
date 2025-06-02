@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('points', function (Blueprint $table) {
             $table->id();
-            $table->integer('amount');
+            $table->unsignedBigInteger('amount');
             $table->string('source');
             $table->foreignId('account_id');
             $table->timestamps();
