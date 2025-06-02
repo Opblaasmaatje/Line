@@ -42,7 +42,7 @@ class PointConfigAllocationTest extends ApplicationCase
 
         $this->assertSame(
             8,
-             $pointCalculator->calculate($boss->kills)
+            $pointCalculator->calculate($boss->kills)
         );
     }
 
@@ -67,7 +67,7 @@ class PointConfigAllocationTest extends ApplicationCase
 
         $this->assertSame(
             2000,
-             $pointCalculator->calculate($boss->kills)
+            $pointCalculator->calculate($boss->kills)
         );
     }
 
@@ -92,7 +92,7 @@ class PointConfigAllocationTest extends ApplicationCase
 
         $this->assertSame(
             1,
-             $pointCalculator->calculate($boss->kills)
+            $pointCalculator->calculate($boss->kills)
         );
     }
 
@@ -117,7 +117,7 @@ class PointConfigAllocationTest extends ApplicationCase
 
         $this->assertSame(
             0,
-             $pointCalculator->calculate($boss->kills)
+            $pointCalculator->calculate($boss->kills)
         );
     }
 
@@ -143,7 +143,7 @@ class PointConfigAllocationTest extends ApplicationCase
 
         $this->assertSame(
             4,
-             $pointCalculator->calculate($boss->kills)
+            $pointCalculator->calculate($boss->kills)
         );
     }
 
