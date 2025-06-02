@@ -141,7 +141,6 @@ class PointConfigAllocationTest extends ApplicationCase
 
         $pointCalculator = $config->getCalculator($boss);
 
-
         $this->assertSame(
             expected: 4,
             actual: $pointCalculator->calculate($boss->kills)
