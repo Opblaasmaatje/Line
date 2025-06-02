@@ -17,8 +17,8 @@ class PointCalculatorTest extends ApplicationCase
         );
 
         $this->assertEquals(
-             0,
-             $sut->calculate(-1)
+            0,
+            $sut->calculate(-1)
         );
     }
 
@@ -31,7 +31,7 @@ class PointCalculatorTest extends ApplicationCase
         );
 
         $this->assertEquals(
-             0,
+            0,
             $sut->calculate(0)
         );
     }
