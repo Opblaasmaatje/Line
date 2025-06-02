@@ -4,6 +4,7 @@ namespace Tests\Unit\Model;
 
 use App\Models\Snapshot;
 use Database\Factories\SnapshotFactory;
+use Illuminate\Database\UniqueConstraintViolationException;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 
@@ -20,5 +21,23 @@ class SnapshotTest extends ApplicationCase
             ]);
 
         $this->assertSame('sus guy', $snapshot->details->username);
+    }
+
+    #[Test]
+    public function it_enforces_uniqueness_on_account_id()
+    {
+        SnapshotFactory::new()->create([
+            'raw_details' => [],
+            'account_id' => 1,
+        ]);
+
+        $this->assertThrows(
+            expectedClass: UniqueConstraintViolationException::class,
+            test: function () {
+                SnapshotFactory::new()->create([
+                    'raw_details' => [],
+                    'account_id' => 1,
+                ]);
+            });
     }
 }
