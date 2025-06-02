@@ -3,12 +3,12 @@
 namespace Tests\Unit\Points\Configuration;
 
 use App\Points\Configuration\PointAllocationConfiguration;
-use App\Wise\Client\Players\Objects\Snapshot\Bosses\AlchemicalHydra;
-use App\Wise\Client\Players\Objects\Snapshot\Bosses\Araxxor;
-use App\Wise\Client\Players\Objects\Snapshot\Bosses\Boss;
-use App\Wise\Client\Players\Objects\Snapshot\Bosses\CommanderZilyana;
-use App\Wise\Client\Players\Objects\Snapshot\Bosses\SolHeredit;
-use App\Wise\Client\Players\Objects\Snapshot\Bosses\TheatreOfBlood;
+use App\Wise\Client\Players\DTO\Snapshot\Bosses\AlchemicalHydra;
+use App\Wise\Client\Players\DTO\Snapshot\Bosses\Araxxor;
+use App\Wise\Client\Players\DTO\Snapshot\Bosses\Boss;
+use App\Wise\Client\Players\DTO\Snapshot\Bosses\CommanderZilyana;
+use App\Wise\Client\Players\DTO\Snapshot\Bosses\SolHeredit;
+use App\Wise\Client\Players\DTO\Snapshot\Bosses\TheatreOfBlood;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 

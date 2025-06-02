@@ -3,10 +3,10 @@
 namespace App\Points\Jobs;
 
 use App\Models\Account;
-use App\Points\CanGivePoints;
 use App\Points\Configuration\PointAllocationConfiguration;
 use App\Points\Jobs\Actions\ApplyPoints;
 use App\Points\Skills\Jobs\Action\GiveSkillPoints;
+use App\Wise\Client\Players\DTO\Snapshot\CanGivePoints;
 use Illuminate\Support\Collection;
 
 /**

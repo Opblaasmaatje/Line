@@ -3,7 +3,7 @@
 namespace App\Wise\Client\Players;
 
 use App\Wise\Client\OldMan;
-use App\Wise\Client\Players\Objects\PlayerSnapshot;
+use App\Wise\Client\Players\DTO\PlayerSnapshot;
 use Brick\JsonMapper\JsonMapper;
 use Brick\JsonMapper\JsonMapperException;
 use Illuminate\Http\Client\ConnectionException;

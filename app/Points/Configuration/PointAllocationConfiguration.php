@@ -2,8 +2,8 @@
 
 namespace App\Points\Configuration;
 
-use App\Points\CanGivePoints;
 use App\Wise\Client\Players\DTO\Snapshot\Bosses\Boss;
+use App\Wise\Client\Players\DTO\Snapshot\CanGivePoints;
 use App\Wise\Client\Players\DTO\Snapshot\Skills\Skill;
 use Illuminate\Support\Arr;
 use InvalidArgumentException;

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Wise\Client\Players\Objects\PlayerSnapshot;
+use App\Wise\Client\Players\DTO\PlayerSnapshot;
 use Brick\JsonMapper\JsonMapper;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;

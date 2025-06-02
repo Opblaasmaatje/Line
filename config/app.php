@@ -68,6 +68,6 @@ return [
     'providers' => [
         App\Providers\BotServiceProvider::class,
         App\Wise\Providers\OldManProvider::class,
-        App\Points\Providers\AllocationServiceProvider::class,
+        \App\Points\Providers\AllocationServiceProvider::class,
     ],
 ];

@@ -2,7 +2,7 @@
 
 namespace App\Wise\Facade;
 
-use App\Wise\Client\Players\Objects\PlayerSnapshot;
+use App\Wise\Client\Players\DTO\PlayerSnapshot;
 use App\Wise\Client\Players\PlayerClient;
 use Illuminate\Support\Facades\Facade;
 

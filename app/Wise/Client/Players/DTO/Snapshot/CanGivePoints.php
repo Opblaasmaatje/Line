@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Points;
+namespace App\Wise\Client\Players\DTO\Snapshot;
 
 interface CanGivePoints
 {

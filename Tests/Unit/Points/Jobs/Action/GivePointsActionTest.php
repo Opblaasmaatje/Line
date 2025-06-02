@@ -4,10 +4,10 @@ namespace Tests\Unit\Points\Jobs\Action;
 
 use App\Models\Account;
 use App\Models\Point;
-use App\Points\Bosses\Jobs\Action\GiveBossPointsAction;
+use App\Points\Action\GiveBossPointsAction;
 use App\Points\Configuration\PointAllocationConfiguration;
-use App\Wise\Client\Players\Objects\Snapshot\Bosses\Boss;
-use App\Wise\Client\Players\Objects\Snapshot\Bosses\CommanderZilyana;
+use App\Wise\Client\Players\DTO\Snapshot\Bosses\Boss;
+use App\Wise\Client\Players\DTO\Snapshot\Bosses\CommanderZilyana;
 use Database\Factories\AccountFactory;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
