@@ -41,8 +41,8 @@ class PointConfigAllocationTest extends ApplicationCase
         $pointCalculator = $config->getCalculator($boss);
 
         $this->assertSame(
-            expected: 8,
-            actual: $pointCalculator->calculate($boss->kills)
+            8,
+             $pointCalculator->calculate($boss->kills)
         );
     }
 
@@ -66,8 +66,8 @@ class PointConfigAllocationTest extends ApplicationCase
         $pointCalculator = $config->getCalculator($boss);
 
         $this->assertSame(
-            expected: 2000,
-            actual: $pointCalculator->calculate($boss->kills)
+            2000,
+             $pointCalculator->calculate($boss->kills)
         );
     }
 
@@ -91,8 +91,8 @@ class PointConfigAllocationTest extends ApplicationCase
         $pointCalculator = $config->getCalculator($boss);
 
         $this->assertSame(
-            expected: 1,
-            actual: $pointCalculator->calculate($boss->kills)
+            1,
+             $pointCalculator->calculate($boss->kills)
         );
     }
 
@@ -116,8 +116,8 @@ class PointConfigAllocationTest extends ApplicationCase
         $pointCalculator = $config->getCalculator($boss);
 
         $this->assertSame(
-            expected: 0,
-            actual: $pointCalculator->calculate($boss->kills)
+            0,
+             $pointCalculator->calculate($boss->kills)
         );
     }
 
@@ -142,8 +142,8 @@ class PointConfigAllocationTest extends ApplicationCase
         $pointCalculator = $config->getCalculator($boss);
 
         $this->assertSame(
-            expected: 4,
-            actual: $pointCalculator->calculate($boss->kills)
+            4,
+             $pointCalculator->calculate($boss->kills)
         );
     }
 
@@ -165,6 +165,9 @@ class PointConfigAllocationTest extends ApplicationCase
             ],
         ]);
 
-        $this->assertInstanceOf(PointCalculator::class, $config->getCalculator($runecrafting));
+        $this->assertInstanceOf(
+            PointCalculator::class,
+            $config->getCalculator($runecrafting)
+        );
     }
 }

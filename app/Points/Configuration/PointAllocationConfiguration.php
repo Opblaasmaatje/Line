@@ -9,7 +9,7 @@ use Illuminate\Support\Arr;
 use InvalidArgumentException;
 
 /**
- * @todo find a way to rework this to be cleaner
+ * todo find a way to rework this to be cleaner
  */
 class PointAllocationConfiguration
 {
@@ -37,8 +37,8 @@ class PointAllocationConfiguration
         );
 
         return new PointCalculator(
-            per: (float) $bossConfig['per'],
-            give: $bossConfig['give']
+            per:  $bossConfig['per'],
+            give: (float) $bossConfig['give']
         );
     }
 
@@ -51,8 +51,8 @@ class PointAllocationConfiguration
         );
 
         return new PointCalculator(
-            per: (float) $skillConfig['per'],
-            give: $skillConfig['give']
+            per: $skillConfig['per'],
+            give: (float) $skillConfig['give']
         );
     }
 

@@ -90,6 +90,7 @@ class ApplyPointsTest extends ApplicationCase
                 'user_id' => 1,
             ]);
 
+        /** @var Account $account */
         $account = AccountFactory::new()
             ->create([
                 'user_id' => 2,
