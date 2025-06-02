@@ -2,9 +2,11 @@
 
 namespace App\Points\Configuration;
 
-use App\Wise\Client\Players\Objects\Snapshot\Bosses\Boss;
-use App\Wise\Client\Players\Objects\Snapshot\Skills\Skill;
+use App\Points\CanGivePoints;
+use App\Wise\Client\Players\DTO\Snapshot\Bosses\Boss;
+use App\Wise\Client\Players\DTO\Snapshot\Skills\Skill;
 use Illuminate\Support\Arr;
+use InvalidArgumentException;
 
 /**
  * @todo find a way to rework this to be cleaner
@@ -26,7 +28,7 @@ class PointAllocationConfiguration
         );
     }
 
-    public function forBoss(Boss $boss): PointCalculator
+    protected function forBoss(Boss $boss): PointCalculator
     {
         $bossConfig = Arr::get(
             array: $this->bossConfig,
@@ -40,7 +42,7 @@ class PointAllocationConfiguration
         );
     }
 
-    public function forSkill(Skill $skill): PointCalculator
+    protected function forSkill(Skill $skill): PointCalculator
     {
         $skillConfig = Arr::get(
             array: $this->skillConfig,
@@ -52,5 +54,14 @@ class PointAllocationConfiguration
             per: (float) $skillConfig['per'],
             give: $skillConfig['give']
         );
+    }
+
+    public function getCalculator(CanGivePoints $canGivePoints): PointCalculator
+    {
+        return match(true){
+            $canGivePoints instanceof Boss => $this->forBoss($canGivePoints),
+            $canGivePoints instanceof Skill => $this->forSkill($canGivePoints),
+            default => throw new InvalidArgumentException(),
+        };
     }
 }

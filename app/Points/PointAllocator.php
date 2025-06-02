@@ -3,27 +3,32 @@
 namespace App\Points;
 
 use App\Models\Snapshot;
-use App\Points\Bosses\Jobs\ApplyBossPoints;
-use App\Points\Skills\ApplySkillPoints;
+use App\Points\Jobs\AssignPoints;
+
 
 /**
- * todo rework to work with snapshot
+ * todo create test
  */
 class PointAllocator
 {
     public function __construct(
-        protected ApplyBossPoints $boss,
-        protected ApplySkillPoints $skill,
+        protected AssignPoints $job,
     ){
     }
 
     public function boss(Snapshot $snapshot): void
     {
-        $this->boss->apply($snapshot);
+        $this->job->apply(
+            $snapshot->account,
+            $snapshot->details->latestSnapshot->data->collectBosses(),
+        );
     }
 
     public function skill(Snapshot $snapshot): void
     {
-        $this->skill->apply($snapshot);
+        $this->job->apply(
+            $snapshot->account,
+            $snapshot->details->latestSnapshot->data->collectSkills()
+        );
     }
 }
