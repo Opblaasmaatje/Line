@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('snapshots', function (Blueprint $table) {
             $table->id();
             $table->json('raw_details');
-            $table->foreignId('account_id');
+            $table->foreignId('account_id')->unique();
             $table->timestamps();
         });
     }
