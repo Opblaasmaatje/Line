@@ -23,7 +23,6 @@ class WiseTest extends ApplicationCase
             'raw_details' => $thing,
         ]);
 
-
         /**
          * @phpstan-ignore method.alreadyNarrowedType
          */
