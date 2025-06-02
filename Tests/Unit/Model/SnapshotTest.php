@@ -38,6 +38,7 @@ class SnapshotTest extends ApplicationCase
                     'raw_details' => [],
                     'account_id' => 1,
                 ]);
-            });
+            }
+        );
     }
 }

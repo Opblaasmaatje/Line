@@ -34,7 +34,7 @@ class GivePointsActionTest extends ApplicationCase
                 Boss::class => [
                     'per' => 1,
                     'give' => 1,
-                ]
+                ],
             ])
         );
 
@@ -53,5 +53,4 @@ class GivePointsActionTest extends ApplicationCase
             $point->source,
         );
     }
-
 }
