@@ -151,7 +151,13 @@ class PointConfigAllocationTest extends ApplicationCase
     #[Test]
     public function it_returns_point_calculator_for_skills()
     {
-        $runecrafting = new Runecrafting(1,1,1,1);
+        $runecrafting = new Runecrafting(
+            metric: 'runecrafting',
+            experience: 1,
+            rank: 1,
+            level: 1,
+            ehp: 1,
+        );
 
         $config = new PointAllocationConfiguration(skillConfig: [
             Skill::class => [
