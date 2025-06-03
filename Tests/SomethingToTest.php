@@ -55,7 +55,6 @@ class SomethingToTest extends ApplicationCase
                 'team_id' => 1,
             ]);
 
-
         dd($objective, $objective->task);
     }
 
@@ -68,7 +67,6 @@ class SomethingToTest extends ApplicationCase
             ->create([
                 'team_id' => 1,
             ]);
-
 
         dd($objective, $objective->task);
 
