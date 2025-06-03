@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('team_id');
             $table->morphs('task');
+            $table->boolean('is_completed')->default(false);
             $table->timestamps();
         });
     }

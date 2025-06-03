@@ -11,12 +11,17 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 /**
  * @property int $id
  * @property int $team_id
+ * @property bool $is_completed
  *
  * @property Team $team
  * @property Threshold|Submission $task
  */
 class Objective extends Model
 {
+    protected $casts = [
+        'is_completed' => 'boolean',
+    ];
+
     public function team(): BelongsTo
     {
         return $this->belongsTo(Team::class);
