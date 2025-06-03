@@ -8,10 +8,10 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('objectives', function (Blueprint $table) {
+        Schema::create('thresholds', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('team_id');
-            $table->morphs('task');
+            $table->string('name');
+            $table->unsignedBigInteger('amount');
             $table->timestamps();
         });
     }

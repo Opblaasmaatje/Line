@@ -8,10 +8,9 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('objectives', function (Blueprint $table) {
+        Schema::create('submissions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('team_id');
-            $table->morphs('task');
+            $table->string('name');
             $table->timestamps();
         });
     }
