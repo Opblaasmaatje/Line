@@ -3,7 +3,6 @@
 namespace Tests;
 
 use App\Bingo\Models\Bingo;
-use App\Bingo\Models\Team;
 use App\Models\Account;
 use Database\Factories\AccountFactory;
 use Database\Factories\BingoFactory;
@@ -16,7 +15,7 @@ class SomethingToTest extends ApplicationCase
     #[Test]
     public function it_works()
     {
-        /** @var  Account $account */
+        /** @var Account $account */
         $account = AccountFactory::new()
             ->set('username', 'sus guy')
             ->set('user_id', 1)
@@ -35,7 +34,6 @@ class SomethingToTest extends ApplicationCase
                     ->hasAttached($account)
             )
             ->create();
-
 
         dd(
             $bingo->objectives,
