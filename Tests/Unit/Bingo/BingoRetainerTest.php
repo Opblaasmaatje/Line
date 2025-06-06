@@ -3,9 +3,7 @@
 namespace Tests\Unit\Bingo;
 
 use App\Bingo\BingoRetainer;
-use App\Models\Account;
 use Database\Factories\BingoFactory;
-use Illuminate\Support\Facades\App;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 
@@ -21,7 +19,6 @@ class BingoRetainerTest extends ApplicationCase
 
         $retainer->createTeam();
 
-
-        dd($retainer);;
+        dd($retainer); ;
     }
 }
