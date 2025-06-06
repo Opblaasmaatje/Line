@@ -2,6 +2,7 @@
 
 namespace App\Wise\Client\Players;
 
+use App\Wise\Client\Exceptions\WiseOldManException;
 use App\Wise\Client\OldMan;
 use App\Wise\Client\Players\DTO\PlayerSnapshot;
 use Brick\JsonMapper\JsonMapper;

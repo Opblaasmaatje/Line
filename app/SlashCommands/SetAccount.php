@@ -4,12 +4,10 @@ namespace App\SlashCommands;
 
 use App\Models\Account;
 use App\Models\User;
+use App\Wise\Facade\WiseOldManPlayer;
 use Discord\Parts\Interactions\Command\Option;
 use Laracord\Commands\SlashCommand;
 
-/**
- * TODO add button to overwrite discord name with submitted account
- */
 class SetAccount extends SlashCommand
 {
     protected $name = 'set-account';
@@ -45,20 +43,22 @@ class SetAccount extends SlashCommand
             'discord_id' => $this->value('user'),
         ]);
 
-        Account::query()->updateOrCreate(
-            [
-                'user_id' => $user->getKey(),
-            ],
+        Account::query()->updateOrCreate([
+            'user_id' => $user->getKey(),
+        ],
             [
                 'username' => $this->value('account-rsn'),
             ]
         );
 
+
+
         $interaction->respondWithMessage(
             $this
                 ->message()
-                ->title('Example')
-                ->content('Hello world!')
+                ->success()
+                ->title('Account information updated!')
+                ->content("{$interaction->user->username} had their account information updated to [{$this->value('account-rsn')}]")
                 ->build()
         );
     }
