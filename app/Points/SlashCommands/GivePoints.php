@@ -47,9 +47,7 @@ class GivePoints extends SlashCommand
 
     public function handle($interaction)
     {
-        $account = User::repository()
-            ->withCommandErrorHandling()
-            ->findAccount($this->option('user.value'));
+        $account = User::repository()->findAccount($this->option('user.value'));
 
         if (is_null($account)) {
             return $interaction->respondWithMessage(
