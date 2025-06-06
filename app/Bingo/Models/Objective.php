@@ -12,6 +12,8 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property int $id
  * @property int $team_id
  * @property bool $is_completed
+ * @property int $task_id
+ * @property string $task_type
  *
  * @property Team $team
  * @property Threshold|Submission $task

@@ -2,26 +2,80 @@
 
 namespace Tests\Unit\Bingo;
 
-use App\Bingo\BingoRetainer;
+use App\Bingo\BingoHandler;
+use App\Bingo\Models\AccountTeam;
+use App\Bingo\Models\Objective;
+use App\Bingo\Models\Objectives\Submission;
+use App\Bingo\Models\Team;
 use App\Models\Account;
+use Database\Factories\AccountFactory;
 use Database\Factories\BingoFactory;
-use Illuminate\Support\Facades\App;
+use Database\Factories\SubmissionFactory;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 
 class BingoRetainerTest extends ApplicationCase
 {
     #[Test]
-    public function it_works()
+    public function a_team_can_be_created()
     {
-
         $bingo = BingoFactory::new()->create();
 
-        $retainer = BingoRetainer::make($bingo);
+        $retainer = BingoHandler::make($bingo);
 
-        $retainer->createTeam();
+        $retainer->findTeam('some-team-name');
+
+        $this->assertDatabaseHas(Team::class, [
+            'name' => 'some-team-name',
+        ]);
+    }
 
 
-        dd($retainer);;
+    #[Test]
+    public function an_account_can_be_assign_to_a_team()
+    {
+        $accountModel = AccountFactory::new()->create([
+            'user_id' => 1,
+            'username' => 'name',
+        ]);
+
+        $bingo = BingoHandler::make(
+            BingoFactory::new()->create()
+        );
+
+        $bingo
+            ->findTeam('some-team-name')
+            ->assign($accountModel);
+
+
+        /** @var Team $team */
+        $team = Team::query()->sole();
+        $this->assertCount(1, $team->accounts);
+
+        /** @var Account $account */
+        $account = $team->accounts->sole();
+        $this->assertSame('name', $account->username);
+    }
+
+    #[Test]
+    public function objectives_can_be_added_and_will_be_assigned_to_all_teams()
+    {
+        $bingo = BingoHandler::make(
+            BingoFactory::new()->create()
+        );
+
+        $bingo->findTeam('some-team-name');
+
+        $submission = SubmissionFactory::new()->create();;
+
+        $bingo->addObjective(
+            (new Objective())
+                ->task()
+                ->associate($submission)
+        );
+
+        $team = $bingo->findTeam('some-team-name');
+
+        dd($team->getTeam()->objectives);
     }
 }

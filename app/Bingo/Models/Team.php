@@ -20,6 +20,10 @@ use Illuminate\Support\Collection;
  */
 class Team extends Model
 {
+    protected $fillable = [
+        'name',
+    ];
+
     public function accounts(): BelongsToMany
     {
         return $this->belongsToMany(Account::class)
