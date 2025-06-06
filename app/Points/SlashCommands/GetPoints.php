@@ -1,6 +1,6 @@
 <?php
 
-namespace App\SlashCommands;
+namespace App\Points\SlashCommands;
 
 use App\Models\Point;
 use App\Models\User;

@@ -1,6 +1,9 @@
 <?php
 
 use App\Points\Services\ApplyPointAllocation;
+use App\Points\SlashCommands\GetPoints;
+use App\Points\SlashCommands\GivePoints;
+use App\Points\SlashCommands\Leaderboard;
 use App\Wise\Services\AddSnapshotToUser;
 use Discord\WebSockets\Intents;
 
@@ -26,6 +29,9 @@ return [
     ],
 
     'commands' => [
+        GetPoints::class,
+        GivePoints::class,
+        Leaderboard::class,
         Laracord\Commands\HelpCommand::class,
     ],
 
