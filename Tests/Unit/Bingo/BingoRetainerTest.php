@@ -4,6 +4,7 @@ namespace Tests\Unit\Bingo;
 
 use App\Bingo\BingoHandler;
 use App\Bingo\Models\AccountTeam;
+use App\Bingo\Models\Bingo;
 use App\Bingo\Models\Objective;
 use App\Bingo\Models\Objectives\Submission;
 use App\Bingo\Models\Team;
@@ -23,7 +24,7 @@ class BingoRetainerTest extends ApplicationCase
 
         $retainer = BingoHandler::make($bingo);
 
-        $retainer->findTeam('some-team-name');
+        $retainer->team('some-team-name');
 
         $this->assertDatabaseHas(Team::class, [
             'name' => 'some-team-name',
@@ -44,7 +45,7 @@ class BingoRetainerTest extends ApplicationCase
         );
 
         $bingo
-            ->findTeam('some-team-name')
+            ->team('some-team-name')
             ->assign($accountModel);
 
 
@@ -64,9 +65,10 @@ class BingoRetainerTest extends ApplicationCase
             BingoFactory::new()->create()
         );
 
-        $bingo->findTeam('some-team-name');
+        $bingo->team('some-team-name');
 
-        $submission = SubmissionFactory::new()->create();;
+        $submission = SubmissionFactory::new()
+            ->create();
 
         $bingo->addObjective(
             (new Objective())
@@ -74,8 +76,20 @@ class BingoRetainerTest extends ApplicationCase
                 ->associate($submission)
         );
 
-        $team = $bingo->findTeam('some-team-name');
+        $team = $bingo->team('some-team-name');
 
-        dd($team->getTeam()->objectives);
+        $this->assertDatabaseHas(Objective::class, [
+            'task_type' => Submission::class,
+        ]);
+    }
+
+    #[Test]
+    public function bingo_can_be_instantiated_using_string()
+    {
+        BingoHandler::make('bingo-bango-bongo');
+
+        $this->assertDatabaseHas(Bingo::class, [
+            'name' => 'bingo-bango-bongo',
+        ]);
     }
 }

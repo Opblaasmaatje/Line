@@ -1,5 +1,8 @@
 <?php
 
+use App\Bingo\Services\ReloadCommandsOptions;
+use App\Bingo\SlashCommands\CreateBingo;
+use App\Bingo\SlashCommands\StartBingo;
 use App\Points\Services\ApplyPointAllocation;
 use App\Points\SlashCommands\GetPoints;
 use App\Points\SlashCommands\GivePoints;
@@ -32,6 +35,8 @@ return [
         GetPoints::class,
         GivePoints::class,
         Leaderboard::class,
+        CreateBingo::class,
+        StartBingo::class,
         Laracord\Commands\HelpCommand::class,
     ],
 
@@ -40,6 +45,7 @@ return [
     ],
 
     'services' => [
+        ReloadCommandsOptions::class,
         ApplyPointAllocation::class,
         AddSnapshotToUser::class,
     ],

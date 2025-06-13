@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->boolean('has_ended')->default(false);
+            $table->boolean('has_started')->default(false);
             $table->timestamps();
         });
     }
