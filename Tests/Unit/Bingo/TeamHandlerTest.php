@@ -22,7 +22,7 @@ class TeamHandlerTest extends ApplicationCase
     {
         /** @var Team $team */
         $team = TeamFactory::new()->create([
-            'bingo_id' => 1
+            'bingo_id' => 1,
         ]);
 
         $handler = new TeamHandler($team);
@@ -39,7 +39,7 @@ class TeamHandlerTest extends ApplicationCase
         $this->assertCount(1, $team->accounts);
 
         /** @var Account $account */
-        $account =  $team->accounts->sole();
+        $account = $team->accounts->sole();
 
         $this->assertSame('some-username', $account->username);
     }
@@ -47,10 +47,16 @@ class TeamHandlerTest extends ApplicationCase
     #[Test]
     public function an_objective_can_be_assigned_for_submission()
     {
-        $sut = new TeamHandler(TeamFactory::new()->create(['bingo_id' => 1]));
+        $sut = new TeamHandler(TeamFactory::new()->create([
+            'bingo_id' => 1,
+        ]));
 
         $submission = SubmissionFactory::new()->create([
+<<<<<<< HEAD
             'name' => 'task-name'
+=======
+            'name' => 'task-name',
+>>>>>>> origin/prototype/stub-out-bingo
         ]);
 
         $sut->addObjective(
@@ -72,10 +78,12 @@ class TeamHandlerTest extends ApplicationCase
     #[Test]
     public function an_objective_can_be_assigned_for_threshold()
     {
-        $sut = new TeamHandler(TeamFactory::new()->create(['bingo_id' => 1]));
+        $sut = new TeamHandler(TeamFactory::new()->create([
+            'bingo_id' => 1,
+        ]));
 
-        $submission= ThresholdFactory::new()->create([
-            'name' => 'task-name'
+        $submission = ThresholdFactory::new()->create([
+            'name' => 'task-name',
         ]);
 
         $sut->addObjective(
@@ -93,5 +101,4 @@ class TeamHandlerTest extends ApplicationCase
         $this->assertSame('task-name', $objective->task->name);
         $this->assertSame(Threshold::class, $objective->task_type);
     }
-
 }

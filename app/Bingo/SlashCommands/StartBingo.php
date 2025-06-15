@@ -45,4 +45,25 @@ class StartBingo extends SlashCommand
                 ->build()
         );
     }
+<<<<<<< HEAD
+=======
+
+    public function createBingoSelect(): Option
+    {
+        $select = (new option($this->discord()))
+            ->setName('bingo')
+            ->setDescription('Set bingo name')
+            ->setType(Option::INTEGER)
+            ->setRequired(true);
+
+        Bingo::query()
+            ->startable()
+            ->get()
+            ->each(
+                fn(Bingo $bingo) => $select->addChoice($bingo->toChoice($this->discord()))
+            );
+
+        return $select;
+    }
+>>>>>>> origin/prototype/stub-out-bingo
 }

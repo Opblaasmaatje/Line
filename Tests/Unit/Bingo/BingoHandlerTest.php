@@ -4,7 +4,6 @@ namespace Tests\Unit\Bingo;
 
 use App\Bingo\BingoException;
 use App\Bingo\BingoHandler;
-use App\Bingo\Models\AccountTeam;
 use App\Bingo\Models\Bingo;
 use App\Bingo\Models\Objective;
 use App\Bingo\Models\Objectives\Submission;
@@ -32,7 +31,6 @@ class BingoHandlerTest extends ApplicationCase
         ]);
     }
 
-
     #[Test]
     public function an_account_can_be_assign_to_a_team()
     {
@@ -48,7 +46,6 @@ class BingoHandlerTest extends ApplicationCase
         $bingo
             ->team('some-team-name')
             ->assign($accountModel);
-
 
         /** @var Team $team */
         $team = Team::query()->sole();

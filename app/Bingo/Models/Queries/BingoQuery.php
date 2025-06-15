@@ -2,7 +2,6 @@
 
 namespace App\Bingo\Models\Queries;
 
-
 use Illuminate\Database\Eloquent\Builder;
 
 class BingoQuery extends Builder
