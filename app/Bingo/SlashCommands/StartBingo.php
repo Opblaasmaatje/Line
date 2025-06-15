@@ -52,7 +52,6 @@ class StartBingo extends SlashCommand
             ->setType(Option::INTEGER)
             ->setRequired(true);
 
-
         Bingo::query()
             ->startable()
             ->get()

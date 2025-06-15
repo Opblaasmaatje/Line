@@ -3,7 +3,6 @@
 namespace App\Bingo\Models;
 
 use App\Bingo\Models\Queries\BingoQuery;
-use Discord\CommandClient\Command;
 use Discord\DiscordCommandClient;
 use Discord\Parts\Interactions\Command\Choice;
 use Illuminate\Database\Eloquent\Collection;

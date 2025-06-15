@@ -3,9 +3,6 @@
 namespace App\Bingo\SlashCommands;
 
 use App\Bingo\BingoHandler;
-use App\Models\Account;
-use App\Models\User;
-use App\Wise\Facade\WiseOldManPlayer;
 use Discord\Parts\Interactions\Command\Option;
 use Laracord\Commands\SlashCommand;
 

@@ -23,7 +23,9 @@ class BingoHandler
         /** @var Team $team */
         $team = $this->bingo
             ->teams()
-            ->firstOrCreate(['name' => $teamName]);
+            ->firstOrCreate([
+                'name' => $teamName,
+            ]);
 
         return new TeamHandler($team);
     }
@@ -40,7 +42,7 @@ class BingoHandler
     protected function setBingo(string $bingoName): Bingo
     {
         return Bingo::query()->firstOrCreate([
-            'name' => $bingoName
+            'name' => $bingoName,
         ]);
     }
 
