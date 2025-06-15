@@ -15,16 +15,16 @@ use Database\Factories\SubmissionFactory;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 
-class BingoRetainerTest extends ApplicationCase
+class BingoHandlerTest extends ApplicationCase
 {
     #[Test]
     public function a_team_can_be_created()
     {
         $bingo = BingoFactory::new()->create();
 
-        $retainer = BingoHandler::make($bingo);
+        $handler = BingoHandler::make($bingo);
 
-        $retainer->team('some-team-name');
+        $handler->team('some-team-name');
 
         $this->assertDatabaseHas(Team::class, [
             'name' => 'some-team-name',
