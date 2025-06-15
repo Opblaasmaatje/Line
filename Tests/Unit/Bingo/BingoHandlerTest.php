@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\Bingo;
 
+use App\Bingo\BingoException;
 use App\Bingo\BingoHandler;
 use App\Bingo\Models\AccountTeam;
 use App\Bingo\Models\Bingo;
@@ -91,5 +92,31 @@ class BingoHandlerTest extends ApplicationCase
         $this->assertDatabaseHas(Bingo::class, [
             'name' => 'bingo-bango-bongo',
         ]);
+    }
+
+    #[Test]
+    public function an_objective_cannot_be_assigned_when_there_are_no_teams()
+    {
+        $bingo = BingoFactory::new()->create();
+
+        $sut = new BingoHandler($bingo);
+
+        $submission = SubmissionFactory::new()
+            ->create();
+
+        $this->assertThrows(function () use ($sut, $submission) {
+            $sut->addObjective(
+                (new Objective())
+                    ->task()
+                    ->associate($submission)
+            );
+        }, BingoException::class);
+    }
+
+    #[Test]
+    public function creating_a_team_when_there_are_already_other_teams_with_objective_copies_them_over_onto_the_other_teams(
+    )
+    {
+        //
     }
 }

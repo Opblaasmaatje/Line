@@ -9,6 +9,8 @@ use Laracord\Commands\SlashCommand;
 
 class StartBingo extends SlashCommand
 {
+    use HasBingoSelect;
+
     protected $name = 'start-bingo';
 
     protected $description = 'Starts a bingo';
@@ -42,24 +44,5 @@ class StartBingo extends SlashCommand
                 ->content('And go!')
                 ->build()
         );
-    }
-
-    public function createBingoSelect(): Option
-    {
-        $select = (new option($this->discord()))
-            ->setName('bingo')
-            ->setDescription('Set bingo name')
-            ->setType(Option::INTEGER)
-            ->setRequired(true);
-
-
-        Bingo::query()
-            ->startable()
-            ->get()
-            ->each(
-                fn(Bingo $bingo) => $select->addChoice($bingo->toChoice($this->discord()))
-            );
-
-        return $select;
     }
 }

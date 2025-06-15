@@ -5,6 +5,7 @@ namespace App\Bingo;
 use App\Bingo\Models\Bingo;
 use App\Bingo\Models\Objective;
 use App\Bingo\Models\Team;
+use LogicException;
 
 class BingoHandler
 {
@@ -25,11 +26,20 @@ class BingoHandler
             ->teams()
             ->firstOrCreate(['name' => $teamName]);
 
+
+
         return new TeamHandler($team);
     }
 
+    /**
+     * @throws BingoException
+     */
     public function addObjective(Objective $objective): static
     {
+        if($this->bingo->teams->isEmpty()){
+            throw new BingoException('An objective cannot be added when there are not teams');
+        }
+
         $this->bingo->teams->each(
             fn(Team $team) => (new TeamHandler($team))->addObjective($objective)
         );

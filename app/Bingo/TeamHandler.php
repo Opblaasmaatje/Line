@@ -5,7 +5,6 @@ namespace App\Bingo;
 use App\Bingo\Models\Objective;
 use App\Bingo\Models\Team;
 use App\Models\Account;
-use Illuminate\Database\Eloquent\Collection;
 
 class TeamHandler
 {

@@ -1,6 +1,7 @@
 <?php
 
 use App\Bingo\Services\ReloadCommandsOptions;
+use App\Bingo\SlashCommands\AddSubmissionObjective;
 use App\Bingo\SlashCommands\CreateBingo;
 use App\Bingo\SlashCommands\StartBingo;
 use App\Points\Services\ApplyPointAllocation;
@@ -37,6 +38,7 @@ return [
         Leaderboard::class,
         CreateBingo::class,
         StartBingo::class,
+        AddSubmissionObjective::class,
         Laracord\Commands\HelpCommand::class,
     ],
 

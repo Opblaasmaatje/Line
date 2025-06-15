@@ -49,7 +49,7 @@ class TeamHandlerTest extends ApplicationCase
     {
         $sut = new TeamHandler(TeamFactory::new()->create(['bingo_id' => 1]));
 
-        $submission= SubmissionFactory::new()->create([
+        $submission = SubmissionFactory::new()->create([
             'name' => 'task-name'
         ]);
 

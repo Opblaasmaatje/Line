@@ -2,12 +2,13 @@
 
 namespace App\Bingo\Services;
 
+use App\Bingo\SlashCommands\AddSubmissionObjective;
 use App\Bingo\SlashCommands\StartBingo;
 use Laracord\Services\Service;
 
 class ReloadCommandsOptions extends Service
 {
-    protected int $interval = 5;
+    protected int $interval = 20;
 
     public function handle(): void
     {
@@ -17,5 +18,10 @@ class ReloadCommandsOptions extends Service
            (new StartBingo($this->bot))->create(),
            'Need new information of things'
        );
+
+        $this->discord()->application->commands->save(
+            (new AddSubmissionObjective($this->bot))->create(),
+            'Need new information of things'
+        );
     }
 }
