@@ -5,9 +5,7 @@ namespace App\Wise\Services;
 use App\Models\Account;
 use App\Wise\Client\Players\WiseOldManException;
 use App\Wise\Facade\WiseOldManPlayer;
-use Exception;
 use Laracord\Services\Service;
-use PHPUnit\Event\Runtime\PHP;
 
 /**
  * TODO add error handling for user not found

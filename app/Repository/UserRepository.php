@@ -4,7 +4,6 @@ namespace App\Repository;
 
 use App\Models\Account;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class UserRepository
 {

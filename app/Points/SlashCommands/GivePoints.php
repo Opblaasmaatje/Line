@@ -5,7 +5,6 @@ namespace App\Points\SlashCommands;
 use App\Models\User;
 use App\Points\Jobs\Actions\ApplyPoints;
 use Discord\Parts\Interactions\Command\Option;
-use Discord\Parts\Interactions\Interaction;
 use Laracord\Commands\SlashCommand;
 
 class GivePoints extends SlashCommand

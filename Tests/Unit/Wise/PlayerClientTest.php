@@ -2,19 +2,13 @@
 
 namespace Tests\Unit\Wise;
 
-use App\Models\Account;
-use App\Wise\Client\OldMan;
 use App\Wise\Client\Players\PlayerClient;
 use App\Wise\Client\Players\WiseOldManException;
-use App\Wise\Facade\WiseOldManPlayer;
-use Database\Factories\AccountFactory;
-use http\Client;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
-use function Termwind\parse;
 
 class PlayerClientTest extends ApplicationCase
 {
@@ -33,7 +27,7 @@ class PlayerClientTest extends ApplicationCase
         $client->details('sus_guy');
 
         Http::assertSent(function (Request $request){
-            return 'https://api.wiseoldman.net/v2/players/sus_guy' ===  $request->url();
+            return 'https://api.wiseoldman.net/v2/players/sus_guy' === $request->url();
         });
     }
 
