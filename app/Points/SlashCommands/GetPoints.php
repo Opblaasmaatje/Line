@@ -36,15 +36,6 @@ class GetPoints extends SlashCommand
     {
         $account = User::repository()->findAccount($this->option('user.value'));
 
-        if (is_null($account)) {
-            return $interaction->respondWithMessage(
-                $this
-                    ->message('You do not have an account attached.')
-                    ->title('No associated account found!')
-                    ->build()
-            );
-        }
-
         return $interaction->respondWithMessage(
             $this->message()
                 ->info()

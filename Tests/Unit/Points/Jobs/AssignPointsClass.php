@@ -13,11 +13,8 @@ use Tests\ApplicationCase;
 
 class AssignPointsClass extends ApplicationCase
 {
-    /**
-     * TODO figure out why mocking is not working
-     */
     #[Test]
-    public function it_calls_run_when()
+    public function it_calls_run_when_applying()
     {
         $account = AccountFactory::new()->create([
             'id' => 69,

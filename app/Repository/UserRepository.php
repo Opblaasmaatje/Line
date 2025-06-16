@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Builder;
 
 class UserRepository
 {
-    public function findAccount(string $discordId): Account|null
+    public function findAccount(string $discordId): Account
     {
         return Account::query()
             ->whereHas('user', fn(Builder $query) => $query->where('discord_id', $discordId))
-            ->first();
+            ->firstOrFail();
     }
 }
