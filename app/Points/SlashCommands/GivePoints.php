@@ -47,16 +47,7 @@ class GivePoints extends SlashCommand
 
     public function handle($interaction)
     {
-        $account = User::repository()->findAccount($this->option('user.value'));
-
-        if (is_null($account)) {
-            return $interaction->respondWithMessage(
-                $this
-                    ->message('No Account was found!')
-                    ->title('No associated account found!')
-                    ->build()
-            );
-        }
+        $account = User::repository()->findAccount($this->value('user'));
 
         (new ApplyPoints)->run(
             account: $account,
@@ -72,12 +63,5 @@ class GivePoints extends SlashCommand
                 ->content("Give {$account->username} {$this->option('amount.value')} points for {$this->option('source.value')}")
                 ->build()
         );
-    }
-
-    public function interactions(): array
-    {
-        return [
-            'wave' => fn(Interaction $interaction) => $this->message('👋')->reply($interaction),
-        ];
     }
 }

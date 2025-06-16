@@ -3,8 +3,11 @@
 namespace App\Wise\Services;
 
 use App\Models\Account;
+use App\Wise\Client\Players\WiseOldManException;
 use App\Wise\Facade\WiseOldManPlayer;
+use Exception;
 use Laracord\Services\Service;
+use PHPUnit\Event\Runtime\PHP;
 
 /**
  * TODO add error handling for user not found
@@ -17,19 +20,26 @@ class AddSnapshotToUser extends Service
     {
         $this->console()->warn('Updating information from Wise Old Man');
 
-        $this->console->withProgressBar(
-            totalSteps: Account::query()->with('snapshot')->get(),
-            callback: function (Account $account) {
-
-                $account->snapshot->setAttribute(
-                    key: 'raw_details',
-                    value: WiseOldManPlayer::details($account->username)->toArray()
-                );
-
-                $account->snapshot->push();
-            }
-        );
+        Account::query()
+            ->with('snapshot')
+            ->get()
+            ->each($this->guardAgainstFailures(...));
 
         $this->console()->newLine(2);
+    }
+
+    public function guardAgainstFailures(Account $account): void
+    {
+        try {
+            $account->snapshot->setAttribute(
+                key: 'raw_details',
+                value: WiseOldManPlayer::details($account->username)->toArray()
+            );
+
+            $account->snapshot->push();
+        } catch (WiseOldManException $exception) {
+            $className = get_class($this);
+            $this->console()->error($exception->getMessage() . "in [$className]");
+        }
     }
 }
