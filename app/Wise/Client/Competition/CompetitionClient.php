@@ -25,10 +25,9 @@ class CompetitionClient
                 'startsAt' => Carbon::now()->addMinute(),
                 'endsAt' => Carbon::now()->addMinutes(3),
                 'participants' => [
-                    'sus_guy'
-                ]
+                    'sus_guy',
+                ],
             ]);
-
 
         dd($data->body());
 
