@@ -2,6 +2,7 @@
 
 namespace App\Wise\Client\Competition;
 
+use App\Wise\Client\Competition\DTO\CompetitionWithParticipations;
 use App\Wise\Client\OldMan;
 use App\Wise\Client\Players\DTO\PlayerSnapshot;
 use App\Wise\Client\Players\WiseOldManException;
@@ -29,13 +30,6 @@ class CompetitionClient
                 ]
             ]);
 
-
-        dd($data->body());
-
-//        if($data->failed()){
-//            throw new WiseOldManException("Could not find [{$username}]");
-//        }
-//
-//        return $this->mapper->map($data->body(), PlayerSnapshot::class);
+        return $this->mapper->map($data->body(), CompetitionWithParticipations::class);
     }
 }

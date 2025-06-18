@@ -24,10 +24,6 @@ class PlayerClient
     {
         $data = $this->oldMan->client()->get("players/$username");
 
-        if($data->failed()){
-            throw new WiseOldManException("Could not find [{$username}]");
-        }
-
         return $this->mapper->map($data->body(), PlayerSnapshot::class);
     }
 }
