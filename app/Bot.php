@@ -9,10 +9,6 @@ class Bot extends Laracord
 {
     public function routes(): void
     {
-        Route::middleware('web')->group(function () {
-        });
-
-        Route::middleware('api')->group(function () {
-        });
+        //
     }
 }
