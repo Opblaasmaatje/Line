@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\Wise;
+namespace Tests\Unit\Wise\Player;
 
 use App\Wise\Client\Players\PlayerClient;
 use App\Wise\Client\Players\WiseOldManException;
@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
+use Tests\Unit\Wise\HasFixtureAccess;
 
 class PlayerClientTest extends ApplicationCase
 {

@@ -127,7 +127,7 @@ return [
         ],
         CommanderZilyana::class => [
             'per' => 1,
-            'give' => 1,
+            'give' => 0.10,
         ],
         CorporealBeast::class => [
             'per' => 1,
