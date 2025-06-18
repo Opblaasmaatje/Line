@@ -18,7 +18,7 @@ class CompetitionClientTest extends ApplicationCase
     public function it_makes_an_api_call_and_create_a_competition()
     {
         Http::fake([
-            'api.wiseoldman.net/*' => Http::response($this->getFromFixture('create_competition.json'), 200)
+            'api.wiseoldman.net/*' => Http::response($this->getFromFixture('create_competition.json'), 200),
         ]);
 
         /** @var CompetitionClient $competitionClient */

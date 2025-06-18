@@ -9,7 +9,6 @@ readonly class CompetitionWithParticipations
     public function __construct(
         public CompetitionObject $competition,
         public string $verificationCode,
-
     ){
     }
 }

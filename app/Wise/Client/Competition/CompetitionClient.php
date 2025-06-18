@@ -4,8 +4,6 @@ namespace App\Wise\Client\Competition;
 
 use App\Wise\Client\Competition\DTO\CompetitionWithParticipations;
 use App\Wise\Client\OldMan;
-use App\Wise\Client\Players\DTO\PlayerSnapshot;
-use App\Wise\Client\Players\WiseOldManException;
 use Brick\JsonMapper\JsonMapper;
 use Illuminate\Support\Carbon;
 
@@ -26,8 +24,8 @@ class CompetitionClient
                 'startsAt' => Carbon::now()->addMinute(),
                 'endsAt' => Carbon::now()->addMinutes(3),
                 'participants' => [
-                    'sus_guy'
-                ]
+                    'sus_guy',
+                ],
             ]);
 
         return $this->mapper->map($data->body(), CompetitionWithParticipations::class);
