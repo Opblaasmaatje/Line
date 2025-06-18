@@ -15,8 +15,12 @@ class AccountTest extends ApplicationCase
     {
         /** @var Account $account */
         $account = AccountFactory::new()
-            ->has(PointFactory::new(['amount' => 4]))
-            ->has(PointFactory::new(['amount' => 2]))
+            ->has(PointFactory::new([
+                'amount' => 4,
+            ]))
+            ->has(PointFactory::new([
+                'amount' => 2,
+            ]))
             ->create([
                 'user_id' => 1,
             ]);
