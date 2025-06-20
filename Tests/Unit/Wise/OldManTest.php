@@ -18,14 +18,10 @@ class OldManTest extends ApplicationCase
     {
         return [
             'group code' => ['wise.old-man.group-code', null, GroupCodeException::class],
-            'group id' => ['wise.old-man.group-id', null, GroupIdException::class]
+            'group id' => ['wise.old-man.group-id', null, GroupIdException::class],
         ];
     }
 
-
-    /**
-     * @return void
-     */
     #[Test]
     #[DataProvider('configProvider')]
     public function it_throws_configuration_exception_when_config_is_incorrect($key, $value, $class)
@@ -56,7 +52,6 @@ class OldManTest extends ApplicationCase
         $this->assertEquals('https', $fakedCallUrlSegments->getScheme());
         $this->assertEquals('test-url.com', $fakedCallUrlSegments->getHost());
         $this->assertEquals('/something-something/get', $fakedCallUrlSegments->getPath());
-
 
     }
 }
