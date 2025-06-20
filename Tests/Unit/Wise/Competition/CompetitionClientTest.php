@@ -7,6 +7,7 @@ use App\Wise\Client\Enums\Metric;
 use App\Wise\Client\Exceptions\CommunicationException;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
@@ -19,8 +20,9 @@ class CompetitionClientTest extends ApplicationCase
     #[Test]
     public function it_makes_an_api_call_and_create_a_competition()
     {
+        Config::set('wise.old-man.group-code', 'group-code');
+        Config::set('wise.old-man.group-id', 111);
 
-        //TODO assert ataobject
         Http::fake([
             'api.wiseoldman.net/*' => Http::response($this->getFromFixture('create_competition.json'), 200),
         ]);

@@ -20,9 +20,7 @@ class OldManProvider extends ServiceProvider
         $this->app->bind(OldMan::class, function () {
             $client = Http::baseUrl(Config::get('wise.old-man.url'));
 
-            return (new OldMan(
-                client: $client,
-            ))
+            return (new OldMan($client))
                 ->setGroupCode(Config::get('wise.old-man.group-code'))
                 ->setGroupId(Config::get('wise.old-man.group-id'));
         });
