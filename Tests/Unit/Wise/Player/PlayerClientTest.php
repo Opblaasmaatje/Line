@@ -3,7 +3,6 @@
 namespace Tests\Unit\Wise\Player;
 
 use App\Wise\Client\Exceptions\CommunicationException;
-use App\Wise\Client\Exceptions\WiseOldManException;
 use App\Wise\Client\Players\PlayerClient;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\App;
@@ -42,7 +41,6 @@ class PlayerClientTest extends ApplicationCase
 
         /** @var PlayerClient $client */
         $client = App::make(PlayerClient::class);
-
 
         $this->assertThrows(function () use ($client){
             $client->details('sus_guy');
