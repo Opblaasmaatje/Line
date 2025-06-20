@@ -39,7 +39,7 @@ class CompetitionClientTest extends ApplicationCase
     }
 
     #[Test]
-    public function it_throws_wiseoldmanexception_upon_failure()
+    public function it_throws_wiseold_man_exception_upon_failure()
     {
         Http::fake([
             'api.wiseoldman.net/*' => Http::response(null, 500),
