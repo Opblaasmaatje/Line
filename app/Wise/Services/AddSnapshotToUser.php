@@ -3,7 +3,7 @@
 namespace App\Wise\Services;
 
 use App\Models\Account;
-use App\Wise\Client\Players\WiseOldManException;
+use App\Wise\Client\Exceptions\WiseOldManException;
 use App\Wise\Facade\WiseOldManPlayer;
 use Laracord\Services\Service;
 

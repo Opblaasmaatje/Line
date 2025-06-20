@@ -13,7 +13,7 @@ class CompetitionClient
     public function __construct(
         protected OldMan $oldMan,
         protected JsonMapper $mapper
-    ){
+    ) {
     }
 
     public function createCompetition(
@@ -22,15 +22,14 @@ class CompetitionClient
         Carbon $startsAt,
         Carbon $endsAt,
     ) {
-        $data = $this->oldMan->client()
-            ->post("competitions", [
-                'groupId' => $this->oldMan->getGroupId(),
-                'groupVerificationCode' => $this->oldMan->getGroupCode(),
-                'title' => $competition,
-                'metric' => $metric,
-                'startsAt' => $startsAt,
-                'endsAt' => $endsAt,
-            ]);
+        $data = $this->oldMan->client()->post("competitions", [
+            'groupId' => $this->oldMan->getGroupId(),
+            'groupVerificationCode' => $this->oldMan->getGroupCode(),
+            'title' => $competition,
+            'metric' => $metric,
+            'startsAt' => $startsAt,
+            'endsAt' => $endsAt,
+        ]);
 
         return $this->mapper->map($data->body(), CompetitionWithParticipations::class);
     }

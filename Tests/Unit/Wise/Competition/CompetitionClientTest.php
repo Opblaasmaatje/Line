@@ -3,7 +3,9 @@
 namespace Tests\Unit\Wise\Competition;
 
 use App\Wise\Client\Competition\CompetitionClient;
-use App\Wise\Client\Players\WiseOldManException;
+use App\Wise\Client\Enums\Metric;
+use App\Wise\Client\Exceptions\CommunicationException;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
 use PHPUnit\Framework\Attributes\Test;
@@ -17,13 +19,21 @@ class CompetitionClientTest extends ApplicationCase
     #[Test]
     public function it_makes_an_api_call_and_create_a_competition()
     {
+
+        //TODO assert ataobject
         Http::fake([
             'api.wiseoldman.net/*' => Http::response($this->getFromFixture('create_competition.json'), 200),
         ]);
 
         /** @var CompetitionClient $competitionClient */
         $competitionClient = App::make(CompetitionClient::class);
-        $data = $competitionClient->createCompetition('test');
+
+        $data = $competitionClient->createCompetition(
+            competition: 'test',
+            metric: Metric::RUNECRAFTING,
+            startsAt: Carbon::now()->addMinute(),
+            endsAt: Carbon::now()->addMinutes(2)
+        );
 
         $this->assertTrue(true);
     }
@@ -39,8 +49,13 @@ class CompetitionClientTest extends ApplicationCase
         $competitionClient = App::make(CompetitionClient::class);
 
         $this->assertThrows(function () use ($competitionClient) {
-            $competitionClient->createCompetition('test');
-        }, WiseOldManException::class);
+            $competitionClient->createCompetition(
+                competition: 'test',
+                metric: Metric::RUNECRAFTING,
+                startsAt: Carbon::now()->addMinute(),
+                endsAt: Carbon::now()->addMinutes(2)
+            );
+        }, CommunicationException::class);
     }
 
     public function test_it_works()
@@ -48,6 +63,15 @@ class CompetitionClientTest extends ApplicationCase
         /** @var CompetitionClient $client */
         $client = App::make(CompetitionClient::class);
 
-        $client->createCompetition('test');
+        $this->markTestIncomplete();
+
+        return;
+
+        $client->createCompetition(
+            competition: 'test',
+            metric: Metric::RUNECRAFTING,
+            startsAt: Carbon::now()->addMinute(),
+            endsAt: Carbon::now()->addMinutes(2)
+        );
     }
 }

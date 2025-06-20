@@ -13,19 +13,18 @@ class OldManProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->app->bind(JsonMapper::class, function (){
+        $this->app->bind(JsonMapper::class, function () {
             return new JsonMapper(onExtraProperties: OnExtraProperties::IGNORE);
         });
 
-        $this->app->bind(OldMan::class, function (){
+        $this->app->bind(OldMan::class, function () {
             $client = Http::baseUrl(Config::get('wise.old-man.url'));
 
-            return new OldMan(
+            return (new OldMan(
                 client: $client,
-                apiKey: Config::get('wise.old-man.api-key'),
-                groupId: Config::get('wise.old-man.group-id'),
-                groupCode: Config::get('wise.old-man.group-code'),
-            );
+            ))
+                ->setGroupCode(Config::get('wise.old-man.group-id'))
+                ->setGroupId(Config::get('wise.old-man.group-id'));
         });
     }
 }
