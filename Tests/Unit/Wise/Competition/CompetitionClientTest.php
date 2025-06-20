@@ -17,12 +17,17 @@ class CompetitionClientTest extends ApplicationCase
 {
     use HasFixtureAccess;
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        Config::set('wise.old-man.group-code', 'group-code');
+        Config::set('wise.old-man.group-id', 111);
+    }
+
     #[Test]
     public function it_makes_an_api_call_and_create_a_competition()
     {
-        Config::set('wise.old-man.group-code', 'group-code');
-        Config::set('wise.old-man.group-id', 111);
-
         Http::fake([
             'api.wiseoldman.net/*' => Http::response($this->getFromFixture('create_competition.json'), 200),
         ]);

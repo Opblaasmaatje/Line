@@ -6,6 +6,7 @@ use App\Wise\Client\Exceptions\CommunicationException;
 use App\Wise\Client\Players\PlayerClient;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
@@ -14,6 +15,14 @@ use Tests\Unit\Wise\HasFixtureAccess;
 class PlayerClientTest extends ApplicationCase
 {
     use HasFixtureAccess;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        Config::set('wise.old-man.group-code', 'group-code');
+        Config::set('wise.old-man.group-id', 111);
+    }
 
     #[Test]
     public function it_creates_an_api_call()
