@@ -42,4 +42,12 @@ class CompetitionClientTest extends ApplicationCase
             $competitionClient->createCompetition('test');
         }, WiseOldManException::class);
     }
+
+    public function test_it_works()
+    {
+        /** @var CompetitionClient $client */
+        $client = App::make(CompetitionClient::class);
+
+        $client->createCompetition('test');
+    }
 }

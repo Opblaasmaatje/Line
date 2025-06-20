@@ -2,13 +2,14 @@
 
 namespace App\Wise\Client\Players\DTO\Snapshot\Skills;
 
+use App\Wise\Client\Enums\Metric;
 use App\Wise\Client\Players\DTO\Snapshot\CanGivePoints;
 use Illuminate\Contracts\Support\Arrayable;
 
 readonly abstract class Skill implements Arrayable, CanGivePoints
 {
     public function __construct(
-        public string $metric,
+        public Metric $metric,
         public int $experience,
         public int $rank,
         public int $level,
@@ -23,7 +24,7 @@ readonly abstract class Skill implements Arrayable, CanGivePoints
 
     public function getMetric(): string
     {
-        return $this->metric;
+        return $this->metric->value;
     }
 
     public function toArray(): array

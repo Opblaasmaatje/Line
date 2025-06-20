@@ -3,6 +3,7 @@
 namespace App\Wise\Client\Competition;
 
 use App\Wise\Client\Competition\DTO\CompetitionWithParticipations;
+use App\Wise\Client\Enums\Metric;
 use App\Wise\Client\OldMan;
 use Brick\JsonMapper\JsonMapper;
 use Illuminate\Support\Carbon;
@@ -15,17 +16,20 @@ class CompetitionClient
     ){
     }
 
-    public function createCompetition(string $competition)
-    {
+    public function createCompetition(
+        string $competition,
+        Metric $metric,
+        Carbon $startsAt,
+        Carbon $endsAt,
+    ) {
         $data = $this->oldMan->client()
             ->post("competitions", [
+                'groupId' => $this->oldMan->getGroupId(),
+                'groupVerificationCode' => $this->oldMan->getGroupCode(),
                 'title' => $competition,
-                'metric' => 'attack',
-                'startsAt' => Carbon::now()->addMinute(),
-                'endsAt' => Carbon::now()->addMinutes(3),
-                'participants' => [
-                    'sus_guy',
-                ],
+                'metric' => $metric,
+                'startsAt' => $startsAt,
+                'endsAt' => $endsAt,
             ]);
 
         return $this->mapper->map($data->body(), CompetitionWithParticipations::class);

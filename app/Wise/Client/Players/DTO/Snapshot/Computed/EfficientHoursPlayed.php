@@ -2,6 +2,6 @@
 
 namespace App\Wise\Client\Players\DTO\Snapshot\Computed;
 
-readonly class EfficientHoursPlayed extends Metric
+readonly class EfficientHoursPlayed extends ComputedMetric
 {
 }

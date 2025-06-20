@@ -21,8 +21,10 @@ class OldManProvider extends ServiceProvider
             $client = Http::baseUrl(Config::get('wise.old-man.url'));
 
             return new OldMan(
-                $client,
-                Config::get('wise.old-man.api-key'),
+                client: $client,
+                apiKey: Config::get('wise.old-man.api-key'),
+                groupId: Config::get('wise.old-man.group-id'),
+                groupCode: Config::get('wise.old-man.group-code'),
             );
         });
     }

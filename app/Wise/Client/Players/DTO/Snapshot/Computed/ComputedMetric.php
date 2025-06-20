@@ -4,7 +4,7 @@ namespace App\Wise\Client\Players\DTO\Snapshot\Computed;
 
 use Illuminate\Contracts\Support\Arrayable;
 
-readonly abstract class Metric implements Arrayable
+readonly abstract class ComputedMetric implements Arrayable
 {
     public function __construct(
         public string $metric,

@@ -2,13 +2,14 @@
 
 namespace App\Wise\Client\Players\DTO\Snapshot\Bosses;
 
+use App\Wise\Client\Enums\Metric;
 use App\Wise\Client\Players\DTO\Snapshot\CanGivePoints;
 use Illuminate\Contracts\Support\Arrayable;
 
 readonly abstract class Boss implements Arrayable, CanGivePoints
 {
     public function __construct(
-        public string $metric,
+        public Metric $metric,
         public int $kills,
         public int $rank,
         public float $ehb,
@@ -22,7 +23,7 @@ readonly abstract class Boss implements Arrayable, CanGivePoints
 
     public function getMetric(): string
     {
-        return $this->metric;
+        return $this->metric->value;
     }
 
     public function toArray(): array
