@@ -41,7 +41,7 @@ class OldMan
     public function setGroupId(int|null $groupId): self
     {
         if(is_null($groupId)){
-            throw ConfigurationException::make('Invalid group id');
+            throw new ConfigurationException('Invalid group id');
         }
 
         $this->groupId = $groupId;
@@ -55,7 +55,7 @@ class OldMan
     public function setGroupCode(string|null $groupCode): self
     {
         if(is_null($groupCode)){
-            throw ConfigurationException::make('Invalid group code');
+            throw new ConfigurationException('Invalid group code');
         }
 
         $this->groupCode = $groupCode;
