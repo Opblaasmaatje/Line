@@ -3,7 +3,8 @@
 namespace App\Wise\Client;
 
 use App\Wise\Client\Exceptions\CommunicationException;
-use App\Wise\Client\Exceptions\ConfigurationException;
+use App\Wise\Client\Exceptions\Configuration\GroupCodeException;
+use App\Wise\Client\Exceptions\Configuration\GroupIdException;
 use App\Wise\Client\Exceptions\WiseOldManException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
@@ -41,7 +42,7 @@ class OldMan
     public function setGroupId(int|null $groupId): self
     {
         if(is_null($groupId)){
-            throw new ConfigurationException('Invalid group id');
+            throw new GroupIdException('Invalid group id');
         }
 
         $this->groupId = $groupId;
@@ -55,7 +56,7 @@ class OldMan
     public function setGroupCode(string|null $groupCode): self
     {
         if(is_null($groupCode)){
-            throw new ConfigurationException('Invalid group code');
+            throw new GroupCodeException('Invalid group code');
         }
 
         $this->groupCode = $groupCode;

@@ -23,7 +23,7 @@ class OldManProvider extends ServiceProvider
             return (new OldMan(
                 client: $client,
             ))
-                ->setGroupCode(Config::get('wise.old-man.group-id'))
+                ->setGroupCode(Config::get('wise.old-man.group-code'))
                 ->setGroupId(Config::get('wise.old-man.group-id'));
         });
     }
