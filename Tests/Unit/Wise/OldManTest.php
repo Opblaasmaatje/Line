@@ -14,7 +14,7 @@ use Tests\ApplicationCase;
 
 class OldManTest extends ApplicationCase
 {
-    public static function configProvider()
+    public static function configProvider(): array
     {
         return [
             'group code' => ['wise.old-man.group-code', null, GroupCodeException::class],
@@ -52,6 +52,5 @@ class OldManTest extends ApplicationCase
         $this->assertEquals('https', $fakedCallUrlSegments->getScheme());
         $this->assertEquals('test-url.com', $fakedCallUrlSegments->getHost());
         $this->assertEquals('/something-something/get', $fakedCallUrlSegments->getPath());
-
     }
 }
