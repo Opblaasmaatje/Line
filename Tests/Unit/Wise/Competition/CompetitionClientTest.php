@@ -5,6 +5,7 @@ namespace Tests\Unit\Wise\Competition;
 use App\Wise\Client\Competition\CompetitionClient;
 use App\Wise\Client\Enums\Metric;
 use App\Wise\Client\Exceptions\CommunicationException;
+use Carbon\CarbonPeriod;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
@@ -35,11 +36,13 @@ class CompetitionClientTest extends ApplicationCase
         /** @var CompetitionClient $competitionClient */
         $competitionClient = App::make(CompetitionClient::class);
 
-        $data = $competitionClient->createCompetition(
+        $competitionClient->createCompetition(
             competition: 'test',
             metric: Metric::RUNECRAFTING,
-            startsAt: Carbon::now()->addMinute(),
-            endsAt: Carbon::now()->addMinutes(2)
+            period: CarbonPeriod::make(
+                Carbon::now()->addMinute(),
+                Carbon::now()->addMinutes(2)
+            ),
         );
 
         $this->assertTrue(true);
@@ -59,8 +62,10 @@ class CompetitionClientTest extends ApplicationCase
             $competitionClient->createCompetition(
                 competition: 'test',
                 metric: Metric::RUNECRAFTING,
-                startsAt: Carbon::now()->addMinute(),
-                endsAt: Carbon::now()->addMinutes(2)
+                period: CarbonPeriod::make(
+                    Carbon::now()->addMinute(),
+                    Carbon::now()->addMinutes(2)
+                ),
             );
         }, CommunicationException::class);
     }
