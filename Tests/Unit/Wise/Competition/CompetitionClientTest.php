@@ -70,7 +70,7 @@ class CompetitionClientTest extends ApplicationCase
         /** @var CompetitionClient $client */
         $client = App::make(CompetitionClient::class);
 
-        $this->markTestIncomplete();
+        $this->markTestSkipped();
 
         return;
 

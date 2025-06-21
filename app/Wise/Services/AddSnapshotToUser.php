@@ -36,8 +36,10 @@ class AddSnapshotToUser extends Service
 
             $account->snapshot->push();
         } catch (WiseOldManException $exception) {
+
             $className = get_class($this);
-            $this->console()->error($exception->getMessage() . "in [$className]");
+
+            $this->console()->error($exception->getMessage() . " in [$className]");
         }
     }
 }
