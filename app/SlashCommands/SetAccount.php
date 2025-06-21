@@ -2,12 +2,9 @@
 
 namespace App\SlashCommands;
 
-use App\Models\Account;
 use App\Models\User;
 use Discord\Parts\Interactions\Command\Option;
-use Discord\Parts\Interactions\Interaction;
 use Laracord\Commands\SlashCommand;
-
 
 class SetAccount extends SlashCommand
 {
@@ -41,10 +38,12 @@ class SetAccount extends SlashCommand
     public function handle($interaction)
     {
         User::query()
-            ->updateOrCreate(['discord_id' => $this->value('user')])
+            ->updateOrCreate([
+                'discord_id' => $this->value('user'),
+            ])
             ->account()
             ->updateOrCreate([], values: [
-                'username' => $this->value('account-rsn')
+                'username' => $this->value('account-rsn'),
             ]);
 
         return $interaction->respondWithMessage(

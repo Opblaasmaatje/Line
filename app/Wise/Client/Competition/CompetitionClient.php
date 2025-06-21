@@ -7,7 +7,6 @@ use App\Wise\Client\Enums\Metric;
 use App\Wise\Client\OldMan;
 use Brick\JsonMapper\JsonMapper;
 use Carbon\CarbonPeriod;
-use Illuminate\Support\Carbon;
 
 class CompetitionClient
 {

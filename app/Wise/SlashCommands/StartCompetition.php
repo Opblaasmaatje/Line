@@ -57,7 +57,7 @@ class StartCompetition extends SlashCommand
         return [
             'metric' => Rule::in(Metric::cases()),
             'start-date' => Rule::date(),
-            'end-date' => Rule::date()
+            'end-date' => Rule::date(),
         ];
     }
 
