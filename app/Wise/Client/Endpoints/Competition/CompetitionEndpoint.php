@@ -22,8 +22,8 @@ class CompetitionEndpoint
         CarbonPeriod $period,
     ) {
         $data = $this->oldMan->client()->post("competitions", [
-            'groupId' => $this->oldMan->getGroupId(),
-            'groupVerificationCode' => $this->oldMan->getGroupCode(),
+            'groupId' => $this->oldMan->getGroup()->getId(),
+            'groupVerificationCode' => $this->oldMan->getGroup()->getCode(),
             'title' => $competition,
             'metric' => $metric,
             'startsAt' => $period->getStartDate(),

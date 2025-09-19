@@ -3,20 +3,14 @@
 namespace App\Wise\Client;
 
 use App\Wise\Client\Exceptions\CommunicationException;
-use App\Wise\Client\Exceptions\Configuration\GroupCodeException;
-use App\Wise\Client\Exceptions\Configuration\GroupIdException;
-use App\Wise\Client\Exceptions\WiseOldManException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
 
 class OldMan
 {
-    protected int $groupId;
-
-    protected string $groupCode;
-
     public function __construct(
         protected PendingRequest $client,
+        protected GroupConfiguration $group
     ){
         $this->client->throw(fn(Response $response) => throw new CommunicationException($response->json('message')));
     }
@@ -26,41 +20,8 @@ class OldMan
         return $this->client;
     }
 
-    public function getGroupId(): int
+    public function getGroup(): GroupConfiguration
     {
-        return $this->groupId;
-    }
-
-    public function getGroupCode(): string
-    {
-        return $this->groupCode;
-    }
-
-    /**
-     * @throws WiseOldManException
-     */
-    public function setGroupId(int|null $groupId): self
-    {
-        if(is_null($groupId)){
-            throw new GroupIdException('Invalid group id');
-        }
-
-        $this->groupId = $groupId;
-
-        return $this;
-    }
-
-    /**
-     * @throws WiseOldManException
-     */
-    public function setGroupCode(string|null $groupCode): self
-    {
-        if(is_null($groupCode)){
-            throw new GroupCodeException('Invalid group code');
-        }
-
-        $this->groupCode = $groupCode;
-
-        return $this;
+        return $this->group;
     }
 }

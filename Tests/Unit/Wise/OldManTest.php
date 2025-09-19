@@ -14,25 +14,6 @@ use Tests\ApplicationCase;
 
 class OldManTest extends ApplicationCase
 {
-    public static function configProvider(): array
-    {
-        return [
-            'group code' => ['wise.old-man.group-code', null, GroupCodeException::class],
-            'group id' => ['wise.old-man.group-id', null, GroupIdException::class],
-        ];
-    }
-
-    #[Test]
-    #[DataProvider('configProvider')]
-    public function it_throws_configuration_exception_when_config_is_incorrect($key, $value, $class)
-    {
-        Config::set($key, $value);
-
-        $this->assertThrows(function () {
-            App::make(OldMan::class);
-        }, $class);
-    }
-
     #[Test]
     public function it_can_instantiate_from_container()
     {
@@ -47,8 +28,8 @@ class OldManTest extends ApplicationCase
 
         $fakedCallUrlSegments = $sut->client()->get('get')->effectiveUri();
 
-        $this->assertEquals(2244, $sut->getGroupId());
-        $this->assertEquals('this-is-the-group-code', $sut->getGroupCode());
+        $this->assertEquals(2244, $sut->getGroup()->getId());
+        $this->assertEquals('this-is-the-group-code', $sut->getGroup()->getCode());
         $this->assertEquals('https', $fakedCallUrlSegments->getScheme());
         $this->assertEquals('test-url.com', $fakedCallUrlSegments->getHost());
         $this->assertEquals('/something-something/get', $fakedCallUrlSegments->getPath());
