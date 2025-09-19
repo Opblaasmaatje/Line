@@ -11,6 +11,11 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          
       - uses: actions/checkout@v3
         with:
           # Ensure the branch is checked out so changes can be pushed
@@ -18,8 +23,6 @@ jobs:
           ref: ${{ github.head_ref || github.ref_name }}
 
       - uses: php-actions/composer@v6
-      - with:
-          php-version: '8.4'
 
       - name: Running Code Style
         run: ./vendor/bin/ecs --fix
