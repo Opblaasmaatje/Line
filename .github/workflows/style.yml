@@ -18,6 +18,8 @@ jobs:
           ref: ${{ github.head_ref || github.ref_name }}
 
       - uses: php-actions/composer@v6
+      - with:
+          php-version: '8.4'
 
       - name: Running Code Style
         run: ./vendor/bin/ecs --fix
