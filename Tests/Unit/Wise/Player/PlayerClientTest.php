@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\Wise\Player;
 
+use App\Wise\Client\Endpoints\Players\PlayerEndpoint;
 use App\Wise\Client\Exceptions\CommunicationException;
-use App\Wise\Client\Players\PlayerClient;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
@@ -31,8 +31,8 @@ class PlayerClientTest extends ApplicationCase
             'api.wiseoldman.net/*' => Http::response($this->getFromFixture('snapshot_details.json'), 200),
         ]);
 
-        /** @var PlayerClient $client */
-        $client = App::make(PlayerClient::class);
+        /** @var PlayerEndpoint $client */
+        $client = App::make(PlayerEndpoint::class);
 
         $client->details('sus_guy');
 
@@ -48,8 +48,8 @@ class PlayerClientTest extends ApplicationCase
             'api.wiseoldman.net/*' => Http::response(null, 404),
         ]);
 
-        /** @var PlayerClient $client */
-        $client = App::make(PlayerClient::class);
+        /** @var PlayerEndpoint $client */
+        $client = App::make(PlayerEndpoint::class);
 
         $this->assertThrows(function () use ($client){
             $client->details('sus_guy');

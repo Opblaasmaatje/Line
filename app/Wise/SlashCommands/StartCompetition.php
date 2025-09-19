@@ -2,7 +2,7 @@
 
 namespace App\Wise\SlashCommands;
 
-use App\Wise\Client\Competition\CompetitionClient;
+use App\Wise\Client\Endpoints\Competition\CompetitionEndpoint;
 use App\Wise\Client\Enums\Metric;
 use Carbon\CarbonPeriod;
 use Discord\Parts\Interactions\Command\Option;
@@ -74,8 +74,8 @@ class StartCompetition extends SlashCommand
             return;
         }
 
-        /** @var CompetitionClient $client */
-        $client = App::make(CompetitionClient::class);
+        /** @var CompetitionEndpoint $client */
+        $client = App::make(CompetitionEndpoint::class);
 
         $client->createCompetition(
             competition: $this->value('title'),

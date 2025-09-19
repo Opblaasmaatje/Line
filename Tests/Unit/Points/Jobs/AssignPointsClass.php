@@ -4,7 +4,7 @@ namespace Tests\Unit\Points\Jobs;
 
 use App\Models\Point;
 use App\Points\Jobs\AssignPoints;
-use App\Wise\Client\Players\DTO\Snapshot\Skills\Construction;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Skills\Construction;
 use Database\Factories\AccountFactory;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;

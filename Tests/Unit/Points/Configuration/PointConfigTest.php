@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\Points\Configuration;
 
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Boss;
-use App\Wise\Client\Players\DTO\Snapshot\Skills\Skill;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Boss;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Skills\Skill;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
 use PHPUnit\Framework\Attributes\Test;

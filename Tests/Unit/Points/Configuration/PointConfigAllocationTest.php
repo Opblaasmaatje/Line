@@ -4,15 +4,15 @@ namespace Tests\Unit\Points\Configuration;
 
 use App\Points\Configuration\PointAllocationConfiguration;
 use App\Points\Configuration\PointCalculator;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\AlchemicalHydra;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Araxxor;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Boss;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\CommanderZilyana;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\SolHeredit;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\TheatreOfBlood;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Skills\Runecrafting;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Skills\Skill;
 use App\Wise\Client\Enums\Metric;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\AlchemicalHydra;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Araxxor;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Boss;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\CommanderZilyana;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\SolHeredit;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\TheatreOfBlood;
-use App\Wise\Client\Players\DTO\Snapshot\Skills\Runecrafting;
-use App\Wise\Client\Players\DTO\Snapshot\Skills\Skill;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 
