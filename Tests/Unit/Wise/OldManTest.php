@@ -2,13 +2,10 @@
 
 namespace Tests\Unit\Wise;
 
-use App\Wise\Client\Exceptions\Configuration\GroupCodeException;
-use App\Wise\Client\Exceptions\Configuration\GroupIdException;
 use App\Wise\Client\OldMan;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
-use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 
