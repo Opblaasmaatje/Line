@@ -26,25 +26,25 @@ class StartCompetition extends SlashCommand
     public function options(): array
     {
         return [
-            (new option($this->discord()))
+            (new Option($this->discord()))
                 ->setName('title')
                 ->setDescription('Define the competition title')
                 ->setType(Option::STRING)
                 ->setRequired(true),
 
-            (new option($this->discord()))
+            (new Option($this->discord()))
                 ->setName('metric')
                 ->setDescription('Define the metric')
                 ->setType(Option::STRING)
                 ->setRequired(true),
 
-            (new option($this->discord()))
+            (new Option($this->discord()))
                 ->setName('start date')
                 ->setDescription('Define the starting date in dd-mm-yyyy format')
                 ->setType(Option::STRING)
                 ->setRequired(true),
 
-            (new option($this->discord()))
+            (new Option($this->discord()))
                 ->setName('end date')
                 ->setDescription('Define the ending date in dd-mm-yyyy format')
                 ->setType(Option::STRING)
@@ -86,7 +86,7 @@ class StartCompetition extends SlashCommand
             $this
                 ->message()
                 ->success()
-                ->title("Created competition!")
+                ->title('Created competition!')
                 ->content("View! {$competition->url}")
                 ->build()
         );
