@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Wise\Services;
+namespace App\Wise\Cron;
 
 use App\Models\Account;
 use App\Wise\Client\Exceptions\WiseOldManException;

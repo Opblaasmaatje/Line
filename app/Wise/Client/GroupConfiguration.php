@@ -6,7 +6,7 @@ readonly class GroupConfiguration
 {
     public function __construct(
         protected string $code,
-        protected string $id,
+        protected int $id,
     ){
     }
 
@@ -15,7 +15,7 @@ readonly class GroupConfiguration
         return $this->code;
     }
 
-    public function getId(): string
+    public function getId(): int
     {
         return $this->id;
     }

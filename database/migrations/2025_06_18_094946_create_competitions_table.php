@@ -10,6 +10,7 @@ return new class extends Migration
     {
         Schema::create('competitions', function (Blueprint $table) {
             $table->id();
+            $table->uuid('wise_old_man_id')->unique();
             $table->string('title');
             $table->string('metric');
             $table->dateTime('starts_at');

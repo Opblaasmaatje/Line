@@ -2,7 +2,7 @@
 
 namespace App\Wise\SlashCommands;
 
-use App\Wise\Client\Endpoints\Competition\CompetitionEndpoint;
+use App\Library\Services\CompetitionService;
 use App\Wise\Client\Enums\Metric;
 use Carbon\CarbonPeriod;
 use Discord\Parts\Interactions\Command\Option;
@@ -55,7 +55,7 @@ class StartCompetition extends SlashCommand
     protected function getRules(): array
     {
         return [
-            'metric' => Rule::in(Metric::cases()),
+            'metric' => Rule::enum(Metric::class),
             'start-date' => Rule::date(),
             'end-date' => Rule::date(),
         ];
@@ -63,21 +63,17 @@ class StartCompetition extends SlashCommand
 
     public function handle($interaction)
     {
-        $validator = Validator::make([
-            'metric' => $this->value('metric'),
-            'start-date' => $this->value('start-date'),
-            'end-date' => $this->value('end-date'),
-        ], $this->getRules());
-
-        if($validator->failed()){
-            //let use know it brokey
-            return;
+        if (! $this->isValid($this->value())) {
+            return $interaction->respondWithMessage(
+                $this->message()
+                    ->error()
+                    ->title('Invalid payload!')
+                    ->content('Please check your competition details')
+                    ->build()
+            );
         }
 
-        /** @var CompetitionEndpoint $client */
-        $client = App::make(CompetitionEndpoint::class);
-
-        $client->createCompetition(
+        $competition = App::make(CompetitionService::class)->create(
             competition: $this->value('title'),
             metric: Metric::from($this->value('metric')),
             period: CarbonPeriod::create(
@@ -90,9 +86,20 @@ class StartCompetition extends SlashCommand
             $this
                 ->message()
                 ->success()
-                ->title('Created competition!')
-                ->content("Competition with the name [{$this->value('title')}] created!")
+                ->title("Created competition!")
+                ->content("View! {$competition->url}")
                 ->build()
         );
+    }
+
+    private function isValid()
+    {
+        $validator = Validator::make([
+            'metric' => $this->value('metric'),
+            'start-date' => $this->value('start-date'),
+            'end-date' => $this->value('end-date'),
+        ], $this->getRules());
+
+        return $validator->passes();
     }
 }
