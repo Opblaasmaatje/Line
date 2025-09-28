@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Http;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 
-class OldManTest extends ApplicationCase
+class WiseOldManTest extends ApplicationCase
 {
     #[Test]
     public function it_can_instantiate_from_container()

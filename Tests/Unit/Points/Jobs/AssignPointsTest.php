@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\App;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 
-class AssignPointsClass extends ApplicationCase
+class AssignPointsTest extends ApplicationCase
 {
     #[Test]
     public function it_calls_run_when_applying()
