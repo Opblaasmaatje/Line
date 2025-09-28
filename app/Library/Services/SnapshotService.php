@@ -4,9 +4,6 @@ namespace App\Library\Services;
 
 use App\Models\Account;
 use App\Wise\Client\Endpoints\Players\PlayerEndpoint;
-use App\Wise\Client\Exceptions\WiseOldManException;
-use App\Wise\Facade\WiseOldManPlayer;
-use Laracord\Console\Commands\BootCommand;
 
 //TODO create test
 class SnapshotService
@@ -15,7 +12,6 @@ class SnapshotService
         protected PlayerEndpoint $client
     ){
     }
-
 
     public function setSnapshot(Account $account): bool
     {
