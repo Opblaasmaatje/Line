@@ -47,7 +47,7 @@ class CompetitionEndpointTest extends ApplicationCase
         );
 
         Http::assertSent(
-            fn(Request $request) => $request->url() === 'https://api.wiseoldman.net/v2/competitions'
+            fn (Request $request) => $request->url() === 'https://api.wiseoldman.net/v2/competitions'
         );
 
         $this->assertEquals('581-255-315', $mapping->verificationCode);
