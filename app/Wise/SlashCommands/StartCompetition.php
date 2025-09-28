@@ -63,7 +63,7 @@ class StartCompetition extends SlashCommand
 
     public function handle($interaction)
     {
-        if (! $this->isValid($this->value())) {
+        if (! $this->isValid()) {
             return $interaction->respondWithMessage(
                 $this->message()
                     ->error()
