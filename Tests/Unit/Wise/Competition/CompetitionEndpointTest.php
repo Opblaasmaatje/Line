@@ -6,6 +6,7 @@ use App\Wise\Client\Endpoints\Competition\CompetitionEndpoint;
 use App\Wise\Client\Enums\Metric;
 use App\Wise\Client\Exceptions\CommunicationException;
 use Carbon\CarbonPeriod;
+use Illuminate\Http\Client\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
@@ -43,6 +44,10 @@ class CompetitionEndpointTest extends ApplicationCase
                 Carbon::now()->addMinute(),
                 Carbon::now()->addMinutes(2)
             ),
+        );
+
+        Http::assertSent(
+            fn(Request $request) => $request->url() === 'https://api.wiseoldman.net/v2/competitions'
         );
 
         $this->assertEquals('581-255-315', $mapping->verificationCode);
