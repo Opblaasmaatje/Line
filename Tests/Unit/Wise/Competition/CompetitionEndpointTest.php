@@ -6,7 +6,6 @@ use App\Wise\Client\Endpoints\Competition\CompetitionEndpoint;
 use App\Wise\Client\Enums\Metric;
 use App\Wise\Client\Exceptions\CommunicationException;
 use Carbon\CarbonPeriod;
-use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
