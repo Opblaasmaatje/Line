@@ -20,8 +20,8 @@ class PlayerClientTest extends ApplicationCase
     {
         parent::setUp();
 
-        Config::set('wise.old-man.group-code', 'group-code');
-        Config::set('wise.old-man.group-id', 111);
+        Config::set('wise-old-man.group-code', 'group-code');
+        Config::set('wise-old-man.group-id', 111);
     }
 
     #[Test]

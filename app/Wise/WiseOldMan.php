@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Wise\Client;
+namespace App\Wise;
 
 use App\Wise\Client\Exceptions\CommunicationException;
+use App\Wise\Client\GroupConfiguration;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
 
-class OldMan
+class WiseOldMan
 {
     public function __construct(
         protected PendingRequest $client,

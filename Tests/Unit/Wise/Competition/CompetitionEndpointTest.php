@@ -22,8 +22,8 @@ class CompetitionEndpointTest extends ApplicationCase
     {
         parent::setUp();
 
-        Config::set('wise.old-man.group-code', 'group-code');
-        Config::set('wise.old-man.group-id', 111);
+        Config::set('wise-old-man.group-code', 'group-code');
+        Config::set('wise-old-man.group-id', 111);
     }
 
     #[Test]
@@ -36,7 +36,7 @@ class CompetitionEndpointTest extends ApplicationCase
         /** @var CompetitionEndpoint $competitionClient */
         $competitionClient = App::make(CompetitionEndpoint::class);
 
-        $competitionClient->createCompetition(
+        $mapping = $competitionClient->createCompetition(
             competition: 'test',
             metric: Metric::RUNECRAFTING,
             period: CarbonPeriod::create(
@@ -45,11 +45,11 @@ class CompetitionEndpointTest extends ApplicationCase
             ),
         );
 
-        $this->assertTrue(true);
+        $this->assertEquals('581-255-315', $mapping->verificationCode);
     }
 
     #[Test]
-    public function it_throws_wiseold_man_exception_upon_failure()
+    public function it_throws_wise_old_man_exception_upon_failure()
     {
         Http::fake([
             'api.wiseoldman.net/*' => Http::response(null, 500),

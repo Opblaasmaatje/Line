@@ -5,6 +5,7 @@ namespace Tests\Unit\Points\Jobs;
 use App\Models\Point;
 use App\Points\Jobs\AssignPoints;
 use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Skills\Construction;
+use App\Wise\Client\Enums\Metric;
 use Database\Factories\AccountFactory;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
@@ -25,7 +26,7 @@ class AssignPointsClass extends ApplicationCase
         $sut = App::make(AssignPoints::class);
 
         $sut->apply($account, Collection::make([
-            new Construction('construction', 1, 1, 1, 1),
+            new Construction(Metric::CONSTRUCTION, 1, 1, 1, 1),
         ]));
 
         $this->assertDatabaseHas(Point::class, [

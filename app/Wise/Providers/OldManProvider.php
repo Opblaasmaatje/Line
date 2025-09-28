@@ -3,7 +3,7 @@
 namespace App\Wise\Providers;
 
 use App\Wise\Client\GroupConfiguration;
-use App\Wise\Client\OldMan;
+use App\Wise\WiseOldMan;
 use Brick\JsonMapper\JsonMapper;
 use Brick\JsonMapper\OnExtraProperties;
 use Illuminate\Support\Facades\Config;
@@ -18,15 +18,15 @@ class OldManProvider extends ServiceProvider
             return new JsonMapper(onExtraProperties: OnExtraProperties::IGNORE);
         });
 
-        $this->app->bind(OldMan::class, function () {
-            $client = Http::baseUrl(Config::get('wise.old-man.url'));
+        $this->app->bind(WiseOldMan::class, function () {
+            $client = Http::baseUrl(Config::get('wise-old-man.api-url'));
 
             $groupConfiguration = new GroupConfiguration(
-                Config::get('wise.old-man.group-code'),
-                Config::get('wise.old-man.group-id')
+                Config::get('wise-old-man.group-code'),
+                Config::get('wise-old-man.group-id')
             );
 
-            return new OldMan(
+            return new WiseOldMan(
                 $client,
                 $groupConfiguration
             );

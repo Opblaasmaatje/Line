@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Wise;
 
-use App\Wise\Client\OldMan;
+use App\Wise\WiseOldMan;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
@@ -16,12 +16,12 @@ class OldManTest extends ApplicationCase
     {
         Http::fake();
 
-        Config::set('wise.old-man.group-id', 2244);
-        Config::set('wise.old-man.group-code', 'this-is-the-group-code');
-        Config::set('wise.old-man.url', 'https://test-url.com/something-something');
+        Config::set('wise-old-man.group-id', 2244);
+        Config::set('wise-old-man.group-code', 'this-is-the-group-code');
+        Config::set('wise-old-man.api-url', 'https://test-url.com/something-something');
 
-        /** @var OldMan $sut */
-        $sut = App::make(OldMan::class);
+        /** @var WiseOldMan $sut */
+        $sut = App::make(WiseOldMan::class);
 
         $fakedCallUrlSegments = $sut->client()->get('get')->effectiveUri();
 

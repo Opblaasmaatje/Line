@@ -1,0 +1,9 @@
+<?php
+
+return [
+    'url' => env('WISE_URL', 'https://wiseoldman.net'),
+    'api-key' => env('WISE_OLD_MAN_API_KEY', ''),
+    'api-url' => env('WISE_OLD_MAN_API_URL', 'https://api.wiseoldman.net/v2/'),
+    'group-code' => env('WISE_OLD_MAN_GROUP_CODE', ''),
+    'group-id' => env('WISE_OLD_MAN_GROUP_ID', ''),
+];

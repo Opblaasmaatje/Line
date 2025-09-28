@@ -4,14 +4,14 @@ namespace App\Wise\Client\Endpoints\Competition;
 
 use App\Wise\Client\Endpoints\Competition\DTO\CompetitionWithParticipations;
 use App\Wise\Client\Enums\Metric;
-use App\Wise\Client\OldMan;
+use App\Wise\WiseOldMan;
 use Brick\JsonMapper\JsonMapper;
 use Carbon\CarbonPeriod;
 
 class CompetitionEndpoint
 {
     public function __construct(
-        protected OldMan $oldMan,
+        protected WiseOldMan $oldMan,
         protected JsonMapper $mapper,
     ) {
     }
