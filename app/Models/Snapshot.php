@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Wise\Client\Players\DTO\PlayerSnapshot;
+use App\Wise\Client\Endpoints\Players\DTO\PlayerSnapshot;
 use Brick\JsonMapper\JsonMapper;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\App;
  * @property int $id
  * @property array $raw_details
  * @property int $account_id
- *
  * @property-read Account $account
  * @property-read PlayerSnapshot $details
  */
@@ -36,9 +35,10 @@ class Snapshot extends Model
     public function details(): Attribute
     {
         return Attribute::get(function () {
-            $mapper = App::make(JsonMapper::class);
-
-            return $mapper->map($this->getRawOriginal('raw_details'), PlayerSnapshot::class);
+            return App::make(JsonMapper::class)->map(
+                json: $this->getRawOriginal('raw_details'),
+                className: PlayerSnapshot::class,
+            );
         });
     }
 }

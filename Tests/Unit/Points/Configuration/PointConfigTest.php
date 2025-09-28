@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\Points\Configuration;
 
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Boss;
-use App\Wise\Client\Players\DTO\Snapshot\Skills\Skill;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Boss;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Skills\Skill;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
 use PHPUnit\Framework\Attributes\Test;
@@ -14,7 +14,7 @@ class PointConfigTest extends ApplicationCase
     #[Test]
     public function bosses_key_is_set()
     {
-        $configuration = Config::get('points.bosses.' . Boss::class);
+        $configuration = Config::get('points.bosses.'.Boss::class);
 
         $this->assertIsArray($configuration);
 
@@ -25,7 +25,7 @@ class PointConfigTest extends ApplicationCase
     #[Test]
     public function skills_key_is_set()
     {
-        $configuration = Config::get('points.skills.' . Skill::class);
+        $configuration = Config::get('points.skills.'.Skill::class);
 
         $this->assertIsArray($configuration);
 

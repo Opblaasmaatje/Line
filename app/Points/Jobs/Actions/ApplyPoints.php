@@ -10,7 +10,8 @@ class ApplyPoints
         Account $account,
         string $metric,
         int $amount,
-    ): self{
+    ): self {
+
         $account->points()->updateOrCreate(
             [
                 'source' => $metric,

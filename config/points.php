@@ -1,71 +1,71 @@
 <?php
 
 use App\Helpers\OldSchoolRuneScape;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\AbyssalSire;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\AlchemicalHydra;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Amoxliatl;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Araxxor;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Artio;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Barrows;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Boss;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Bryophyta;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Callisto;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Calvarion;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Cerberus;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\ChambersOfXeric;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\ChambersOfXericChallengeMode;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\ChaosElemental;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\ChaosFanatic;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\CommanderZilyana;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\CorporealBeast;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\CrazyArchaeologist;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\DagannothPrime;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\DagannothRex;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\DagannothSupreme;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\DerangedArchaeologist;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\DukeSucellus;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\GeneralGraardor;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\GiantMole;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\GrotesqueGuardians;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Hespori;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\KalphiteQueen;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\KingBlackDragon;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Kraken;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Kreearra;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\KrilTsutsaroth;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Mimic;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Moons;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Nex;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Nightmare;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Obor;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\PhantomMuspah;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\PhosanisNightmare;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Sarachnis;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Scorpia;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Scurrius;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Skotizo;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\SolHeredit;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\TheatreOfBlood;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\TheatreOfBloodHardMode;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\TheCorruptedGauntlet;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\TheGauntlet;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\TheHueycoatl;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\TheLeviathan;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\ThermonuclearSmokeDevil;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\TheRoyalTitans;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\TheWhisperer;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\TombsOfAmascut;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\TombsOfAmascutExpert;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\TzkalZuk;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\TztokJad;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Vardorvis;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Venenatis;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Vetion;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Vorkath;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Yama;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Zulrah;
-use App\Wise\Client\Players\DTO\Snapshot\Skills\Overall;
-use App\Wise\Client\Players\DTO\Snapshot\Skills\Skill;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\AbyssalSire;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\AlchemicalHydra;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Amoxliatl;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Araxxor;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Artio;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Barrows;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Boss;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Bryophyta;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Callisto;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Calvarion;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Cerberus;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\ChambersOfXeric;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\ChambersOfXericChallengeMode;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\ChaosElemental;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\ChaosFanatic;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\CommanderZilyana;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\CorporealBeast;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\CrazyArchaeologist;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\DagannothPrime;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\DagannothRex;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\DagannothSupreme;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\DerangedArchaeologist;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\DukeSucellus;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\GeneralGraardor;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\GiantMole;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\GrotesqueGuardians;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Hespori;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\KalphiteQueen;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\KingBlackDragon;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Kraken;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Kreearra;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\KrilTsutsaroth;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Mimic;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Moons;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Nex;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Nightmare;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Obor;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\PhantomMuspah;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\PhosanisNightmare;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Sarachnis;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Scorpia;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Scurrius;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Skotizo;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\SolHeredit;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\TheatreOfBlood;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\TheatreOfBloodHardMode;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\TheCorruptedGauntlet;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\TheGauntlet;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\TheHueycoatl;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\TheLeviathan;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\ThermonuclearSmokeDevil;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\TheRoyalTitans;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\TheWhisperer;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\TombsOfAmascut;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\TombsOfAmascutExpert;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\TzkalZuk;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\TztokJad;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Vardorvis;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Venenatis;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Vetion;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Vorkath;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Yama;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Zulrah;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Skills\Overall;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Skills\Skill;
 
 return [
     'bosses' => [
@@ -127,7 +127,7 @@ return [
         ],
         CommanderZilyana::class => [
             'per' => 1,
-            'give' => 1,
+            'give' => 0.10,
         ],
         CorporealBeast::class => [
             'per' => 1,

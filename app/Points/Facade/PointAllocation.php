@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @method static void boss(Snapshot $snapshot)
  * @method static void skill(Snapshot $snapshot)
+ *
  * @see PointAllocator
  */
 class PointAllocation extends Facade

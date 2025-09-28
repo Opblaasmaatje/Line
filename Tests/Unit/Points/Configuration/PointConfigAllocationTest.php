@@ -4,14 +4,15 @@ namespace Tests\Unit\Points\Configuration;
 
 use App\Points\Configuration\PointAllocationConfiguration;
 use App\Points\Configuration\PointCalculator;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\AlchemicalHydra;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Araxxor;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Boss;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\CommanderZilyana;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\SolHeredit;
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\TheatreOfBlood;
-use App\Wise\Client\Players\DTO\Snapshot\Skills\Runecrafting;
-use App\Wise\Client\Players\DTO\Snapshot\Skills\Skill;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\AlchemicalHydra;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Araxxor;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Boss;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\CommanderZilyana;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\SolHeredit;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\TheatreOfBlood;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Skills\Runecrafting;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Skills\Skill;
+use App\Wise\Client\Enums\Metric;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 
@@ -21,7 +22,7 @@ class PointConfigAllocationTest extends ApplicationCase
     public function boss_point_allocation_can_map_to_point_calculator_and_give_points()
     {
         $boss = new CommanderZilyana(
-            metric: 'Commander Zilyana',
+            metric: Metric::COMMANDER_ZILYANA,
             kills: 20,
             rank: 2,
             ehb: 2,
@@ -38,7 +39,7 @@ class PointConfigAllocationTest extends ApplicationCase
             ],
         ]);
 
-        $pointCalculator = $config->getCalculator($boss);
+        $pointCalculator = $config->factory($boss);
 
         $this->assertSame(
             8,
@@ -50,7 +51,7 @@ class PointConfigAllocationTest extends ApplicationCase
     public function boss_point_allocation_can_use_the_default_and_give_an_correct_amount_of_points()
     {
         $boss = new AlchemicalHydra(
-            metric: 'Alchemical Hydra',
+            metric: Metric::ALCHEMICAL_HYDRA,
             kills: 100,
             rank: 2,
             ehb: 2,
@@ -63,7 +64,7 @@ class PointConfigAllocationTest extends ApplicationCase
             ],
         ]);
 
-        $pointCalculator = $config->getCalculator($boss);
+        $pointCalculator = $config->factory($boss);
 
         $this->assertSame(
             2000,
@@ -75,7 +76,7 @@ class PointConfigAllocationTest extends ApplicationCase
     public function it_accepts_float_values()
     {
         $boss = new TheatreOfBlood(
-            metric: 'Theatre of blood',
+            metric: Metric::THEATRE_OF_BLOOD,
             kills: 2,
             rank: 2,
             ehb: 2,
@@ -88,7 +89,7 @@ class PointConfigAllocationTest extends ApplicationCase
             ],
         ]);
 
-        $pointCalculator = $config->getCalculator($boss);
+        $pointCalculator = $config->factory($boss);
 
         $this->assertSame(
             1,
@@ -100,7 +101,7 @@ class PointConfigAllocationTest extends ApplicationCase
     public function it_does_not_break_when_not_having_anything_to_calculate_with()
     {
         $boss = new Araxxor(
-            metric: 'Araxxor',
+            metric: Metric::ARAXXOR,
             kills: 0,
             rank: 2,
             ehb: 2,
@@ -113,7 +114,7 @@ class PointConfigAllocationTest extends ApplicationCase
             ],
         ]);
 
-        $pointCalculator = $config->getCalculator($boss);
+        $pointCalculator = $config->factory($boss);
 
         $this->assertSame(
             0,
@@ -125,7 +126,7 @@ class PointConfigAllocationTest extends ApplicationCase
     public function it_defaults_when_it_has_a_key_but_no_values_are_set()
     {
         $boss = new SolHeredit(
-            metric: 'Araxxor',
+            metric: Metric::SOL_HEREDIT,
             kills: 2,
             rank: 2,
             ehb: 2,
@@ -139,7 +140,7 @@ class PointConfigAllocationTest extends ApplicationCase
             ],
         ]);
 
-        $pointCalculator = $config->getCalculator($boss);
+        $pointCalculator = $config->factory($boss);
 
         $this->assertSame(
             4,
@@ -151,7 +152,7 @@ class PointConfigAllocationTest extends ApplicationCase
     public function it_returns_point_calculator_for_skills()
     {
         $runecrafting = new Runecrafting(
-            metric: 'runecrafting',
+            metric: Metric::RUNECRAFTING,
             experience: 1,
             rank: 1,
             level: 1,
@@ -167,7 +168,7 @@ class PointConfigAllocationTest extends ApplicationCase
 
         $this->assertInstanceOf(
             PointCalculator::class,
-            $config->getCalculator($runecrafting)
+            $config->factory($runecrafting)
         );
     }
 }

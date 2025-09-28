@@ -10,7 +10,7 @@ class AllocationServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->app->bind(PointAllocationConfiguration::class, function (){
+        $this->app->bind(PointAllocationConfiguration::class, function () {
             return new PointAllocationConfiguration(
                 bossConfig: Config::get('points.bosses'),
                 skillConfig: Config::get('points.skills'),

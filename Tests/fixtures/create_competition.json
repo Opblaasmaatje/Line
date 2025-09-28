@@ -1,0 +1,45 @@
+{
+  "competition": {
+    "id": 94285,
+    "title": "test",
+    "metric": "attack",
+    "type": "classic",
+    "startsAt": "2025-06-18T09:44:01.133Z",
+    "endsAt": "2025-06-18T09:46:01.134Z",
+    "groupId": null,
+    "score": 0,
+    "visible": true,
+    "createdAt": "2025-06-18T09:43:01.361Z",
+    "updatedAt": "2025-06-18T09:43:01.361Z",
+    "participations": [
+      {
+        "playerId": 393285,
+        "competitionId": 94285,
+        "teamName": null,
+        "createdAt": "2025-06-18T09:43:01.361Z",
+        "updatedAt": "2025-06-18T09:43:01.361Z",
+        "player": {
+          "id": 393285,
+          "username": "sus guy",
+          "displayName": "sus guy",
+          "type": "regular",
+          "build": "main",
+          "status": "active",
+          "country": "NL",
+          "patron": false,
+          "exp": 323604512,
+          "ehp": 560.5002931862085,
+          "ehb": 590.54118,
+          "ttm": 381.2309328608771,
+          "tt200m": 11323.85766406131,
+          "registeredAt": "2021-10-06T15:06:56.502Z",
+          "updatedAt": "2025-06-18T09:40:52.832Z",
+          "lastChangedAt": "2025-06-16T21:15:50.554Z",
+          "lastImportedAt": "2023-06-03T10:53:22.044Z"
+        }
+      }
+    ],
+    "participantCount": 1
+  },
+  "verificationCode": "581-255-315"
+}

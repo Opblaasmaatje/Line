@@ -12,7 +12,7 @@ class PointAllocator
 {
     public function __construct(
         protected AssignPoints $job,
-    ){
+    ) {
     }
 
     public function boss(Snapshot $snapshot): void

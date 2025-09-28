@@ -45,7 +45,7 @@ class ApplyPointsTest extends ApplicationCase
     #[Test]
     public function it_overwrites_when_same_metric()
     {
-        {
+
             /** @var Account $account */
             $account = AccountFactory::new()->create([
                 'user_id' => 1,
@@ -76,7 +76,7 @@ class ApplyPointsTest extends ApplicationCase
                 'some-metric',
                 $point->source,
             );
-        }
+
     }
 
     #[Test]

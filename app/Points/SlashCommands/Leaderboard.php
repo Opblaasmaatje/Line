@@ -25,7 +25,7 @@ class Leaderboard extends SlashCommand
             ->with('points')
             ->whereHas('points')
             ->get()
-            ->sortBy(fn(Account $account) => $account->total_points)
+            ->sortBy(fn (Account $account) => $account->total_points)
             ->take(5)
             ->reverse()
             ->values();
@@ -34,7 +34,7 @@ class Leaderboard extends SlashCommand
             $this->message()
                 ->info()
                 ->title('The leaderboard')
-                ->content("Check out the leaderboard!")
+                ->content('Check out the leaderboard!')
                 ->imageUrl($this->buildImage($accounts))
                 ->build()
         );
@@ -48,17 +48,17 @@ class Leaderboard extends SlashCommand
         ]);
 
         $quickChart->setConfig([
-            "type" => "bar",
-            "data" => [
-                "labels" => $accounts
-                    ->map(fn(Account $account) => $account->username)
+            'type' => 'bar',
+            'data' => [
+                'labels' => $accounts
+                    ->map(fn (Account $account) => $account->username)
                     ->values()
                     ->toArray(),
-                "datasets" => [
+                'datasets' => [
                     [
-                        'label' => "Points",
-                        "data" => $accounts
-                            ->map(fn(Account $account) => $account->total_points)
+                        'label' => 'Points',
+                        'data' => $accounts
+                            ->map(fn (Account $account) => $account->total_points)
                             ->values()
                             ->toArray(),
 

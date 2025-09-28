@@ -2,9 +2,9 @@
 
 namespace App\Points\Configuration;
 
-use App\Wise\Client\Players\DTO\Snapshot\Bosses\Boss;
-use App\Wise\Client\Players\DTO\Snapshot\CanGivePoints;
-use App\Wise\Client\Players\DTO\Snapshot\Skills\Skill;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Boss;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\CanGivePoints;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Skills\Skill;
 use Illuminate\Support\Arr;
 use InvalidArgumentException;
 
@@ -19,12 +19,12 @@ class PointAllocationConfiguration
     ) {
         $this->bossConfig = Arr::where(
             array: $this->bossConfig,
-            callback: fn($entry) => Arr::has($entry, ['per', 'give'])
+            callback: fn ($entry) => Arr::has($entry, ['per', 'give'])
         );
 
         $this->skillConfig = Arr::where(
             array: $this->skillConfig,
-            callback: fn($entry) => Arr::has($entry, ['per', 'give'])
+            callback: fn ($entry) => Arr::has($entry, ['per', 'give'])
         );
     }
 
@@ -37,7 +37,7 @@ class PointAllocationConfiguration
         );
 
         return new PointCalculator(
-            per:  $bossConfig['per'],
+            per: $bossConfig['per'],
             give: (float) $bossConfig['give']
         );
     }
@@ -56,9 +56,9 @@ class PointAllocationConfiguration
         );
     }
 
-    public function getCalculator(CanGivePoints $canGivePoints): PointCalculator
+    public function factory(CanGivePoints $canGivePoints): PointCalculator
     {
-        return match(true){
+        return match (true) {
             $canGivePoints instanceof Boss => $this->forBoss($canGivePoints),
             $canGivePoints instanceof Skill => $this->forSkill($canGivePoints),
             default => throw new InvalidArgumentException(),

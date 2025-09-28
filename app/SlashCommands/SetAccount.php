@@ -2,14 +2,10 @@
 
 namespace App\SlashCommands;
 
-use App\Models\Account;
 use App\Models\User;
 use Discord\Parts\Interactions\Command\Option;
 use Laracord\Commands\SlashCommand;
 
-/**
- * TODO add button to overwrite discord name with submitted account
- */
 class SetAccount extends SlashCommand
 {
     protected $name = 'set-account';
@@ -25,13 +21,13 @@ class SetAccount extends SlashCommand
     public function options(): array
     {
         return [
-            (new option($this->discord()))
+            (new Option($this->discord()))
                 ->setName('User')
                 ->setDescription('Define which user')
                 ->setType(Option::USER)
                 ->setRequired(true),
 
-            (new option($this->discord()))
+            (new Option($this->discord()))
                 ->setName('Account RSN')
                 ->setDescription('Define RSN')
                 ->setType(Option::STRING)
@@ -41,24 +37,24 @@ class SetAccount extends SlashCommand
 
     public function handle($interaction)
     {
-        $user = User::query()->updateOrCreate([
-            'discord_id' => $this->value('user'),
+        /** @var User $user */
+        $user = User::query()
+            ->with('account')
+            ->updateOrCreate([
+                'discord_id' => $this->value('user'),
+            ]);
+
+        $user->account()->updateOrCreate([], values: [
+            'username' => $this->value('account-rsn'),
         ]);
 
-        Account::query()->updateOrCreate(
-            [
-                'user_id' => $user->getKey(),
-            ],
-            [
-                'username' => $this->value('account-rsn'),
-            ]
-        );
-
-        $interaction->respondWithMessage(
+        return $interaction->respondWithMessage(
             $this
-                ->message()
-                ->title('Example')
-                ->content('Hello world!')
+                ->message('Account information updated!')
+                ->success()
+                ->field('URL', $user->account->url)
+                ->field('RSN', $user->account->username)
+                ->content("{$interaction->user->username} had their account information updated!")
                 ->build()
         );
     }

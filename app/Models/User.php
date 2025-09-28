@@ -12,10 +12,8 @@ use Laravel\Sanctum\HasApiTokens;
 /**
  * @property string $discord_id
  * @property bool $is_admin
- *
  * @property Account $account
  * @property Collection $accounts
- *
  * @property string $highlight
  */
 class User extends Model
@@ -43,7 +41,7 @@ class User extends Model
 
     public function highlight(): Attribute
     {
-        return Attribute::get(function (){
+        return Attribute::get(function () {
            return "<@{$this->discord_id}>";
         });
     }

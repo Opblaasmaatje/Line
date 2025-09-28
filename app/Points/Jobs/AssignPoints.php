@@ -5,7 +5,7 @@ namespace App\Points\Jobs;
 use App\Models\Account;
 use App\Points\Configuration\PointAllocationConfiguration;
 use App\Points\Jobs\Actions\ApplyPoints;
-use App\Wise\Client\Players\DTO\Snapshot\CanGivePoints;
+use App\Wise\Client\Endpoints\Players\DTO\Snapshot\CanGivePoints;
 use Illuminate\Support\Collection;
 
 class AssignPoints
@@ -19,13 +19,13 @@ class AssignPoints
     public function apply(Account $account, Collection $collection): void
     {
         $collection->each(
-            fn(CanGivePoints $give) => $this->action->run(
+            fn (CanGivePoints $canGivePoints) => $this->action->run(
                 account: $account,
-                metric: $give->getMetric(),
+                metric: $canGivePoints->getMetric(),
                 amount: $this
                     ->config
-                    ->getCalculator($give)
-                    ->calculate($give->getAmount()),
+                    ->factory($canGivePoints)
+                    ->calculate($canGivePoints->getAmount()),
             )
         );
     }

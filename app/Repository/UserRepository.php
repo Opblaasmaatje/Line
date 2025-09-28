@@ -10,7 +10,7 @@ class UserRepository
     public function findAccount(string $discordId): Account
     {
         return Account::query()
-            ->whereHas('user', fn(Builder $query) => $query->where('discord_id', $discordId))
+            ->whereHas('user', fn (Builder $query) => $query->where('discord_id', $discordId))
             ->firstOrFail();
     }
 }

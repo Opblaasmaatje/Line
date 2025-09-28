@@ -1,14 +1,16 @@
 <?php
 
-use App\Points\Services\ApplyPointAllocation;
+use App\Cron\AddSnapshotToUser;
+use App\Cron\ApplyPointAllocation;
 use App\Points\SlashCommands\GetPoints;
 use App\Points\SlashCommands\GivePoints;
 use App\Points\SlashCommands\Leaderboard;
-use App\Wise\Services\AddSnapshotToUser;
+use App\SlashCommands\SetAccount;
+use App\Wise\SlashCommands\StartCompetition;
 use Discord\WebSockets\Intents;
 
 return [
-    'description' => env('DISCORD_BOT_DESCRIPTION', 'The Laracord Discord Bot.'),
+    'description' => env('DISCORD_BOT_DESCRIPTION', ''),
 
     'token' => env('DISCORD_TOKEN', ''),
 
@@ -29,9 +31,11 @@ return [
     ],
 
     'commands' => [
+        SetAccount::class,
         GetPoints::class,
         GivePoints::class,
         Leaderboard::class,
+        StartCompetition::class,
         Laracord\Commands\HelpCommand::class,
     ],
 
