@@ -20,7 +20,7 @@ class CreateTest extends ApplicationCase
     public function it_can_create_a_competition_with_model()
     {
         Http::fake([
-            '*' => Http::response($this->getFromFixture('create_competition.json'), 200)
+            '*' => Http::response($this->getFromFixture('create_competition.json'), 200),
         ]);
 
         Carbon::setTestNow();
@@ -41,7 +41,7 @@ class CreateTest extends ApplicationCase
             'metric' => Metric::ATTACK,
             'starts_at' => '2025-06-18 09:44:01',
             'ends_at' => '2025-06-18 09:46:01',
-            'verification_code' => '581-255-315'
+            'verification_code' => '581-255-315',
         ]);
     }
 

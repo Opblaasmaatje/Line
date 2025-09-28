@@ -3,7 +3,6 @@
 namespace Tests\Unit\Library\Services\SnapshotService;
 
 use App\Library\Services\SnapshotService;
-use App\Models\Account;
 use Database\Factories\AccountFactory;
 use Database\Factories\UserFactory;
 use Illuminate\Support\Facades\Http;
@@ -19,7 +18,7 @@ class SetSnapshot extends ApplicationCase
     public function it_can_create_a_snapshot()
     {
         Http::fake([
-            '*' => Http::response($this->getFromFixture('snapshot_details.json'))
+            '*' => Http::response($this->getFromFixture('snapshot_details.json')),
         ]);
 
         $account = AccountFactory::new()
