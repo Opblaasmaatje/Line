@@ -14,7 +14,6 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property int $id
  * @property string $username
  * @property string $user_id
- *
  * @property-read User $user
  * @property-read Collection<Point> $points
  * @property-read Snapshot $snapshot
@@ -47,14 +46,14 @@ class Account extends Model
     public function totalPoints(): Attribute
     {
         return Attribute::get(
-            fn() => $this->points->sum('amount')
+            fn () => $this->points->sum('amount')
         );
     }
 
     public function url(): Attribute
     {
         return Attribute::get(
-            fn() => WiseOldManUrl::forPlayer($this->username)
+            fn () => WiseOldManUrl::forPlayer($this->username)
         );
     }
 }

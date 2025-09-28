@@ -9,4 +9,3 @@ abstract class ApplicationCase extends BaseTestCase
 {
     use RefreshDatabase;
 }
-

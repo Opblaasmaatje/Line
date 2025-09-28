@@ -13,6 +13,6 @@ readonly class CompetitionObject
         public string $type,
         public string $startsAt,
         public string $endsAt,
-    ){
+    ) {
     }
 }

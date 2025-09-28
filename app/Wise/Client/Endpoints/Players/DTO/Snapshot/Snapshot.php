@@ -12,7 +12,7 @@ readonly class Snapshot implements Arrayable
         public string $createdAt,
         public string|null $importedAt,
         public Data $data,
-    ){
+    ) {
     }
 
     public function toArray(): array

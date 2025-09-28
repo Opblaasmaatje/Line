@@ -12,7 +12,7 @@ class ApplyPointAllocation extends Service
 
     public function handle(): void
     {
-        $this->console()->log("Starting point allocation");
+        $this->console()->log('Starting point allocation');
 
         Snapshot::query()
             ->with(['account'])

@@ -7,7 +7,7 @@ readonly class GroupConfiguration
     public function __construct(
         protected string $code,
         protected int $id,
-    ){
+    ) {
     }
 
     public function getCode(): string

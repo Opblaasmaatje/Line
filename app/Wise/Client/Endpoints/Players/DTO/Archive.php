@@ -13,7 +13,7 @@ readonly class Archive implements Arrayable
         public string $restoredUsername,
         public string $createdAt,
         public string $restoredAt,
-    ){
+    ) {
     }
 
     public function toArray(): array

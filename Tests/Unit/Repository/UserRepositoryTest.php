@@ -30,7 +30,7 @@ class UserRepositoryTest extends ApplicationCase
     #[Test]
     public function it_throws_when_user_is_not_found()
     {
-        $this->assertThrows(function (){
+        $this->assertThrows(function () {
             (new UserRepository)->findAccount('this-id-does-not-exist');
         }, ModelNotFoundException::class);
     }

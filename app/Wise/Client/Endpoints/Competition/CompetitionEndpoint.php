@@ -21,7 +21,7 @@ class CompetitionEndpoint
         Metric $metric,
         CarbonPeriod $period,
     ): CompetitionWithParticipations {
-        $data = $this->oldMan->client()->post("competitions", [
+        $data = $this->oldMan->client()->post('competitions', [
             'groupId' => $this->oldMan->getGroup()->getId(),
             'groupVerificationCode' => $this->oldMan->getGroup()->getCode(),
             'title' => $competition,

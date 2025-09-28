@@ -12,7 +12,6 @@ use Illuminate\Support\Str;
  * @property int $amount
  * @property string $source
  * @property int $account_id
- *
  * @property-read string $title
  * @property-read Account $account
  */
@@ -37,7 +36,7 @@ class Point extends Model
     public function title(): Attribute
     {
         return Attribute::get(
-            fn() => Str::of($this->source)->replace('_', ' ')->title()
+            fn () => Str::of($this->source)->replace('_', ' ')->title()
         );
     }
 }

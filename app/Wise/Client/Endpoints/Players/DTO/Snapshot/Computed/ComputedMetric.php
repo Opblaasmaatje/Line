@@ -4,13 +4,13 @@ namespace App\Wise\Client\Endpoints\Players\DTO\Snapshot\Computed;
 
 use Illuminate\Contracts\Support\Arrayable;
 
-readonly abstract class ComputedMetric implements Arrayable
+abstract readonly class ComputedMetric implements Arrayable
 {
     public function __construct(
         public string $metric,
         public float $value,
         public int $rank,
-    ){
+    ) {
     }
 
     public function toArray(): array

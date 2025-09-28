@@ -21,13 +21,13 @@ class SetAccount extends SlashCommand
     public function options(): array
     {
         return [
-            (new option($this->discord()))
+            (new Option($this->discord()))
                 ->setName('User')
                 ->setDescription('Define which user')
                 ->setType(Option::USER)
                 ->setRequired(true),
 
-            (new option($this->discord()))
+            (new Option($this->discord()))
                 ->setName('Account RSN')
                 ->setDescription('Define RSN')
                 ->setType(Option::STRING)

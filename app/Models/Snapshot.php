@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\App;
  * @property int $id
  * @property array $raw_details
  * @property int $account_id
- *
  * @property-read Account $account
  * @property-read PlayerSnapshot $details
  */

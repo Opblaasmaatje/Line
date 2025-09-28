@@ -18,7 +18,6 @@ use Illuminate\Support\Carbon;
  * @property string $verification_code
  * @property Carbon $created_at
  * @property Carbon $updated_at
- *
  * @property-read string $url
  */
 class Competition extends Model
@@ -40,7 +39,7 @@ class Competition extends Model
 
     public function url(): Attribute
     {
-        return Attribute::get(function (){
+        return Attribute::get(function () {
             return WiseOldManUrl::forCompetition($this->wise_old_man_id);
         });
     }

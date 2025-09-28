@@ -6,14 +6,14 @@ use App\Wise\Client\Endpoints\Players\DTO\Snapshot\CanGivePoints;
 use App\Wise\Client\Enums\Metric;
 use Illuminate\Contracts\Support\Arrayable;
 
-readonly abstract class Boss implements Arrayable, CanGivePoints
+abstract readonly class Boss implements Arrayable, CanGivePoints
 {
     public function __construct(
         public Metric $metric,
         public int $kills,
         public int $rank,
         public float $ehb,
-    ){
+    ) {
     }
 
     public function getAmount(): int

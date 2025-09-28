@@ -14,7 +14,7 @@ class PointConfigTest extends ApplicationCase
     #[Test]
     public function bosses_key_is_set()
     {
-        $configuration = Config::get('points.bosses.' . Boss::class);
+        $configuration = Config::get('points.bosses.'.Boss::class);
 
         $this->assertIsArray($configuration);
 
@@ -25,7 +25,7 @@ class PointConfigTest extends ApplicationCase
     #[Test]
     public function skills_key_is_set()
     {
-        $configuration = Config::get('points.skills.' . Skill::class);
+        $configuration = Config::get('points.skills.'.Skill::class);
 
         $this->assertIsArray($configuration);
 

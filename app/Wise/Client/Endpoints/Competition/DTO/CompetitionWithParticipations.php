@@ -12,7 +12,7 @@ class CompetitionWithParticipations
     public function __construct(
         public readonly CompetitionObject $competition,
         public readonly string $verificationCode,
-    ){
+    ) {
     }
 
     protected function createModel(): Competition

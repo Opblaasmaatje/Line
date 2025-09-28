@@ -6,7 +6,7 @@ use Exception;
 
 abstract class WiseOldManException extends Exception
 {
-    public function __construct(string|null $message = "")
+    public function __construct(string|null $message = '')
     {
         $this->message = $message;
 

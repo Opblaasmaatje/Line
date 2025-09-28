@@ -12,7 +12,7 @@ class CompetitionService
 {
     public function __construct(
         protected CompetitionEndpoint $client
-    ){
+    ) {
     }
 
     public function create(string $competition, Metric $metric, CarbonPeriod $period): Competition

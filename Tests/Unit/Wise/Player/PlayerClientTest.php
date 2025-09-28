@@ -36,7 +36,7 @@ class PlayerClientTest extends ApplicationCase
 
         $client->details('sus_guy');
 
-        Http::assertSent(function (Request $request){
+        Http::assertSent(function (Request $request) {
             return 'https://api.wiseoldman.net/v2/players/sus_guy' === $request->url();
         });
     }
@@ -51,7 +51,7 @@ class PlayerClientTest extends ApplicationCase
         /** @var PlayerEndpoint $client */
         $client = App::make(PlayerEndpoint::class);
 
-        $this->assertThrows(function () use ($client){
+        $this->assertThrows(function () use ($client) {
             $client->details('sus_guy');
         }, CommunicationException::class);
 

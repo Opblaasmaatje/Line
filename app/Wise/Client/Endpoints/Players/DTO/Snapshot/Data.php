@@ -10,7 +10,7 @@ readonly class Data
         public Skills $skills,
         public Bosses $bosses,
         public Computed $computed,
-    ){
+    ) {
     }
 
     protected function collect(Basket $basket): Collection

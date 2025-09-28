@@ -10,6 +10,6 @@ readonly class Computed extends Basket
     public function __construct(
         public EfficientHoursPlayed $ehp,
         public EfficientHoursBossed $ehb,
-    ){
+    ) {
     }
 }
