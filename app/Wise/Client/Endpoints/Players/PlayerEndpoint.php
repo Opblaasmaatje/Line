@@ -19,7 +19,7 @@ class PlayerEndpoint
 
     /**
      * @throws ConnectionException
-     * @throws WiseOldManException|JsonMapperException
+     * @throws JsonMapperException
      */
     public function details(string $username): PlayerSnapshot
     {

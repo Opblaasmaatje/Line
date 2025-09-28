@@ -2,9 +2,11 @@
 
 namespace App\Cron;
 
+use App\Library\Services\SnapshotService;
 use App\Models\Account;
 use App\Wise\Client\Exceptions\WiseOldManException;
 use App\Wise\Facade\WiseOldManPlayer;
+use Illuminate\Support\Facades\App;
 use Laracord\Services\Service;
 
 /**
@@ -18,28 +20,21 @@ class AddSnapshotToUser extends Service
     {
         $this->console()->warn('Updating information from Wise Old Man');
 
+        $service = App::make(SnapshotService::class);
+
         Account::query()
             ->with('snapshot')
             ->get()
-            ->each($this->guardAgainstFailures(...));
+            ->each(function (Account $account) use ($service) {
+                $success = $service->setSnapshot($account);
+
+                if ($success) {
+                    return;
+                }
+
+                $this->console()->error("Failed updating account for [{$account->username}]");
+            });
 
         $this->console()->newLine(2);
-    }
-
-    public function guardAgainstFailures(Account $account): void
-    {
-        try {
-            $account->snapshot->setAttribute(
-                key: 'raw_details',
-                value: WiseOldManPlayer::details($account->username)->toArray()
-            );
-
-            $account->snapshot->push();
-        } catch (WiseOldManException $exception) {
-
-            $className = get_class($this);
-
-            $this->console()->error($exception->getMessage() . " in [$className]");
-        }
     }
 }

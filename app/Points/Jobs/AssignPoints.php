@@ -19,13 +19,13 @@ class AssignPoints
     public function apply(Account $account, Collection $collection): void
     {
         $collection->each(
-            fn(CanGivePoints $give) => $this->action->run(
+            fn(CanGivePoints $canGivePoints) => $this->action->run(
                 account: $account,
-                metric: $give->getMetric(),
+                metric: $canGivePoints->getMetric(),
                 amount: $this
                     ->config
-                    ->getCalculator($give)
-                    ->calculate($give->getAmount()),
+                    ->getCalculator($canGivePoints)
+                    ->calculate($canGivePoints->getAmount()),
             )
         );
     }
