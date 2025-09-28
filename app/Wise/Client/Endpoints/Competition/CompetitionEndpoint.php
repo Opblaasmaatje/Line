@@ -4,7 +4,6 @@ namespace App\Wise\Client\Endpoints\Competition;
 
 use App\Wise\Client\Endpoints\Competition\DTO\CompetitionWithParticipations;
 use App\Wise\Client\Enums\Metric;
-use App\Wise\Client\GroupConfiguration;
 use App\Wise\Client\OldMan;
 use Brick\JsonMapper\JsonMapper;
 use Carbon\CarbonPeriod;
