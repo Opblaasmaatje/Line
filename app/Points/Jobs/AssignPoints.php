@@ -24,7 +24,7 @@ class AssignPoints
                 metric: $canGivePoints->getMetric(),
                 amount: $this
                     ->config
-                    ->getCalculator($canGivePoints)
+                    ->factory($canGivePoints)
                     ->calculate($canGivePoints->getAmount()),
             )
         );

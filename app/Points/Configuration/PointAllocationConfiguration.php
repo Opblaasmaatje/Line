@@ -56,7 +56,7 @@ class PointAllocationConfiguration
         );
     }
 
-    public function getCalculator(CanGivePoints $canGivePoints): PointCalculator
+    public function factory(CanGivePoints $canGivePoints): PointCalculator
     {
         return match (true) {
             $canGivePoints instanceof Boss => $this->forBoss($canGivePoints),

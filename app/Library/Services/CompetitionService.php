@@ -7,7 +7,6 @@ use App\Wise\Client\Endpoints\Competition\CompetitionEndpoint;
 use App\Wise\Client\Enums\Metric;
 use Carbon\CarbonPeriod;
 
-//TODO create test
 class CompetitionService
 {
     public function __construct(

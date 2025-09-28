@@ -5,7 +5,6 @@ namespace App\Library\Services;
 use App\Models\Account;
 use App\Wise\Client\Endpoints\Players\PlayerEndpoint;
 
-//TODO create test
 class SnapshotService
 {
     public function __construct(

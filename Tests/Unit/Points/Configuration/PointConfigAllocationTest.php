@@ -39,7 +39,7 @@ class PointConfigAllocationTest extends ApplicationCase
             ],
         ]);
 
-        $pointCalculator = $config->getCalculator($boss);
+        $pointCalculator = $config->factory($boss);
 
         $this->assertSame(
             8,
@@ -64,7 +64,7 @@ class PointConfigAllocationTest extends ApplicationCase
             ],
         ]);
 
-        $pointCalculator = $config->getCalculator($boss);
+        $pointCalculator = $config->factory($boss);
 
         $this->assertSame(
             2000,
@@ -89,7 +89,7 @@ class PointConfigAllocationTest extends ApplicationCase
             ],
         ]);
 
-        $pointCalculator = $config->getCalculator($boss);
+        $pointCalculator = $config->factory($boss);
 
         $this->assertSame(
             1,
@@ -114,7 +114,7 @@ class PointConfigAllocationTest extends ApplicationCase
             ],
         ]);
 
-        $pointCalculator = $config->getCalculator($boss);
+        $pointCalculator = $config->factory($boss);
 
         $this->assertSame(
             0,
@@ -140,7 +140,7 @@ class PointConfigAllocationTest extends ApplicationCase
             ],
         ]);
 
-        $pointCalculator = $config->getCalculator($boss);
+        $pointCalculator = $config->factory($boss);
 
         $this->assertSame(
             4,
@@ -168,7 +168,7 @@ class PointConfigAllocationTest extends ApplicationCase
 
         $this->assertInstanceOf(
             PointCalculator::class,
-            $config->getCalculator($runecrafting)
+            $config->factory($runecrafting)
         );
     }
 }
