@@ -13,7 +13,6 @@ class WiseOldMan
         protected PendingRequest $client,
         protected GroupConfiguration $group
     ) {
-        $this->client->throw(fn (Response $response) => throw new CommunicationException($response->json('message')));
     }
 
     public function client(): PendingRequest

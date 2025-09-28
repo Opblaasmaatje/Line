@@ -32,4 +32,12 @@ class CompetitionEndpoint
 
         return $this->mapper->map($data->body(), CompetitionWithParticipations::class);
     }
+
+    public function delete(string $id): bool
+    {
+        return $this->oldMan
+            ->client()
+            ->delete("competitions/{$id}", ['verificationCode' => $this->oldMan->getGroup()->getCode(),])
+            ->successful();
+    }
 }

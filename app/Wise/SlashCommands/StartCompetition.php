@@ -74,7 +74,7 @@ class StartCompetition extends SlashCommand
         }
 
         $competition = App::make(CompetitionService::class)->create(
-            competition: $this->value('title'),
+            title: $this->value('title'),
             metric: Metric::from($this->value('metric')),
             period: CarbonPeriod::create(
                 $this->value('start-date'),

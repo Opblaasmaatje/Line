@@ -14,14 +14,23 @@ class CompetitionService
     ) {
     }
 
-    public function create(string $competition, Metric $metric, CarbonPeriod $period): Competition
+    public function create(string $title, Metric $metric, CarbonPeriod $period): Competition
     {
         $response = $this->client->createCompetition(
-            $competition,
+            $title,
             $metric,
             $period
         );
 
         return $response->saveModel();
+    }
+
+    public function delete(Competition $competition): ?bool
+    {
+        if(!$this->client->delete($competition->wise_old_man_id)){
+            return false;
+        }
+
+        return $competition->delete();
     }
 }
