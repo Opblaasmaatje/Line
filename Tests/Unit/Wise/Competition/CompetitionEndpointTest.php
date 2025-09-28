@@ -70,21 +70,4 @@ class CompetitionEndpointTest extends ApplicationCase
             );
         }, CommunicationException::class);
     }
-
-    public function test_it_works()
-    {
-        /** @var CompetitionEndpoint $client */
-        $client = App::make(CompetitionEndpoint::class);
-
-        $this->markTestSkipped();
-
-        return;
-
-        $client->createCompetition(
-            competition: 'test',
-            metric: Metric::RUNECRAFTING,
-            startsAt: Carbon::now()->addMinute(),
-            endsAt: Carbon::now()->addMinutes(2)
-        );
-    }
 }

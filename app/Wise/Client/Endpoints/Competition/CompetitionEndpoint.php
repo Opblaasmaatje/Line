@@ -4,6 +4,7 @@ namespace App\Wise\Client\Endpoints\Competition;
 
 use App\Wise\Client\Endpoints\Competition\DTO\CompetitionWithParticipations;
 use App\Wise\Client\Enums\Metric;
+use App\Wise\Client\GroupConfiguration;
 use App\Wise\Client\OldMan;
 use Brick\JsonMapper\JsonMapper;
 use Carbon\CarbonPeriod;
@@ -12,7 +13,7 @@ class CompetitionEndpoint
 {
     public function __construct(
         protected OldMan $oldMan,
-        protected JsonMapper $mapper
+        protected JsonMapper $mapper,
     ) {
     }
 
@@ -20,7 +21,7 @@ class CompetitionEndpoint
         string $competition,
         Metric $metric,
         CarbonPeriod $period,
-    ) {
+    ): CompetitionWithParticipations {
         $data = $this->oldMan->client()->post("competitions", [
             'groupId' => $this->oldMan->getGroup()->getId(),
             'groupVerificationCode' => $this->oldMan->getGroup()->getCode(),

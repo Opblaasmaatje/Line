@@ -15,6 +15,8 @@ class WiseOldManUrl
 
     public static function forPlayer(string $username): string
     {
+        $username = rawurlencode($username);
+
         return Url::fromString(Config::get('wise.url'))
             ->withPath("/players/{$username}");
     }

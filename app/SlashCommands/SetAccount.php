@@ -37,21 +37,24 @@ class SetAccount extends SlashCommand
 
     public function handle($interaction)
     {
-        User::query()
+        /** @var User $user */
+        $user = User::query()
+            ->with('account')
             ->updateOrCreate([
                 'discord_id' => $this->value('user'),
-            ])
-            ->account()
-            ->updateOrCreate([], values: [
-                'username' => $this->value('account-rsn'),
             ]);
+
+        $user->account()->updateOrCreate([], values: [
+            'username' => $this->value('account-rsn'),
+        ]);
 
         return $interaction->respondWithMessage(
             $this
-                ->message()
+                ->message('Account information updated!')
                 ->success()
-                ->title('Account information updated!')
-                ->content("{$interaction->user->username} had their account information updated to [{$this->value('account-rsn')}]")
+                ->field('URL', $user->account->url)
+                ->field('RSN', $user->account->username)
+                ->content("{$interaction->user->username} had their account information updated!")
                 ->build()
         );
     }

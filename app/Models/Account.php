@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Wise\Helpers\WiseOldManUrl;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
@@ -18,12 +19,14 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property-read Collection<Point> $points
  * @property-read Snapshot $snapshot
  * @property-read int $total_points
+ * @property-read string $url
  */
 class Account extends Model
 {
     protected $fillable = [
         'username',
         'user_id',
+        'discord_id',
     ];
 
     public function user(): BelongsTo
@@ -45,6 +48,13 @@ class Account extends Model
     {
         return Attribute::get(
             fn() => $this->points->sum('amount')
+        );
+    }
+
+    public function url(): Attribute
+    {
+        return Attribute::get(
+            fn() => WiseOldManUrl::forPlayer($this->username)
         );
     }
 }

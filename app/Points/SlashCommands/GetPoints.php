@@ -41,7 +41,8 @@ class GetPoints extends SlashCommand
                 ->info()
                 ->title('These are you total points!')
                 ->field('Points', $account->total_points)
-                ->content("Check some of your highest point contributions!")
+                ->field('URL', $account->url)
+                ->content("Che  ck some of your highest point contributions!")
                 ->imageUrl($this->buildImage($account->points))
                 ->build()
         );

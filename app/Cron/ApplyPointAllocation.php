@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Points\Services;
+namespace App\Cron;
 
 use App\Models\Snapshot;
 use App\Points\Facade\PointAllocation;
