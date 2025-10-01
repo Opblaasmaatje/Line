@@ -2,7 +2,6 @@
 
 namespace Tests\Unit\Wise\Competition\DTO;
 
-use App\Models\Competition;
 use App\Wise\Client\Endpoints\Competition\DTO\CompetitionWithParticipations;
 use Brick\JsonMapper\JsonMapper;
 use PHPUnit\Framework\Attributes\Test;
