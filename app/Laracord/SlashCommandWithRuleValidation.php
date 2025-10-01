@@ -10,7 +10,6 @@ use React\Promise\PromiseInterface;
 
 abstract class SlashCommandWithRuleValidation extends SlashCommand
 {
-
     /**
      * @param Ping $interaction
      * @return mixed|PromiseInterface
