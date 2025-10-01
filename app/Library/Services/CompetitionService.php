@@ -27,7 +27,7 @@ class CompetitionService
 
     public function delete(Competition $competition): ?bool
     {
-        if(!$this->client->delete($competition->wise_old_man_id)){
+        if(! $this->client->delete($competition->wise_old_man_id)){
             return false;
         }
 

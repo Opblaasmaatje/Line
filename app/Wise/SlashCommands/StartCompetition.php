@@ -2,16 +2,21 @@
 
 namespace App\Wise\SlashCommands;
 
+use App\Laracord\SlashCommandWithRule;
 use App\Library\Services\CompetitionService;
+use App\Models\Competition;
 use App\Wise\Client\Enums\Metric;
 use Carbon\CarbonPeriod;
+use Discord\Interaction;
 use Discord\Parts\Interactions\Command\Option;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Validator as ValidatorFacade;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\Validator;
 use Laracord\Commands\SlashCommand;
+use React\Promise\PromiseInterface;
 
-class StartCompetition extends SlashCommand
+class StartCompetition extends SlashCommandWithRule
 {
     protected $name = 'start-competition';
 
@@ -52,27 +57,28 @@ class StartCompetition extends SlashCommand
         ];
     }
 
-    protected function getRules(): array
+    protected function getValidationRules(): array
     {
         return [
+            'title' => Rule::unique(Competition::class, 'title'),
             'metric' => Rule::enum(Metric::class),
             'start-date' => Rule::date(),
             'end-date' => Rule::date(),
         ];
     }
 
-    public function handle($interaction)
+    protected function getValidationAttributes(): array
     {
-        if (! $this->isValid()) {
-            return $interaction->respondWithMessage(
-                $this->message()
-                    ->error()
-                    ->title('Invalid payload!')
-                    ->content('Please check your competition details')
-                    ->build()
-            );
-        }
+        return [
+            'title' => $this->value('title'),
+            'metric' => $this->value('metric'),
+            'start-date' => $this->value('start-date'),
+            'end-date' => $this->value('end-date')
+        ];
+    }
 
+    protected function action($interaction): PromiseInterface
+    {
         $competition = App::make(CompetitionService::class)->create(
             title: $this->value('title'),
             metric: Metric::from($this->value('metric')),
@@ -90,16 +96,5 @@ class StartCompetition extends SlashCommand
                 ->content("View! {$competition->url}")
                 ->build()
         );
-    }
-
-    private function isValid()
-    {
-        $validator = Validator::make([
-            'metric' => $this->value('metric'),
-            'start-date' => $this->value('start-date'),
-            'end-date' => $this->value('end-date'),
-        ], $this->getRules());
-
-        return $validator->passes();
     }
 }

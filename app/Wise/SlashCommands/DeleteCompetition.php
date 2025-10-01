@@ -3,7 +3,13 @@
 namespace App\Wise\SlashCommands;
 
 use App\Laracord\Option;
+use App\Library\Services\CompetitionService;
+use App\Models\Competition;
+use Discord\Interaction;
+use Discord\Parts\Interactions\Command\Choice;
+use Illuminate\Support\Facades\App;
 use Laracord\Commands\SlashCommand;
+use Discord\Parts\Interactions\ApplicationCommandAutocomplete;
 
 class DeleteCompetition extends SlashCommand
 {
@@ -23,6 +29,7 @@ class DeleteCompetition extends SlashCommand
             Option::make($this->discord())
                 ->setName('competition')
                 ->setType(Option::STRING)
+                ->setAutoComplete(true)
                 ->setDescription('Define the competition to delete')
                 ->setRequired(true),
         ];
@@ -30,8 +37,38 @@ class DeleteCompetition extends SlashCommand
 
     public function handle($interaction)
     {
-        dd($this->value('competition'));;
+        /** @var Competition $competition */
+        $success = App::make(CompetitionService::class)->delete(
+            $competition = Competition::query()->where('title', $this->value('competition'))->firstOrFail()
+        );
 
-        // TODO: Implement handle() method.
+        if(! $success ){
+            return $interaction->respondWithMessage(
+                $this
+                    ->message()
+                    ->error()
+                    ->title('Could not delete competition!')
+                    ->field("Competition Title", $competition->title)
+                    ->build()
+            );
+        }
+
+        return $interaction->respondWithMessage(
+            $this
+                ->message()
+                ->success()
+                ->title('Competition deleted!')
+                ->field("Competition Title", $competition->title)
+                ->build(),
+        );
+    }
+
+    public function autocomplete(): array
+    {
+        return [
+            'competition' => fn (ApplicationCommandAutocomplete $autocomplete, mixed $value) => $value
+                ? Competition::query()->where('title', 'like', "%{$value}%")->take(25)->pluck('title')->toArray()
+                : Competition::query()->take(25)->pluck('title')->toArray()
+        ];
     }
 }

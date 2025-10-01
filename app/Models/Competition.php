@@ -4,9 +4,12 @@ namespace App\Models;
 
 use App\Wise\Client\Enums\Metric;
 use App\Wise\Helpers\WiseOldManUrl;
+use Discord\Discord;
+use Discord\Parts\Interactions\Command\Choice;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\App;
 
 /**
  * @property int $id
