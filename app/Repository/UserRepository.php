@@ -19,6 +19,8 @@ class UserRepository
     {
         return User::query()
             ->with('account')
-            ->updateOrCreate(['discord_id' => $discordId]);
+            ->updateOrCreate([
+                'discord_id' => $discordId,
+            ]);
     }
 }

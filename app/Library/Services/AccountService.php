@@ -8,10 +8,9 @@ use App\Wise\Client\Endpoints\Players\PlayerEndpoint;
 
 class AccountService
 {
-
     public function __construct(
         protected PlayerEndpoint $playerClientEndpoint,
-    ){
+    ) {
     }
 
     public function assignAccount(User $user, string $username): Account|false

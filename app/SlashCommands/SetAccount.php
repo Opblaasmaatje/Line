@@ -3,9 +3,7 @@
 namespace App\SlashCommands;
 
 use App\Library\Services\AccountService;
-use App\Library\Services\UserService;
 use App\Models\Account;
-use App\Models\User;
 use App\Repository\UserRepository;
 use Discord\Parts\Interactions\Command\Option;
 use Illuminate\Support\Facades\App;
@@ -52,8 +50,7 @@ class SetAccount extends SlashCommand
             $this->value('account-rsn'),
         );
 
-
-        if(! $account){
+        if (! $account) {
             return $interaction->respondWithMessage(
                 $this
                     ->message('Failure assigning account')
