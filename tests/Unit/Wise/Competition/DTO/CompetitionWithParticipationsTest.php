@@ -14,13 +14,11 @@ class CompetitionWithParticipationsTest extends ApplicationCase
     use HasFixtureAccess;
 
     #[Test]
-    public function it_create_a_model()
+    public function it_can_create_a_model()
     {
         $subject = $this->mapper()->map($this->getFromFixture('create_competition.json'), CompetitionWithParticipations::class);
 
         $model = $subject->saveModel();
-
-
 
         $this->assertDatabaseHas(Competition::class, $model->toArray());
     }
