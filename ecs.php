@@ -11,7 +11,7 @@ use Symplify\EasyCodingStandard\Config\ECSConfig;
 
 return ECSConfig::configure()
     ->withPaths([
-        __DIR__ . '/Tests',
+        __DIR__ . '/tests',
         __DIR__ . '/app',
         __DIR__ . '/bootstrap',
         __DIR__ . '/config',
