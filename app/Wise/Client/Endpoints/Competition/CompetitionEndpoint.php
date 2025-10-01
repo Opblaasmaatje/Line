@@ -37,7 +37,9 @@ class CompetitionEndpoint
     {
         return $this->oldMan
             ->client()
-            ->delete("competitions/{$id}", ['verificationCode' => $this->oldMan->getGroup()->getCode(),])
+            ->delete("competitions/{$id}", [
+                'verificationCode' => $this->oldMan->getGroup()->getCode(),
+            ])
             ->successful();
     }
 }

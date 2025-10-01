@@ -5,11 +5,9 @@ namespace App\Wise\SlashCommands;
 use App\Laracord\Option;
 use App\Library\Services\CompetitionService;
 use App\Models\Competition;
-use Discord\Interaction;
-use Discord\Parts\Interactions\Command\Choice;
+use Discord\Parts\Interactions\ApplicationCommandAutocomplete;
 use Illuminate\Support\Facades\App;
 use Laracord\Commands\SlashCommand;
-use Discord\Parts\Interactions\ApplicationCommandAutocomplete;
 
 class DeleteCompetition extends SlashCommand
 {
@@ -42,13 +40,13 @@ class DeleteCompetition extends SlashCommand
             $competition = Competition::query()->where('title', $this->value('competition'))->firstOrFail()
         );
 
-        if(! $success ){
+        if (! $success) {
             return $interaction->respondWithMessage(
                 $this
                     ->message()
                     ->error()
                     ->title('Could not delete competition!')
-                    ->field("Competition Title", $competition->title)
+                    ->field('Competition Title', $competition->title)
                     ->build()
             );
         }
@@ -58,7 +56,7 @@ class DeleteCompetition extends SlashCommand
                 ->message()
                 ->success()
                 ->title('Competition deleted!')
-                ->field("Competition Title", $competition->title)
+                ->field('Competition Title', $competition->title)
                 ->build(),
         );
     }
@@ -68,7 +66,7 @@ class DeleteCompetition extends SlashCommand
         return [
             'competition' => fn (ApplicationCommandAutocomplete $autocomplete, mixed $value) => $value
                 ? Competition::query()->where('title', 'like', "%{$value}%")->take(25)->pluck('title')->toArray()
-                : Competition::query()->take(25)->pluck('title')->toArray()
+                : Competition::query()->take(25)->pluck('title')->toArray(),
         ];
     }
 }

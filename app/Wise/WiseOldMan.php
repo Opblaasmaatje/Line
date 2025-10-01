@@ -2,10 +2,8 @@
 
 namespace App\Wise;
 
-use App\Wise\Client\Exceptions\CommunicationException;
 use App\Wise\Client\GroupConfiguration;
 use Illuminate\Http\Client\PendingRequest;
-use Illuminate\Http\Client\Response;
 
 class WiseOldMan
 {

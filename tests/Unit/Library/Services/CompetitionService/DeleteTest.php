@@ -10,7 +10,6 @@ use Tests\ApplicationCase;
 
 class DeleteTest extends ApplicationCase
 {
-
     #[Test]
     public function it_can_delete_a_competition()
     {

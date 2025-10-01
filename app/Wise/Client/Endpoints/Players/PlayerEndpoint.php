@@ -25,7 +25,7 @@ class PlayerEndpoint
     {
         $response = $this->oldMan->client()->get("players/$username");
 
-        if($response->failed()){
+        if ($response->failed()) {
             throw new CommunicationException($response->body());
         }
 

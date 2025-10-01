@@ -8,12 +8,11 @@ use Illuminate\Validation\Validator;
 use Laracord\Commands\SlashCommand;
 use React\Promise\PromiseInterface;
 
-
 abstract class SlashCommandWithRule extends SlashCommand
 {
     final public function handle($interaction)
     {
-        if($this->validator()->fails()){
+        if ($this->validator()->fails()) {
             return $interaction->respondWithMessage(
                 $this->message()
                     ->error()
@@ -40,5 +39,4 @@ abstract class SlashCommandWithRule extends SlashCommand
             $this->getValidationRules()
         );
     }
-
 }

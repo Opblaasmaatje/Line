@@ -4,7 +4,6 @@ namespace Tests\Unit\Wise\Competition;
 
 use App\Wise\Client\Endpoints\Competition\CompetitionEndpoint;
 use App\Wise\Client\Enums\Metric;
-use App\Wise\Client\Exceptions\CommunicationException;
 use Carbon\CarbonPeriod;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Carbon;

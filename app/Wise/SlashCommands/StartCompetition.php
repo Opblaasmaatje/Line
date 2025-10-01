@@ -7,13 +7,9 @@ use App\Library\Services\CompetitionService;
 use App\Models\Competition;
 use App\Wise\Client\Enums\Metric;
 use Carbon\CarbonPeriod;
-use Discord\Interaction;
 use Discord\Parts\Interactions\Command\Option;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Validator as ValidatorFacade;
 use Illuminate\Validation\Rule;
-use Illuminate\Validation\Validator;
-use Laracord\Commands\SlashCommand;
 use React\Promise\PromiseInterface;
 
 class StartCompetition extends SlashCommandWithRule
@@ -73,7 +69,7 @@ class StartCompetition extends SlashCommandWithRule
             'title' => $this->value('title'),
             'metric' => $this->value('metric'),
             'start-date' => $this->value('start-date'),
-            'end-date' => $this->value('end-date')
+            'end-date' => $this->value('end-date'),
         ];
     }
 
