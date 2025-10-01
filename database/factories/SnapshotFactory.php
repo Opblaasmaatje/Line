@@ -25,6 +25,6 @@ class SnapshotFactory extends Factory
 
     protected function getFromFixture(string $filename): false|string
     {
-        return file_get_contents(base_path("Tests/fixtures/$filename"));
+        return file_get_contents(base_path("tests/fixtures/$filename"));
     }
 }
