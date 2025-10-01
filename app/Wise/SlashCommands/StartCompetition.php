@@ -2,7 +2,7 @@
 
 namespace App\Wise\SlashCommands;
 
-use App\Laracord\SlashCommandWithRule;
+use App\Laracord\SlashCommandWithRuleValidation;
 use App\Library\Services\CompetitionService;
 use App\Models\Competition;
 use App\Wise\Client\Enums\Metric;
@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Validation\Rule;
 use React\Promise\PromiseInterface;
 
-class StartCompetition extends SlashCommandWithRule
+class StartCompetition extends SlashCommandWithRuleValidation
 {
     protected $name = 'start-competition';
 

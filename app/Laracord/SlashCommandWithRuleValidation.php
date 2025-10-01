@@ -8,8 +8,13 @@ use Illuminate\Validation\Validator;
 use Laracord\Commands\SlashCommand;
 use React\Promise\PromiseInterface;
 
-abstract class SlashCommandWithRule extends SlashCommand
+abstract class SlashCommandWithRuleValidation extends SlashCommand
 {
+
+    /**
+     * @param Ping $interaction
+     * @return mixed|PromiseInterface
+     */
     final public function handle($interaction)
     {
         if ($this->validator()->fails()) {
