@@ -3,6 +3,7 @@
 namespace App\Wise\Client\Endpoints\Players;
 
 use App\Wise\Client\Endpoints\Players\DTO\PlayerSnapshot;
+use App\Wise\Client\Exceptions\CommunicationException;
 use App\Wise\WiseOldMan;
 use Brick\JsonMapper\JsonMapper;
 use Brick\JsonMapper\JsonMapperException;
@@ -22,8 +23,12 @@ class PlayerEndpoint
      */
     public function details(string $username): PlayerSnapshot
     {
-        $data = $this->oldMan->client()->get("players/$username");
+        $response = $this->oldMan->client()->get("players/$username");
 
-        return $this->mapper->map($data->body(), PlayerSnapshot::class);
+        if ($response->failed()) {
+            throw new CommunicationException($response->body());
+        }
+
+        return $this->mapper->map($response->body(), PlayerSnapshot::class);
     }
 }

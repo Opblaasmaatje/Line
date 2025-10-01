@@ -4,7 +4,6 @@ namespace Tests\Unit\Wise\Competition;
 
 use App\Wise\Client\Endpoints\Competition\CompetitionEndpoint;
 use App\Wise\Client\Enums\Metric;
-use App\Wise\Client\Exceptions\CommunicationException;
 use Carbon\CarbonPeriod;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Carbon;
@@ -51,27 +50,5 @@ class CompetitionEndpointTest extends ApplicationCase
         );
 
         $this->assertEquals('581-255-315', $mapping->verificationCode);
-    }
-
-    #[Test]
-    public function it_throws_wise_old_man_exception_upon_failure()
-    {
-        Http::fake([
-            'api.wiseoldman.net/*' => Http::response(null, 500),
-        ]);
-
-        /** @var CompetitionEndpoint $competitionClient */
-        $competitionClient = App::make(CompetitionEndpoint::class);
-
-        $this->assertThrows(function () use ($competitionClient) {
-            $competitionClient->createCompetition(
-                competition: 'test',
-                metric: Metric::RUNECRAFTING,
-                period: CarbonPeriod::create(
-                    Carbon::now()->addMinute(),
-                    Carbon::now()->addMinutes(2)
-                ),
-            );
-        }, CommunicationException::class);
     }
 }

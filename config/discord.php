@@ -6,6 +6,7 @@ use App\Points\SlashCommands\GetPoints;
 use App\Points\SlashCommands\GivePoints;
 use App\Points\SlashCommands\Leaderboard;
 use App\SlashCommands\SetAccount;
+use App\Wise\SlashCommands\DeleteCompetition;
 use App\Wise\SlashCommands\StartCompetition;
 use Discord\WebSockets\Intents;
 
@@ -36,6 +37,7 @@ return [
         GivePoints::class,
         Leaderboard::class,
         StartCompetition::class,
+        DeleteCompetition::class,
         Laracord\Commands\HelpCommand::class,
     ],
 
