@@ -20,7 +20,7 @@ class CompetitionWithParticipationsTest extends ApplicationCase
 
         $model = $subject->saveModel();
 
-        $this->assertDatabaseHas(Competition::class, $model->toArray());
+        $this->assertModelExists($model);
     }
 
     protected function mapper(): JsonMapper
