@@ -31,4 +31,15 @@ class PlayerEndpoint
 
         return $this->mapper->map($response->body(), PlayerSnapshot::class);
     }
+
+    public function update(string $username): bool
+    {
+        $response = $this->oldMan
+            ->client()
+            ->post("players/$username", []);
+
+        dd($response);
+
+        return $response->successful();
+    }
 }
