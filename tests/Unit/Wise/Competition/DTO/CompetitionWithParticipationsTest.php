@@ -18,9 +18,11 @@ class CompetitionWithParticipationsTest extends ApplicationCase
     {
         $subject = $this->mapper()->map($this->getFromFixture('create_competition.json'), CompetitionWithParticipations::class);
 
-        $subject->saveModel();
+        $model = $subject->saveModel();
 
-        $this->assertDatabaseHas(Competition::class, $subject->saveModel()->toArray());
+
+
+        $this->assertDatabaseHas(Competition::class, $model->toArray());
     }
 
     protected function mapper(): JsonMapper
