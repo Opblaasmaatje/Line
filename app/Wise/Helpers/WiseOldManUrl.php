@@ -5,7 +5,6 @@ namespace App\Wise\Helpers;
 use Illuminate\Support\Facades\Config;
 use Spatie\Url\Url;
 
-// TODO create tests.
 class WiseOldManUrl
 {
     public static function forCompetition(string $id): string
