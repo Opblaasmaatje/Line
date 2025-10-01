@@ -2,8 +2,13 @@
 
 namespace App\SlashCommands;
 
+use App\Library\Services\AccountService;
+use App\Library\Services\UserService;
+use App\Models\Account;
 use App\Models\User;
+use App\Repository\UserRepository;
 use Discord\Parts\Interactions\Command\Option;
+use Illuminate\Support\Facades\App;
 use Laracord\Commands\SlashCommand;
 
 class SetAccount extends SlashCommand
@@ -37,16 +42,26 @@ class SetAccount extends SlashCommand
 
     public function handle($interaction)
     {
-        /** @var User $user */
-        $user = User::query()
-            ->with('account')
-            ->updateOrCreate([
-                'discord_id' => $this->value('user'),
-            ]);
+        $user = $this->userRepository()->setUserByDiscordId(
+            $this->value('user')
+        );
 
-        $user->account()->updateOrCreate([], values: [
-            'username' => $this->value('account-rsn'),
-        ]);
+        /** @var Account|false $account */
+        $account = $this->accountService()->assignAccount(
+            $user,
+            $this->value('account-rsn'),
+        );
+
+
+        if(! $account){
+            return $interaction->respondWithMessage(
+                $this
+                    ->message('Failure assigning account')
+                    ->error()
+                    ->content("Could not assign account with name [{$this->value('account-rsn')}]")
+                    ->build()
+            );
+        }
 
         return $interaction->respondWithMessage(
             $this
@@ -57,5 +72,15 @@ class SetAccount extends SlashCommand
                 ->content("{$interaction->user->username} had their account information updated!")
                 ->build()
         );
+    }
+
+    protected function userRepository(): UserRepository
+    {
+        return App::make(UserRepository::class);
+    }
+
+    protected function accountService(): AccountService
+    {
+        return App::make(AccountService::class);
     }
 }
