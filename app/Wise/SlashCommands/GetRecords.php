@@ -54,7 +54,7 @@ class GetRecords extends SlashCommandWithAccount
                 ->success()
                 ->fields(
                     $records->flatMap(fn (Record $record) => [
-                        $record->period->toHeadline() => "$record->value XP",
+                        $record->period->toHeadline() => "$record->value",
                     ]),
                     false
                 )
@@ -80,7 +80,9 @@ class GetRecords extends SlashCommandWithAccount
 
             //TODO this search doesnt work yet
                 ? Metric::search($value)
+                    ->pluck('value')
                     ->take(25)
+                    ->values()
                     ->toArray()
 
                 : collect(Metric::cases())
