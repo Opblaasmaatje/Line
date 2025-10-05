@@ -37,7 +37,7 @@ class GetPoints extends SlashCommand
         $account = User::repository()
             ->findAccount($this->option('user.value'));
 
-        if(!$account) {
+        if (! $account) {
             return $interaction->respondWithMessage(
                 $this->message()
                     ->warning()
@@ -46,7 +46,6 @@ class GetPoints extends SlashCommand
                     ->build()
             );
         }
-
 
         return $interaction->respondWithMessage(
             $this->message()
