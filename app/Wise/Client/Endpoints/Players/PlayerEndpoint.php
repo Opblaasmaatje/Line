@@ -2,12 +2,14 @@
 
 namespace App\Wise\Client\Endpoints\Players;
 
+use App\Wise\Client\Endpoints\Players\DTO\Player;
 use App\Wise\Client\Endpoints\Players\DTO\PlayerSnapshot;
 use App\Wise\Client\Exceptions\CommunicationException;
 use App\Wise\WiseOldMan;
 use Brick\JsonMapper\JsonMapper;
 use Brick\JsonMapper\JsonMapperException;
 use Illuminate\Http\Client\ConnectionException;
+use Illuminate\Support\Collection;
 
 class PlayerEndpoint
 {
@@ -21,25 +23,37 @@ class PlayerEndpoint
      * @throws ConnectionException
      * @throws JsonMapperException
      */
-    public function details(string $username): PlayerSnapshot
+    public function details(string $username): PlayerSnapshot|false
     {
         $response = $this->oldMan->client()->get("players/$username");
 
         if ($response->failed()) {
-            throw new CommunicationException($response->body());
+            return false;
         }
 
         return $this->mapper->map($response->body(), PlayerSnapshot::class);
     }
 
-    public function update(string $username): bool
+    /**
+     * @param string $username
+     * @param int $limit
+     * @return Collection<Player>|false
+     */
+    public function search(string $username, int $limit = 25): Collection|false
     {
-        $response = $this->oldMan
-            ->client()
-            ->post("players/$username", []);
+        $response = $this->oldMan->client()->get('/players/search', [
+            'username' => $username,
+            'limit' => $limit
+        ]);
 
-        dd($response);
+        if ($response->failed()) {
+            return false;
+        }
 
-        return $response->successful();
+        return Collection::make(
+            json_decode($response->body(), true)
+        )->map(
+            fn(array $value) => $this->mapper->map(json_encode($value), Player::class)
+        );
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Laracord;
 
 use Discord\Parts\Interactions\Ping;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Validator as ValidatorFacade;
 use Illuminate\Validation\Validator;
 use Laracord\Commands\SlashCommand;
@@ -10,6 +11,12 @@ use React\Promise\PromiseInterface;
 
 abstract class SlashCommandWithRuleValidation extends SlashCommand
 {
+    abstract protected function action(Ping $interaction): PromiseInterface;
+
+    abstract protected function getValidationRules(): array;
+
+    abstract protected function getValidationAttributes(): array;
+
     /**
      * @param Ping $interaction
      * @return mixed|PromiseInterface
@@ -29,12 +36,6 @@ abstract class SlashCommandWithRuleValidation extends SlashCommand
 
         return $this->action($interaction);
     }
-
-    abstract protected function action(Ping $interaction): PromiseInterface;
-
-    abstract protected function getValidationRules(): array;
-
-    abstract protected function getValidationAttributes(): array;
 
     final protected function validator(): Validator
     {

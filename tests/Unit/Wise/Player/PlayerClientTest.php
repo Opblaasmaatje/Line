@@ -42,7 +42,7 @@ class PlayerClientTest extends ApplicationCase
     }
 
     #[Test]
-    public function it_throws_an_exception_when_the_player_id_is_missing()
+    public function it_returns_false_when_user_is_not_found()
     {
         Http::fake([
             'api.wiseoldman.net/*' => Http::response(null, 404),
@@ -51,9 +51,6 @@ class PlayerClientTest extends ApplicationCase
         /** @var PlayerEndpoint $client */
         $client = App::make(PlayerEndpoint::class);
 
-        $this->assertThrows(function () use ($client) {
-            $client->details('sus_guy');
-        }, CommunicationException::class);
-
+        $this->assertFalse($client->details('sus_guy'));
     }
 }

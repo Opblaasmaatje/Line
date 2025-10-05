@@ -5,6 +5,7 @@ namespace App\Library\Services;
 use App\Models\Account;
 use App\Models\User;
 use App\Wise\Client\Endpoints\Players\PlayerEndpoint;
+use Illuminate\Support\Collection;
 
 class AccountService
 {
@@ -15,7 +16,7 @@ class AccountService
 
     public function assignAccount(User $user, string $username): Account|false
     {
-        $success = $this->playerClientEndpoint->update($username);
+        $success = $this->playerClientEndpoint->details($username);
 
         if (! $success) {
             return false;
@@ -24,5 +25,10 @@ class AccountService
         return $user->account()->updateOrCreate([], values: [
             'username' => $username,
         ]);
+    }
+
+    public function search(string $username): false|Collection
+    {
+        return $this->playerClientEndpoint->search($username);
     }
 }

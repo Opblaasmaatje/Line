@@ -5,6 +5,7 @@ namespace App\SlashCommands;
 use App\Library\Services\AccountService;
 use App\Models\Account;
 use App\Repository\UserRepository;
+use App\Wise\Helpers\WiseOldManUrl;
 use Discord\Parts\Interactions\Command\Option;
 use Illuminate\Support\Facades\App;
 use Laracord\Commands\SlashCommand;
@@ -50,11 +51,12 @@ class SetAccount extends SlashCommand
             $this->value('account-rsn'),
         );
 
-        if (! $account) {
+        if (!$account) {
             return $interaction->respondWithMessage(
                 $this
                     ->message('Failure assigning account')
                     ->error()
+                    ->field('URL', WiseOldManUrl::forPlayer($this->value('account-rsn')))
                     ->content("Could not assign account with name [{$this->value('account-rsn')}]")
                     ->build()
             );
@@ -64,8 +66,8 @@ class SetAccount extends SlashCommand
             $this
                 ->message('Account information updated!')
                 ->success()
-                ->field('URL', $user->account->url)
-                ->field('RSN', $user->account->username)
+                ->field('URL', $account->url)
+                ->field('RSN', $account->username)
                 ->content("{$interaction->user->username} had their account information updated!")
                 ->build()
         );
