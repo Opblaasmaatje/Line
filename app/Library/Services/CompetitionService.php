@@ -31,7 +31,7 @@ class CompetitionService
     {
         $model = $this->repository->byTitle($competition);
 
-        if(is_null($model)){
+        if (is_null($model)) {
             return false;
         }
 
