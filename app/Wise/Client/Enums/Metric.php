@@ -4,7 +4,6 @@ namespace App\Wise\Client\Enums;
 
 use App\Helpers\Enums\AsHeadline;
 use App\Helpers\Enums\Searchable;
-use Illuminate\Support\Str;
 
 enum Metric: string
 {
