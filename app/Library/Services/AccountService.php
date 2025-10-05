@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Wise\Client\Endpoints\Players\PlayerEndpoint;
 use App\Wise\Client\Enums\Metric;
 use App\Wise\Client\Enums\Period;
+use Brick\JsonMapper\JsonMapperException;
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Collection;
 
 class AccountService
@@ -16,6 +18,13 @@ class AccountService
     ) {
     }
 
+    /**
+     * @param User $user
+     * @param string $username
+     * @return Account|false
+     * @throws JsonMapperException
+     * @throws ConnectionException
+     */
     public function assignAccount(User $user, string $username): Account|false
     {
         $success = $this->playerClientEndpoint->details($username);
