@@ -46,7 +46,18 @@ class GivePoints extends SlashCommand
 
     public function handle($interaction)
     {
-        $account = User::repository()->findAccount($this->value('user'));
+        $account = User::repository()
+            ->findAccount($this->value('user'));
+
+        if (! $account) {
+            return $interaction->respondWithMessage(
+                $this->message()
+                    ->warning()
+                    ->title('User does not have an account!')
+                    ->content('Add account to user using /set account')
+                    ->build()
+            );
+        }
 
         (new ApplyPoints)->run(
             account: $account,
