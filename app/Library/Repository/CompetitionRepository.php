@@ -24,6 +24,9 @@ class CompetitionRepository
             return $competition;
         }
 
-        return $this->query->where('title', $competition)->first();
+        /** @var Competition $model */
+        $model = $this->query->where('title', $competition)->first();
+    
+        return $model;
     }
 }

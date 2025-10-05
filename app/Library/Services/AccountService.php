@@ -18,13 +18,6 @@ class AccountService
     ) {
     }
 
-    /**
-     * @param User $user
-     * @param string $username
-     * @return Account|false
-     * @throws JsonMapperException
-     * @throws ConnectionException
-     */
     public function assignAccount(User $user, string $username): Account|false
     {
         $success = $this->playerClientEndpoint->details($username);
@@ -33,9 +26,12 @@ class AccountService
             return false;
         }
 
-        return $user->account()->updateOrCreate([], values: [
+        /** @var Account $account */
+        $account = $user->account()->updateOrCreate([], values: [
             'username' => $username,
         ]);
+
+        return $account;
     }
 
     public function search(string $username): false|Collection
