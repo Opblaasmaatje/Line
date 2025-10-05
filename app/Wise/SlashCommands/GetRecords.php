@@ -7,7 +7,6 @@ use App\Laracord\SlashCommands\SlashCommandWithAccount;
 use App\Library\Repository\UserRepository;
 use App\Library\Services\AccountService;
 use App\Models\Account;
-use App\Models\Competition;
 use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Record;
 use App\Wise\Client\Enums\Metric;
 use Discord\Parts\Interactions\ApplicationCommand;
@@ -54,7 +53,9 @@ class GetRecords extends SlashCommandWithAccount
                 ->message()
                 ->success()
                 ->fields(
-                    $records->flatMap(fn(Record $record) => [$record->period->toHeadline() => "$record->value XP"]),
+                    $records->flatMap(fn (Record $record) => [
+                        $record->period->toHeadline() => "$record->value XP",
+                    ]),
                     false
                 )
                 ->content("Here are {$account->username}'s records for the [{$this->value('metric')}] metric!")

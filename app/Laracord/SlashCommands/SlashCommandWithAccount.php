@@ -18,7 +18,7 @@ abstract class SlashCommandWithAccount extends SlashCommand
     public function options(): array
     {
         return [
-           Option::make($this->discord())
+            Option::make($this->discord())
                 ->setName('User')
                 ->setDescription("Who's points do you want to know?")
                 ->setType(Option::USER)
@@ -41,7 +41,7 @@ abstract class SlashCommandWithAccount extends SlashCommand
                 $this
                     ->message('User does not have an account assigned')
                     ->error()
-                    ->content("Please use the set account command to assign the user an account!")
+                    ->content('Please use the set account command to assign the user an account!')
                     ->build()
             );
         }

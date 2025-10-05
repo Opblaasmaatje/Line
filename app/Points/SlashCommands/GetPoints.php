@@ -5,12 +5,9 @@ namespace App\Points\SlashCommands;
 use App\Laracord\SlashCommands\SlashCommandWithAccount;
 use App\Models\Account;
 use App\Models\Point;
-use App\Models\User;
 use Discord\Parts\Interactions\ApplicationCommand;
-use Discord\Parts\Interactions\Command\Option;
 use Discord\Parts\Interactions\Ping;
 use Illuminate\Support\Collection;
-use Laracord\Commands\SlashCommand;
 use QuickChart;
 use React\Promise\PromiseInterface;
 

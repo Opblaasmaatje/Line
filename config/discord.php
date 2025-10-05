@@ -39,7 +39,7 @@ return [
         Leaderboard::class,
         StartCompetition::class,
         DeleteCompetition::class,
-        GetRecords::class
+        GetRecords::class,
     ],
 
     'menus' => [

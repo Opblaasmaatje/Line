@@ -2,7 +2,6 @@
 
 namespace App\Points\SlashCommands;
 
-use App\Models\Account;
 use App\Models\User;
 use App\Points\Jobs\Actions\ApplyPoints;
 use Discord\Parts\Interactions\Command\Option;
@@ -50,7 +49,7 @@ class GivePoints extends SlashCommand
         $account = User::repository()
             ->findAccount($this->value('user'));
 
-        if(!$account){
+        if (! $account) {
             return $interaction->respondWithMessage(
                 $this->message()
                     ->warning()
