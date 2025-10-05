@@ -2,9 +2,9 @@
 
 namespace App\SlashCommands;
 
+use App\Library\Repository\UserRepository;
 use App\Library\Services\AccountService;
 use App\Models\Account;
-use App\Repository\UserRepository;
 use App\Wise\Helpers\WiseOldManUrl;
 use Discord\Parts\Interactions\Command\Option;
 use Illuminate\Support\Facades\App;

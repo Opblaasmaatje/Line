@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Repository\UserRepository;
+use App\Library\Repository\UserRepository;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;

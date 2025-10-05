@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repository;
+namespace App\Library\Repository;
 
 use App\Models\Competition;
 
