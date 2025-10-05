@@ -14,10 +14,6 @@ class CompetitionRepository
         $this->query = Competition::query();
     }
 
-    /**
-     * @param Competition|string $competition
-     * @return Competition|null
-     */
     public function byTitle(Competition|string $competition): Competition|null
     {
         if ($competition instanceof Competition) {

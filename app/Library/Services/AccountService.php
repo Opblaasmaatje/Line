@@ -19,9 +19,6 @@ class AccountService
     }
 
     /**
-     * @param User $user
-     * @param string $username
-     * @return Account|false
      * @throws JsonMapperException
      * @throws ConnectionException
      */
