@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Builder;
 
 class UserRepository
 {
-    public function findAccount(string $discordId): Account
+    public function findAccount(string $discordId): Account|null
     {
         return Account::query()
             ->whereHas('user', fn (Builder $query) => $query->where('discord_id', $discordId))
-            ->firstOrFail();
+            ->first();
     }
 
     public function setUserByDiscordId(string $discordId): User

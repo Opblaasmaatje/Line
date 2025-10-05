@@ -34,7 +34,19 @@ class GetPoints extends SlashCommand
 
     public function handle($interaction)
     {
-        $account = User::repository()->findAccount($this->option('user.value'));
+        $account = User::repository()
+            ->findAccount($this->option('user.value'));
+
+        if(!$account) {
+            return $interaction->respondWithMessage(
+                $this->message()
+                    ->warning()
+                    ->title('User does not have an account!')
+                    ->content('Add account to user using /set account')
+                    ->build()
+            );
+        }
+
 
         return $interaction->respondWithMessage(
             $this->message()
@@ -42,7 +54,7 @@ class GetPoints extends SlashCommand
                 ->title('These are you total points!')
                 ->field('Points', $account->total_points)
                 ->field('URL', $account->url)
-                ->content('Che  ck some of your highest point contributions!')
+                ->content('Check some of your highest point contributions!')
                 ->imageUrl($this->buildImage($account->points))
                 ->build()
         );
