@@ -3,7 +3,6 @@
 namespace App\Laracord;
 
 use Discord\Parts\Interactions\Ping;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Validator as ValidatorFacade;
 use Illuminate\Validation\Validator;
 use Laracord\Commands\SlashCommand;

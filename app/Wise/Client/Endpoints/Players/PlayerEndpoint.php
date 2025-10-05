@@ -37,15 +37,13 @@ class PlayerEndpoint
     }
 
     /**
-     * @param string $username
-     * @param int $limit
      * @return Collection<Player>|false
      */
     public function search(string $username, int $limit = 25): Collection|false
     {
         $response = $this->oldMan->client()->get('/players/search', [
             'username' => $username,
-            'limit' => $limit
+            'limit' => $limit,
         ]);
 
         if ($response->failed()) {

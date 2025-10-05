@@ -51,7 +51,7 @@ class SetAccount extends SlashCommand
             $this->value('account-rsn'),
         );
 
-        if (!$account) {
+        if (! $account) {
             return $interaction->respondWithMessage(
                 $this
                     ->message('Failure assigning account')

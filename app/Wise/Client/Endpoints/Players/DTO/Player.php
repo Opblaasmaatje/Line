@@ -6,8 +6,6 @@ use App\Wise\Client\Enums\Build;
 use App\Wise\Client\Enums\Country;
 use App\Wise\Client\Enums\Status;
 use App\Wise\Client\Enums\Type;
-use Spatie\LaravelData\Attributes\WithCast;
-use Spatie\LaravelData\Casts\EnumCast;
 
 readonly class Player
 {
@@ -15,17 +13,9 @@ readonly class Player
         public int $id,
         public string $username,
         public string $displayName,
-
-        #[WithCast(EnumCast::class)]
         public Type $type,
-
-        #[WithCast(EnumCast::class)]
         public Build $build,
-
-        #[WithCast(EnumCast::class)]
         public Status $status,
-
-        #[WithCast(EnumCast::class)]
         public Country|null $country,
         public bool $patron,
         public float $exp,
@@ -36,6 +26,6 @@ readonly class Player
         public string|null $updatedAt,
         public string|null $lastChangedAt,
         public string|null $lastImportedAt,
-    ){
+    ) {
     }
 }
