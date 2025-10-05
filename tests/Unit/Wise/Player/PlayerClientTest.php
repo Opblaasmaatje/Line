@@ -3,7 +3,6 @@
 namespace Tests\Unit\Wise\Player;
 
 use App\Wise\Client\Endpoints\Players\PlayerEndpoint;
-use App\Wise\Client\Exceptions\CommunicationException;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;

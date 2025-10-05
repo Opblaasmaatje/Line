@@ -2,7 +2,6 @@
 
 namespace App\Wise\Client\Endpoints\Players\DTO;
 
-use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Snapshot;
 use Spatie\LaravelData\Attributes\WithCast;
 use Spatie\LaravelData\Casts\EnumCast;
 
@@ -33,6 +32,6 @@ readonly class Player
         public string|null $updatedAt,
         public string|null $lastChangedAt,
         public string|null $lastImportedAt,
-    ){
+    ) {
     }
 }

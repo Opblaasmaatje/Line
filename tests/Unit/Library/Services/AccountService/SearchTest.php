@@ -4,7 +4,6 @@ namespace Tests\Unit\Library\Services\AccountService;
 
 use App\Library\Services\AccountService;
 use App\Wise\Client\Endpoints\Players\DTO\Player;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
@@ -18,7 +17,7 @@ class SearchTest extends ApplicationCase
     public function it_can_search_players()
     {
         Http::fake([
-            '*' => Http::response($this->getFromFixture('search_player.json'))
+            '*' => Http::response($this->getFromFixture('search_player.json')),
         ]);
 
         /** @var Player $object */

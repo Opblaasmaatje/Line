@@ -4,7 +4,6 @@ namespace App\Wise\Client\Endpoints\Players;
 
 use App\Wise\Client\Endpoints\Players\DTO\Player;
 use App\Wise\Client\Endpoints\Players\DTO\PlayerSnapshot;
-use App\Wise\Client\Exceptions\CommunicationException;
 use App\Wise\WiseOldMan;
 use Brick\JsonMapper\JsonMapper;
 use Brick\JsonMapper\JsonMapperException;
@@ -35,15 +34,13 @@ class PlayerEndpoint
     }
 
     /**
-     * @param string $username
-     * @param int $limit
      * @return Collection<Player>|false
      */
     public function search(string $username, int $limit = 25): Collection|false
     {
         $response = $this->oldMan->client()->get('/players/search', [
             'username' => $username,
-            'limit' => $limit
+            'limit' => $limit,
         ]);
 
         if ($response->failed()) {
@@ -53,7 +50,7 @@ class PlayerEndpoint
         return Collection::make(
             json_decode($response->body(), true)
         )->map(
-            fn(array $value) => $this->mapper->map(json_encode($value), Player::class)
+            fn (array $value) => $this->mapper->map(json_encode($value), Player::class)
         );
     }
 }
