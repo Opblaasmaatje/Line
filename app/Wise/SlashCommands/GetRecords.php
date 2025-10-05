@@ -45,7 +45,7 @@ class GetRecords extends SlashCommandWithAccount
     {
         $records = $this->accountService()->records(
             $account,
-            Metric::from($this->value('metric')),
+            Metric::fromHeadline($this->value('metric')),
         );
 
         return $interaction->respondWithMessage(
@@ -77,16 +77,14 @@ class GetRecords extends SlashCommandWithAccount
     {
         return [
             'metric' => fn (ApplicationCommandAutocomplete $autocomplete, mixed $value) => $value
-
-            //TODO this search doesnt work yet
                 ? Metric::search($value)
-                    ->pluck('value')
+                    ->map(fn (Metric $metric) => $metric->toHeadline())
                     ->take(25)
                     ->values()
                     ->toArray()
 
                 : collect(Metric::cases())
-                    ->pluck('value')
+                    ->map(fn (Metric $metric) => $metric->toHeadline())
                     ->toArray(),
         ];
     }

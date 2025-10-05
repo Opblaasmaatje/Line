@@ -10,4 +10,11 @@ trait AsHeadline
     {
         return Str::headline($this->value);
     }
+
+    public static function fromHeadline(string $headline): self
+    {
+        return self::from(
+            Str::snake($headline)
+        );
+    }
 }
