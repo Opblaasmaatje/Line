@@ -2,7 +2,7 @@
 
 namespace App\Wise\SlashCommands;
 
-use App\Laracord\SlashCommandWithRuleValidation;
+use App\Laracord\SlashCommands\SlashCommandWithRuleValidation;
 use App\Library\Services\CompetitionService;
 use App\Models\Competition;
 use App\Wise\Client\Enums\Metric;

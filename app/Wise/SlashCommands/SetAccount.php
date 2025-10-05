@@ -1,6 +1,6 @@
 <?php
 
-namespace App\SlashCommands;
+namespace App\Wise\SlashCommands;
 
 use App\Library\Repository\UserRepository;
 use App\Library\Services\AccountService;

@@ -39,7 +39,7 @@ class AccountService
 
     public function records(
         Account $account,
-        Metric|null $metric = null,
+        Metric|null $metric,
         Period|null $period = null
     ) {
         return $this->playerClientEndpoint->records($account->username, $metric, $period);

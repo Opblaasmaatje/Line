@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Laracord;
+namespace App\Laracord\SlashCommands;
 
 use Discord\Parts\Interactions\Ping;
 use Illuminate\Support\Facades\Validator as ValidatorFacade;
