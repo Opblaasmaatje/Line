@@ -3,6 +3,7 @@
 namespace App\Library\Services;
 
 use App\Models\Competition;
+use App\Repository\CompetitionRepository;
 use App\Wise\Client\Endpoints\Competition\CompetitionEndpoint;
 use App\Wise\Client\Enums\Metric;
 use Carbon\CarbonPeriod;
@@ -10,7 +11,8 @@ use Carbon\CarbonPeriod;
 class CompetitionService
 {
     public function __construct(
-        protected CompetitionEndpoint $client
+        protected CompetitionEndpoint $client,
+        protected CompetitionRepository $repository
     ) {
     }
 
@@ -25,9 +27,15 @@ class CompetitionService
         return $response->saveModel();
     }
 
-    public function delete(Competition $competition): ?bool
+    public function delete(Competition|string $competition): ?bool
     {
-        if (! $this->client->delete($competition->wise_old_man_id)) {
+        $model = $this->repository->byTitle($competition);
+
+        if(is_null($model)){
+            return false;
+        }
+
+        if (! $this->client->delete($model->wise_old_man_id)) {
             return false;
         }
 
