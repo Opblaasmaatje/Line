@@ -60,7 +60,7 @@ class PlayerEndpoint
             'period' => $period,
         ]);
 
-        if($response->failed()){
+        if ($response->failed()) {
             return false;
         }
 
@@ -73,7 +73,7 @@ class PlayerEndpoint
     protected function mapFromCollection(array $data, string $className): Collection
     {
         return Collection::make($data)->map(
-            fn(array $value) => $this->mapper->map(json_encode($value), $className)
+            fn (array $value) => $this->mapper->map(json_encode($value), $className)
         );
     }
 }

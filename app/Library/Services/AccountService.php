@@ -38,7 +38,7 @@ class AccountService
         Account $account,
         Metric|null $metric = null,
         Period|null $period = null
-    )  {
+    ) {
         return $this->playerClientEndpoint->records($account->username, $metric, $period);
     }
 }

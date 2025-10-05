@@ -8,7 +8,7 @@ class CompetitionRepository
 {
     public function byTitle(Competition|string $competition): Competition|null
     {
-        if($competition instanceof Competition){
+        if ($competition instanceof Competition) {
             return $competition;
         }
 

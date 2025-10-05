@@ -3,7 +3,6 @@
 namespace Tests\Unit\Library\Services\AccountService;
 
 use App\Library\Services\AccountService;
-use App\Models\Account;
 use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Record;
 use App\Wise\Client\Enums\Metric;
 use App\Wise\Client\Enums\Period;
@@ -21,7 +20,7 @@ class RecordsTest extends ApplicationCase
     public function it_can_make_an_api_call()
     {
         Http::fake([
-            '*' => Http::response($this->getFromFixture('records.json'))
+            '*' => Http::response($this->getFromFixture('records.json')),
         ]);
 
         $objects = $this->subjectUnderTesting()->records(
