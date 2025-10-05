@@ -102,4 +102,22 @@ enum Metric: string
     case EHP = 'ehp';
     case EHB = 'ehb';
 
+    case CLUE_SCROLLS_ALL = 'clue_scrolls_all';
+
+    case CLUE_SCROLLS_BEGINNER = 'clue_scrolls_beginner';
+
+    case CLUE_SCROLLS_EASY = 'clue_scrolls_easy';
+
+    case CLUE_SCROLLS_MEDIUM = 'clue_scrolls_medium';
+    case CLUE_SCROLLS_HARD = 'clue_scrolls_hard';
+
+    case GUARDIANS_OF_THE_RIFT = 'guardians_of_the_rift';
+    case CLUE_SCROLLS_MASTER = 'clue_scrolls_master';
+    case CLUE_SCROLLS_ELITE = 'clue_scrolls_elite';
+
+    case SOUL_WARS_ZEAL = 'soul_wars_zeal';
+
+    case COLOSSEUM_GLORY = 'colosseum_glory';
+
+    case LAST_MAN_STANDING = 'last_man_standing';
 }

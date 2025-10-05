@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Repository;
 
-use App\Repository\UserRepository;
+use App\Library\Repository\UserRepository;
 use Database\Factories\AccountFactory;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\ModelNotFoundException;

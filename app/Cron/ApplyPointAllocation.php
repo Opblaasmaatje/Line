@@ -8,7 +8,7 @@ use Laracord\Services\Service;
 
 class ApplyPointAllocation extends Service
 {
-    protected int $interval = 5;
+    protected int $interval = 100;
 
     public function handle(): void
     {

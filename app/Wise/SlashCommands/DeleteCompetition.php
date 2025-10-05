@@ -35,10 +35,9 @@ class DeleteCompetition extends SlashCommand
 
     public function handle($interaction)
     {
-        /** @var Competition $competition */
-        $competition = Competition::query()->where('title', $this->value('competition'))->firstOrFail();
-
-        $success = App::make(CompetitionService::class)->delete($competition);
+        $success = App::make(CompetitionService::class)->delete(
+            $this->value('competition')
+        );
 
         if (! $success) {
             return $interaction->respondWithMessage(
@@ -46,7 +45,7 @@ class DeleteCompetition extends SlashCommand
                     ->message()
                     ->error()
                     ->title('Could not delete competition!')
-                    ->field('Competition Title', $competition->title)
+                    ->field('Competition Title', $this->value('competition'))
                     ->build()
             );
         }
@@ -56,7 +55,7 @@ class DeleteCompetition extends SlashCommand
                 ->message()
                 ->success()
                 ->title('Competition deleted!')
-                ->field('Competition Title', $competition->title)
+                ->field('Competition Title', $this->value('competition'))
                 ->build(),
         );
     }

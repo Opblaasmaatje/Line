@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Repository;
+namespace App\Library\Repository;
 
 use App\Models\Account;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 
 class UserRepository
@@ -12,5 +13,14 @@ class UserRepository
         return Account::query()
             ->whereHas('user', fn (Builder $query) => $query->where('discord_id', $discordId))
             ->firstOrFail();
+    }
+
+    public function setUserByDiscordId(string $discordId): User
+    {
+        return User::query()
+            ->with('account')
+            ->updateOrCreate([
+                'discord_id' => $discordId,
+            ]);
     }
 }

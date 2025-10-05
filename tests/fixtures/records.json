@@ -1,0 +1,2585 @@
+[
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "hunter",
+    "value": 4282480,
+    "updatedAt": "2025-07-31T20:07:22.265Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "yama",
+    "value": 809,
+    "updatedAt": "2025-07-17T18:15:13.345Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "the_royal_titans",
+    "value": 223,
+    "updatedAt": "2025-07-04T19:52:44.962Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "strength",
+    "value": 27005820,
+    "updatedAt": "2025-07-04T19:52:44.959Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "commander_zilyana",
+    "value": 1986,
+    "updatedAt": "2025-07-03T14:59:50.578Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "mining",
+    "value": 1550325,
+    "updatedAt": "2025-07-01T21:15:15.329Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "theatre_of_blood",
+    "value": 140,
+    "updatedAt": "2025-06-16T20:58:57.638Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "ranged",
+    "value": 25760435,
+    "updatedAt": "2025-06-16T20:58:57.632Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "ehp",
+    "value": 241.4151,
+    "updatedAt": "2025-06-12T20:49:36.759Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "hitpoints",
+    "value": 21866447,
+    "updatedAt": "2025-06-12T20:49:36.754Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "overall",
+    "value": 149236680,
+    "updatedAt": "2025-06-12T20:49:36.752Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "magic",
+    "value": 2930091,
+    "updatedAt": "2025-06-12T20:49:36.042Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "hitpoints",
+    "value": 5596970,
+    "updatedAt": "2025-06-12T20:49:36.040Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "araxxor",
+    "value": 1146,
+    "updatedAt": "2025-06-12T20:18:21.982Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "herblore",
+    "value": 6856853,
+    "updatedAt": "2025-06-12T07:06:42.377Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "yama",
+    "value": 773,
+    "updatedAt": "2025-06-11T18:04:41.754Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "grotesque_guardians",
+    "value": 107,
+    "updatedAt": "2025-06-11T16:23:38.045Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "ehb",
+    "value": 79.8377,
+    "updatedAt": "2025-06-11T16:23:37.178Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "grotesque_guardians",
+    "value": 55,
+    "updatedAt": "2025-06-11T16:23:37.163Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "grotesque_guardians",
+    "value": 55,
+    "updatedAt": "2025-06-11T16:23:37.143Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "grotesque_guardians",
+    "value": 55,
+    "updatedAt": "2025-06-11T16:23:37.102Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "phantom_muspah",
+    "value": 873,
+    "updatedAt": "2025-06-10T19:45:18.100Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "phantom_muspah",
+    "value": 655,
+    "updatedAt": "2025-06-10T19:45:15.924Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "phantom_muspah",
+    "value": 253,
+    "updatedAt": "2025-06-10T19:45:14.957Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "strength",
+    "value": 8898879,
+    "updatedAt": "2025-06-09T09:30:06.352Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "cooking",
+    "value": 7294128,
+    "updatedAt": "2025-06-07T11:52:38.505Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "theatre_of_blood",
+    "value": 33,
+    "updatedAt": "2025-06-05T13:43:06.053Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "tombs_of_amascut_expert",
+    "value": 39,
+    "updatedAt": "2025-06-04T18:36:29.648Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "theatre_of_blood",
+    "value": 46,
+    "updatedAt": "2025-06-03T19:05:41.115Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "theatre_of_blood",
+    "value": 9,
+    "updatedAt": "2025-05-31T14:46:36.324Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "phantom_muspah",
+    "value": 78,
+    "updatedAt": "2025-05-25T20:43:10.257Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "hitpoints",
+    "value": 462146,
+    "updatedAt": "2025-05-25T09:25:10.110Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "strength",
+    "value": 1008967,
+    "updatedAt": "2025-05-24T22:13:32.660Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "strength",
+    "value": 3438025,
+    "updatedAt": "2025-05-22T06:59:07.268Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "hitpoints",
+    "value": 1682934,
+    "updatedAt": "2025-05-21T21:07:30.401Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "yama",
+    "value": 388,
+    "updatedAt": "2025-05-21T17:36:16.607Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "magic",
+    "value": 1350078,
+    "updatedAt": "2025-05-19T19:51:25.050Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "the_royal_titans",
+    "value": 110,
+    "updatedAt": "2025-05-17T18:19:50.472Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "yama",
+    "value": 112,
+    "updatedAt": "2025-05-15T20:17:47.622Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "magic",
+    "value": 612611,
+    "updatedAt": "2025-05-15T14:02:10.516Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "clue_scrolls_all",
+    "value": 39,
+    "updatedAt": "2025-05-13T17:05:16.346Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "clue_scrolls_all",
+    "value": 51,
+    "updatedAt": "2025-05-13T17:05:16.343Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "clue_scrolls_medium",
+    "value": 56,
+    "updatedAt": "2025-05-12T18:06:28.847Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "clue_scrolls_medium",
+    "value": 36,
+    "updatedAt": "2025-05-12T18:06:28.140Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "clue_scrolls_medium",
+    "value": 17,
+    "updatedAt": "2025-05-12T18:06:28.129Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "clue_scrolls_medium",
+    "value": 25,
+    "updatedAt": "2025-05-12T18:06:28.103Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "tombs_of_amascut_expert",
+    "value": 19,
+    "updatedAt": "2025-05-09T20:43:07.905Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "ranged",
+    "value": 7162365,
+    "updatedAt": "2025-05-05T15:09:13.111Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "cerberus",
+    "value": 115,
+    "updatedAt": "2025-05-05T10:32:31.263Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "commander_zilyana",
+    "value": 1734,
+    "updatedAt": "2025-05-04T15:35:29.162Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "kalphite_queen",
+    "value": 46,
+    "updatedAt": "2025-04-29T08:31:40.121Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "kalphite_queen",
+    "value": 46,
+    "updatedAt": "2025-04-29T08:31:39.380Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "herblore",
+    "value": 2109630,
+    "updatedAt": "2025-04-29T08:31:39.374Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "commander_zilyana",
+    "value": 718,
+    "updatedAt": "2025-04-28T15:14:43.368Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "commander_zilyana",
+    "value": 165,
+    "updatedAt": "2025-04-27T15:24:45.991Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "fletching",
+    "value": 1938761,
+    "updatedAt": "2025-04-25T12:56:20.903Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "amoxliatl",
+    "value": 16,
+    "updatedAt": "2025-04-22T14:21:20.649Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "amoxliatl",
+    "value": 16,
+    "updatedAt": "2025-04-22T14:21:19.972Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "amoxliatl",
+    "value": 16,
+    "updatedAt": "2025-04-22T14:21:19.967Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "amoxliatl",
+    "value": 16,
+    "updatedAt": "2025-04-22T14:21:19.884Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "bryophyta",
+    "value": 1,
+    "updatedAt": "2025-04-22T12:12:56.661Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "bryophyta",
+    "value": 1,
+    "updatedAt": "2025-04-22T12:12:56.046Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "bryophyta",
+    "value": 1,
+    "updatedAt": "2025-04-22T12:12:56.001Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "bryophyta",
+    "value": 1,
+    "updatedAt": "2025-04-22T12:12:55.985Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "barrows_chests",
+    "value": 20,
+    "updatedAt": "2025-04-21T19:41:50.610Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "barrows_chests",
+    "value": 20,
+    "updatedAt": "2025-04-21T19:41:49.942Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "barrows_chests",
+    "value": 19,
+    "updatedAt": "2025-04-21T19:41:49.897Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "barrows_chests",
+    "value": 19,
+    "updatedAt": "2025-04-21T19:41:49.881Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "the_royal_titans",
+    "value": 77,
+    "updatedAt": "2025-04-21T15:54:21.609Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "the_royal_titans",
+    "value": 77,
+    "updatedAt": "2025-04-21T15:54:21.598Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "tombs_of_amascut_expert",
+    "value": 5,
+    "updatedAt": "2025-04-20T21:47:19.366Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "corporeal_beast",
+    "value": 96,
+    "updatedAt": "2025-04-13T20:59:33.146Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "corporeal_beast",
+    "value": 86,
+    "updatedAt": "2025-04-13T20:59:32.425Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "corporeal_beast",
+    "value": 86,
+    "updatedAt": "2025-04-13T20:59:32.288Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "corporeal_beast",
+    "value": 30,
+    "updatedAt": "2025-04-13T20:59:32.268Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "the_leviathan",
+    "value": 945,
+    "updatedAt": "2025-04-07T15:01:17.727Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "chambers_of_xeric_challenge_mode",
+    "value": 10,
+    "updatedAt": "2025-04-07T08:07:19.672Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "kalphite_queen",
+    "value": 39,
+    "updatedAt": "2025-03-31T11:55:24.147Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "kalphite_queen",
+    "value": 37,
+    "updatedAt": "2025-03-31T11:55:24.113Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "fletching",
+    "value": 3370316,
+    "updatedAt": "2025-03-30T15:39:54.316Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "fletching",
+    "value": 1927931,
+    "updatedAt": "2025-03-30T15:39:53.557Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "fletching",
+    "value": 847171,
+    "updatedAt": "2025-03-30T15:39:53.486Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "agility",
+    "value": 2078148,
+    "updatedAt": "2025-03-29T19:58:51.151Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "fishing",
+    "value": 4399733,
+    "updatedAt": "2025-03-29T19:58:51.131Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "fishing",
+    "value": 3549449,
+    "updatedAt": "2025-03-29T19:58:50.352Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "fishing",
+    "value": 1951852,
+    "updatedAt": "2025-03-29T19:58:50.269Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "agility",
+    "value": 1339018,
+    "updatedAt": "2025-03-24T16:06:54.525Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "fishing",
+    "value": 446900,
+    "updatedAt": "2025-03-13T21:20:17.766Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "agility",
+    "value": 751439,
+    "updatedAt": "2025-03-02T17:57:53.394Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "agility",
+    "value": 234769,
+    "updatedAt": "2025-03-02T17:57:53.240Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "firemaking",
+    "value": 1226258,
+    "updatedAt": "2025-02-21T13:16:34.811Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "firemaking",
+    "value": 1226258,
+    "updatedAt": "2025-02-21T13:16:34.753Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "woodcutting",
+    "value": 2930810,
+    "updatedAt": "2025-02-20T07:38:29.147Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "wintertodt",
+    "value": 50,
+    "updatedAt": "2025-02-20T07:38:28.270Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "wintertodt",
+    "value": 50,
+    "updatedAt": "2025-02-20T07:38:28.227Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "wintertodt",
+    "value": 46,
+    "updatedAt": "2025-02-19T18:37:02.731Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "firemaking",
+    "value": 1122064,
+    "updatedAt": "2025-02-19T18:37:02.723Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "runecrafting",
+    "value": 3093727,
+    "updatedAt": "2024-12-30T22:44:43.289Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "runecrafting",
+    "value": 1566220,
+    "updatedAt": "2024-12-30T22:44:42.224Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "runecrafting",
+    "value": 229334,
+    "updatedAt": "2024-12-28T19:58:46.934Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "runecrafting",
+    "value": 45040,
+    "updatedAt": "2024-12-19T19:44:05.963Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "crafting",
+    "value": 10654510,
+    "updatedAt": "2024-12-13T21:29:17.041Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "guardians_of_the_rift",
+    "value": 167,
+    "updatedAt": "2024-12-07T10:19:29.140Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "smithing",
+    "value": 3152034,
+    "updatedAt": "2024-12-07T09:59:03.700Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "vetion",
+    "value": 1,
+    "updatedAt": "2024-12-04T20:38:07.059Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "woodcutting",
+    "value": 2237386,
+    "updatedAt": "2024-12-04T20:38:06.986Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "vetion",
+    "value": 1,
+    "updatedAt": "2024-12-04T20:38:06.961Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "vetion",
+    "value": 1,
+    "updatedAt": "2024-12-04T20:38:06.894Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "woodcutting",
+    "value": 2574559,
+    "updatedAt": "2024-12-03T21:41:03.389Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "woodcutting",
+    "value": 713246,
+    "updatedAt": "2024-12-03T21:41:03.268Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "woodcutting",
+    "value": 50014,
+    "updatedAt": "2024-12-02T22:54:13.666Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "zalcano",
+    "value": 69,
+    "updatedAt": "2024-12-01T16:08:26.049Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "ehb",
+    "value": 314.5465,
+    "updatedAt": "2024-11-25T18:36:48.973Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "defence",
+    "value": 11980327,
+    "updatedAt": "2024-11-25T10:45:40.048Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "giant_mole",
+    "value": 238,
+    "updatedAt": "2024-11-12T16:14:15.132Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "giant_mole",
+    "value": 167,
+    "updatedAt": "2024-11-12T16:14:14.653Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "chambers_of_xeric",
+    "value": 121,
+    "updatedAt": "2024-11-05T20:34:05.756Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "slayer",
+    "value": 6595129,
+    "updatedAt": "2024-11-05T12:02:57.407Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "magic",
+    "value": 10063039,
+    "updatedAt": "2024-11-03T21:27:05.590Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "prayer",
+    "value": 4022599,
+    "updatedAt": "2024-11-01T21:44:59.238Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "giant_mole",
+    "value": 100,
+    "updatedAt": "2024-11-01T21:44:58.970Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "giant_mole",
+    "value": 100,
+    "updatedAt": "2024-11-01T21:44:58.938Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "chambers_of_xeric_challenge_mode",
+    "value": 9,
+    "updatedAt": "2024-10-24T19:06:05.639Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "tombs_of_amascut_expert",
+    "value": 9,
+    "updatedAt": "2024-10-23T16:21:54.054Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "hunter",
+    "value": 4560,
+    "updatedAt": "2024-10-20T08:09:09.168Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "ranged",
+    "value": 33947,
+    "updatedAt": "2024-10-20T08:09:09.143Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "phantom_muspah",
+    "value": 6,
+    "updatedAt": "2024-10-20T08:09:09.137Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "chambers_of_xeric_challenge_mode",
+    "value": 7,
+    "updatedAt": "2024-10-20T08:05:52.668Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "vorkath",
+    "value": 119,
+    "updatedAt": "2024-10-19T08:01:39.366Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "nightmare",
+    "value": 9,
+    "updatedAt": "2024-10-18T21:00:51.667Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "nightmare",
+    "value": 9,
+    "updatedAt": "2024-10-18T21:00:51.284Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "nightmare",
+    "value": 9,
+    "updatedAt": "2024-10-18T21:00:51.235Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "nightmare",
+    "value": 8,
+    "updatedAt": "2024-10-18T21:00:51.203Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "ranged",
+    "value": 2360521,
+    "updatedAt": "2024-10-18T17:07:22.554Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "zulrah",
+    "value": 1154,
+    "updatedAt": "2024-10-14T17:48:43.521Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "vardorvis",
+    "value": 1847,
+    "updatedAt": "2024-10-13T20:01:00.671Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "ehb",
+    "value": 6.9375,
+    "updatedAt": "2024-10-13T19:02:39.341Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "chambers_of_xeric_challenge_mode",
+    "value": 2,
+    "updatedAt": "2024-10-13T16:36:06.361Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "the_leviathan",
+    "value": 150,
+    "updatedAt": "2024-10-12T21:30:30.173Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "ranged",
+    "value": 1132672,
+    "updatedAt": "2024-10-12T21:30:30.165Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "clue_scrolls_hard",
+    "value": 22,
+    "updatedAt": "2024-10-10T19:15:33.878Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "prayer",
+    "value": 2017838,
+    "updatedAt": "2024-10-07T17:46:46.627Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "slayer",
+    "value": 2610059,
+    "updatedAt": "2024-09-20T19:22:55.897Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "araxxor",
+    "value": 687,
+    "updatedAt": "2024-09-19T18:13:07.625Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "overall",
+    "value": 28940749,
+    "updatedAt": "2024-09-16T17:32:36.909Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "clue_scrolls_master",
+    "value": 3,
+    "updatedAt": "2024-09-15T11:57:11.026Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "clue_scrolls_elite",
+    "value": 9,
+    "updatedAt": "2024-09-15T11:57:10.654Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "clue_scrolls_hard",
+    "value": 21,
+    "updatedAt": "2024-09-15T11:57:10.645Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "clue_scrolls_elite",
+    "value": 9,
+    "updatedAt": "2024-09-15T11:57:10.634Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "clue_scrolls_hard",
+    "value": 21,
+    "updatedAt": "2024-09-15T11:57:10.628Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "clue_scrolls_all",
+    "value": 37,
+    "updatedAt": "2024-09-15T11:57:10.543Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "prayer",
+    "value": 1073736,
+    "updatedAt": "2024-09-12T15:40:44.832Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "prayer",
+    "value": 947702,
+    "updatedAt": "2024-09-12T15:40:44.795Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "prayer",
+    "value": 39389,
+    "updatedAt": "2024-09-11T19:41:26.290Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "alchemical_hydra",
+    "value": 492,
+    "updatedAt": "2024-09-11T19:01:54.069Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "slayer",
+    "value": 1286469,
+    "updatedAt": "2024-09-09T17:58:41.962Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "spindel",
+    "value": 119,
+    "updatedAt": "2024-09-09T17:32:49.585Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "araxxor",
+    "value": 243,
+    "updatedAt": "2024-09-08T09:09:25.670Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "overall",
+    "value": 8419463,
+    "updatedAt": "2024-09-06T16:51:18.470Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "king_black_dragon",
+    "value": 9,
+    "updatedAt": "2024-09-04T17:40:08.839Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "duke_sucellus",
+    "value": 260,
+    "updatedAt": "2024-09-04T17:40:08.834Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "mining",
+    "value": 993981,
+    "updatedAt": "2024-09-04T17:40:08.437Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "crafting",
+    "value": 9220430,
+    "updatedAt": "2024-09-03T19:17:32.085Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "dagannoth_supreme",
+    "value": 178,
+    "updatedAt": "2024-09-01T12:40:57.402Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "dagannoth_prime",
+    "value": 182,
+    "updatedAt": "2024-09-01T12:40:57.397Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "sarachnis",
+    "value": 2,
+    "updatedAt": "2024-09-01T12:40:57.366Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "sarachnis",
+    "value": 2,
+    "updatedAt": "2024-09-01T12:40:57.154Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "sarachnis",
+    "value": 2,
+    "updatedAt": "2024-09-01T12:40:57.101Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "sarachnis",
+    "value": 2,
+    "updatedAt": "2024-09-01T12:40:57.059Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "araxxor",
+    "value": 163,
+    "updatedAt": "2024-08-31T18:29:03.180Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "slayer",
+    "value": 297871,
+    "updatedAt": "2024-08-31T18:29:03.163Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "crafting",
+    "value": 5185355,
+    "updatedAt": "2024-08-24T07:55:21.843Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "crafting",
+    "value": 1790475,
+    "updatedAt": "2024-08-17T21:56:50.984Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "mining",
+    "value": 966901,
+    "updatedAt": "2024-08-17T17:02:15.738Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "mining",
+    "value": 268151,
+    "updatedAt": "2024-08-16T19:08:24.858Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "alchemical_hydra",
+    "value": 345,
+    "updatedAt": "2024-08-11T19:56:24.138Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "alchemical_hydra",
+    "value": 286,
+    "updatedAt": "2024-08-11T19:56:24.069Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "alchemical_hydra",
+    "value": 104,
+    "updatedAt": "2024-08-11T19:56:24.042Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "chambers_of_xeric",
+    "value": 15,
+    "updatedAt": "2024-08-10T21:07:01.084Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "skotizo",
+    "value": 24,
+    "updatedAt": "2024-08-03T20:31:15.790Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "skotizo",
+    "value": 24,
+    "updatedAt": "2024-08-03T20:31:15.618Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "skotizo",
+    "value": 24,
+    "updatedAt": "2024-08-03T20:31:15.578Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "skotizo",
+    "value": 24,
+    "updatedAt": "2024-08-03T20:31:15.563Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "thermonuclear_smoke_devil",
+    "value": 518,
+    "updatedAt": "2024-07-31T20:12:11.797Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "thermonuclear_smoke_devil",
+    "value": 181,
+    "updatedAt": "2024-07-31T20:12:11.624Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "kraken",
+    "value": 362,
+    "updatedAt": "2024-07-28T17:17:45.736Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "the_leviathan",
+    "value": 447,
+    "updatedAt": "2024-07-28T13:45:20.725Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "the_leviathan",
+    "value": 305,
+    "updatedAt": "2024-07-28T13:45:20.701Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "cooking",
+    "value": 5148230,
+    "updatedAt": "2024-07-16T15:05:33.092Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "cooking",
+    "value": 4312250,
+    "updatedAt": "2024-07-16T15:05:33.061Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "overall",
+    "value": 3002952,
+    "updatedAt": "2024-07-14T08:14:22.528Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "cooking",
+    "value": 2615210,
+    "updatedAt": "2024-07-13T22:08:37.233Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "kril_tsutsaroth",
+    "value": 61,
+    "updatedAt": "2024-07-11T18:50:15.502Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "kril_tsutsaroth",
+    "value": 61,
+    "updatedAt": "2024-07-11T18:50:15.290Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "kril_tsutsaroth",
+    "value": 61,
+    "updatedAt": "2024-07-11T18:50:15.251Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "kril_tsutsaroth",
+    "value": 52,
+    "updatedAt": "2024-07-11T18:50:15.227Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "cerberus",
+    "value": 89,
+    "updatedAt": "2024-07-07T20:08:12.197Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "cerberus",
+    "value": 89,
+    "updatedAt": "2024-07-07T20:08:12.161Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "cerberus",
+    "value": 67,
+    "updatedAt": "2024-07-07T20:08:12.110Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "defence",
+    "value": 4302263,
+    "updatedAt": "2024-06-26T19:13:59.499Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "abyssal_sire",
+    "value": 26,
+    "updatedAt": "2024-06-26T18:00:31.334Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "abyssal_sire",
+    "value": 19,
+    "updatedAt": "2024-06-26T18:00:31.051Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "abyssal_sire",
+    "value": 19,
+    "updatedAt": "2024-06-26T18:00:30.983Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "abyssal_sire",
+    "value": 9,
+    "updatedAt": "2024-06-26T18:00:30.953Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "dagannoth_supreme",
+    "value": 166,
+    "updatedAt": "2024-06-25T20:16:19.707Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "dagannoth_rex",
+    "value": 163,
+    "updatedAt": "2024-06-25T20:16:19.705Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "dagannoth_prime",
+    "value": 170,
+    "updatedAt": "2024-06-25T20:16:19.702Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "dagannoth_supreme",
+    "value": 166,
+    "updatedAt": "2024-06-25T20:16:19.676Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "dagannoth_rex",
+    "value": 163,
+    "updatedAt": "2024-06-25T20:16:19.671Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "dagannoth_prime",
+    "value": 170,
+    "updatedAt": "2024-06-25T20:16:19.664Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "dagannoth_supreme",
+    "value": 99,
+    "updatedAt": "2024-06-23T20:06:52.790Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "dagannoth_rex",
+    "value": 97,
+    "updatedAt": "2024-06-23T20:06:52.782Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "dagannoth_prime",
+    "value": 101,
+    "updatedAt": "2024-06-23T20:06:52.779Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "kraken",
+    "value": 183,
+    "updatedAt": "2024-06-23T12:26:40.468Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "kraken",
+    "value": 183,
+    "updatedAt": "2024-06-23T12:26:40.410Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "kraken",
+    "value": 183,
+    "updatedAt": "2024-06-23T12:26:40.379Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "tempoross",
+    "value": 252,
+    "updatedAt": "2024-06-19T17:42:36.594Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "tempoross",
+    "value": 33,
+    "updatedAt": "2024-06-16T20:05:22.787Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "defence",
+    "value": 1529543,
+    "updatedAt": "2024-06-11T20:30:31.985Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "vardorvis",
+    "value": 133,
+    "updatedAt": "2024-06-02T07:33:20.263Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "attack",
+    "value": 3697201,
+    "updatedAt": "2024-05-03T21:25:32.169Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "vardorvis",
+    "value": 956,
+    "updatedAt": "2024-05-02T19:35:32.423Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "vardorvis",
+    "value": 640,
+    "updatedAt": "2024-05-02T16:41:02.981Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "attack",
+    "value": 2338924,
+    "updatedAt": "2024-04-28T06:48:13.363Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "attack",
+    "value": 522733,
+    "updatedAt": "2024-04-27T11:14:12.529Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "duke_sucellus",
+    "value": 205,
+    "updatedAt": "2024-04-20T07:52:33.402Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "duke_sucellus",
+    "value": 118,
+    "updatedAt": "2024-04-20T07:52:33.359Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "duke_sucellus",
+    "value": 66,
+    "updatedAt": "2024-04-18T20:25:40.015Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "vorkath",
+    "value": 65,
+    "updatedAt": "2024-04-16T20:45:09.014Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "vorkath",
+    "value": 65,
+    "updatedAt": "2024-04-16T20:45:08.953Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "zulrah",
+    "value": 734,
+    "updatedAt": "2024-04-13T22:06:30.174Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "spindel",
+    "value": 114,
+    "updatedAt": "2024-04-13T22:06:30.170Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "spindel",
+    "value": 114,
+    "updatedAt": "2024-04-13T22:06:30.134Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "clue_scrolls_master",
+    "value": 2,
+    "updatedAt": "2024-04-12T18:40:24.920Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "clue_scrolls_master",
+    "value": 2,
+    "updatedAt": "2024-04-12T18:40:24.882Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "spindel",
+    "value": 48,
+    "updatedAt": "2024-04-11T14:06:59.213Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "chaos_elemental",
+    "value": 15,
+    "updatedAt": "2024-04-09T19:25:01.917Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "chaos_elemental",
+    "value": 15,
+    "updatedAt": "2024-04-09T19:25:01.635Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "chaos_elemental",
+    "value": 15,
+    "updatedAt": "2024-04-09T19:25:01.559Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "chaos_elemental",
+    "value": 15,
+    "updatedAt": "2024-04-09T19:25:01.514Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "king_black_dragon",
+    "value": 8,
+    "updatedAt": "2024-04-09T18:46:48.298Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "king_black_dragon",
+    "value": 8,
+    "updatedAt": "2024-04-09T18:46:48.254Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "king_black_dragon",
+    "value": 8,
+    "updatedAt": "2024-04-09T18:46:48.215Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "clue_scrolls_master",
+    "value": 1,
+    "updatedAt": "2024-04-09T18:00:31.555Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "hunter",
+    "value": 1255207,
+    "updatedAt": "2024-04-07T19:28:21.769Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "defence",
+    "value": 673655,
+    "updatedAt": "2024-04-06T19:44:24.579Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "scurrius",
+    "value": 160,
+    "updatedAt": "2024-04-06T18:58:22.493Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "scurrius",
+    "value": 147,
+    "updatedAt": "2024-04-06T18:58:22.413Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "scurrius",
+    "value": 144,
+    "updatedAt": "2024-04-06T18:58:22.386Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "scurrius",
+    "value": 144,
+    "updatedAt": "2024-04-06T18:58:22.363Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "defence",
+    "value": 6860,
+    "updatedAt": "2024-04-06T10:53:18.839Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "soul_wars_zeal",
+    "value": 160,
+    "updatedAt": "2024-04-06T10:35:46.784Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "soul_wars_zeal",
+    "value": 160,
+    "updatedAt": "2024-04-06T10:35:46.697Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "soul_wars_zeal",
+    "value": 160,
+    "updatedAt": "2024-04-06T10:35:46.663Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "soul_wars_zeal",
+    "value": 160,
+    "updatedAt": "2024-04-06T10:35:46.633Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "zulrah",
+    "value": 300,
+    "updatedAt": "2024-04-03T18:15:46.867Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "tombs_of_amascut",
+    "value": 2,
+    "updatedAt": "2024-03-30T20:57:57.484Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "farming",
+    "value": 36058,
+    "updatedAt": "2024-03-25T17:34:28.657Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "herblore",
+    "value": 1883,
+    "updatedAt": "2024-03-25T17:34:28.651Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "fletching",
+    "value": 800,
+    "updatedAt": "2024-03-25T17:33:05.303Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "zulrah",
+    "value": 4,
+    "updatedAt": "2024-03-25T17:33:05.298Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "colosseum_glory",
+    "value": 5003,
+    "updatedAt": "2024-03-24T10:15:20.121Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "colosseum_glory",
+    "value": 5003,
+    "updatedAt": "2024-03-24T10:15:20.023Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "colosseum_glory",
+    "value": 5003,
+    "updatedAt": "2024-03-24T10:15:19.986Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "colosseum_glory",
+    "value": 5003,
+    "updatedAt": "2024-03-24T10:15:19.958Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "vorkath",
+    "value": 43,
+    "updatedAt": "2024-03-08T18:23:16.490Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "chambers_of_xeric",
+    "value": 30,
+    "updatedAt": "2024-03-03T19:56:28.038Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "chambers_of_xeric",
+    "value": 7,
+    "updatedAt": "2024-03-02T20:19:02.476Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "the_whisperer",
+    "value": 467,
+    "updatedAt": "2024-02-29T21:09:24.530Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "the_whisperer",
+    "value": 467,
+    "updatedAt": "2024-02-29T21:09:24.460Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "the_whisperer",
+    "value": 269,
+    "updatedAt": "2024-02-20T21:13:08.452Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "the_whisperer",
+    "value": 78,
+    "updatedAt": "2024-02-17T22:27:12.661Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "tztok_jad",
+    "value": 2,
+    "updatedAt": "2024-02-17T13:21:07.608Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "tztok_jad",
+    "value": 1,
+    "updatedAt": "2024-02-17T13:21:07.524Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "tztok_jad",
+    "value": 1,
+    "updatedAt": "2024-02-17T13:21:07.484Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "tztok_jad",
+    "value": 1,
+    "updatedAt": "2024-02-17T13:21:07.483Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "thermonuclear_smoke_devil",
+    "value": 337,
+    "updatedAt": "2024-01-29T18:22:11.892Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "thermonuclear_smoke_devil",
+    "value": 191,
+    "updatedAt": "2024-01-29T18:22:11.844Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "general_graardor",
+    "value": 1397,
+    "updatedAt": "2024-01-28T11:01:35.023Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "calvarion",
+    "value": 270,
+    "updatedAt": "2024-01-21T10:35:59.508Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "calvarion",
+    "value": 24,
+    "updatedAt": "2024-01-21T10:35:59.468Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "calvarion",
+    "value": 17,
+    "updatedAt": "2024-01-21T10:35:59.413Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "calvarion",
+    "value": 17,
+    "updatedAt": "2024-01-21T10:35:59.398Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "guardians_of_the_rift",
+    "value": 157,
+    "updatedAt": "2024-01-19T21:37:36.427Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "guardians_of_the_rift",
+    "value": 119,
+    "updatedAt": "2024-01-19T21:37:36.417Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "runecrafting",
+    "value": 935137,
+    "updatedAt": "2024-01-19T21:37:36.410Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "guardians_of_the_rift",
+    "value": 32,
+    "updatedAt": "2024-01-14T16:31:03.351Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "general_graardor",
+    "value": 1189,
+    "updatedAt": "2024-01-05T19:53:49.854Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "the_corrupted_gauntlet",
+    "value": 33,
+    "updatedAt": "2023-12-28T17:03:23.916Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "general_graardor",
+    "value": 642,
+    "updatedAt": "2023-12-27T18:57:25.529Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "general_graardor",
+    "value": 166,
+    "updatedAt": "2023-12-27T10:06:54.056Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "farming",
+    "value": 2094980,
+    "updatedAt": "2023-12-23T14:14:11.539Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "farming",
+    "value": 699700,
+    "updatedAt": "2023-12-20T16:58:43.748Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "tempoross",
+    "value": 84,
+    "updatedAt": "2023-12-19T17:49:38.008Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "zulrah",
+    "value": 110,
+    "updatedAt": "2023-12-09T18:38:30.406Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "tempoross",
+    "value": 71,
+    "updatedAt": "2023-12-03T12:31:06.784Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "farming",
+    "value": 272149,
+    "updatedAt": "2023-12-03T10:02:53.970Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "herblore",
+    "value": 1138825,
+    "updatedAt": "2023-11-29T17:46:59.003Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "herblore",
+    "value": 690570,
+    "updatedAt": "2023-11-25T21:56:07.886Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "attack",
+    "value": 6485416,
+    "updatedAt": "2023-06-05T10:25:05.854Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "construction",
+    "value": 10349082,
+    "updatedAt": "2023-06-03T14:21:45.577Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "construction",
+    "value": 8952918,
+    "updatedAt": "2023-06-03T14:21:45.495Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "construction",
+    "value": 6759130,
+    "updatedAt": "2023-06-03T14:21:45.458Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "construction",
+    "value": 1430760,
+    "updatedAt": "2023-05-27T19:10:56.683Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "tombs_of_amascut",
+    "value": 77,
+    "updatedAt": "2023-05-25T19:23:10.711Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "dagannoth_rex",
+    "value": 178,
+    "updatedAt": "2023-05-25T19:23:10.690Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "firemaking",
+    "value": 1501592,
+    "updatedAt": "2023-05-25T19:23:10.664Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "wintertodt",
+    "value": 74,
+    "updatedAt": "2023-05-25T19:23:10.626Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "vetion",
+    "value": 7,
+    "updatedAt": "2023-05-25T19:23:10.626Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "deranged_archaeologist",
+    "value": 21,
+    "updatedAt": "2023-05-25T19:23:10.626Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "farming",
+    "value": 7304463,
+    "updatedAt": "2022-10-28T09:52:45.970Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "hespori",
+    "value": 43,
+    "updatedAt": "2022-10-28T09:52:45.969Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "clue_scrolls_hard",
+    "value": 72,
+    "updatedAt": "2022-10-28T09:52:45.969Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "clue_scrolls_all",
+    "value": 141,
+    "updatedAt": "2022-10-28T09:52:45.969Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "tombs_of_amascut",
+    "value": 4,
+    "updatedAt": "2022-10-08T12:44:10.628Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "tombs_of_amascut",
+    "value": 12,
+    "updatedAt": "2022-10-08T12:44:10.623Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "clue_scrolls_elite",
+    "value": 22,
+    "updatedAt": "2022-10-03T11:37:28.193Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "clue_scrolls_elite",
+    "value": 12,
+    "updatedAt": "2022-09-24T22:03:22.074Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "the_corrupted_gauntlet",
+    "value": 490,
+    "updatedAt": "2022-09-19T19:22:56.378Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "thieving",
+    "value": 3158948,
+    "updatedAt": "2022-09-17T06:54:39.203Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "hespori",
+    "value": 16,
+    "updatedAt": "2022-01-28T22:29:45.600Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "smithing",
+    "value": 1259844,
+    "updatedAt": "2022-01-24T16:54:25.148Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "the_corrupted_gauntlet",
+    "value": 364,
+    "updatedAt": "2022-01-16T22:47:45.752Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "zalcano",
+    "value": 123,
+    "updatedAt": "2022-01-15T20:25:41.334Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "zalcano",
+    "value": 123,
+    "updatedAt": "2022-01-15T20:25:41.326Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "smithing",
+    "value": 1159070,
+    "updatedAt": "2022-01-14T15:58:50.362Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "ehb",
+    "value": 25.8461,
+    "updatedAt": "2022-01-14T15:58:50.362Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "the_corrupted_gauntlet",
+    "value": 168,
+    "updatedAt": "2022-01-14T14:25:52.166Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "smithing",
+    "value": 649465,
+    "updatedAt": "2022-01-13T22:25:42.383Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "zalcano",
+    "value": 104,
+    "updatedAt": "2022-01-11T20:30:43.691Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "zalcano",
+    "value": 17,
+    "updatedAt": "2022-01-09T22:50:10.237Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "smithing",
+    "value": 3940,
+    "updatedAt": "2022-01-09T22:50:10.196Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "mining",
+    "value": 19775,
+    "updatedAt": "2022-01-09T22:50:10.196Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "ehb",
+    "value": 1.2307,
+    "updatedAt": "2021-12-29T20:42:51.085Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "cooking",
+    "value": 2835,
+    "updatedAt": "2021-12-29T20:42:51.085Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "the_corrupted_gauntlet",
+    "value": 8,
+    "updatedAt": "2021-12-29T20:42:51.085Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "crafting",
+    "value": 55565,
+    "updatedAt": "2021-12-29T20:42:50.744Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "fishing",
+    "value": 1780,
+    "updatedAt": "2021-12-29T20:42:50.744Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "magic",
+    "value": 53548,
+    "updatedAt": "2021-12-29T20:42:50.744Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "strength",
+    "value": 21656,
+    "updatedAt": "2021-12-29T20:42:50.743Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "hitpoints",
+    "value": 20102,
+    "updatedAt": "2021-12-29T20:42:50.743Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "clue_scrolls_easy",
+    "value": 8,
+    "updatedAt": "2021-12-08T19:54:39.990Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "hespori",
+    "value": 5,
+    "updatedAt": "2021-12-04T22:04:59.130Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "hespori",
+    "value": 1,
+    "updatedAt": "2021-11-28T18:14:23.389Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "attack",
+    "value": 36,
+    "updatedAt": "2021-11-15T15:59:24.679Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "thieving",
+    "value": 2093558,
+    "updatedAt": "2021-11-10T14:26:14.252Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "clue_scrolls_easy",
+    "value": 6,
+    "updatedAt": "2021-11-07T23:07:02.063Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "hunter",
+    "value": 2832351,
+    "updatedAt": "2021-11-07T17:34:25.594Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "thieving",
+    "value": 318392,
+    "updatedAt": "2021-11-06T23:35:20.403Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "thieving",
+    "value": 640013,
+    "updatedAt": "2021-11-06T23:35:20.401Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "overall",
+    "value": 326546,
+    "updatedAt": "2021-11-06T23:35:20.356Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "ehp",
+    "value": 1.587,
+    "updatedAt": "2021-11-06T23:35:20.356Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "ehp",
+    "value": 71.7829,
+    "updatedAt": "2021-11-06T16:29:09.778Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "agility",
+    "value": 20455,
+    "updatedAt": "2021-11-03T16:56:17.703Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "clue_scrolls_beginner",
+    "value": 3,
+    "updatedAt": "2021-11-03T13:35:05.776Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "clue_scrolls_beginner",
+    "value": 3,
+    "updatedAt": "2021-11-03T13:35:05.766Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "month",
+    "metric": "last_man_standing",
+    "value": 515,
+    "updatedAt": "2021-10-30T20:39:11.978Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "year",
+    "metric": "last_man_standing",
+    "value": 515,
+    "updatedAt": "2021-10-30T20:39:11.957Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "clue_scrolls_easy",
+    "value": 3,
+    "updatedAt": "2021-10-30T10:13:41.539Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "five_min",
+    "metric": "slayer",
+    "value": 2860,
+    "updatedAt": "2021-10-24T22:10:02.274Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "clue_scrolls_easy",
+    "value": 2,
+    "updatedAt": "2021-10-23T22:00:55.125Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "ehp",
+    "value": 7.373,
+    "updatedAt": "2021-10-21T15:43:22.192Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "thieving",
+    "value": 1205900,
+    "updatedAt": "2021-10-20T14:58:14.645Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "ehp",
+    "value": 23.8251,
+    "updatedAt": "2021-10-15T13:12:51.503Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "hunter",
+    "value": 2677951,
+    "updatedAt": "2021-10-14T15:07:36.079Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "last_man_standing",
+    "value": 501,
+    "updatedAt": "2021-10-09T22:08:07.764Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "last_man_standing",
+    "value": 501,
+    "updatedAt": "2021-10-09T22:08:07.733Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "week",
+    "metric": "clue_scrolls_beginner",
+    "value": 2,
+    "updatedAt": "2021-10-07T15:21:25.590Z"
+  },
+  {
+    "playerId": 393285,
+    "period": "day",
+    "metric": "clue_scrolls_beginner",
+    "value": 2,
+    "updatedAt": "2021-10-07T15:21:25.581Z"
+  }
+]
