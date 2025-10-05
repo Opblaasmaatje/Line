@@ -2,7 +2,10 @@
 
 namespace App\Wise\Client\Endpoints\Players\DTO;
 
-use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Snapshot;
+use App\Wise\Client\Enums\Build;
+use App\Wise\Client\Enums\Country;
+use App\Wise\Client\Enums\Status;
+use App\Wise\Client\Enums\Type;
 use Spatie\LaravelData\Attributes\WithCast;
 use Spatie\LaravelData\Casts\EnumCast;
 

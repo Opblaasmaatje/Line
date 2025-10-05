@@ -5,6 +5,8 @@ namespace App\Library\Services;
 use App\Models\Account;
 use App\Models\User;
 use App\Wise\Client\Endpoints\Players\PlayerEndpoint;
+use App\Wise\Client\Enums\Metric;
+use App\Wise\Client\Enums\Period;
 use Illuminate\Support\Collection;
 
 class AccountService
@@ -30,5 +32,13 @@ class AccountService
     public function search(string $username): false|Collection
     {
         return $this->playerClientEndpoint->search($username);
+    }
+
+    public function records(
+        Account $account,
+        Metric|null $metric = null,
+        Period|null $period = null
+    )  {
+        return $this->playerClientEndpoint->records($account->username, $metric, $period);
     }
 }

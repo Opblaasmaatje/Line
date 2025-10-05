@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Wise\Client\Endpoints\Players\DTO;
+namespace App\Wise\Client\Enums;
 
 enum Country: string
 {
