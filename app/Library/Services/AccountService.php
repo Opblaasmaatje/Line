@@ -26,12 +26,9 @@ class AccountService
             return false;
         }
 
-        /** @var Account $account */
-        $account = $user->account()->updateOrCreate([], values: [
+        return $user->account()->updateOrCreate([], values: [
             'username' => $username,
         ]);
-
-        return $account;
     }
 
     public function search(string $username): false|Collection
