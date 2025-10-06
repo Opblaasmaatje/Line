@@ -16,7 +16,7 @@ class SnapshotService
     {
         $data = $this->client->account($account);
 
-        if(! $data){
+        if (! $data) {
             return false;
         }
 

@@ -20,7 +20,7 @@ class UserTest extends ApplicationCase
     public function it_can_highlight()
     {
         $user = UserFactory::new()->create([
-            'discord_id' => 'some-id'
+            'discord_id' => 'some-id',
         ]);
 
         $this->assertEquals('<@some-id>', $user->highlight);
