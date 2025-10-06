@@ -2,12 +2,10 @@
 
 namespace Tests\Unit\Points;
 
-use App\Models\Account;
 use App\Models\Point;
 use App\Points\PointAllocator;
 use Database\Factories\AccountFactory;
 use Database\Factories\SnapshotFactory;
-use PharIo\Manifest\Application;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 
