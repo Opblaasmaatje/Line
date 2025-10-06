@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helpers\Enums;
+namespace App\Helpers\Enums\Concerns;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;

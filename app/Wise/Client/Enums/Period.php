@@ -2,7 +2,7 @@
 
 namespace App\Wise\Client\Enums;
 
-use App\Helpers\Enums\AsHeadline;
+use App\Helpers\Enums\Concerns\AsHeadline;
 
 enum Period: string
 {
