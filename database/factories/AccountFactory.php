@@ -12,6 +12,7 @@ class AccountFactory extends Factory
     public function definition(): array
     {
         return [
+            'external_id' => $this->faker->unique()->uuid,
             'user_id' => $this->faker->unique()->uuid(),
             'username' => $this->faker->name(),
         ];

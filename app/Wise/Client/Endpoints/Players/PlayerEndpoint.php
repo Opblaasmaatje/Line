@@ -2,6 +2,7 @@
 
 namespace App\Wise\Client\Endpoints\Players;
 
+use App\Models\Account;
 use App\Wise\Client\Endpoints\Players\DTO\Player;
 use App\Wise\Client\Endpoints\Players\DTO\PlayerSnapshot;
 use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Record;
@@ -28,6 +29,17 @@ class PlayerEndpoint
     public function details(string $username): PlayerSnapshot|false
     {
         $response = $this->oldMan->client()->get("players/$username");
+
+        if ($response->failed()) {
+            return false;
+        }
+
+        return $this->mapper->map($response->body(), PlayerSnapshot::class);
+    }
+
+    public function account(Account $account): PlayerSnapshot|false
+    {
+        $response = $this->oldMan->client()->get("players/id/{$account->external_id}");
 
         if ($response->failed()) {
             return false;

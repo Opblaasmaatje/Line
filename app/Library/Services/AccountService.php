@@ -18,15 +18,13 @@ class AccountService
 
     public function assignAccount(User $user, string $username): Account|false
     {
-        $success = $this->playerClientEndpoint->details($username);
+        $details = $this->playerClientEndpoint->details($username);
 
-        if (! $success) {
+        if (! $details) {
             return false;
         }
 
-        return $user->account()->updateOrCreate([], values: [
-            'username' => $username,
-        ]);
+        return $details->saveToUser($user);
     }
 
     public function search(string $username): false|Collection
@@ -34,11 +32,8 @@ class AccountService
         return $this->playerClientEndpoint->search($username);
     }
 
-    public function records(
-        Account $account,
-        Metric|null $metric,
-        Period|null $period = null
-    ) {
+    public function records(Account $account, Metric|null $metric, Period|null $period = null): false|Collection
+    {
         return $this->playerClientEndpoint->records($account->username, $metric, $period);
     }
 }

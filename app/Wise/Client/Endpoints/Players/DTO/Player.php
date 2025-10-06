@@ -2,6 +2,8 @@
 
 namespace App\Wise\Client\Endpoints\Players\DTO;
 
+use App\Models\Account;
+use App\Models\User;
 use App\Wise\Client\Enums\Build;
 use App\Wise\Client\Enums\Country;
 use App\Wise\Client\Enums\Status;
@@ -28,6 +30,14 @@ readonly class Player
         public string|null $lastChangedAt,
         public string|null $lastImportedAt,
     ) {
+    }
+
+    public function saveToUser(User $user): Account
+    {
+        return $user->account()->updateOrCreate([], values: [
+            'username' => $this->username,
+            'external_id' => $this->id,
+        ]);
     }
 
     protected function getAsCarbon(string|null $timeStamp): Carbon|null
