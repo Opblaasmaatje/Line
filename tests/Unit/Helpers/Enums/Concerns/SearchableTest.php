@@ -3,7 +3,6 @@
 namespace Tests\Unit\Helpers\Enums\Concerns;
 
 use App\Wise\Client\Enums\Metric;
-use App\Wise\Client\Enums\Period;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 
