@@ -3,7 +3,6 @@
 namespace Tests\Unit\Points;
 
 use App\Points\Facade\PointAllocation;
-use App\Points\PointAllocator;
 use Illuminate\Support\Facades\Facade;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
