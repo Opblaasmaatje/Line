@@ -15,7 +15,7 @@ class AsHeadlineTest extends ApplicationCase
     {
         return [
             ...collect(Metric::cases())->map(fn (Metric $metric) => [$metric]),
-            ...collect(Period::cases())->map(fn (Period $period) => [$period])
+            ...collect(Period::cases())->map(fn (Period $period) => [$period]),
         ];
     }
 
