@@ -39,6 +39,6 @@ class CompetitionService
             return false;
         }
 
-        return $competition->delete();
+        return $model->delete();
     }
 }
