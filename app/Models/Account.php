@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property int $id
  * @property string $username
  * @property string $user_id
+ * @property string $external_id
  * @property-read User $user
  * @property-read Collection<Point> $points
  * @property-read Snapshot $snapshot
@@ -25,6 +26,7 @@ class Account extends Model
     protected $fillable = [
         'username',
         'user_id',
+        'external_id',
         'discord_id',
     ];
 

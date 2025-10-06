@@ -34,6 +34,9 @@ class User extends Model
         return new UserRepository;
     }
 
+    /**
+     * @return HasOne<Account, $this>
+     */
     public function account(): HasOne
     {
         return $this->hasOne(Account::class);

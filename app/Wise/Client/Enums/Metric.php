@@ -2,8 +2,14 @@
 
 namespace App\Wise\Client\Enums;
 
+use App\Helpers\Enums\Concerns\AsHeadline;
+use App\Helpers\Enums\Concerns\Searchable;
+
 enum Metric: string
 {
+    use AsHeadline;
+    use Searchable;
+
     //Skill
     case OVERALL = 'overall';
     case ATTACK = 'attack';

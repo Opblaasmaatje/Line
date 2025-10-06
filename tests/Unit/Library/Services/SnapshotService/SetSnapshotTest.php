@@ -10,7 +10,7 @@ use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 use Tests\Unit\Wise\HasFixtureAccess;
 
-class SetSnapshot extends ApplicationCase
+class SetSnapshotTest extends ApplicationCase
 {
     use HasFixtureAccess;
 
@@ -30,6 +30,24 @@ class SetSnapshot extends ApplicationCase
         $this->assertTrue($success);
 
         $this->assertIsArray($account->refresh()->snapshot->raw_details);
+    }
+
+    #[Test]
+    public function it_can_recover_from_a_failure()
+    {
+        Http::fake([
+            '*' => Http::response(status: 400),
+        ]);
+
+        $account = AccountFactory::new()
+            ->for(UserFactory::new())
+            ->create();
+
+        $success = $this->subjectUnderTesting()->setSnapshot($account);
+
+        $this->assertFalse($success);
+
+        $this->assertNull($account->refresh()->snapshot->raw_details);
     }
 
     protected function subjectUnderTesting(): SnapshotService

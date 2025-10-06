@@ -14,13 +14,17 @@ class SnapshotService
 
     public function setSnapshot(Account $account): bool
     {
-        return rescue(function () use ($account) {
-            $account->snapshot->setAttribute(
-                key: 'raw_details',
-                value: $this->client->details($account->username)->toArray()
-            );
+        $data = $this->client->account($account);
 
-            return $account->snapshot->push();
-        }, false);
+        if (! $data) {
+            return false;
+        }
+
+        $account->snapshot->setAttribute(
+            key: 'raw_details',
+            value: $data->toArray()
+        );
+
+        return $account->snapshot->push();
     }
 }

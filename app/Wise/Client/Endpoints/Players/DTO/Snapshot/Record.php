@@ -9,10 +9,10 @@ readonly class Record
 {
     public function __construct(
         public int $playerId,
-          public Period $period,
-          public Metric $metric,
-          public float $value,
-          public string $updatedAt,
+        public Period $period,
+        public Metric $metric,
+        public float $value,
+        public string $updatedAt,
     ) {
     }
 }

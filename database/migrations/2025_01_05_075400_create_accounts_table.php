@@ -11,6 +11,7 @@ return new class extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->string('username')->unique();
+            $table->string('external_id')->unique();
             $table->string('user_id');
             $table->timestamps();
         });

@@ -24,7 +24,8 @@ class RecordsTest extends ApplicationCase
         ]);
 
         $objects = $this->subjectUnderTesting()->records(
-            AccountFactory::new()->create()
+            AccountFactory::new()->create(),
+            Metric::RUNECRAFTING,
         );
 
         /** @var Record $record */

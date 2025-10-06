@@ -2,14 +2,16 @@
 
 namespace App\Points\SlashCommands;
 
+use App\Laracord\SlashCommands\SlashCommandWithAccount;
+use App\Models\Account;
 use App\Models\Point;
-use App\Models\User;
-use Discord\Parts\Interactions\Command\Option;
+use Discord\Parts\Interactions\ApplicationCommand;
+use Discord\Parts\Interactions\Ping;
 use Illuminate\Support\Collection;
-use Laracord\Commands\SlashCommand;
 use QuickChart;
+use React\Promise\PromiseInterface;
 
-class GetPoints extends SlashCommand
+class GetPoints extends SlashCommandWithAccount
 {
     protected $name = 'points';
 
@@ -21,32 +23,8 @@ class GetPoints extends SlashCommand
 
     protected $hidden = false;
 
-    public function options(): array
+    protected function action(Ping|ApplicationCommand $interaction, Account $account): PromiseInterface
     {
-        return [
-            (new Option($this->discord()))
-                ->setName('User')
-                ->setDescription("Who's points do you want to know?")
-                ->setType(Option::USER)
-                ->setRequired(true),
-        ];
-    }
-
-    public function handle($interaction)
-    {
-        $account = User::repository()
-            ->findAccount($this->option('user.value'));
-
-        if (! $account) {
-            return $interaction->respondWithMessage(
-                $this->message()
-                    ->warning()
-                    ->title('User does not have an account!')
-                    ->content('Add account to user using /set account')
-                    ->build()
-            );
-        }
-
         return $interaction->respondWithMessage(
             $this->message()
                 ->info()

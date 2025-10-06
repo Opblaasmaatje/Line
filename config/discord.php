@@ -5,8 +5,9 @@ use App\Cron\ApplyPointAllocation;
 use App\Points\SlashCommands\GetPoints;
 use App\Points\SlashCommands\GivePoints;
 use App\Points\SlashCommands\Leaderboard;
-use App\SlashCommands\SetAccount;
 use App\Wise\SlashCommands\DeleteCompetition;
+use App\Wise\SlashCommands\GetRecords;
+use App\Wise\SlashCommands\SetAccount;
 use App\Wise\SlashCommands\StartCompetition;
 use Discord\WebSockets\Intents;
 
@@ -38,7 +39,7 @@ return [
         Leaderboard::class,
         StartCompetition::class,
         DeleteCompetition::class,
-        Laracord\Commands\HelpCommand::class,
+        GetRecords::class,
     ],
 
     'menus' => [

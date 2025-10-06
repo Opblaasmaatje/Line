@@ -11,9 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
       - uses: actions/checkout@v3
       - uses: php-actions/composer@v6
-      - uses: php-actions/phpstan@v3
-        with:
-          level: 5
-          path: app/
+      - name: Running PHP stan
+        run: ./vendor/bin/phpstan analyse

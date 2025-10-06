@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Builder;
 
 class CompetitionRepository
 {
+    /**
+     * @var Builder<Competition>
+     */
     protected Builder $query;
 
     public function __construct()
@@ -20,9 +23,6 @@ class CompetitionRepository
             return $competition;
         }
 
-        /** @var Competition $model */
-        $model = $this->query->where('title', $competition)->first();
-
-        return $model;
+        return $this->query->where('title', $competition)->first();
     }
 }

@@ -17,10 +17,7 @@ class AssignPointsTest extends ApplicationCase
     #[Test]
     public function it_calls_run_when_applying()
     {
-        $account = AccountFactory::new()->create([
-            'id' => 69,
-            'user_id' => 69,
-        ]);
+        $account = AccountFactory::new()->create();
 
         /** @var AssignPoints $sut */
         $sut = App::make(AssignPoints::class);
@@ -31,7 +28,9 @@ class AssignPointsTest extends ApplicationCase
 
         $this->assertDatabaseHas(Point::class, [
             'id' => 1,
-            'account_id' => 69,
+            'source' => Metric::CONSTRUCTION,
+            'amount' => 0,
+            'account_id' => $account->getKey(),
         ]);
 
     }
