@@ -8,7 +8,6 @@ use App\Wise\Client\Enums\Country;
 use App\Wise\Client\Enums\Status;
 use App\Wise\Client\Enums\Type;
 use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Support\Carbon;
 
 readonly class PlayerSnapshot extends Player implements Arrayable
 {
