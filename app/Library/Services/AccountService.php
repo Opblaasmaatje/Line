@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Wise\Client\Endpoints\Players\PlayerEndpoint;
 use App\Wise\Client\Enums\Metric;
 use App\Wise\Client\Enums\Period;
+use Brick\JsonMapper\JsonMapperException;
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Collection;
 
 class AccountService
@@ -24,12 +26,9 @@ class AccountService
             return false;
         }
 
-        /** @var Account $account */
-        $account = $user->account()->updateOrCreate([], values: [
+        return $user->account()->updateOrCreate([], values: [
             'username' => $username,
         ]);
-
-        return $account;
     }
 
     public function search(string $username): false|Collection

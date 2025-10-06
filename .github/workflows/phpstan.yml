@@ -9,11 +9,13 @@ on:
 jobs:
   php-stan:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
-      - uses: php-actions/composer@v6
-      - uses: php-actions/phpstan@v3
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
         with:
-          level: 5
-          path: app/
+          php-version: '8.4'
+
+      - uses: php-actions/composer@v6
+
+      - name: Running Code Style
+        run: ./vendor/bin/phpstan analyse
