@@ -7,6 +7,6 @@ readonly class History
     public function __construct(
         public int $value,
         public string $date,
-    ){
+    ) {
     }
 }

@@ -11,7 +11,7 @@ readonly class ParticipantHistory
      * @param History[] $history
      */
     public function __construct(
-         public Player $player,
+        public Player $player,
          public array $history
     ) {
     }

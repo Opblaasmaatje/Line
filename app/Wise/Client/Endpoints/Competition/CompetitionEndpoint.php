@@ -10,7 +10,6 @@ use App\Wise\Client\Enums\Metric;
 use App\Wise\WiseOldMan;
 use Brick\JsonMapper\JsonMapper;
 use Carbon\CarbonPeriod;
-use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Collection;
 
 class CompetitionEndpoint

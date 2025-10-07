@@ -2,7 +2,6 @@
 
 namespace Tests\Unit\Wise\Competition;
 
-use App\Models\Competition;
 use App\Wise\Client\Endpoints\Competition\CompetitionEndpoint;
 use App\Wise\Client\Endpoints\Competition\DTO\ParticipantHistory;
 use App\Wise\Client\Enums\Metric;
@@ -69,9 +68,8 @@ class CompetitionEndpointTest extends ApplicationCase
         );
 
         Http::assertSent(
-            fn(Request $request) => $request->url() === "https://api.wiseoldman.net/v2/competitions/{$competition->wise_old_man_id}/top-history?metric=runecrafting"
+            fn (Request $request) => $request->url() === "https://api.wiseoldman.net/v2/competitions/{$competition->wise_old_man_id}/top-history?metric=runecrafting"
         );
-
 
         $this->assertInstanceOf(ParticipantHistory::class, $mapping->first());
     }
