@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Wise\SlashCommands;
+namespace App\Wise\SlashCommands\Competition;
 
 use App\Laracord\Option;
 use App\Library\Services\CompetitionService;

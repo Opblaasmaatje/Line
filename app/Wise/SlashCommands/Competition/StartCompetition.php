@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Wise\SlashCommands;
+namespace App\Wise\SlashCommands\Competition;
 
 use App\Laracord\SlashCommands\SlashCommandWithRuleValidation;
 use App\Library\Services\CompetitionService;
 use App\Models\Competition;
 use App\Wise\Client\Enums\Metric;
 use Carbon\CarbonPeriod;
+use Discord\Parts\Interactions\ApplicationCommand;
 use Discord\Parts\Interactions\Command\Option;
+use Discord\Parts\Interactions\Ping;
 use Illuminate\Support\Facades\App;
 use Illuminate\Validation\Rule;
 use React\Promise\PromiseInterface;
@@ -73,7 +75,7 @@ class StartCompetition extends SlashCommandWithRuleValidation
         ];
     }
 
-    protected function action($interaction): PromiseInterface
+    protected function action(Ping|ApplicationCommand $interaction): PromiseInterface
     {
         $competition = App::make(CompetitionService::class)->create(
             title: $this->value('title'),
