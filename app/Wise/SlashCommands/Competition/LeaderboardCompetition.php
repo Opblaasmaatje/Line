@@ -44,8 +44,10 @@ class LeaderboardCompetition extends SlashCommandWithRuleValidation
                 ->success()
                 ->title('The current rankings are!')
                 ->fields(
-                    $data->take(5)->flatMap(function (ParticipantHistory $participant){
-                        return [$participant->player->username => $participant->collectHistory()->first()?->value ?? 0 ];
+                    $data->take(5)->flatMap(function (ParticipantHistory $participant) {
+                        return [
+                            $participant->player->username => $participant->collectHistory()->first()?->value ?? 0,
+                        ];
                     }),
                     inline: false,
                 )

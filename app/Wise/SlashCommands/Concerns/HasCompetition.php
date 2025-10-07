@@ -4,7 +4,6 @@ namespace App\Wise\SlashCommands\Concerns;
 
 use App\Laracord\Option;
 use App\Library\Repository\CompetitionRepository;
-use App\Models\Competition;
 use Closure;
 use Discord\DiscordCommandClient;
 use Discord\Parts\Interactions\ApplicationCommandAutocomplete;

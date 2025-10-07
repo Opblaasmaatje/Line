@@ -2,13 +2,9 @@
 
 namespace App\Wise\SlashCommands\Competition;
 
-use App\Laracord\Option;
 use App\Library\Services\CompetitionService;
-use App\Models\Competition;
 use App\Wise\SlashCommands\Concerns\HasCompetition;
-use Discord\Parts\Interactions\ApplicationCommandAutocomplete;
 use Illuminate\Support\Facades\App;
-use Illuminate\Testing\Fluent\Concerns\Has;
 use Laracord\Commands\SlashCommand;
 
 class DeleteCompetition extends SlashCommand

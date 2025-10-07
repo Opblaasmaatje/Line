@@ -45,8 +45,6 @@ class CompetitionService
     }
 
     /**
-     * @param Competition $competition
-     * @param Metric $metric
      * @return Collection<ParticipantHistory>
      */
     public function leaderboard(Competition $competition, Metric $metric): Collection
