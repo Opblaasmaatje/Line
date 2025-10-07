@@ -46,7 +46,7 @@ class LeaderboardCompetition extends SlashCommandWithRuleValidation
                 ->fields(
                     $data->take(5)->flatMap(function (ParticipantHistory $participant) {
                         return [
-                            $participant->player->username => $participant->collectHistory()->first()?->value ?? 0,
+                            $participant->player->username => $participant->collectHistory()->first()?->value,
                         ];
                     }),
                     inline: false,
