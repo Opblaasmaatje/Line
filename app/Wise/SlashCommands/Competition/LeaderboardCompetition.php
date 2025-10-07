@@ -12,7 +12,6 @@ use Discord\Parts\Interactions\ApplicationCommandAutocomplete;
 use Discord\Parts\Interactions\Ping;
 use Illuminate\Support\Facades\App;
 use Illuminate\Validation\Rule;
-use Laracord\Commands\SlashCommand;
 use React\Promise\PromiseInterface;
 
 class LeaderboardCompetition extends SlashCommandWithRuleValidation
