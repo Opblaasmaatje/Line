@@ -2,21 +2,25 @@
 
 namespace App\Wise\SlashCommands\Competition;
 
-use App\Laracord\Option;
 use App\Laracord\SlashCommands\SlashCommandWithRuleValidation;
 use App\Library\Services\CompetitionService;
 use App\Models\Competition;
+use App\Wise\Client\Endpoints\Competition\DTO\ParticipantHistory;
 use App\Wise\Client\Enums\Metric;
+use App\Wise\SlashCommands\Concerns\HasCompetition;
+use App\Wise\SlashCommands\Concerns\HasMetric;
 use Discord\Parts\Interactions\ApplicationCommand;
-use Discord\Parts\Interactions\ApplicationCommandAutocomplete;
 use Discord\Parts\Interactions\Ping;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
-use Laracord\Commands\SlashCommand;
 use React\Promise\PromiseInterface;
 
 class LeaderboardCompetition extends SlashCommandWithRuleValidation
 {
+    use HasMetric;
+    use HasCompetition;
+
     protected $name = 'leaderboard-competition';
 
     protected $description = 'Get the leaderboard of a competition';
@@ -27,65 +31,40 @@ class LeaderboardCompetition extends SlashCommandWithRuleValidation
 
     protected $hidden = false;
 
+    protected function action(Ping|ApplicationCommand $interaction): PromiseInterface
+    {
+        $data = $this->service()->leaderboard(
+            competition: $this->getCompetitionRepository()->byTitle($this->value('competition')),
+            metric: Metric::fromHeadline($this->value('metric'))
+        );
+
+        return $interaction->respondWithMessage(
+            $this
+                ->message()
+                ->success()
+                ->title('The current rankings are!')
+                ->fields(
+                    $data->take(5)->flatMap(function (ParticipantHistory $participant){
+                        return [$participant->player->username => $participant->collectHistory()->first()?->value ?? 0 ];
+                    }),
+                    inline: false,
+                )
+                ->build(),
+        );
+    }
+
     public function options(): array
     {
         return [
-            Option::make($this->discord())
-                ->setName('competition')
-                ->setType(Option::STRING)
-                ->setAutoComplete(true)
-                ->setDescription('Define the competition to delete')
-                ->setRequired(true),
-
-            Option::make($this->discord())
-                ->setName('metric')
-                ->setType(Option::STRING)
-                ->setAutoComplete(true)
-                ->setDescription('Define the competition to delete')
-                ->setRequired(true),
+            $this->getCompetitionOption($this->discord()),
+            $this->getMetricOption($this->discord()),
         ];
-    }
-
-    public function autocomplete(): array
-    {
-        return [
-            'competition' => fn (ApplicationCommandAutocomplete $autocomplete, mixed $value) => $value
-                ? Competition::query()->where('title', 'like', "%{$value}%")->take(25)->pluck('title')->toArray()
-                : Competition::query()->take(25)->pluck('title')->toArray(),
-
-            'metric' => fn (ApplicationCommandAutocomplete $autocomplete, mixed $value) => $value
-                ? Metric::search($value)
-                    ->map(fn (Metric $metric) => $metric->toHeadline())
-                    ->take(25)
-                    ->values()
-                    ->toArray()
-
-                : collect(Metric::cases())
-                    ->map(fn (Metric $metric) => $metric->toHeadline())
-                    ->toArray(),
-        ];
-    }
-
-    protected function action(Ping|ApplicationCommand $interaction): PromiseInterface
-    {
-        $competition = Competition::query()
-            ->where('title', $this->value('competition'))
-            ->firstOrFail();
-
-        $data = $this->service()->leaderboard(
-            $competition,
-            Metric::from($this->value('metric'))
-        );
-
-        dd($data);
-
-        return $interaction;
     }
 
     protected function getValidationRules(): array
     {
         return [
-            'title' => Rule::exists(Competition::class, 'title'),
+            'competition' => Rule::exists(Competition::class, 'title'),
             'metric' => Rule::enum(Metric::class),
         ];
     }
@@ -93,8 +72,18 @@ class LeaderboardCompetition extends SlashCommandWithRuleValidation
     protected function getValidationAttributes(): array
     {
         return [
-            'title' => $this->value('competition'),
-            'metric' => $this->value('metric'),
+            'competition' => $this->value('competition'),
+            'metric' => Str::snake(
+                $this->value('metric')
+            ),
+        ];
+    }
+
+    public function autocomplete(): array
+    {
+        return [
+            'competition' => $this->getCompetitionAutocomplete(),
+            'metric' => $this->getMetricAutocomplete(),
         ];
     }
 

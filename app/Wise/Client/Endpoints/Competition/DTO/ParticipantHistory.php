@@ -3,7 +3,7 @@
 namespace App\Wise\Client\Endpoints\Competition\DTO;
 
 use App\Wise\Client\Endpoints\Players\DTO\Player;
-use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Support\Collection;
 
 readonly class ParticipantHistory
 {
@@ -14,5 +14,10 @@ readonly class ParticipantHistory
          public Player $player,
          public array $history
     ) {
+    }
+
+    public function collectHistory()
+    {
+        return Collection::make($this->history);
     }
 }

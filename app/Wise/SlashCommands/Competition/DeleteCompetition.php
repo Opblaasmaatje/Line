@@ -5,12 +5,16 @@ namespace App\Wise\SlashCommands\Competition;
 use App\Laracord\Option;
 use App\Library\Services\CompetitionService;
 use App\Models\Competition;
+use App\Wise\SlashCommands\Concerns\HasCompetition;
 use Discord\Parts\Interactions\ApplicationCommandAutocomplete;
 use Illuminate\Support\Facades\App;
+use Illuminate\Testing\Fluent\Concerns\Has;
 use Laracord\Commands\SlashCommand;
 
 class DeleteCompetition extends SlashCommand
 {
+    use HasCompetition;
+
     protected $name = 'delete-competition';
 
     protected $description = 'Delete a competition';
@@ -24,18 +28,13 @@ class DeleteCompetition extends SlashCommand
     public function options(): array
     {
         return [
-            Option::make($this->discord())
-                ->setName('competition')
-                ->setType(Option::STRING)
-                ->setAutoComplete(true)
-                ->setDescription('Define the competition to delete')
-                ->setRequired(true),
+            $this->getCompetitionOption($this->discord()),
         ];
     }
 
     public function handle($interaction)
     {
-        $success = App::make(CompetitionService::class)->delete(
+        $success = $this->getCompetitionService()->delete(
             $this->value('competition')
         );
 
@@ -63,9 +62,12 @@ class DeleteCompetition extends SlashCommand
     public function autocomplete(): array
     {
         return [
-            'competition' => fn (ApplicationCommandAutocomplete $autocomplete, mixed $value) => $value
-                ? Competition::query()->where('title', 'like', "%{$value}%")->take(25)->pluck('title')->toArray()
-                : Competition::query()->take(25)->pluck('title')->toArray(),
+            'competition' => $this->getCompetitionAutocomplete(),
         ];
+    }
+
+    protected function getCompetitionService(): CompetitionService
+    {
+        return App::make(CompetitionService::class);
     }
 }
