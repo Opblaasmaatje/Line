@@ -2,6 +2,7 @@
 
 namespace App\Laracord\SlashCommands;
 
+use Discord\Parts\Interactions\ApplicationCommand;
 use Discord\Parts\Interactions\Ping;
 use Illuminate\Support\Facades\Validator as ValidatorFacade;
 use Illuminate\Validation\Validator;
@@ -10,7 +11,7 @@ use React\Promise\PromiseInterface;
 
 abstract class SlashCommandWithRuleValidation extends SlashCommand
 {
-    abstract protected function action(Ping $interaction): PromiseInterface;
+    abstract protected function action(Ping|ApplicationCommand $interaction): PromiseInterface;
 
     abstract protected function getValidationRules(): array;
 

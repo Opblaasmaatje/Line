@@ -5,8 +5,10 @@ namespace App\Library\Services;
 use App\Library\Repository\CompetitionRepository;
 use App\Models\Competition;
 use App\Wise\Client\Endpoints\Competition\CompetitionEndpoint;
+use App\Wise\Client\Endpoints\Competition\DTO\ParticipantHistory;
 use App\Wise\Client\Enums\Metric;
 use Carbon\CarbonPeriod;
+use Illuminate\Support\Collection;
 
 class CompetitionService
 {
@@ -40,5 +42,13 @@ class CompetitionService
         }
 
         return $model->delete();
+    }
+
+    /**
+     * @return Collection<ParticipantHistory>
+     */
+    public function leaderboard(Competition $competition, Metric $metric): Collection
+    {
+        return $this->client->topParticipants($competition, $metric);
     }
 }

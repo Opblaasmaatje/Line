@@ -5,10 +5,11 @@ use App\Cron\ApplyPointAllocation;
 use App\Points\SlashCommands\GetPoints;
 use App\Points\SlashCommands\GivePoints;
 use App\Points\SlashCommands\Leaderboard;
-use App\Wise\SlashCommands\DeleteCompetition;
-use App\Wise\SlashCommands\GetRecords;
-use App\Wise\SlashCommands\SetAccount;
-use App\Wise\SlashCommands\StartCompetition;
+use App\Wise\SlashCommands\Account\GetRecords;
+use App\Wise\SlashCommands\Account\SetAccount;
+use App\Wise\SlashCommands\Competition\DeleteCompetition;
+use App\Wise\SlashCommands\Competition\LeaderboardCompetition;
+use App\Wise\SlashCommands\Competition\StartCompetition;
 use Discord\WebSockets\Intents;
 
 return [
@@ -39,6 +40,7 @@ return [
         Leaderboard::class,
         StartCompetition::class,
         DeleteCompetition::class,
+        LeaderboardCompetition::class,
         GetRecords::class,
     ],
 

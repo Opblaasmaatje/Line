@@ -27,7 +27,6 @@ class AssignPointsTest extends ApplicationCase
         ]));
 
         $this->assertDatabaseHas(Point::class, [
-            'id' => 1,
             'source' => Metric::CONSTRUCTION,
             'amount' => 0,
             'account_id' => $account->getKey(),

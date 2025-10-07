@@ -3,6 +3,7 @@
 namespace App\Wise\Client\Endpoints\Players;
 
 use App\Models\Account;
+use App\Wise\Client\Endpoints\MapsArrayToObjects;
 use App\Wise\Client\Endpoints\Players\DTO\Player;
 use App\Wise\Client\Endpoints\Players\DTO\PlayerSnapshot;
 use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Record;
@@ -16,6 +17,8 @@ use Illuminate\Support\Collection;
 
 class PlayerEndpoint
 {
+    use MapsArrayToObjects;
+
     public function __construct(
         protected WiseOldMan $oldMan,
         protected JsonMapper $mapper
@@ -62,7 +65,7 @@ class PlayerEndpoint
             return false;
         }
 
-        return $this->mapFromCollection($response->json(), Player::class);
+        return $this->mapToCollection($response->json(), Player::class);
     }
 
     public function records(string $username, Metric|null $metric, Period|null $period): Collection|false
@@ -76,16 +79,6 @@ class PlayerEndpoint
             return false;
         }
 
-        return $this->mapFromCollection($response->json(), Record::class);
-    }
-
-    /**
-     * @param class-string $className
-     */
-    protected function mapFromCollection(array $data, string $className): Collection
-    {
-        return Collection::make($data)->map(
-            fn (array $value) => $this->mapper->map(json_encode($value), $className)
-        );
+        return $this->mapToCollection($response->json(), Record::class);
     }
 }

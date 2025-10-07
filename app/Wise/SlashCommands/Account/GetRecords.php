@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Wise\SlashCommands;
+namespace App\Wise\SlashCommands\Account;
 
 use App\Laracord\Option;
 use App\Laracord\SlashCommands\SlashCommandWithAccount;
