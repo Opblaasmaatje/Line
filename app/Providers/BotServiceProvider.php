@@ -14,7 +14,9 @@ class BotServiceProvider extends LaracordServiceProvider
 
         Model::shouldBeStrict();
 
-        $this->app->register(ErdGeneratorServiceProvider::class);
+        if ($this->app->environment('local')) {
+            $this->app->register(ErdGeneratorServiceProvider::class);
+        }
     }
 
     public function register()
