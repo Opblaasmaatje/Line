@@ -26,5 +26,4 @@ $ laracord
 ```
 
 ## Data structure
-![drawSQL-image-export-2025-06-03(1)](https://github.com/user-attachments/assets/2615df1a-63d9-4aea-bcdd-65eb34f53101)
-
+![graph.png](graph.png)

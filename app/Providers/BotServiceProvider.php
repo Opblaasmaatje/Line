@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use BeyondCode\ErdGenerator\ErdGeneratorServiceProvider;
 use Illuminate\Database\Eloquent\Model;
 use Laracord\LaracordServiceProvider;
 
@@ -12,6 +13,8 @@ class BotServiceProvider extends LaracordServiceProvider
         parent::boot();
 
         Model::shouldBeStrict();
+
+        $this->app->register(ErdGeneratorServiceProvider::class);
     }
 
     public function register()
