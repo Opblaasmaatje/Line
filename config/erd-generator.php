@@ -2,7 +2,7 @@
 
 return [
     'directories' => [
-        base_path('app' . DIRECTORY_SEPARATOR . 'Models'),
+        base_path('app'.DIRECTORY_SEPARATOR.'Models'),
     ],
 
     'ignore' => [],
