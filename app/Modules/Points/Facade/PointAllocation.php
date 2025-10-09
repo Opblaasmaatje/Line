@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Points\Facade;
+namespace App\Modules\Points\Facade;
 
 use App\Models\Snapshot;
-use App\Points\PointAllocator;
+use App\Modules\Points\PointAllocator;
 use Illuminate\Support\Facades\Facade;
 
 /**

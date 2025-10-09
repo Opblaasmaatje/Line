@@ -3,7 +3,7 @@
 namespace App\Cron;
 
 use App\Models\Snapshot;
-use App\Points\Facade\PointAllocation;
+use App\Modules\Points\Facade\PointAllocation;
 use Laracord\Services\Service;
 
 class ApplyPointAllocation extends Service

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Points\Configuration;
+namespace App\Modules\Points\Configuration;
 
 class PointCalculator
 {

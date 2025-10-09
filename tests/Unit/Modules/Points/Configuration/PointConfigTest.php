@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\Points\Configuration;
+namespace Tests\Unit\Modules\Points\Configuration;
 
 use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Boss;
 use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Skills\Skill;

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Modules\Points\Models\Point;
 use App\Wise\Helpers\WiseOldManUrl;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;

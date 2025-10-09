@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Points\SlashCommands;
+namespace App\Modules\Points\SlashCommands;
 
 use App\Models\User;
-use App\Points\Jobs\Actions\ApplyPoints;
+use App\Modules\Points\Jobs\Actions\ApplyPoints;
 use Discord\Parts\Interactions\Command\Option;
 use Laracord\Commands\SlashCommand;
 

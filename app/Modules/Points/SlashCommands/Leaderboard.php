@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Points\SlashCommands;
+namespace App\Modules\Points\SlashCommands;
 
 use App\Models\Account;
 use Illuminate\Support\Collection;

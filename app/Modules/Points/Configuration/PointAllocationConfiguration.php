@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Points\Configuration;
+namespace App\Modules\Points\Configuration;
 
 use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Boss;
 use App\Wise\Client\Endpoints\Players\DTO\Snapshot\CanGivePoints;

@@ -2,9 +2,9 @@
 
 use App\Cron\AddSnapshotToUser;
 use App\Cron\ApplyPointAllocation;
-use App\Points\SlashCommands\GetPoints;
-use App\Points\SlashCommands\GivePoints;
-use App\Points\SlashCommands\Leaderboard;
+use App\Modules\Points\SlashCommands\GetPoints;
+use App\Modules\Points\SlashCommands\GivePoints;
+use App\Modules\Points\SlashCommands\Leaderboard;
 use App\Wise\SlashCommands\Account\GetRecords;
 use App\Wise\SlashCommands\Account\SetAccount;
 use App\Wise\SlashCommands\Competition\DeleteCompetition;

@@ -8,6 +8,7 @@ use Laracord\LaracordServiceProvider;
 
 class BotServiceProvider extends LaracordServiceProvider
 {
+
     public function boot()
     {
         parent::boot();

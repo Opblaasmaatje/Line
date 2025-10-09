@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Point;
+use App\Modules\Points\Models\Point;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PointFactory extends Factory

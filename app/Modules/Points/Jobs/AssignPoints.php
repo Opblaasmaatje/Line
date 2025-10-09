@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Points\Jobs;
+namespace App\Modules\Points\Jobs;
 
 use App\Models\Account;
-use App\Points\Configuration\PointAllocationConfiguration;
-use App\Points\Jobs\Actions\ApplyPoints;
+use App\Modules\Points\Configuration\PointAllocationConfiguration;
+use App\Modules\Points\Jobs\Actions\ApplyPoints;
 use App\Wise\Client\Endpoints\Players\DTO\Snapshot\CanGivePoints;
 use Illuminate\Support\Collection;
 
