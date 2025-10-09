@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Unit\Points\Jobs\Action;
+namespace Tests\Unit\Modules\Points\Jobs\Action;
 
 use App\Models\Account;
-use App\Models\Point;
-use App\Points\Jobs\Actions\ApplyPoints;
+use App\Modules\Points\Jobs\Actions\ApplyPoints;
+use App\Modules\Points\Models\Point;
 use Database\Factories\AccountFactory;
 use Database\Factories\PointFactory;
 use PHPUnit\Framework\Attributes\Test;

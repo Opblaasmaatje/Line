@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Unit\Points;
+namespace Tests\Unit\Modules\Points;
 
-use App\Points\Facade\PointAllocation;
+use App\Modules\Points\Facade\PointAllocation;
 use Illuminate\Support\Facades\Facade;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;

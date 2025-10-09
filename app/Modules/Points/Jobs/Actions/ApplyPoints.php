@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Points\Jobs\Actions;
+namespace App\Modules\Points\Jobs\Actions;
 
 use App\Models\Account;
 

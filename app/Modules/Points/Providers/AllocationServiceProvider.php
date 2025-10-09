@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Points\Providers;
+namespace App\Modules\Points\Providers;
 
-use App\Points\Configuration\PointAllocationConfiguration;
+use App\Modules\Points\Configuration\PointAllocationConfiguration;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 

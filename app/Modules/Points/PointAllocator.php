@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Points;
+namespace App\Modules\Points;
 
 use App\Models\Snapshot;
-use App\Points\Jobs\AssignPoints;
+use App\Modules\Points\Jobs\AssignPoints;
 
 /**
  * todo create test

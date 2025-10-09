@@ -12,6 +12,6 @@ return [
     'providers' => [
         App\Providers\BotServiceProvider::class,
         App\Wise\Providers\OldManProvider::class,
-        App\Points\Providers\AllocationServiceProvider::class,
+        App\Modules\Points\Providers\AllocationServiceProvider::class,
     ],
 ];

@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Unit\Points;
+namespace Tests\Unit\Modules\Points;
 
-use App\Models\Point;
-use App\Points\PointAllocator;
+use App\Modules\Points\Models\Point;
+use App\Modules\Points\PointAllocator;
 use Database\Factories\AccountFactory;
 use Database\Factories\SnapshotFactory;
 use PHPUnit\Framework\Attributes\Test;

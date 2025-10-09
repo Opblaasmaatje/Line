@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Unit\Points\Configuration;
+namespace Tests\Unit\Modules\Points\Configuration;
 
-use App\Points\Configuration\PointAllocationConfiguration;
-use App\Points\Configuration\PointCalculator;
+use App\Modules\Points\Configuration\PointAllocationConfiguration;
+use App\Modules\Points\Configuration\PointCalculator;
 use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\AlchemicalHydra;
 use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Araxxor;
 use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Bosses\Boss;

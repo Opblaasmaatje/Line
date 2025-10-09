@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Unit\Points\Configuration;
+namespace Tests\Unit\Modules\Points\Configuration;
 
-use App\Points\Configuration\PointCalculator;
+use App\Modules\Points\Configuration\PointCalculator;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 

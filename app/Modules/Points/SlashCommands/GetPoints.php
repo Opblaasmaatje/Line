@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Points\SlashCommands;
+namespace App\Modules\Points\SlashCommands;
 
 use App\Laracord\SlashCommands\SlashCommandWithAccount;
 use App\Models\Account;
-use App\Models\Point;
+use App\Modules\Points\Models\Point;
 use Discord\Parts\Interactions\ApplicationCommand;
 use Discord\Parts\Interactions\Ping;
 use Illuminate\Support\Collection;

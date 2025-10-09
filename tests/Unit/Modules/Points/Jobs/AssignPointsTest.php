@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Unit\Points\Jobs;
+namespace Tests\Unit\Modules\Points\Jobs;
 
-use App\Models\Point;
-use App\Points\Jobs\AssignPoints;
+use App\Modules\Points\Jobs\AssignPoints;
+use App\Modules\Points\Models\Point;
 use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Skills\Construction;
 use App\Wise\Client\Enums\Metric;
 use Database\Factories\AccountFactory;
