@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Modules\Pets\Models\Pet;
 use App\Modules\Points\Models\Point;
 use App\Wise\Helpers\WiseOldManUrl;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -18,6 +19,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property string $external_id
  * @property-read User $user
  * @property-read Collection<Point> $points
+ * @property-read Collection<Pet> $pets
  * @property-read Snapshot $snapshot
  * @property-read int $total_points
  * @property-read string $url
@@ -44,6 +46,14 @@ class Account extends Model
     public function snapshot(): HasOne
     {
         return $this->hasOne(Snapshot::class)->withDefault();
+    }
+
+    /**
+     * @return HasMany<Pet, $this>
+     */
+    public function pets(): HasMany
+    {
+        return $this->hasMany(Pet::class);
     }
 
     public function totalPoints(): Attribute
