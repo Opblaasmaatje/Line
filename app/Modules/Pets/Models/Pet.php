@@ -17,6 +17,7 @@ use Illuminate\Support\Carbon;
  * @property Status $status
  * @property Carbon $updated_at
  * @property Carbon $created_at
+ *
  * @method static PetQuery query()
  */
 class Pet extends Model
