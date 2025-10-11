@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('pets', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('account_id')->unique();
+            $table->foreignId('account_id');
             $table->string('name');
             $table->string('status');
+            $table->string('image');
             $table->timestamps();
         });
     }
