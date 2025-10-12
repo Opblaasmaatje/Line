@@ -12,6 +12,7 @@ use Discord\Parts\Interactions\Ping;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Config;
 use React\Promise\PromiseInterface;
+use function Illuminate\Events\queueable;
 
 class SubmitPet extends SlashCommandWithAccount
 {
@@ -34,7 +35,7 @@ class SubmitPet extends SlashCommandWithAccount
 
             Option::make($this->discord())
                 ->setName('image')
-                ->setDescription('Upload image as proof')
+                ->setDescription('Upload image as proof.')
                 ->setType(Option::ATTACHMENT)
                 ->setRequired(true),
         ]);
@@ -42,6 +43,8 @@ class SubmitPet extends SlashCommandWithAccount
 
     protected function action(ApplicationCommand|Ping $interaction, Account $account): PromiseInterface
     {
+        // TODO Save thing in storage
+        dd($interaction->data->resolved->attachments);;
 
         $pet = $this->getPetService()->createPet(
             $account,
