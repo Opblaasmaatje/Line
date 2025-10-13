@@ -13,6 +13,6 @@ return Application::configure(basePath: dirname(__DIR__))
         GenerateDiagramCommand::class,
         VendorPublishCommand::class,
         ConfigClearCommand::class,
-        ClearCommand::class
+        ClearCommand::class,
     ])
     ->create();

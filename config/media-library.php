@@ -1,7 +1,5 @@
 <?php
 
-use Spatie\MediaLibrary\Support\Factories\TemporaryUploadFactory;
-
 return [
     /*
      * The disk on which to store added files and derived images by default. Choose

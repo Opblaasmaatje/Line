@@ -10,11 +10,8 @@ use App\Modules\Pets\SlashCommands\Concerns\HasPet;
 use Discord\Parts\Channel\Attachment;
 use Discord\Parts\Interactions\ApplicationCommand;
 use Discord\Parts\Interactions\Ping;
-use Illuminate\Http\File;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Storage;
 use React\Promise\PromiseInterface;
-use function Illuminate\Events\queueable;
 
 class SubmitPet extends SlashCommandWithAccount
 {
