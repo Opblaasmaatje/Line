@@ -9,6 +9,8 @@ use App\Modules\Pets\Models\Queries\PetQuery;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
 /**
  * @property int $id
@@ -20,8 +22,10 @@ use Illuminate\Support\Carbon;
  *
  * @method static PetQuery query()
  */
-class Pet extends Model
+class Pet extends Model implements HasMedia
 {
+    use InteractsWithMedia;
+
     protected $fillable = [
         'name',
         'status',

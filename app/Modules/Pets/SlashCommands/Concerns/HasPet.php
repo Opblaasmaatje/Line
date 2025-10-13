@@ -26,13 +26,13 @@ trait HasPet
     {
         return fn (ApplicationCommandAutocomplete $autocomplete, mixed $value) => $value
             ? PetName::search($value)
-                ->map(fn (PetName $pet) => $pet->toHeadline())
+                ->map(fn (PetName $pet) => $pet->value)
                 ->take(25)
                 ->values()
                 ->toArray()
 
             : collect(PetName::cases())
-                ->map(fn (PetName $pet) => $pet->toHeadline())
+                ->map(fn (PetName $pet) => $pet->value)
                 ->toArray();
     }
 

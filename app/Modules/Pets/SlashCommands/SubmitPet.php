@@ -7,10 +7,12 @@ use App\Laracord\SlashCommands\SlashCommandWithAccount;
 use App\Models\Account;
 use App\Modules\Pets\Models\Enums\PetName;
 use App\Modules\Pets\SlashCommands\Concerns\HasPet;
+use Discord\Parts\Channel\Attachment;
 use Discord\Parts\Interactions\ApplicationCommand;
 use Discord\Parts\Interactions\Ping;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Storage;
 use React\Promise\PromiseInterface;
 use function Illuminate\Events\queueable;
 
@@ -43,28 +45,31 @@ class SubmitPet extends SlashCommandWithAccount
 
     protected function action(ApplicationCommand|Ping $interaction, Account $account): PromiseInterface
     {
-        // TODO Save thing in storage
-        dd($interaction->data->resolved->attachments);;
+        $attachment = $this->getImage($interaction);
 
         $pet = $this->getPetService()->createPet(
             $account,
             PetName::from($this->value('pet')),
-            new File($this->value('image'))
+            $attachment->url,
         );
 
         return $interaction->respondWithMessage(
             $this
-                ->message("Submitted pet approval for {$pet->name->toHeadline()}.")
+                ->message("Submitted pet approval for {$pet->name->value}.")
                 ->success()
-                ->title("Successfully submitted pet approval for {$pet->name->toHeadline()}!")
+                ->title("Successfully submitted pet approval for {$pet->name->value}!")
                 ->content('An admin will approve or deny your pet submission.')
                 ->build()
         )->then(
-            fn () => $interaction->respondWithMessage(
-                $this
-                    ->message('Please review')
-                    ->send(Config::get('app.pet.discord-channel')),
-            )
+            function () use ($interaction, $pet) {
+                return $interaction->respondWithMessage(
+                    $this
+                        ->message('Please review')
+                        ->info()
+                        ->body($pet->getMedia()->sole()->getUrl())
+                        ->send(Config::get('app.pet.discord-channel')),
+                );
+            }
         );
     }
 
@@ -73,5 +78,10 @@ class SubmitPet extends SlashCommandWithAccount
         return [
             'pet' => $this->getPetAutocompletion(),
         ];
+    }
+
+    private function getImage(ApplicationCommand $interaction): Attachment
+    {
+        return collect($interaction->data->resolved->attachments)->first();
     }
 }

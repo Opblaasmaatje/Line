@@ -2,12 +2,10 @@
 
 namespace App\Modules\Pets\Models\Enums;
 
-use App\Helpers\Enums\Concerns\AsHeadline;
 use App\Helpers\Enums\Concerns\Searchable;
 
 enum PetName: string
 {
-    use AsHeadline;
     use Searchable;
 
     case PET_CHAOS_ELEMENTAL = 'Pet chaos elemental';
@@ -75,4 +73,5 @@ enum PetName: string
     case BRAN = 'Bran';
     case YAMI = 'Yami';
     case DOM = 'Dom';
+
 }
