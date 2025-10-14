@@ -1,4 +1,4 @@
-name: PHP Code style
+name: Code style
 on:
   push:
     branches: [ "master" ]

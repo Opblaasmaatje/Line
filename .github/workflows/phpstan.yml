@@ -1,4 +1,4 @@
-name: Php-stan
+name: PHP-stan
 
 on:
   push:
