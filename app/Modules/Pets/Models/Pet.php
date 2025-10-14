@@ -9,26 +9,24 @@ use App\Modules\Pets\Models\Queries\PetQuery;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 
 /**
  * @property int $id
  * @property int $account_id
  * @property PetName $name
+ * @property string $image_url
  * @property Status $status
  * @property Carbon $updated_at
  * @property Carbon $created_at
  *
  * @method static PetQuery query()
  */
-class Pet extends Model implements HasMedia
+class Pet extends Model
 {
-    use InteractsWithMedia;
-
     protected $fillable = [
         'name',
         'status',
+        'image_url',
     ];
 
     protected $casts = [

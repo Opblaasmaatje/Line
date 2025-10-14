@@ -6,12 +6,16 @@ use App\Laracord\Option;
 use App\Laracord\SlashCommands\SlashCommandWithAccount;
 use App\Models\Account;
 use App\Modules\Pets\Models\Enums\PetName;
+use App\Modules\Pets\Models\Pet;
 use App\Modules\Pets\SlashCommands\Concerns\HasPet;
 use Discord\Parts\Channel\Attachment;
 use Discord\Parts\Interactions\ApplicationCommand;
+use Discord\Parts\Interactions\MessageComponent;
 use Discord\Parts\Interactions\Ping;
 use Illuminate\Support\Facades\Config;
+use PHPUnit\TextUI\Application;
 use React\Promise\PromiseInterface;
+use Discord\Parts\Interactions\Interaction;
 
 class SubmitPet extends SlashCommandWithAccount
 {
@@ -55,20 +59,50 @@ class SubmitPet extends SlashCommandWithAccount
                 ->message("Submitted pet approval for {$pet->name->value}.")
                 ->success()
                 ->title("Successfully submitted pet approval for {$pet->name->value}!")
+                ->imageUrl($pet->image_url)
                 ->content('An admin will approve or deny your pet submission.')
                 ->build()
         )->then(
             function () use ($interaction, $pet) {
                 return $interaction->respondWithMessage(
                     $this
-                        ->message('Please review')
+                        ->message('Please review the pet submission!')
                         ->info()
-                        ->body($pet->getMedia()->sole()->getUrl())
+                        ->imageUrl($pet->image_url)
+                        ->button(
+                            label: 'Approve',
+                            value: $pet->getKey(),
+                            route: "Approve",
+                        )
+                        ->button(
+                            label: 'Approve',
+                            value: $pet->getKey(),
+                            style: 'danger',
+                            route: "Deny"
+                        )
+                        ->select()
                         ->send(Config::get('app.pet.discord-channel')),
                 );
             }
         );
     }
+
+    public function interactions(): array
+    {
+        return [
+            'Approve:pet' => fn (MessageComponent $interaction, string $pet) => $interaction
+                ->acknowledge()
+                ->then(fn() => $this->getPetService()->approve(
+                    Pet::query()->find($pet)
+                )),
+            'Deny:{pet}' => fn (MessageComponent $interaction, string $pet) => $interaction
+                ->acknowledge()
+                ->then(fn () => $this->getPetService()->reject(
+                    Pet::query()->find($pet)
+                )),
+        ];
+    }
+
 
     public function autocomplete(): array
     {

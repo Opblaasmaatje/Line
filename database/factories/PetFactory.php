@@ -16,6 +16,8 @@ class PetFactory extends Factory
         return [
             'name' => $this->faker->randomElement(PetName::cases()),
             'status' => $this->faker->randomElement(Status::cases()),
+            'image_url' => $this->faker->imageUrl(),
+            'account_id' => $this->faker->unique()->numberBetween(),
         ];
     }
 }

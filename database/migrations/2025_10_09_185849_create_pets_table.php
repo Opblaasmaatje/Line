@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('account_id');
             $table->string('name');
             $table->string('status');
+            $table->string('image_url');
             $table->timestamps();
         });
     }
