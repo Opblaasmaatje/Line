@@ -13,9 +13,7 @@ use Discord\Parts\Interactions\ApplicationCommand;
 use Discord\Parts\Interactions\MessageComponent;
 use Discord\Parts\Interactions\Ping;
 use Illuminate\Support\Facades\Config;
-use PHPUnit\TextUI\Application;
 use React\Promise\PromiseInterface;
-use Discord\Parts\Interactions\Interaction;
 
 class SubmitPet extends SlashCommandWithAccount
 {
@@ -72,13 +70,13 @@ class SubmitPet extends SlashCommandWithAccount
                         ->button(
                             label: 'Approve',
                             value: $pet->getKey(),
-                            route: "Approve",
+                            route: 'Approve',
                         )
                         ->button(
                             label: 'Approve',
                             value: $pet->getKey(),
                             style: 'danger',
-                            route: "Deny"
+                            route: 'Deny'
                         )
                         ->select()
                         ->send(Config::get('app.pet.discord-channel')),
@@ -92,7 +90,7 @@ class SubmitPet extends SlashCommandWithAccount
         return [
             'Approve:pet' => fn (MessageComponent $interaction, string $pet) => $interaction
                 ->acknowledge()
-                ->then(fn() => $this->getPetService()->approve(
+                ->then(fn () => $this->getPetService()->approve(
                     Pet::query()->find($pet)
                 )),
             'Deny:{pet}' => fn (MessageComponent $interaction, string $pet) => $interaction
@@ -102,7 +100,6 @@ class SubmitPet extends SlashCommandWithAccount
                 )),
         ];
     }
-
 
     public function autocomplete(): array
     {
