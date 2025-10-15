@@ -16,6 +16,7 @@
     "brick/json-mapper": "^0.1.1",
     "ianw/quickchart": "^1.3",
     "laracord/framework": "^2.3",
+    "spatie/php-structure-discoverer": "^2.3",
     "spatie/url": "^2.4"
   },
   "require-dev": {

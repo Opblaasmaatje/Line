@@ -2,9 +2,11 @@
 
 namespace App\Wise\Client\Enums;
 
-use App\Helpers\Enums\Concerns\AsHeadline;
+use App\Helpers\Enums\Contracts\CanHeadline;
+use App\Helpers\Enums\Contracts\Concerns\AsHeadline;
+use Illuminate\Support\Str;
 
-enum Period: string
+enum Period: string implements CanHeadline
 {
     use AsHeadline;
 
@@ -17,4 +19,11 @@ enum Period: string
     case MONTH = 'month';
 
     case YEAR = 'year';
+
+    public static function fromHeadline(string $headline): self
+    {
+        return self::from(
+            Str::snake($headline)
+        );
+    }
 }

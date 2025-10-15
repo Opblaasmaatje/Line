@@ -14,4 +14,8 @@ return [
         App\Wise\Providers\OldManProvider::class,
         App\Modules\Points\Providers\AllocationServiceProvider::class,
     ],
+
+    'pet' => [
+        'discord-channel' => env('PET_REVIEW_CHANNEL'),
+    ],
 ];

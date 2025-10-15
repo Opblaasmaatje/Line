@@ -2,10 +2,13 @@
 
 namespace App\Wise\Client\Enums;
 
-use App\Helpers\Enums\Concerns\AsHeadline;
-use App\Helpers\Enums\Concerns\Searchable;
+use App\Helpers\Enums\Contracts\CanHeadline;
+use App\Helpers\Enums\Contracts\CanSearch;
+use App\Helpers\Enums\Contracts\Concerns\AsHeadline;
+use App\Helpers\Enums\Contracts\Concerns\Searchable;
+use Illuminate\Support\Str;
 
-enum Metric: string
+enum Metric: string implements CanHeadline, CanSearch
 {
     use AsHeadline;
     use Searchable;
@@ -126,4 +129,11 @@ enum Metric: string
     case COLOSSEUM_GLORY = 'colosseum_glory';
 
     case LAST_MAN_STANDING = 'last_man_standing';
+
+    public static function fromHeadline(string $headline): self
+    {
+        return self::from(
+            Str::snake($headline)
+        );
+    }
 }

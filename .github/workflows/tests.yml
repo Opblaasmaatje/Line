@@ -1,4 +1,4 @@
-name: Tests
+name: Test suite
 
 on:
   push:
@@ -16,8 +16,13 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.4'
+        extensions: exif
+        tools: composer:v2
+    - name: Debug PHP extensions
+      run: php -m
     - uses: actions/checkout@v4
-    - uses: php-actions/composer@v6
+    - name: Install Composer dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
 
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
