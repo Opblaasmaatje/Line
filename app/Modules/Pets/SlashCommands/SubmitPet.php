@@ -7,17 +7,21 @@ use App\Laracord\Option;
 use App\Laracord\SlashCommands\SlashCommandWithAccount;
 use App\Models\Account;
 use App\Modules\Pets\Models\Enums\PetName;
+use App\Modules\Pets\SlashCommands\Concerns\HasImage;
 use App\Modules\Pets\SlashCommands\Concerns\HasPet;
+use Discord\DiscordCommandClient;
 use Discord\Parts\Channel\Attachment;
 use Discord\Parts\Interactions\ApplicationCommand;
 use Discord\Parts\Interactions\MessageComponent;
 use Discord\Parts\Interactions\Ping;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Str;
 use React\Promise\PromiseInterface;
 
 class SubmitPet extends SlashCommandWithAccount
 {
     use HasPet;
+    use HasImage;
 
     protected $name = 'pet-submit';
 
@@ -33,18 +37,24 @@ class SubmitPet extends SlashCommandWithAccount
     {
         return array_merge(parent::options(), [
             $this->getPetOption($this->discord()),
-
-            Option::make($this->discord())
-                ->setName('image')
-                ->setDescription('Upload image as proof.')
-                ->setType(Option::ATTACHMENT)
-                ->setRequired(true),
+            $this->getImageOption($this->discord()),
         ]);
     }
 
     protected function action(ApplicationCommand|Ping $interaction, Account $account): PromiseInterface
     {
         $attachment = $this->getImage($interaction);
+
+        if(! Str::startsWith($attachment->content_type, 'image/')){
+            return $interaction->respondWithMessage(
+                $this
+                    ->message("Invalid Image!")
+                    ->title("Invalid image submitted!")
+                    ->body('Please try again with a valid image.')
+                    ->error()
+                    ->build()
+            );
+        }
 
         $pet = $this->getPetService()->createPet(
             $account,
@@ -104,10 +114,5 @@ class SubmitPet extends SlashCommandWithAccount
         return [
             'pet' => $this->getPetAutocompletion(),
         ];
-    }
-
-    private function getImage(ApplicationCommand $interaction): Attachment
-    {
-        return collect($interaction->data->resolved->attachments)->first();
     }
 }
