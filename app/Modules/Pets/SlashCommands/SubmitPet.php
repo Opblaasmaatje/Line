@@ -8,6 +8,7 @@ use App\Models\Account;
 use App\Modules\Pets\Models\Enums\PetName;
 use App\Modules\Pets\Models\Pet;
 use App\Modules\Pets\SlashCommands\Concerns\HasPet;
+use Discord\Builders\Components\Button;
 use Discord\Parts\Channel\Attachment;
 use Discord\Parts\Interactions\ApplicationCommand;
 use Discord\Parts\Interactions\MessageComponent;
@@ -67,20 +68,18 @@ class SubmitPet extends SlashCommandWithAccount
                 return $interaction->respondWithMessage(
                     $this
                         ->message('Please review the pet submission!')
+                        ->title('Please review the pet submission!')
                         ->info()
                         ->imageUrl($pet->image_url)
                         ->button(
-                            label: 'Approve',
-                            value: $pet->getKey(),
-                            route: "Approve",
+                           label: 'Approve',
+                           route: "approve:{$pet->getKey()}",
                         )
                         ->button(
-                            label: 'Approve',
-                            value: $pet->getKey(),
-                            style: 'danger',
-                            route: "Deny"
+                            label: 'Deny',
+                            style: Button::STYLE_DANGER,
+                            route: "deny:{$pet->getKey()}",
                         )
-                        ->select()
                         ->send(Config::get('app.pet.discord-channel')),
                 );
             }
@@ -90,15 +89,15 @@ class SubmitPet extends SlashCommandWithAccount
     public function interactions(): array
     {
         return [
-            'Approve:pet' => fn (MessageComponent $interaction, string $pet) => $interaction
+            'approve:{pet}' => fn (MessageComponent $interaction, string $pet) => $interaction
                 ->acknowledge()
                 ->then(fn() => $this->getPetService()->approve(
-                    Pet::query()->find($pet)
+                    $this->getPetService()->repository->find($pet)
                 )),
-            'Deny:{pet}' => fn (MessageComponent $interaction, string $pet) => $interaction
+            'deny:{pet}' => fn (MessageComponent $interaction, string $pet) => $interaction
                 ->acknowledge()
                 ->then(fn () => $this->getPetService()->reject(
-                    Pet::query()->find($pet)
+                    $this->getPetService()->repository->find($pet)
                 )),
         ];
     }

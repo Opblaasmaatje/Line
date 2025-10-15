@@ -3,12 +3,18 @@
 namespace App\Modules\Pets\Library\Services;
 
 use App\Models\Account;
+use App\Modules\Pets\Library\Repository\PetRepository;
 use App\Modules\Pets\Models\Enums\PetName;
 use App\Modules\Pets\Models\Enums\Status;
 use App\Modules\Pets\Models\Pet;
 
 class PetService
 {
+    public function __construct(
+        public readonly PetRepository $repository
+    ){
+    }
+
     public function createPet(Account $account, PetName $pet, string $imageUrl): Pet
     {
        /** @var Pet $pet */
