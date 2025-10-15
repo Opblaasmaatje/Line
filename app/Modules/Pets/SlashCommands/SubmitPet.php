@@ -2,12 +2,12 @@
 
 namespace App\Modules\Pets\SlashCommands;
 
+use App\Laracord\Button;
 use App\Laracord\Option;
 use App\Laracord\SlashCommands\SlashCommandWithAccount;
 use App\Models\Account;
 use App\Modules\Pets\Models\Enums\PetName;
 use App\Modules\Pets\SlashCommands\Concerns\HasPet;
-use Discord\Builders\Components\Button;
 use Discord\Parts\Channel\Attachment;
 use Discord\Parts\Interactions\ApplicationCommand;
 use Discord\Parts\Interactions\MessageComponent;
@@ -63,7 +63,7 @@ class SubmitPet extends SlashCommandWithAccount
         )->then(
             function () use ($interaction, $pet) {
                 return $interaction->respondWithMessage(
-                    $this
+                    $this // @phpstan-ignore argument.type
                         ->message('Please review the pet submission!')
                         ->title('Please review the pet submission!')
                         ->info()

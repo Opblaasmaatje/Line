@@ -3,8 +3,12 @@
 namespace App\Modules\Pets\Models\Queries;
 
 use App\Modules\Pets\Models\Enums\Status;
+use App\Modules\Pets\Models\Pet;
 use Illuminate\Database\Eloquent\Builder;
 
+/**
+ * @extends Builder<Pet>
+ */
 class PetQuery extends Builder
 {
     public function approved(): self
