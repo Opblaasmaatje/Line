@@ -3,7 +3,6 @@
 namespace App\Modules\Pets\SlashCommands\Concerns;
 
 use App\Laracord\Option;
-use App\Modules\Pets\Models\Pet;
 use Discord\DiscordCommandClient;
 use Discord\Parts\Channel\Attachment;
 use Discord\Parts\Interactions\ApplicationCommand;
