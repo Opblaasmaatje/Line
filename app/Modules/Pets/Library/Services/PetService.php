@@ -19,7 +19,7 @@ class PetService
     {
        /** @var Pet $pet */
        $pet = $account->pets()->create([
-            'name' => $pet,
+        'name' => $pet,
            'status' => Status::IN_PROCESS,
            'image_url' => $imageUrl,
     ]);
@@ -34,7 +34,9 @@ class PetService
 
     protected function setStatus(Pet $pet, Status $status): Pet
     {
-        $pet->fill(['status' => $status])->save();
+        $pet->fill([
+            'status' => $status,
+        ])->save();
 
         return $pet->refresh();
     }
