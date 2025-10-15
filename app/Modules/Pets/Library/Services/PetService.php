@@ -17,12 +17,11 @@ class PetService
 
     public function createPet(Account $account, PetName $pet, string $imageUrl): Pet
     {
-       /** @var Pet $pet */
-       $pet = $account->pets()->create([
-        'name' => $pet,
-           'status' => Status::IN_PROCESS,
-           'image_url' => $imageUrl,
-    ]);
+        $pet = $account->pets()->create([
+            'name' => $pet,
+            'status' => Status::IN_PROCESS,
+            'image_url' => $imageUrl,
+        ]);
 
        return $pet->refresh();
    }
