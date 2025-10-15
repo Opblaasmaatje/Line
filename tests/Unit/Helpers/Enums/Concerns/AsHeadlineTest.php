@@ -17,7 +17,7 @@ class AsHeadlineTest extends ApplicationCase
     {
         return [
             ...collect(
-                Discover::in( realpath(__DIR__ . '/../../../../../app'))
+                Discover::in(realpath(__DIR__.'/../../../../../app'))
                     ->enums()
                     ->implementing(CanHeadline::class)
                     ->get()
@@ -25,7 +25,7 @@ class AsHeadlineTest extends ApplicationCase
                 ->map(fn (string $enumClass) => $enumClass::cases())
                 ->flatten()
                 ->map(fn (CanHeadline $canHeadline) => [$canHeadline])
-                ->toArray()
+                ->toArray(),
         ];
     }
 
