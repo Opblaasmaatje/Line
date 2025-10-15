@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use BeyondCode\ErdGenerator\ErdGeneratorServiceProvider;
 use Illuminate\Database\Eloquent\Model;
 use Laracord\LaracordServiceProvider;
 
