@@ -3,14 +3,11 @@
 namespace App\Modules\Pets\SlashCommands;
 
 use App\Laracord\Button;
-use App\Laracord\Option;
 use App\Laracord\SlashCommands\SlashCommandWithAccount;
 use App\Models\Account;
 use App\Modules\Pets\Models\Enums\PetName;
 use App\Modules\Pets\SlashCommands\Concerns\HasImage;
 use App\Modules\Pets\SlashCommands\Concerns\HasPet;
-use Discord\DiscordCommandClient;
-use Discord\Parts\Channel\Attachment;
 use Discord\Parts\Interactions\ApplicationCommand;
 use Discord\Parts\Interactions\MessageComponent;
 use Discord\Parts\Interactions\Ping;
@@ -45,11 +42,11 @@ class SubmitPet extends SlashCommandWithAccount
     {
         $attachment = $this->getImage($interaction);
 
-        if(! Str::startsWith($attachment->content_type, 'image/')){
+        if (! Str::startsWith($attachment->content_type, 'image/')) {
             return $interaction->respondWithMessage(
                 $this
-                    ->message("Invalid Image!")
-                    ->title("Invalid image submitted!")
+                    ->message('Invalid Image!')
+                    ->title('Invalid image submitted!')
                     ->body('Please try again with a valid image.')
                     ->error()
                     ->build()
