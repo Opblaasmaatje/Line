@@ -13,10 +13,6 @@ class BotServiceProvider extends LaracordServiceProvider
         parent::boot();
 
         Model::shouldBeStrict();
-
-        if ($this->app->environment('local')) {
-            $this->app->register(ErdGeneratorServiceProvider::class);
-        }
     }
 
     public function register()
