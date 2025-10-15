@@ -12,7 +12,7 @@ class PetService
 {
     public function __construct(
         public readonly PetRepository $repository
-    ){
+    ) {
     }
 
     public function createPet(Account $account, PetName $pet, string $imageUrl): Pet

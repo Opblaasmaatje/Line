@@ -6,7 +6,6 @@ use App\Laracord\Option;
 use App\Laracord\SlashCommands\SlashCommandWithAccount;
 use App\Models\Account;
 use App\Modules\Pets\Models\Enums\PetName;
-use App\Modules\Pets\Models\Pet;
 use App\Modules\Pets\SlashCommands\Concerns\HasPet;
 use Discord\Builders\Components\Button;
 use Discord\Parts\Channel\Attachment;
@@ -14,9 +13,7 @@ use Discord\Parts\Interactions\ApplicationCommand;
 use Discord\Parts\Interactions\MessageComponent;
 use Discord\Parts\Interactions\Ping;
 use Illuminate\Support\Facades\Config;
-use PHPUnit\TextUI\Application;
 use React\Promise\PromiseInterface;
-use Discord\Parts\Interactions\Interaction;
 
 class SubmitPet extends SlashCommandWithAccount
 {
@@ -91,7 +88,7 @@ class SubmitPet extends SlashCommandWithAccount
         return [
             'approve:{pet}' => fn (MessageComponent $interaction, string $pet) => $interaction
                 ->acknowledge()
-                ->then(fn() => $this->getPetService()->approve(
+                ->then(fn () => $this->getPetService()->approve(
                     $this->getPetService()->repository->find($pet)
                 )),
             'deny:{pet}' => fn (MessageComponent $interaction, string $pet) => $interaction
@@ -101,7 +98,6 @@ class SubmitPet extends SlashCommandWithAccount
                 )),
         ];
     }
-
 
     public function autocomplete(): array
     {
