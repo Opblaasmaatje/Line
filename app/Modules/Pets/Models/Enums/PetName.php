@@ -2,9 +2,10 @@
 
 namespace App\Modules\Pets\Models\Enums;
 
-use App\Helpers\Enums\Concerns\Searchable;
+use App\Helpers\Enums\Contracts\CanSearch;
+use App\Helpers\Enums\Contracts\Concerns\Searchable;
 
-enum PetName: string
+enum PetName: string implements CanSearch
 {
     use Searchable;
 

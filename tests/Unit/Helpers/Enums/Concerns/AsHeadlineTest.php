@@ -2,11 +2,13 @@
 
 namespace Tests\Unit\Helpers\Enums\Concerns;
 
+use App\Helpers\Enums\Contracts\CanHeadline;
 use App\Wise\Client\Enums\Metric;
 use App\Wise\Client\Enums\Period;
 use Illuminate\Support\Str;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
+use Spatie\StructureDiscoverer\Discover;
 use Tests\ApplicationCase;
 
 class AsHeadlineTest extends ApplicationCase
@@ -14,24 +16,31 @@ class AsHeadlineTest extends ApplicationCase
     public static function enums(): array
     {
         return [
-            ...collect(Metric::cases())->map(fn (Metric $metric) => [$metric]),
-            ...collect(Period::cases())->map(fn (Period $period) => [$period]),
+            ...collect(
+                Discover::in( realpath(__DIR__ . '/../../../../../app'))
+                    ->enums()
+                    ->implementing(CanHeadline::class)
+                    ->get()
+            )
+                ->map(fn (string $enumClass) => $enumClass::cases())
+                ->flatten()
+                ->map(fn (CanHeadline $canHeadline) => [$canHeadline])
+                ->toArray()
         ];
     }
 
     #[Test]
     #[DataProvider('enums')]
-    public function it_can_instantiate_from_headline(Metric|Period $metric)
+    public function it_can_instantiate_from_headline(CanHeadline|Metric|Period $canHeadlineEnum)
     {
-
         $this->assertSame(
-            Str::headline($metric->value),
-            $metric->toHeadline()
+            Str::headline($canHeadlineEnum->value),
+            $canHeadlineEnum->toHeadline()
         );
 
         $this->assertInstanceOf(
-            $metric::class,
-            $metric::fromHeadline($metric->toHeadline())
+            $canHeadlineEnum::class,
+            $canHeadlineEnum::fromHeadline($canHeadlineEnum->toHeadline())
         );
     }
 }
