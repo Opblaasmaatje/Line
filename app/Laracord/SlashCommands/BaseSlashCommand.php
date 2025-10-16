@@ -30,21 +30,11 @@ abstract class BaseSlashCommand extends SlashCommand
     /**
      * {@inheritDoc}
      */
-    public function maybeHandle($interaction)
+    public function maybeHandle($interaction): void
     {
-        if (! $this->isAdminCommand()) {
-            $this->parseOptions($interaction);
-
-            $this->handleBeforeCallbacks($interaction);
-
-            $this->handle($interaction);
-
-            $this->clearOptions();
-        }
-
         /** @phpstan-ignore-next-line */
-        if ($this->isAdminCommand() && ! $this->isAdmin($interaction->member?->user)) {
-            return $interaction->respondWithMessage(
+        if ($this->isAdminCommand() && ! $this->isAdmin($interaction->member->user)) {
+            $interaction->respondWithMessage(
                 $this
                     ->message('You do not have permission to run this command.')
                     ->title('Permission Denied')
@@ -52,6 +42,8 @@ abstract class BaseSlashCommand extends SlashCommand
                     ->build(),
                 ephemeral: true
             );
+
+            return;
         }
 
         $this->parseOptions($interaction);
