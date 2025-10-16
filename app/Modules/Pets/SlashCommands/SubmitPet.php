@@ -3,21 +3,20 @@
 namespace App\Modules\Pets\SlashCommands;
 
 use App\Laracord\Button;
-use App\Laracord\SlashCommands\SlashCommandWithAccount;
-use App\Models\Account;
-use App\Modules\Pets\Models\Enums\PetName;
-use App\Modules\Pets\SlashCommands\Concerns\HasImage;
-use App\Modules\Pets\SlashCommands\Concerns\HasPet;
-use Discord\Parts\Interactions\ApplicationCommand;
+use App\Laracord\SlashCommands\BaseSlashCommand;
+use App\Modules\Pets\Library\Services\PetService;
+use App\Modules\Pets\SlashCommands\Parameters\HasImage;
+use App\Modules\Pets\SlashCommands\Parameters\HasPetName;
+use App\Wise\SlashCommands\Parameters\HasAccount;
 use Discord\Parts\Interactions\MessageComponent;
-use Discord\Parts\Interactions\Ping;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Str;
 use React\Promise\PromiseInterface;
 
-class SubmitPet extends SlashCommandWithAccount
+class SubmitPet extends BaseSlashCommand
 {
-    use HasPet;
+    use HasAccount;
+    use HasPetName;
     use HasImage;
 
     protected $name = 'pet-submit';
@@ -32,31 +31,19 @@ class SubmitPet extends SlashCommandWithAccount
 
     public function options(): array
     {
-        return array_merge(parent::options(), [
-            $this->getPetOption($this->discord()),
+        return [
+            $this->getAccountOption($this->discord()),
+            $this->getPetNameOption($this->discord()),
             $this->getImageOption($this->discord()),
-        ]);
+        ];
     }
 
-    protected function action(ApplicationCommand|Ping $interaction, Account $account): PromiseInterface
+    public function handle($interaction): PromiseInterface
     {
-        $attachment = $this->getImage($interaction);
-
-        if (! Str::startsWith($attachment->content_type, 'image/')) {
-            return $interaction->respondWithMessage(
-                $this
-                    ->message('Invalid Image!')
-                    ->title('Invalid image submitted!')
-                    ->body('Please try again with a valid image.')
-                    ->error()
-                    ->build()
-            );
-        }
-
         $pet = $this->getPetService()->createPet(
-            $account,
-            PetName::from($this->value('pet')),
-            $attachment->url,
+            $this->account,
+            $this->petName,
+            $this->image->url,
         );
 
         return $interaction->respondWithMessage(
@@ -90,6 +77,11 @@ class SubmitPet extends SlashCommandWithAccount
         );
     }
 
+    protected function getPetService(): PetService
+    {
+        return App::make(PetService::class);
+    }
+
     public function interactions(): array
     {
         return [
@@ -109,7 +101,7 @@ class SubmitPet extends SlashCommandWithAccount
     public function autocomplete(): array
     {
         return [
-            'pet' => $this->getPetAutocompletion(),
+            'pet-name' => $this->getPetNameAutocompleteCallback(),
         ];
     }
 }

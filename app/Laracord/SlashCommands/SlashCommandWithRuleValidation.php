@@ -6,10 +6,9 @@ use Discord\Parts\Interactions\ApplicationCommand;
 use Discord\Parts\Interactions\Ping;
 use Illuminate\Support\Facades\Validator as ValidatorFacade;
 use Illuminate\Validation\Validator;
-use Laracord\Commands\SlashCommand;
 use React\Promise\PromiseInterface;
 
-abstract class SlashCommandWithRuleValidation extends SlashCommand
+abstract class SlashCommandWithRuleValidation extends BaseSlashCommand
 {
     abstract protected function action(Ping|ApplicationCommand $interaction): PromiseInterface;
 

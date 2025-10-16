@@ -26,4 +26,11 @@ enum Period: string implements CanHeadline
             Str::snake($headline)
         );
     }
+
+    public static function tryFromHeadline(string $headline): self|null
+    {
+        return self::tryFrom(
+            Str::snake($headline)
+        );
+    }
 }

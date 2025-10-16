@@ -2,21 +2,19 @@
 
 namespace App\Wise\SlashCommands\Account;
 
-use App\Laracord\Option;
-use App\Laracord\SlashCommands\SlashCommandWithAccount;
-use App\Library\Repository\UserRepository;
+use App\Laracord\SlashCommands\BaseSlashCommand;
 use App\Library\Services\AccountService;
-use App\Models\Account;
 use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Record;
-use App\Wise\Client\Enums\Metric;
-use Discord\Parts\Interactions\ApplicationCommand;
-use Discord\Parts\Interactions\ApplicationCommandAutocomplete;
-use Discord\Parts\Interactions\Ping;
+use App\Wise\SlashCommands\Parameters\HasAccount;
+use App\Wise\SlashCommands\Parameters\HasMetric;
 use Illuminate\Support\Facades\App;
 use React\Promise\PromiseInterface;
 
-class GetRecords extends SlashCommandWithAccount
+class GetRecords extends BaseSlashCommand
 {
+    use HasAccount;
+    use HasMetric;
+
     protected $name = 'records';
 
     protected $description = 'Get the records of an account.';
@@ -29,23 +27,17 @@ class GetRecords extends SlashCommandWithAccount
 
     public function options(): array
     {
-        $parentRules = parent::options();
-
-        return array_merge($parentRules, [
-            Option::make($this->discord())
-                ->setName('Metric')
-                ->setDescription('What metric do you want to know?')
-                ->setType(Option::STRING)
-                ->setAutoComplete(true)
-                ->setRequired(true),
-        ]);
+        return [
+            $this->getAccountOption($this->discord()),
+            $this->getMetricOption($this->discord()),
+        ];
     }
 
-    protected function action(Ping|ApplicationCommand $interaction, Account $account): PromiseInterface
+    public function handle($interaction): PromiseInterface
     {
         $records = $this->accountService()->records(
-            $account,
-            Metric::fromHeadline($this->value('metric')),
+            $this->account,
+            $this->metric,
         );
 
         return $interaction->respondWithMessage(
@@ -58,14 +50,9 @@ class GetRecords extends SlashCommandWithAccount
                     ]),
                     false
                 )
-                ->content("Here are {$account->username}'s records for the [{$this->value('metric')}] metric!")
+                ->content("Here are {$this->account->username}'s records for the [{$this->value('metric')}] metric!")
                 ->build(),
         );
-    }
-
-    protected function userRepository(): UserRepository
-    {
-        return App::make(UserRepository::class);
     }
 
     protected function accountService(): AccountService
@@ -76,16 +63,7 @@ class GetRecords extends SlashCommandWithAccount
     public function autocomplete(): array
     {
         return [
-            'metric' => fn (ApplicationCommandAutocomplete $autocomplete, mixed $value) => $value
-                ? Metric::search($value)
-                    ->map(fn (Metric $metric) => $metric->toHeadline())
-                    ->take(25)
-                    ->values()
-                    ->toArray()
-
-                : collect(Metric::cases())
-                    ->map(fn (Metric $metric) => $metric->toHeadline())
-                    ->toArray(),
+            'metric' => $this->getMetricAutoCompleteCallback(),
         ];
     }
 }

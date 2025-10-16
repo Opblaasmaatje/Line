@@ -2,17 +2,17 @@
 
 namespace App\Modules\Points\SlashCommands;
 
-use App\Laracord\SlashCommands\SlashCommandWithAccount;
-use App\Models\Account;
+use App\Laracord\SlashCommands\BaseSlashCommand;
 use App\Modules\Points\Models\Point;
-use Discord\Parts\Interactions\ApplicationCommand;
-use Discord\Parts\Interactions\Ping;
+use App\Wise\SlashCommands\Parameters\HasAccount;
 use Illuminate\Support\Collection;
 use QuickChart;
 use React\Promise\PromiseInterface;
 
-class GetPoints extends SlashCommandWithAccount
+class GetPoints extends BaseSlashCommand
 {
+    use HasAccount;
+
     protected $name = 'points';
 
     protected $description = 'Check user stats';
@@ -23,16 +23,23 @@ class GetPoints extends SlashCommandWithAccount
 
     protected $hidden = false;
 
-    protected function action(Ping|ApplicationCommand $interaction, Account $account): PromiseInterface
+    public function options(): array
+    {
+        return [
+            $this->getAccountOption($this->discord()),
+        ];
+    }
+
+    public function handle($interaction): PromiseInterface
     {
         return $interaction->respondWithMessage(
             $this->message()
                 ->info()
                 ->title('These are you total points!')
-                ->field('Points', $account->total_points)
-                ->field('URL', $account->url)
+                ->field('Points', $this->account->total_points)
+                ->field('URL', $this->account->url)
                 ->content('Check some of your highest point contributions!')
-                ->imageUrl($this->buildImage($account->points))
+                ->imageUrl($this->buildImage($this->account->points))
                 ->build()
         );
     }
