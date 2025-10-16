@@ -67,7 +67,7 @@ trait HasCompetition
                 return $interaction->respondWithMessage(
                     $this
                         ->message('Competition does not exist!')
-                        ->error()
+                        ->warning()
                         ->content('Please enter a valid competition!')
                         ->build()
                 );

@@ -15,10 +15,10 @@ class PetService
     ) {
     }
 
-    public function createPet(Account $account, PetName $pet, string $imageUrl): Pet
+    public function createPet(Account $account, PetName $petName, string $imageUrl): Pet
     {
         $pet = $account->pets()->create([
-            'name' => $pet,
+            'name' => $petName,
             'status' => Status::IN_PROCESS,
             'image_url' => $imageUrl,
         ]);

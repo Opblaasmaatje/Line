@@ -42,7 +42,7 @@ abstract class BaseSlashCommand extends SlashCommand
             $this->clearOptions();
         }
 
-        if ($this->isAdminCommand() && ! $this->isAdmin($interaction->member->user)) {
+        if ($this->isAdminCommand() && ! $this->isAdmin($interaction->member?->user)) {
             return $interaction->respondWithMessage(
                 $this
                     ->message('You do not have permission to run this command.')

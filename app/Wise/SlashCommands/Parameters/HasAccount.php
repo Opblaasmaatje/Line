@@ -48,7 +48,7 @@ trait HasAccount
                 return $interaction->respondWithMessage(
                     $this
                         ->message('User does not have an account assigned')
-                        ->error()
+                        ->warning()
                         ->content('Please use the set account command to assign the user an account!')
                         ->build()
                 );
