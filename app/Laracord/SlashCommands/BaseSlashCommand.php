@@ -9,7 +9,6 @@ abstract class BaseSlashCommand extends SlashCommand
 {
     private array $beforeCallbacks = [];
 
-
     public function __construct(Laracord $bot)
     {
         parent::__construct($bot);
@@ -20,7 +19,7 @@ abstract class BaseSlashCommand extends SlashCommand
     private function bootTraits(): void
     {
         foreach (class_uses_recursive(static::class) as $trait) {
-            $method = 'boot' . class_basename($trait);
+            $method = 'boot'.class_basename($trait);
 
             if (method_exists($this, $method)) {
                 $this->{$method}();
@@ -29,7 +28,7 @@ abstract class BaseSlashCommand extends SlashCommand
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function maybeHandle($interaction)
     {

@@ -49,7 +49,7 @@ trait HasCompetition
     protected function bootHasCompetition(): void
     {
         $this->addBeforeCallback(function (Interaction $interaction) {
-            if (!$this->value('competition')) {
+            if (! $this->value('competition')) {
                 return $interaction->respondWithMessage(
                     $this
                         ->message('Competition not given as parameter!')
@@ -63,7 +63,7 @@ trait HasCompetition
                 $this->value('competition')
             );
 
-            if (!$competition) {
+            if (! $competition) {
                 return $interaction->respondWithMessage(
                     $this
                         ->message('Competition does not exist!')

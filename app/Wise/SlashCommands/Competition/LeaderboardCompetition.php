@@ -3,16 +3,11 @@
 namespace App\Wise\SlashCommands\Competition;
 
 use App\Laracord\SlashCommands\BaseSlashCommand;
-use App\Laracord\SlashCommands\SlashCommandWithRuleValidation;
 use App\Library\Services\CompetitionService;
-use App\Models\Competition;
 use App\Wise\Client\Endpoints\Competition\DTO\ParticipantHistory;
-use App\Wise\Client\Enums\Metric;
 use App\Wise\SlashCommands\Parameters\HasCompetition;
 use App\Wise\SlashCommands\Parameters\HasMetric;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Str;
-use Illuminate\Validation\Rule;
 use React\Promise\PromiseInterface;
 
 class LeaderboardCompetition extends BaseSlashCommand

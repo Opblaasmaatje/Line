@@ -25,7 +25,7 @@ trait HasMetric
 
     protected function bootHasMetric(): void
     {
-        $this->addBeforeCallback(function (Interaction $interaction){
+        $this->addBeforeCallback(function (Interaction $interaction) {
             if (! $this->value('metric')) {
                 return $interaction->respondWithMessage(
                     $this

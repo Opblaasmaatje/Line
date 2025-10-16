@@ -17,7 +17,7 @@ trait HasAccount
     {
         return Option::make($client)
             ->setName('User')
-            ->setDescription("Decide the account of a user.")
+            ->setDescription('Decide the account of a user.')
             ->setType(Option::USER)
             ->setRequired(true);
     }
@@ -29,7 +29,7 @@ trait HasAccount
 
     protected function bootHasAccount(): void
     {
-        $this->addBeforeCallback(function (Interaction $interaction){
+        $this->addBeforeCallback(function (Interaction $interaction) {
             if (! $this->value('user')) {
                 return $interaction->respondWithMessage(
                     $this
