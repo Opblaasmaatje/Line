@@ -42,6 +42,7 @@ abstract class BaseSlashCommand extends SlashCommand
             $this->clearOptions();
         }
 
+        /** @phpstan-ignore-next-line */
         if ($this->isAdminCommand() && ! $this->isAdmin($interaction->member?->user)) {
             return $interaction->respondWithMessage(
                 $this
