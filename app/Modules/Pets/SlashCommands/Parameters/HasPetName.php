@@ -3,14 +3,11 @@
 namespace App\Modules\Pets\SlashCommands\Parameters;
 
 use App\Laracord\Option;
-use App\Modules\Pets\Library\Services\PetService;
 use App\Modules\Pets\Models\Enums\PetName;
 use Closure;
 use Discord\DiscordCommandClient;
 use Discord\Parts\Interactions\ApplicationCommandAutocomplete;
 use Discord\Parts\Interactions\Interaction;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Str;
 
 trait HasPetName
 {
