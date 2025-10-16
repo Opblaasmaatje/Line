@@ -132,7 +132,14 @@ enum Metric: string implements CanHeadline, CanSearch
 
     public static function fromHeadline(string $headline): self
     {
-        return self::from(
+        return self::tryFrom(
+            Str::snake($headline)
+        );
+    }
+
+    public static function tryFromHeadline(string $headline): self|null
+    {
+        return self::tryFrom(
             Str::snake($headline)
         );
     }

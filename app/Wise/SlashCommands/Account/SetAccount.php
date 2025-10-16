@@ -2,11 +2,11 @@
 
 namespace App\Wise\SlashCommands\Account;
 
+use App\Laracord\Option;
 use App\Library\Repository\UserRepository;
 use App\Library\Services\AccountService;
 use App\Models\Account;
 use App\Wise\Helpers\WiseOldManUrl;
-use Discord\Parts\Interactions\Command\Option;
 use Illuminate\Support\Facades\App;
 use Laracord\Commands\SlashCommand;
 
@@ -25,13 +25,13 @@ class SetAccount extends SlashCommand
     public function options(): array
     {
         return [
-            (new Option($this->discord()))
+            Option::make($this->discord())
                 ->setName('User')
                 ->setDescription('Define which user')
                 ->setType(Option::USER)
                 ->setRequired(true),
 
-            (new Option($this->discord()))
+            Option::make($this->discord())
                 ->setName('Account RSN')
                 ->setDescription('Define RSN')
                 ->setType(Option::STRING)

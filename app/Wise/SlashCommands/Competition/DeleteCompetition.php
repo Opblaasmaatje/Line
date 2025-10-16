@@ -2,12 +2,12 @@
 
 namespace App\Wise\SlashCommands\Competition;
 
+use App\Laracord\SlashCommands\BaseSlashCommand;
 use App\Library\Services\CompetitionService;
-use App\Wise\SlashCommands\Concerns\HasCompetition;
+use App\Wise\SlashCommands\Parameters\HasCompetition;
 use Illuminate\Support\Facades\App;
-use Laracord\Commands\SlashCommand;
 
-class DeleteCompetition extends SlashCommand
+class DeleteCompetition extends BaseSlashCommand
 {
     use HasCompetition;
 
@@ -31,7 +31,7 @@ class DeleteCompetition extends SlashCommand
     public function handle($interaction)
     {
         $success = $this->getCompetitionService()->delete(
-            $this->value('competition')
+            $this->competition
         );
 
         if (! $success) {
@@ -40,7 +40,7 @@ class DeleteCompetition extends SlashCommand
                     ->message()
                     ->error()
                     ->title('Could not delete competition!')
-                    ->field('Competition Title', $this->value('competition'))
+                    ->field('Competition Title', $this->competition->title)
                     ->build()
             );
         }
@@ -50,7 +50,7 @@ class DeleteCompetition extends SlashCommand
                 ->message()
                 ->success()
                 ->title('Competition deleted!')
-                ->field('Competition Title', $this->value('competition'))
+                ->field('Competition Title', $this->competition->title)
                 ->build(),
         );
     }
@@ -58,7 +58,7 @@ class DeleteCompetition extends SlashCommand
     public function autocomplete(): array
     {
         return [
-            'competition' => $this->getCompetitionAutocomplete(),
+            'competition' => $this->getCompetitionAutocompleteCallback(),
         ];
     }
 

@@ -6,6 +6,7 @@ use App\Laracord\Option;
 use Discord\DiscordCommandClient;
 use Discord\Parts\Channel\Attachment;
 use Discord\Parts\Interactions\ApplicationCommand;
+use Discord\Parts\Interactions\Interaction;
 
 trait HasImage
 {
@@ -18,7 +19,7 @@ trait HasImage
             ->setRequired(true);
     }
 
-    protected function getImage(ApplicationCommand $interaction): Attachment
+    protected function getImage(ApplicationCommand|Interaction $interaction): Attachment
     {
         return collect($interaction->data->resolved->attachments)->first();
     }

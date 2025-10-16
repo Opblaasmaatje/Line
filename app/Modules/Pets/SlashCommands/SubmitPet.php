@@ -3,11 +3,13 @@
 namespace App\Modules\Pets\SlashCommands;
 
 use App\Laracord\Button;
+use App\Laracord\SlashCommands\BaseSlashCommand;
 use App\Laracord\SlashCommands\SlashCommandWithAccount;
 use App\Models\Account;
 use App\Modules\Pets\Models\Enums\PetName;
 use App\Modules\Pets\SlashCommands\Concerns\HasImage;
 use App\Modules\Pets\SlashCommands\Concerns\HasPet;
+use App\Wise\SlashCommands\Parameters\HasAccount;
 use Discord\Parts\Interactions\ApplicationCommand;
 use Discord\Parts\Interactions\MessageComponent;
 use Discord\Parts\Interactions\Ping;
@@ -15,8 +17,9 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 use React\Promise\PromiseInterface;
 
-class SubmitPet extends SlashCommandWithAccount
+class SubmitPet extends BaseSlashCommand
 {
+    use HasAccount;
     use HasPet;
     use HasImage;
 
@@ -32,13 +35,14 @@ class SubmitPet extends SlashCommandWithAccount
 
     public function options(): array
     {
-        return array_merge(parent::options(), [
+        return [
+            $this->getAccountOption($this->discord()),
             $this->getPetOption($this->discord()),
             $this->getImageOption($this->discord()),
-        ]);
+        ];
     }
 
-    protected function action(ApplicationCommand|Ping $interaction, Account $account): PromiseInterface
+    public function handle($interaction): PromiseInterface
     {
         $attachment = $this->getImage($interaction);
 
@@ -54,7 +58,7 @@ class SubmitPet extends SlashCommandWithAccount
         }
 
         $pet = $this->getPetService()->createPet(
-            $account,
+            $this->account,
             PetName::from($this->value('pet')),
             $attachment->url,
         );

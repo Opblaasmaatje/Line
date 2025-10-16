@@ -8,6 +8,7 @@ use App\Modules\Points\SlashCommands\GivePoints;
 use App\Modules\Points\SlashCommands\Leaderboard;
 use App\Wise\SlashCommands\Account\GetRecords;
 use App\Wise\SlashCommands\Account\SetAccount;
+use App\Wise\SlashCommands\Account\TestCommand;
 use App\Wise\SlashCommands\Competition\DeleteCompetition;
 use App\Wise\SlashCommands\Competition\LeaderboardCompetition;
 use App\Wise\SlashCommands\Competition\StartCompetition;
