@@ -2,6 +2,7 @@
 
 use App\Cron\AddSnapshotToUser;
 use App\Cron\ApplyPointAllocation;
+use App\Cron\UpdateBotActivity;
 use App\Modules\Pets\SlashCommands\CheckPets;
 use App\Modules\Pets\SlashCommands\SubmitPet;
 use App\Modules\Points\SlashCommands\GetPoints;
@@ -55,6 +56,7 @@ return [
     'services' => [
         ApplyPointAllocation::class,
         AddSnapshotToUser::class,
+        UpdateBotActivity::class,
     ],
 
     'events' => [
