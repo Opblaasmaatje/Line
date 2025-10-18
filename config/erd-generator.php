@@ -3,6 +3,9 @@
 return [
     'directories' => [
         base_path('app'.DIRECTORY_SEPARATOR.'Models'),
+        base_path('app'.DIRECTORY_SEPARATOR.'Modules'.DIRECTORY_SEPARATOR.'Points'.DIRECTORY_SEPARATOR.'Models'),
+        base_path('app'.DIRECTORY_SEPARATOR.'Modules'.DIRECTORY_SEPARATOR.'Pets'.DIRECTORY_SEPARATOR.'Models'),
+
     ],
 
     'ignore' => [],
