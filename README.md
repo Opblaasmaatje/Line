@@ -31,8 +31,7 @@ Note: This README reflects the current repository state. Unknowns are explicitly
    cp .env.example .env
    # Fill in required values (see Environment variables)
    ```
-4. Generate app key (if required by Laracord components). TODO: Confirm whether an app key is required.
-5. Configure your database in .env (see Laravel database configuration). TODO: Document the expected DB connection.
+5. Configure your database in .env (see Laravel database configuration).
 6. Run database migrations (if used by your commands):
    ```bash
    ./laracord migrate
@@ -49,33 +48,22 @@ Note: This README reflects the current repository state. Unknowns are explicitly
   ```bash
   ./laracord list
   ```
-- Example: run a specific command (replace with your command name):
-  ```bash
-  ./laracord your:command
-  ```
 
 ## Scripts and developer tooling
 These tools are available via Composer-installed binaries:
 - Tests:
   ```bash
-  vendor/bin/phpunit
+  ./vendor/bin/phpunit
   ```
 - Static analysis (PHPStan):
   ```bash
-  vendor/bin/phpstan analyse
+  ./vendor/bin/phpstan analyse
   ```
 - Coding standards (ECS):
   ```bash
-  vendor/bin/ecs check
-  vendor/bin/ecs fix   # to fix automatically
+  ./vendor/bin/ecs check
+  ./vendor/bin/ecs fix   # to fix automatically
   ```
-- Code style (Pint):
-  ```bash
-  vendor/bin/pint
-  ```
-
-Composer scripts:
-- post-root-package-install will copy .env.example to .env if .env does not exist.
 
 ## Environment variables
 From .env.example:
@@ -86,53 +74,6 @@ From .env.example:
 - WISE_OLD_MAN_GROUP_ID=001
 - WISE_OLD_MAN_GROUP_CODE=001
 - PET_REVIEW_CHANNEL=
-
-Notes:
-- Provide valid Discord credentials for the bot to authenticate.
-- Configure any DB_* variables if your features use the database. TODO: List exact DB vars once confirmed.
-
-## Tests
-- Test runner:
-  ```bash
-  vendor/bin/phpunit
-  ```
-- Configuration: phpunit.xml at the repo root.
-  - Source includes: app/
-  - Tests directory in config is "tests".
-
-## Project structure
-Top-level of this repository includes:
-- app/ — Application code (commands, services, modules)
-- bootstrap/ — Framework bootstrap
-- config/ — Configuration files
-- database/ — Migrations/factories/seeds
-- laracord — CLI entry point
-- public/ — Public assets (if applicable)
-- storage/ — Runtime storage
-- tests/ — Test suite (PHPUnit)
-- vendor/ — Composer dependencies
-- box.json — PHAR packaging configuration
-- phpunit.xml — PHPUnit configuration
-- phpstan.neon — PHPStan configuration
-- ecs.php — ECS configuration
-- composer.json — Project metadata and dependencies
-- graph.png — Data structure diagram
-
-## Packaging (PHAR)
-This project contains a box.json, indicating support for building a PHAR.
-- Prerequisite: Install humbug/box (Box) locally or globally. Example (global):
-  ```bash
-  composer global require humbug/box
-  ```
-- Build (example):
-  ```bash
-  box compile
-  ```
-TODO: Document the exact PHAR build and execution commands once confirmed (stub, output path, and versioning).
-
-## License
-- Declared in composer.json as MIT.
-- TODO: Add a LICENSE file to the repository to accompany the declared license.
 
 ## Diagram
 Data structure / ER graph:
