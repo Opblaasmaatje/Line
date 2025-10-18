@@ -9,19 +9,24 @@ class GooseBoardService
 {
     public function __construct(
         protected TeamService $teamService,
+        protected TileService $tileService,
     ){
     }
 
     public function create(array $data): GooseBoard
     {
-        $gooseBoard = GooseBoard::query()->create(
+        $board = GooseBoard::query()->create(
             Arr::only($data['goose_board'], (new GooseBoard)->getFillable())
         );
 
-        foreach ($data['teams'] as $team) {
-            $this->teamService->createTeam($gooseBoard, $team);
-        }
+        collect($data['tiles'])->each(function (array $tile, int $index) use ($board) {
+            return $this->tileService->create($board, $tile, $index);
+        });
 
-        return $gooseBoard;
+        collect($data['teams'])->each(function (array $team) use ($board) {
+            return $this->teamService->create($board, $team);
+        });
+
+        return $board->load(['teams', 'tiles']);
     }
 }

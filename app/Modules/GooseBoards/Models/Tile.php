@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $id
  * @property string $name
  * @property string $description
+ * @property int $index
  * @property int $goose_board_id
  * @property-read GooseBoard $gooseBoard
  */
@@ -17,6 +18,7 @@ class Tile extends Model
     protected $fillable = [
         'name',
         'description',
+        'index',
     ];
 
     public function gooseBoard(): BelongsTo
