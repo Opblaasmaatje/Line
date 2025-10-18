@@ -3,14 +3,18 @@
 namespace App\Wise\SlashCommands\Account;
 
 use App\Laracord\Option;
+use App\Laracord\SlashCommands\SlashCommandWithRuleValidation;
 use App\Library\Repository\UserRepository;
 use App\Library\Services\AccountService;
 use App\Models\Account;
 use App\Wise\Helpers\WiseOldManUrl;
+use Discord\Parts\Interactions\ApplicationCommand;
+use Discord\Parts\Interactions\Ping;
 use Illuminate\Support\Facades\App;
-use Laracord\Commands\SlashCommand;
+use Illuminate\Validation\Rule;
+use React\Promise\PromiseInterface;
 
-class SetAccount extends SlashCommand
+class SetAccount extends SlashCommandWithRuleValidation
 {
     protected $name = 'set-account';
 
@@ -39,7 +43,21 @@ class SetAccount extends SlashCommand
         ];
     }
 
-    public function handle($interaction)
+    protected function getValidationRules(): array
+    {
+        return [
+            'username' => Rule::unique(Account::class, 'username'),
+        ];
+    }
+
+    protected function getValidationAttributes(): array
+    {
+        return [
+            'username' => $this->value('account-rsn'),
+        ];
+    }
+
+    protected function action(ApplicationCommand|Ping $interaction): PromiseInterface
     {
         $user = $this->userRepository()->setUserByDiscordId(
             $this->value('user')
@@ -73,13 +91,13 @@ class SetAccount extends SlashCommand
         );
     }
 
-    protected function userRepository(): UserRepository
-    {
-        return App::make(UserRepository::class);
-    }
-
     protected function accountService(): AccountService
     {
         return App::make(AccountService::class);
+    }
+
+    protected function userRepository(): UserRepository
+    {
+        return App::make(UserRepository::class);
     }
 }
