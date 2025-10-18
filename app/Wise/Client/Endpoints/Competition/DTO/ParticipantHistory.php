@@ -12,7 +12,7 @@ readonly class ParticipantHistory
      */
     public function __construct(
         public Player $player,
-         public array $history
+        public array $history
     ) {
     }
 

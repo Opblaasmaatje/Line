@@ -56,4 +56,9 @@ readonly class PlayerSnapshot extends Player implements Arrayable
     {
         return get_object_vars($this);
     }
+
+    public function hasSnapshot(): bool
+    {
+        return $this->latestSnapshot !== null;
+    }
 }

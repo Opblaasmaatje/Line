@@ -1,0 +1,21 @@
+{
+  "id": 60001,
+  "ehp": 0,
+  "exp": 0,
+  "ttm": 0,
+  "type": "unknown",
+  "build": "main",
+  "patron": false,
+  "status": "active",
+  "tt200m": 0,
+  "archive": null,
+  "country": null,
+  "username": "sharona",
+  "updatedAt": "2020-10-25T11:31:46.420Z",
+  "combatLevel": 3,
+  "displayName": "Sharona",
+  "registeredAt": "2020-10-25T11:31:46.420Z",
+  "lastChangedAt": null,
+  "lastImportedAt": null,
+  "latestSnapshot": null
+}

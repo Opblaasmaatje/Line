@@ -50,6 +50,22 @@ class SetSnapshotTest extends ApplicationCase
         $this->assertNull($account->refresh()->snapshot->raw_details);
     }
 
+    #[Test]
+    public function it_gracefully_recovers_from_data_less_response()
+    {
+        Http::fake([
+            '*' => Http::response($this->getFromFixture('empty_snapshot.json')),
+        ]);
+
+        $account = AccountFactory::new()
+            ->for(UserFactory::new())
+            ->create();
+
+        $succes = $this->subjectUnderTesting()->setSnapshot($account);
+
+        $this->assertFalse($succes);
+    }
+
     protected function subjectUnderTesting(): SnapshotService
     {
         return $this->app->make(SnapshotService::class);

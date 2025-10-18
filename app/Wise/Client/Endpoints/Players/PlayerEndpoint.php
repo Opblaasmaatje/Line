@@ -48,7 +48,14 @@ class PlayerEndpoint
             return false;
         }
 
-        return $this->mapper->map($response->body(), PlayerSnapshot::class);
+        /** @var PlayerSnapshot $snapshot */
+        $snapshot = $this->mapper->map($response->body(), PlayerSnapshot::class);
+
+        if (! $snapshot->hasSnapshot()) {
+            return false;
+        }
+
+        return $snapshot;
     }
 
     /**
