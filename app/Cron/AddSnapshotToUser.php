@@ -9,7 +9,7 @@ use Laracord\Services\Service;
 
 class AddSnapshotToUser extends Service
 {
-    protected int $interval = 10;
+    protected int $interval = 20;
 
     public function handle(): void
     {

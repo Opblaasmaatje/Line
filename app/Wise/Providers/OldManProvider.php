@@ -9,6 +9,7 @@ use Brick\JsonMapper\OnExtraProperties;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\ServiceProvider;
+use Spatie\GuzzleRateLimiterMiddleware\RateLimiterMiddleware;
 
 class OldManProvider extends ServiceProvider
 {
@@ -19,7 +20,8 @@ class OldManProvider extends ServiceProvider
         });
 
         $this->app->bind(WiseOldMan::class, function () {
-            $client = Http::baseUrl(Config::get('wise-old-man.api-url'));
+            $client = Http::baseUrl(Config::get('wise-old-man.api-url'))
+                ->withMiddleware(RateLimiterMiddleware::perSecond(5));
 
             $groupConfiguration = new GroupConfiguration(
                 Config::get('wise-old-man.group-code'),

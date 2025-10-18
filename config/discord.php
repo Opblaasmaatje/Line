@@ -54,9 +54,9 @@ return [
     ],
 
     'services' => [
+        UpdateBotActivity::class,
         ApplyPointAllocation::class,
         AddSnapshotToUser::class,
-        UpdateBotActivity::class,
     ],
 
     'events' => [

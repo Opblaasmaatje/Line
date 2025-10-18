@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad271ad1711086a3e3b4d92597a55430",
+    "content-hash": "b7bacd29bcceef8b0be79afa33b25d0a",
     "packages": [
         {
             "name": "brick/json-mapper",
@@ -4424,31 +4424,31 @@
         },
         {
             "name": "nunomaduro/termwind",
-            "version": "v2.3.1",
+            "version": "v2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/termwind.git",
-                "reference": "dfa08f390e509967a15c22493dc0bac5733d9123"
+                "reference": "eb61920a53057a7debd718a5b89c2178032b52c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/dfa08f390e509967a15c22493dc0bac5733d9123",
-                "reference": "dfa08f390e509967a15c22493dc0bac5733d9123",
+                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/eb61920a53057a7debd718a5b89c2178032b52c0",
+                "reference": "eb61920a53057a7debd718a5b89c2178032b52c0",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
                 "php": "^8.2",
-                "symfony/console": "^7.2.6"
+                "symfony/console": "^7.3.4"
             },
             "require-dev": {
-                "illuminate/console": "^11.44.7",
-                "laravel/pint": "^1.22.0",
+                "illuminate/console": "^11.46.1",
+                "laravel/pint": "^1.25.1",
                 "mockery/mockery": "^1.6.12",
-                "pestphp/pest": "^2.36.0 || ^3.8.2",
-                "phpstan/phpstan": "^1.12.25",
+                "pestphp/pest": "^2.36.0 || ^3.8.4",
+                "phpstan/phpstan": "^1.12.32",
                 "phpstan/phpstan-strict-rules": "^1.6.2",
-                "symfony/var-dumper": "^7.2.6",
+                "symfony/var-dumper": "^7.3.4",
                 "thecodingmachine/phpstan-strict-rules": "^1.0.0"
             },
             "type": "library",
@@ -4491,7 +4491,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nunomaduro/termwind/issues",
-                "source": "https://github.com/nunomaduro/termwind/tree/v2.3.1"
+                "source": "https://github.com/nunomaduro/termwind/tree/v2.3.2"
             },
             "funding": [
                 {
@@ -4507,7 +4507,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-05-08T08:14:37+00:00"
+            "time": "2025-10-18T11:10:27+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -6206,6 +6206,58 @@
                 }
             ],
             "time": "2024-06-11T12:45:25+00:00"
+        },
+        {
+            "name": "spatie/guzzle-rate-limiter-middleware",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/guzzle-rate-limiter-middleware.git",
+                "reference": "096966730d24a5c056a69465ae458f9339e1945a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/guzzle-rate-limiter-middleware/zipball/096966730d24a5c056a69465ae458f9339e1945a",
+                "reference": "096966730d24a5c056a69465ae458f9339e1945a",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.3|^7.0",
+                "php": "^7.1|^8.0"
+            },
+            "require-dev": {
+                "larapack/dd": "^1.0",
+                "phpunit/phpunit": "^9.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\GuzzleRateLimiterMiddleware\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastiandedeyne@gmail.com",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A rate limiter for Guzzle",
+            "homepage": "https://github.com/spatie/guzzle-rate-limiter-middleware",
+            "keywords": [
+                "guzzle-rate-limiter-middleware",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/guzzle-rate-limiter-middleware/issues",
+                "source": "https://github.com/spatie/guzzle-rate-limiter-middleware/tree/2.1.0"
+            },
+            "time": "2024-12-02T08:42:25+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
@@ -8628,16 +8680,16 @@
         },
         {
             "name": "team-reflex/discord-php",
-            "version": "v10.36.29",
+            "version": "v10.36.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/discord-php/DiscordPHP",
-                "reference": "29b08fb439fdbd73418b20242920c4d9e9268abb"
+                "reference": "98a641f15a070b0a5d7839ae851115a8b7bbc834"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/discord-php/DiscordPHP/zipball/29b08fb439fdbd73418b20242920c4d9e9268abb",
-                "reference": "29b08fb439fdbd73418b20242920c4d9e9268abb",
+                "url": "https://api.github.com/repos/discord-php/DiscordPHP/zipball/98a641f15a070b0a5d7839ae851115a8b7bbc834",
+                "reference": "98a641f15a070b0a5d7839ae851115a8b7bbc834",
                 "shasum": ""
             },
             "require": {
@@ -8701,7 +8753,7 @@
                 "issues": "https://github.com/discord-php/DiscordPHP/issues",
                 "wiki": "https://github.com/discord-php/DiscordPHP/wiki"
             },
-            "time": "2025-10-15T18:19:08+00:00"
+            "time": "2025-10-17T16:56:02+00:00"
         },
         {
             "name": "trafficcophp/bytebuffer",
