@@ -10,7 +10,8 @@ use Discord\DiscordCommandClient;
 use Discord\Parts\Interactions\Interaction;
 use Illuminate\Support\Facades\App;
 
-trait HasAccount
+trait
+HasAccount
 {
     protected Account $account;
 

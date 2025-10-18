@@ -3,6 +3,9 @@
 namespace App;
 
 use App\Cron\UpdateBotActivity;
+use App\Livewire\Message;
+use Illuminate\Foundation\Console\NotificationMakeCommand;
+use Illuminate\Support\Facades\Route;
 use Laracord\Laracord;
 
 class Bot extends Laracord
@@ -18,6 +21,9 @@ class Bot extends Laracord
 
     public function routes(): void
     {
-        //
+        Route::middleware('web')->group(function () {
+            Route::get('/message', Message::class);
+        });
+
     }
 }
