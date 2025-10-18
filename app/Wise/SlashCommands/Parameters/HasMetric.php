@@ -27,7 +27,7 @@ trait HasMetric
     protected function bootHasMetric(): void
     {
         $validatableCallback = new ValidatableCallback(function (Interaction $interaction) {
-            if (!$this->value('metric')) {
+            if (! $this->value('metric')) {
                 $interaction->respondWithMessage(
                     $this
                         ->message('Metric not given as parameter!')
@@ -41,7 +41,7 @@ trait HasMetric
 
             $metric = Metric::tryFromHeadline($this->value('metric'));
 
-            if (!$metric) {
+            if (! $metric) {
                 $interaction->respondWithMessage(
                     $this
                         ->message('Invalid metric given!')

@@ -50,7 +50,7 @@ trait HasCompetition
     protected function bootHasCompetition(): void
     {
         $validatableCallback = new ValidatableCallback(function (Interaction $interaction) {
-            if (!$this->value('competition')) {
+            if (! $this->value('competition')) {
                 $interaction->respondWithMessage(
                     $this
                         ->message('Competition not given as parameter!')
@@ -66,7 +66,7 @@ trait HasCompetition
                 $this->value('competition')
             );
 
-            if (!$competition) {
+            if (! $competition) {
                 $interaction->respondWithMessage(
                     $this
                         ->message('Competition does not exist!')
