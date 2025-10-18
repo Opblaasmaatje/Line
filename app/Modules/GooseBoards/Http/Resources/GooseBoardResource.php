@@ -3,6 +3,7 @@
 namespace App\Modules\GooseBoards\Http\Resources;
 
 use App\Modules\GooseBoards\Models\GooseBoard;
+use App\Modules\GooseBoards\Models\Tile;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -19,6 +20,7 @@ class GooseBoardResource extends JsonResource
             'name' => $this->name,
             'starts_at' => $this->starts_at,
             'ends_at' => $this->ends_at,
+            'tiles' => TileResource::collection($this->tiles),
             'teams' => TeamResource::collection($this->teams),
         ];
     }
