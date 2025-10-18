@@ -22,7 +22,7 @@ class UpdateBotActivity extends Service
         /** @var Activity $activity */
         $activity = $client->factory(Activity::class, [
             'type' => Activity::TYPE_GAME,
-            'name' => 'with ' . Items::getOne()['name'],
+            'name' => 'with '.Items::getOne()['name'],
         ]);
 
         if (! is_null($console)) {
