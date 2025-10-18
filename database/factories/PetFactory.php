@@ -14,10 +14,15 @@ class PetFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->randomElement(PetName::cases()),
+            'name' => $this->faker->unique()->randomElement(PetName::cases()),
             'status' => $this->faker->randomElement(Status::cases()),
             'image_url' => $this->faker->imageUrl(),
             'account_id' => $this->faker->unique()->numberBetween(),
         ];
+    }
+
+    public function approved(): self
+    {
+        return $this->set('status', Status::APPROVED);
     }
 }
