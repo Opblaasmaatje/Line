@@ -32,12 +32,12 @@ class ProofPet extends BaseSlashCommand
             $this->petName,
         );
 
-        if(is_null($pet)){
+        if (is_null($pet)) {
             return $interaction->respondWithMessage(
                 $this
-                ->message("{$this->account->username} does not have {$this->petName->value} 😔")
-                ->warning()
-                ->build()
+                    ->message("{$this->account->username} does not have {$this->petName->value} 😔")
+                    ->warning()
+                    ->build()
             );
         }
 

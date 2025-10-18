@@ -19,9 +19,10 @@ class AccountHasPetTest extends ApplicationCase
     {
         $account = AccountFactory::new()
             ->for(UserFactory::new())
-            ->has(PetFactory::new(['name' => PetName::PET_ZILYANA])->approved())
+            ->has(PetFactory::new([
+                'name' => PetName::PET_ZILYANA,
+            ])->approved())
             ->create();
-
 
         $pet = $this->subjectUnderTesting()->accountHasPet($account, PetName::PET_ZILYANA);
 

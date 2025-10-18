@@ -14,8 +14,6 @@ class PetRepository
         return Pet::query()->findOrFail($id);
     }
 
-
-
     /**
      * @return Collection<Pet>
      */
