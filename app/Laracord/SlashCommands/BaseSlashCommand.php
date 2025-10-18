@@ -7,7 +7,6 @@ use Laracord\Laracord;
 
 abstract class BaseSlashCommand extends SlashCommand
 {
-
     /**
      * @var ValidatableCallback[]
      */
