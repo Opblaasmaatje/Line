@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Modules\GooseBoards\Models\Team;
 use App\Modules\Pets\Models\Pet;
 use App\Modules\Points\Models\Point;
 use App\Wise\Helpers\WiseOldManUrl;
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
@@ -20,6 +22,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property-read User $user
  * @property-read Collection<Point> $points
  * @property-read Collection<Pet> $pets
+ * @property-read Collection<Team> $teams
  * @property-read Snapshot $snapshot
  * @property-read int $total_points
  * @property-read string $url
@@ -54,6 +57,11 @@ class Account extends Model
     public function pets(): HasMany
     {
         return $this->hasMany(Pet::class);
+    }
+
+    public function teams(): BelongsToMany
+    {
+        return $this->belongsToMany(Team::class)->withTimestamps();
     }
 
     public function totalPoints(): Attribute
