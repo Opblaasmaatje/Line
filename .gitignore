@@ -32,3 +32,4 @@ output.log
 Homestead.json
 Homestead.yaml
 Thumbs.db
+.env.testing
