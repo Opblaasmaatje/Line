@@ -67,6 +67,9 @@ class CompetitionEndpointTest extends ApplicationCase
             Metric::RUNECRAFTING,
         );
 
+
+        dd($mapping);
+        
         Http::assertSent(
             fn (Request $request) => $request->url() === "https://api.wiseoldman.net/v2/competitions/{$competition->wise_old_man_id}/top-history?metric=runecrafting"
         );
