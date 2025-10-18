@@ -7,7 +7,6 @@ use Laracord\Laracord;
 
 class Bot extends Laracord
 {
-
     protected function bootServices(): self
     {
         parent::bootServices();

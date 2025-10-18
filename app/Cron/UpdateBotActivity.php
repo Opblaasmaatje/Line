@@ -25,7 +25,7 @@ class UpdateBotActivity extends Service
             'name' => Items::getOne()['name'],
         ]);
 
-        if(! is_null($console)){
+        if (! is_null($console)) {
             $console->log("Updating bot activity with {$activity->name}");
         }
 
