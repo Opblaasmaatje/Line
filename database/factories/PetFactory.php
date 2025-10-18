@@ -21,8 +21,23 @@ class PetFactory extends Factory
         ];
     }
 
+    public function setStatus(Status $status): self
+    {
+        return $this->set('status', $status);
+    }
+
     public function approved(): self
     {
-        return $this->set('status', Status::APPROVED);
+        return $this->setStatus(Status::APPROVED);
+    }
+
+    public function rejected(): self
+    {
+        return $this->setStatus(Status::REJECTED);
+    }
+
+    public function inProcess(): self
+    {
+        return $this->setStatus(Status::IN_PROCESS);
     }
 }
