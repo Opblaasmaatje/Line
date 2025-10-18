@@ -14,7 +14,7 @@ class TeamService
     ){
     }
 
-    public function createTeam(GooseBoard $board, array $data): Team
+    public function create(GooseBoard $board, array $data): Team
     {
         /** @var Team $team */
         $team = $board->teams()->create(

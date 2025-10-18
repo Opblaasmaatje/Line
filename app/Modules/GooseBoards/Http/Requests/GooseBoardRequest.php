@@ -12,7 +12,7 @@ class GooseBoardRequest
     public function rules(): array
     {
         return [
-            'goose_board.name' =>[
+            'goose_board.name' => [
                 'required',
                 'string',
             ],
@@ -26,6 +26,18 @@ class GooseBoardRequest
                 'required',
                 Rule::date()->format('Y-m-d'),
                 'after:goose_board.starts_at',
+            ],
+            'tiles' => [
+                'array',
+                'min:1',
+            ],
+            'tiles.*.name' => [
+                'required',
+                'string',
+            ],
+            'tiles.*.description' => [
+                'required',
+                'string',
             ],
             'teams' => [
                 'array',
@@ -44,6 +56,23 @@ class GooseBoardRequest
         ];
     }
 
+    /**
+     * @return array{
+     *     goose_board: array{
+     *         name: string,
+     *         starts_at: string,
+     *         ends_at: string,
+     *     },
+     *     tiles: array<int, array{
+     *         name: string,
+     *         description: string,
+     *     }>,
+     *     teams: array<int, array{
+     *         name: string,
+     *         accounts: array<int, string>
+     *     }>
+     * }
+     */
     public function validate(array $json): array
     {
         return Validator::make($json, $this->rules())->validate();

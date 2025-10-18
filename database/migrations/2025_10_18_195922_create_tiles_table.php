@@ -16,10 +16,10 @@ return new class extends Migration
             $table->foreignId('goose_board_id');
             $table->string('name');
             $table->longText('description');
-            $table->integer('position');
+            $table->integer('index');
             $table->timestamps();
 
-            $table->unique(['goose_board_id', 'position']);
+            $table->unique(['goose_board_id', 'index']);
         });
     }
 
