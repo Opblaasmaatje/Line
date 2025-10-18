@@ -2,8 +2,6 @@
 
 namespace Tests\Unit\Modules\Pets\Library\Services\PetService;
 
-use App\Models\Account;
-use App\Models\User;
 use App\Modules\Pets\Library\AcquiredPets\AcquiredPet;
 use App\Modules\Pets\Library\Services\PetService;
 use App\Modules\Pets\Models\Enums\PetName;
@@ -31,13 +29,14 @@ class GetApprovedPetsTest extends ApplicationCase
         $this->assertCount(count(PetName::cases()) - 4, $acquiredPets->onlyYetToGet());
     }
 
-
     #[Test]
     public function it_applies_to_the_correct_name()
     {
         $account = AccountFactory::new()
             ->for(UserFactory::new())
-            ->has(PetFactory::new(['name' => PetName::PET_ZILYANA])->approved())
+            ->has(PetFactory::new([
+                'name' => PetName::PET_ZILYANA,
+            ])->approved())
             ->create();
 
         $acquiredPets = $this->subjectUnderTesting()->getAcquiredPets($account);
@@ -54,8 +53,12 @@ class GetApprovedPetsTest extends ApplicationCase
     {
         $account = AccountFactory::new()
             ->for(UserFactory::new())
-            ->has(PetFactory::new(['name' => PetName::PET_KRAKEN])->approved())
-            ->has(PetFactory::new(['name' => PetName::PET_KRAKEN])->approved())
+            ->has(PetFactory::new([
+                'name' => PetName::PET_KRAKEN,
+            ])->approved())
+            ->has(PetFactory::new([
+                'name' => PetName::PET_KRAKEN,
+            ])->approved())
             ->create();
 
         $acquiredPets = $this->subjectUnderTesting()->getAcquiredPets($account);
@@ -70,8 +73,12 @@ class GetApprovedPetsTest extends ApplicationCase
     {
         $account = AccountFactory::new()
             ->for(UserFactory::new())
-            ->has(PetFactory::new(['status' => Status::IN_PROCESS]))
-            ->has(PetFactory::new(['status' => Status::REJECTED]))
+            ->has(PetFactory::new([
+                'status' => Status::IN_PROCESS,
+            ]))
+            ->has(PetFactory::new([
+                'status' => Status::REJECTED,
+            ]))
             ->create();
 
         $acquiredPets = $this->subjectUnderTesting()->getAcquiredPets($account);

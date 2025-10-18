@@ -9,6 +9,6 @@ readonly class AcquiredPet
     public function __construct(
         public PetName $name,
         public bool $acquired,
-    ){
+    ) {
     }
 }

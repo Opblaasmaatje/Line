@@ -14,7 +14,6 @@ class PetRepository
     }
 
     /**
-     * @param Account $account
      * @return Collection<Pet>
      */
     public function getApprovedPets(Account $account): Collection

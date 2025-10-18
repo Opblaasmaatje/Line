@@ -5,10 +5,9 @@ namespace App\Modules\Pets\Library\Services;
 use App\Models\Account;
 use App\Modules\Pets\Library\AcquiredPets\AcquiredPetsCollection;
 use App\Modules\Pets\Library\Repository\PetRepository;
+use App\Modules\Pets\Models\Enums\PetName;
 use App\Modules\Pets\Models\Enums\Status;
 use App\Modules\Pets\Models\Pet;
-use Illuminate\Support\Collection;
-use App\Modules\Pets\Models\Enums\PetName;
 
 class PetService
 {

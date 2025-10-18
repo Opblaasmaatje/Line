@@ -19,7 +19,7 @@ readonly class AcquiredPetsCollection
         $ownedNames = $pets->pluck('name');
 
         $this->acquiredPets = $allPets->map(
-            fn(PetName $petName) => new AcquiredPet(
+            fn (PetName $petName) => new AcquiredPet(
                 $petName,
                 $ownedNames->contains($petName),
             ),
@@ -28,11 +28,11 @@ readonly class AcquiredPetsCollection
 
     public function onlyGotten(): Collection
     {
-        return $this->acquiredPets->filter(fn(AcquiredPet $pet) => $pet->acquired)->values();
+        return $this->acquiredPets->filter(fn (AcquiredPet $pet) => $pet->acquired)->values();
     }
 
     public function onlyYetToGet(): Collection
     {
-        return $this->acquiredPets->reject(fn(AcquiredPet $pet) => $pet->acquired)->values();
+        return $this->acquiredPets->reject(fn (AcquiredPet $pet) => $pet->acquired)->values();
     }
 }

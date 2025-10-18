@@ -19,7 +19,7 @@ class CheckPets extends BaseSlashCommand
     public function options(): array
     {
         return [
-            $this->getAccountOption($this->discord())
+            $this->getAccountOption($this->discord()),
         ];
     }
 
@@ -32,7 +32,7 @@ class CheckPets extends BaseSlashCommand
             ->title("These are all the pets {$this->account->username} has!")
             ->success();
 
-        $collection->onlyGotten()->each(function (AcquiredPet $pet) use ($message){
+        $collection->onlyGotten()->each(function (AcquiredPet $pet) use ($message) {
             return $message->field($pet->name->value, '✅');
         });
 
