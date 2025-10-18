@@ -7,9 +7,6 @@ use App\Models\Account;
 use Illuminate\Support\Facades\App;
 use Laracord\Services\Service;
 
-/**
- * TODO add error handling for user not found
- */
 class AddSnapshotToUser extends Service
 {
     protected int $interval = 10;

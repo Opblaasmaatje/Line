@@ -3,6 +3,7 @@
 namespace App\Wise\SlashCommands\Parameters;
 
 use App\Laracord\Option;
+use App\Laracord\SlashCommands\ValidatableCallback;
 use App\Wise\Client\Enums\Metric;
 use Closure;
 use Discord\DiscordCommandClient;
@@ -25,31 +26,39 @@ trait HasMetric
 
     protected function bootHasMetric(): void
     {
-        $this->addBeforeCallback(function (Interaction $interaction) {
+        $validatableCallback = new ValidatableCallback(function (Interaction $interaction) {
             if (! $this->value('metric')) {
-                return $interaction->respondWithMessage(
+                $interaction->respondWithMessage(
                     $this
                         ->message('Metric not given as parameter!')
                         ->error()
                         ->content('Metric not given as parameter!')
                         ->build()
                 );
+
+                return false;
             }
 
             $metric = Metric::tryFromHeadline($this->value('metric'));
 
             if (! $metric) {
-                return $interaction->respondWithMessage(
+                $interaction->respondWithMessage(
                     $this
                         ->message('Invalid metric given!')
                         ->warning()
                         ->content('Please give a valid metric!')
                         ->build()
                 );
+
+                return false;
             }
 
             $this->metric = $metric;
+
+            return true;
         });
+
+        $this->addBeforeCallback($validatableCallback);
     }
 
     protected function getMetricAutoCompleteCallback(): Closure

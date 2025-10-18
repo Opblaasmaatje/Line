@@ -7,6 +7,9 @@ use Laracord\Laracord;
 
 abstract class BaseSlashCommand extends SlashCommand
 {
+    /**
+     * @var ValidatableCallback[]
+     */
     private array $beforeCallbacks = [];
 
     public function __construct(Laracord $bot)
@@ -48,23 +51,23 @@ abstract class BaseSlashCommand extends SlashCommand
 
         $this->parseOptions($interaction);
 
-        $this->handleBeforeCallbacks($interaction);
+        if (! $this->handleBeforeCallbacks($interaction)) {
+            return;
+        }
 
         $this->handle($interaction);
 
         $this->clearOptions();
     }
 
-    protected function handleBeforeCallbacks($interaction): self
+    protected function handleBeforeCallbacks($interaction): bool
     {
-        foreach ($this->beforeCallbacks as $callback) {
-            $callback($interaction);
-        }
-
-        return $this;
+        return collect($this->beforeCallbacks)->every(function (ValidatableCallback $callback) use ($interaction) {
+            return $callback->validate($interaction);
+        });
     }
 
-    public function addBeforeCallback(callable $callback): self
+    public function addBeforeCallback(ValidatableCallback $callback): self
     {
         $this->beforeCallbacks[] = $callback;
 
