@@ -2,6 +2,7 @@
 
 namespace App\Library\Services;
 
+use App\Library\Repository\AccountRepository;
 use App\Models\Account;
 use App\Models\User;
 use App\Wise\Client\Endpoints\Players\PlayerEndpoint;
@@ -12,6 +13,7 @@ use Illuminate\Support\Collection;
 class AccountService
 {
     public function __construct(
+        public readonly AccountRepository $accountRepository,
         protected PlayerEndpoint $playerClientEndpoint,
     ) {
     }
