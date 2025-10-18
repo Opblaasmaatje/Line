@@ -3,6 +3,7 @@
 namespace App\Wise\SlashCommands\Parameters;
 
 use App\Laracord\Option;
+use App\Laracord\SlashCommands\ValidatableCallback;
 use App\Library\Repository\CompetitionRepository;
 use App\Models\Competition;
 use Closure;
@@ -48,32 +49,40 @@ trait HasCompetition
 
     protected function bootHasCompetition(): void
     {
-        $this->addBeforeCallback(function (Interaction $interaction) {
-            if (! $this->value('competition')) {
-                return $interaction->respondWithMessage(
+        $validatableCallback = new ValidatableCallback(function (Interaction $interaction) {
+            if (!$this->value('competition')) {
+                $interaction->respondWithMessage(
                     $this
                         ->message('Competition not given as parameter!')
                         ->error()
                         ->content('Competition not given as parameter!')
                         ->build()
                 );
+
+                return false;
             }
 
             $competition = $this->getCompetitionRepository()->byTitle(
                 $this->value('competition')
             );
 
-            if (! $competition) {
-                return $interaction->respondWithMessage(
+            if (!$competition) {
+                $interaction->respondWithMessage(
                     $this
                         ->message('Competition does not exist!')
                         ->warning()
                         ->content('Please enter a valid competition!')
                         ->build()
                 );
+
+                return false;
             }
 
             $this->competition = $competition;
+
+            return true;
         });
+
+        $this->addBeforeCallback($validatableCallback);
     }
 }

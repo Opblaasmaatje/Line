@@ -3,6 +3,7 @@
 namespace App\Wise\SlashCommands\Parameters;
 
 use App\Laracord\Option;
+use App\Laracord\SlashCommands\ValidatableCallback;
 use App\Library\Repository\UserRepository;
 use App\Models\Account;
 use Discord\DiscordCommandClient;
@@ -29,15 +30,17 @@ trait HasAccount
 
     protected function bootHasAccount(): void
     {
-        $this->addBeforeCallback(function (Interaction $interaction) {
+        $validatableCallback = new ValidatableCallback(function (Interaction $interaction) {
             if (! $this->value('user')) {
-                return $interaction->respondWithMessage(
+                $interaction->respondWithMessage(
                     $this
                         ->message('User was not given as parameter!')
                         ->error()
                         ->content('User was not given as parameter!')
                         ->build()
                 );
+
+                return false;
             }
 
             $account = $this->userRepository()->findAccount(
@@ -45,16 +48,22 @@ trait HasAccount
             );
 
             if (! $account) {
-                return $interaction->respondWithMessage(
+                $interaction->respondWithMessage(
                     $this
                         ->message('User does not have an account assigned')
                         ->warning()
                         ->content('Please use the set account command to assign the user an account!')
                         ->build()
                 );
+
+                return false;
             }
 
             $this->account = $account;
+
+            return true;
         });
+
+        $this->addBeforeCallback($validatableCallback);
     }
 }

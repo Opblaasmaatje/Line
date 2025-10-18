@@ -3,6 +3,7 @@
 namespace App\Modules\Pets\SlashCommands\Parameters;
 
 use App\Laracord\Option;
+use App\Laracord\SlashCommands\ValidatableCallback;
 use Discord\DiscordCommandClient;
 use Discord\Parts\Channel\Attachment;
 use Discord\Parts\Interactions\ApplicationCommand;
@@ -24,31 +25,39 @@ trait HasImage
 
     protected function bootHasImage(): void
     {
-        $this->addBeforeCallback(function (Interaction $interaction) {
+        $validatableCallback = new ValidatableCallback(function (Interaction $interaction) {
             if (! $this->value('image')) {
-                return $interaction->respondWithMessage(
+                $interaction->respondWithMessage(
                     $this
                         ->message('Image not given as parameter!')
                         ->error()
                         ->content('Image not given as parameter!')
                         ->build()
                 );
+
+                return false;
             }
 
             $attachment = $this->getImage($interaction);
 
             if (! Str::startsWith($attachment?->content_type, 'image/')) {
-                return $interaction->respondWithMessage(
+                $interaction->respondWithMessage(
                     $this
                         ->message('Image is not a valid image!')
                         ->warning()
                         ->content('Image is not a valid image!')
                         ->build()
                 );
+
+                return false;
             }
 
             $this->image = $attachment;
+
+            return true;
         });
+
+        $this->addBeforeCallback($validatableCallback);
     }
 
     protected function getImage(ApplicationCommand|Interaction $interaction): Attachment|null

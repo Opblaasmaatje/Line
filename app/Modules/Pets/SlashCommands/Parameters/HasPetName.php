@@ -3,6 +3,7 @@
 namespace App\Modules\Pets\SlashCommands\Parameters;
 
 use App\Laracord\Option;
+use App\Laracord\SlashCommands\ValidatableCallback;
 use App\Modules\Pets\Models\Enums\PetName;
 use Closure;
 use Discord\DiscordCommandClient;
@@ -25,31 +26,39 @@ trait HasPetName
 
     protected function bootHasPetName(): void
     {
-        $this->addBeforeCallback(function (Interaction $interaction) {
+        $validatableCallback = new ValidatableCallback(function (Interaction $interaction) {
             if (! $this->value('pet-name')) {
-                return $interaction->respondWithMessage(
+                $interaction->respondWithMessage(
                     $this
                         ->message('pet-name not given as parameter!')
                         ->error()
                         ->content('pet-name not given as parameter!')
                         ->build()
                 );
+
+                return false;
             }
 
             $petName = PetName::tryFrom($this->value('pet-name'));
 
             if (is_null($petName)) {
-                return $interaction->respondWithMessage(
+                $interaction->respondWithMessage(
                     $this
                         ->message('Pet name is not valid!')
                         ->warning()
                         ->content('Pet name is not valid!')
                         ->build()
                 );
+
+                return false;
             }
 
             $this->petName = $petName;
+
+            return true;
         });
+
+        $this->addBeforeCallback($validatableCallback);
     }
 
     protected function getPetNameAutocompleteCallback(): Closure
