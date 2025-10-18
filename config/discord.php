@@ -2,6 +2,7 @@
 
 use App\Cron\AddSnapshotToUser;
 use App\Cron\ApplyPointAllocation;
+use App\Modules\Pets\SlashCommands\CheckPets;
 use App\Modules\Pets\SlashCommands\SubmitPet;
 use App\Modules\Points\SlashCommands\GetPoints;
 use App\Modules\Points\SlashCommands\GivePoints;
@@ -44,6 +45,7 @@ return [
         LeaderboardCompetition::class,
         GetRecords::class,
         SubmitPet::class,
+        CheckPets::class,
     ],
 
     'menus' => [
