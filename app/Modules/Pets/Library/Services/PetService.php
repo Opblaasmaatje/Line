@@ -52,4 +52,9 @@ class PetService
     {
         return $this->setStatus($pet, Status::REJECTED);
     }
+
+    public function accountHasPet(Account $account, PetName $petName): Pet|null
+    {
+        return $this->repository->accountHasPet($account, $petName);
+    }
 }

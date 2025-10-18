@@ -4,6 +4,7 @@ use App\Cron\AddSnapshotToUser;
 use App\Cron\ApplyPointAllocation;
 use App\Cron\UpdateBotActivity;
 use App\Modules\Pets\SlashCommands\CheckPets;
+use App\Modules\Pets\SlashCommands\ProofPet;
 use App\Modules\Pets\SlashCommands\SubmitPet;
 use App\Modules\Points\SlashCommands\GetPoints;
 use App\Modules\Points\SlashCommands\GivePoints;
@@ -47,6 +48,7 @@ return [
         GetRecords::class,
         SubmitPet::class,
         CheckPets::class,
+        ProofPet::class,
     ],
 
     'menus' => [
