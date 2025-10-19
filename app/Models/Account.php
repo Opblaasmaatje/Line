@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Modules\GooseBoards\Models\Pivot\AccountTeam;
 use App\Modules\GooseBoards\Models\Team;
 use App\Modules\Pets\Models\Pet;
 use App\Modules\Points\Models\Point;
@@ -61,7 +62,9 @@ class Account extends Model
 
     public function teams(): BelongsToMany
     {
-        return $this->belongsToMany(Team::class)->withTimestamps();
+        return $this->belongsToMany(Team::class)
+            ->using(AccountTeam::class)
+            ->withTimestamps();
     }
 
     public function totalPoints(): Attribute
