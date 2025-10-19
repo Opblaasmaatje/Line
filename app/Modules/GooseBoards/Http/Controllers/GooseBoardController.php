@@ -13,7 +13,7 @@ class GooseBoardController extends Controller
     public function __construct(
         protected GooseBoardRequest $validator,
         protected GooseBoardService $service
-    ){
+    ) {
     }
 
     public function create(Request $request)
@@ -21,7 +21,6 @@ class GooseBoardController extends Controller
         $validated = $this->validator->validate(
             $request->json()->all()
         );
-
 
         return new GooseBoardResource(
             $this->service->create($validated)

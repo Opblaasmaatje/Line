@@ -28,13 +28,25 @@ class TeamTest extends ApplicationCase
         $team = TeamFactory::new()
             ->for(
                 GooseBoardFactory::new()
-                    ->has(TileFactory::new(['index' => 0]))
-                    ->has(TileFactory::new(['index' => 1]))
-                    ->has(TileFactory::new(['index' => 2]))
-                    ->has(TileFactory::new(['index' => 3]))
-                    ->has(TileFactory::new(['index' => 4]))
+                    ->has(TileFactory::new([
+                        'index' => 0,
+                    ]))
+                    ->has(TileFactory::new([
+                        'index' => 1,
+                    ]))
+                    ->has(TileFactory::new([
+                        'index' => 2,
+                    ]))
+                    ->has(TileFactory::new([
+                        'index' => 3,
+                    ]))
+                    ->has(TileFactory::new([
+                        'index' => 4,
+                    ]))
             )
-            ->create(['position' => $index]);
+            ->create([
+                'position' => $index,
+            ]);
 
         $this->assertModelExists($team->objective);
         $this->assertSame($index, $team->objective->index);
@@ -48,18 +60,38 @@ class TeamTest extends ApplicationCase
         $team = TeamFactory::new()
             ->for(
                 GooseBoardFactory::new()
-                    ->has(TileFactory::new(['index' => 0]))
-                    ->has(TileFactory::new(['index' => 1]))
-                    ->has(TileFactory::new(['index' => 2]))
-                    ->has(TileFactory::new(['index' => 3]))
-                    ->has(TileFactory::new(['index' => 4]))
-                    ->has(TileFactory::new(['index' => 5]))
-                    ->has(TileFactory::new(['index' => 6]))
-                    ->has(TileFactory::new(['index' => 9]))
-                    ->has(TileFactory::new(['index' => 10]))
+                    ->has(TileFactory::new([
+                        'index' => 0,
+                    ]))
+                    ->has(TileFactory::new([
+                        'index' => 1,
+                    ]))
+                    ->has(TileFactory::new([
+                        'index' => 2,
+                    ]))
+                    ->has(TileFactory::new([
+                        'index' => 3,
+                    ]))
+                    ->has(TileFactory::new([
+                        'index' => 4,
+                    ]))
+                    ->has(TileFactory::new([
+                        'index' => 5,
+                    ]))
+                    ->has(TileFactory::new([
+                        'index' => 6,
+                    ]))
+                    ->has(TileFactory::new([
+                        'index' => 9,
+                    ]))
+                    ->has(TileFactory::new([
+                        'index' => 10,
+                    ]))
 
             )
-            ->create(['position' => 8]);
+            ->create([
+                'position' => 8,
+            ]);
 
         $this->assertModelExists($team->objective);
         $this->assertSame(6, $team->objective->index);
