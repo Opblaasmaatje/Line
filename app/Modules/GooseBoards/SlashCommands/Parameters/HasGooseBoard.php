@@ -54,7 +54,6 @@ trait HasGooseBoard
         $this->addBeforeCallback($validatableCallback);
     }
 
-
     public function getGooseBoardOption(DiscordCommandClient $client)
     {
         return Option::make($client)

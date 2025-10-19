@@ -12,7 +12,7 @@ class TeamRepository
     public function findTeam(Account $account, GooseBoard $board): Team|null
     {
         return $board->teams()
-            ->whereHas('accounts', fn(Builder $query) => $query->whereKey($account->getKey()))
+            ->whereHas('accounts', fn (Builder $query) => $query->whereKey($account->getKey()))
             ->first();
     }
 }

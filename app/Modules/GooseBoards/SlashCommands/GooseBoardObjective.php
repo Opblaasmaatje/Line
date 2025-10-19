@@ -32,7 +32,7 @@ class GooseBoardObjective extends BaseSlashCommand
             $this->gooseBoard,
         );
 
-        if(is_null($team)){
+        if (is_null($team)) {
             return $interaction->respondWithMessage(
                 $this
                     ->message('This user does not have a team for this goose board!')
@@ -47,8 +47,7 @@ class GooseBoardObjective extends BaseSlashCommand
                 ->info()
                 ->title("The current objective of team [{$team->name}] is to get [{$team->objective->name}], go get it! 🔥")
                 ->content("The current tile for [{$team->name}] is $team->position/{$this->gooseBoard->tiles->count()}")
-                ->build()
-            , true
+                ->build(), true
         );
     }
 

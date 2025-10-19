@@ -4,11 +4,9 @@ namespace App\Modules\GooseBoards\Library\Repository;
 
 use App\Modules\GooseBoards\Models\GooseBoard;
 use Illuminate\Database\Eloquent\Collection;
-use Symfony\Component\Mime\Encoder\QpContentEncoder;
 
 class GooseBoardRespository
 {
-
     public function searchByName(mixed $value): Collection
     {
         return GooseBoard::query()
