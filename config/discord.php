@@ -11,9 +11,9 @@ use App\Modules\Points\SlashCommands\PointsGive;
 use App\Modules\Points\SlashCommands\PointsLeaderboard;
 use App\Wise\SlashCommands\Account\GetRecords;
 use App\Wise\SlashCommands\Account\SetAccount;
+use App\Wise\SlashCommands\Competition\CompetitionCreate;
 use App\Wise\SlashCommands\Competition\CompetitionDelete;
 use App\Wise\SlashCommands\Competition\CompetitionLeaderboard;
-use App\Wise\SlashCommands\Competition\CompetitionCreate;
 use Discord\WebSockets\Intents;
 
 return [
