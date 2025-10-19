@@ -16,4 +16,9 @@ class UserFactory extends Factory
             'is_admin' => $this->faker->boolean(),
         ];
     }
+
+    public function asAdmin(): self
+    {
+        return $this->set('is_admin', true);
+    }
 }
