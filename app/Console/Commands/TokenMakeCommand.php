@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Laracord\Console\Commands\TokenMakeCommand as BaseTokenMakeCommand;
+use Laravel\Sanctum\Contracts\HasApiTokens;
 
 class TokenMakeCommand extends BaseTokenMakeCommand
 {
@@ -10,8 +11,14 @@ class TokenMakeCommand extends BaseTokenMakeCommand
     {
         $tokens = $this->getTokens();
 
+        if(! $this->user instanceof HasApiTokens){
+            $this->components->error("User cannot make API keys!.");
+
+            return;
+        }
+
         if ($tokens->isNotEmpty() && ! $force) {
-            $this->components->error("The user <fg=red>{$this->user->id}</> already has a token.");
+            $this->components->error("The user <fg=red>{$this->user->getKey()}</> already has a token.");
 
             return;
         }
