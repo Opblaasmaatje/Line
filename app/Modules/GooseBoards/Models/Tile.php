@@ -2,6 +2,8 @@
 
 namespace App\Modules\GooseBoards\Models;
 
+use App\Modules\GooseBoards\Models\Observers\TileObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -13,6 +15,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $goose_board_id
  * @property-read GooseBoard $gooseBoard
  */
+#[ObservedBy(TileObserver::class)]
 class Tile extends Model
 {
     protected $fillable = [

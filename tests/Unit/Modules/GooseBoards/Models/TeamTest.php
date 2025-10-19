@@ -23,25 +23,20 @@ class TeamTest extends ApplicationCase
 
     #[Test]
     #[DataProvider('indexes')]
-    public function team_can_get_current_objective_based_on_index($index)
+    public function team_can_get_current_objective_based_on_index(int $index)
     {
         $team = TeamFactory::new()
             ->for(
                 GooseBoardFactory::new()
                     ->has(TileFactory::new([
-                        'index' => 0,
                     ]))
                     ->has(TileFactory::new([
-                        'index' => 1,
                     ]))
                     ->has(TileFactory::new([
-                        'index' => 2,
                     ]))
                     ->has(TileFactory::new([
-                        'index' => 3,
                     ]))
                     ->has(TileFactory::new([
-                        'index' => 4,
                     ]))
             )
             ->create([
@@ -60,33 +55,15 @@ class TeamTest extends ApplicationCase
         $team = TeamFactory::new()
             ->for(
                 GooseBoardFactory::new()
-                    ->has(TileFactory::new([
-                        'index' => 0,
-                    ]))
-                    ->has(TileFactory::new([
-                        'index' => 1,
-                    ]))
-                    ->has(TileFactory::new([
-                        'index' => 2,
-                    ]))
-                    ->has(TileFactory::new([
-                        'index' => 3,
-                    ]))
-                    ->has(TileFactory::new([
-                        'index' => 4,
-                    ]))
-                    ->has(TileFactory::new([
-                        'index' => 5,
-                    ]))
-                    ->has(TileFactory::new([
-                        'index' => 6,
-                    ]))
-                    ->has(TileFactory::new([
-                        'index' => 9,
-                    ]))
-                    ->has(TileFactory::new([
-                        'index' => 10,
-                    ]))
+                    ->has(TileFactory::new())
+                    ->has(TileFactory::new())
+                    ->has(TileFactory::new())
+                    ->has(TileFactory::new())
+                    ->has(TileFactory::new())
+                    ->has(TileFactory::new())
+                    ->has(TileFactory::new())
+                    ->has(TileFactory::new())
+                    ->has(TileFactory::new())
 
             )
             ->create([

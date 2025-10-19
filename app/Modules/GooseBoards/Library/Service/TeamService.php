@@ -3,6 +3,7 @@
 namespace App\Modules\GooseBoards\Library\Service;
 
 use App\Library\Services\AccountService;
+use App\Modules\GooseBoards\Library\Repository\TeamRepository;
 use App\Modules\GooseBoards\Models\GooseBoard;
 use App\Modules\GooseBoards\Models\Team;
 use Illuminate\Support\Arr;
@@ -10,7 +11,8 @@ use Illuminate\Support\Arr;
 class TeamService
 {
     public function __construct(
-        protected AccountService $accountService
+        public readonly TeamRepository $repository,
+        protected AccountService $accountService,
     ) {
     }
 
@@ -28,6 +30,5 @@ class TeamService
         }
 
         return $team;
-
     }
 }
