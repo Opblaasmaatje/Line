@@ -4,7 +4,6 @@ namespace Tests\Unit\Modules\GooseBoards\Library\Repository\TeamRepository;
 
 use App\Models\Account;
 use App\Modules\GooseBoards\Library\Repository\TeamRepository;
-use App\Modules\GooseBoards\Models\GooseBoard;
 use Database\Factories\AccountFactory;
 use Database\Factories\GooseBoardFactory;
 use Database\Factories\TeamFactory;
