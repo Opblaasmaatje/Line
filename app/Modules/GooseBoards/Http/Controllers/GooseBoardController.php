@@ -16,11 +16,12 @@ class GooseBoardController extends Controller
     ){
     }
 
-    public function __invoke(Request $request)
+    public function create(Request $request)
     {
         $validated = $this->validator->validate(
             $request->json()->all()
         );
+
 
         return new GooseBoardResource(
             $this->service->create($validated)

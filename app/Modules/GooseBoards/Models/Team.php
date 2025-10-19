@@ -3,6 +3,8 @@
 namespace App\Modules\GooseBoards\Models;
 
 use App\Models\Account;
+use App\Modules\GooseBoards\Models\Pivot\AccountTeam;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -15,6 +17,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @property-read int $goose_board_id
  * @property-read GooseBoard $gooseBoard
  * @property-read Collection<Account> $accounts
+ * @property-read Tile|null $objective
  */
 class Team extends Model
 {
@@ -29,6 +32,16 @@ class Team extends Model
 
     public function accounts(): BelongsToMany
     {
-        return $this->belongsToMany(Account::class);
+        return $this
+            ->belongsToMany(Account::class)
+            ->using(AccountTeam::class)
+            ->withTimestamps();
+    }
+
+    public function objective(): Attribute
+    {
+        return Attribute::get(function () {
+            return $this->gooseBoard->tiles->firstWhere('index', $this->position);
+        });
     }
 }
