@@ -10,12 +10,12 @@ use App\Wise\SlashCommands\Parameters\HasMetric;
 use Illuminate\Support\Facades\App;
 use React\Promise\PromiseInterface;
 
-class LeaderboardCompetition extends BaseSlashCommand
+class CompetitionLeaderboard extends BaseSlashCommand
 {
     use HasMetric;
     use HasCompetition;
 
-    protected $name = 'leaderboard-competition';
+    protected $name = 'competition-leaderboard';
 
     protected $description = 'Get the leaderboard of a competition';
 

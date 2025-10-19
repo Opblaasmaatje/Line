@@ -7,9 +7,9 @@ use App\Modules\Points\Jobs\Actions\ApplyPoints;
 use Discord\Parts\Interactions\Command\Option;
 use Laracord\Commands\SlashCommand;
 
-class GivePoints extends SlashCommand
+class PointsGive extends SlashCommand
 {
-    protected $name = 'give-points';
+    protected $name = 'points-give';
 
     protected $description = 'Manually give points to account';
 

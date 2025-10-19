@@ -14,13 +14,13 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Validation\Rule;
 use React\Promise\PromiseInterface;
 
-class StartCompetition extends SlashCommandWithRuleValidation
+class CompetitionCreate extends SlashCommandWithRuleValidation
 {
     use HasMetric;
 
-    protected $name = 'start-competition';
+    protected $name = 'competition-create';
 
-    protected $description = 'Starts a competition';
+    protected $description = 'Create a competition';
 
     protected $permissions = [];
 

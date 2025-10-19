@@ -7,11 +7,11 @@ use Illuminate\Support\Collection;
 use Laracord\Commands\SlashCommand;
 use QuickChart;
 
-class Leaderboard extends SlashCommand
+class PointsLeaderboard extends SlashCommand
 {
-    protected $name = 'leaderboard';
+    protected $name = 'points-leaderboard';
 
-    protected $description = 'Get leaderboard';
+    protected $description = 'Get the points leaderboard!';
 
     protected $permissions = [];
 
