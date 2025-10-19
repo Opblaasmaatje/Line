@@ -4,6 +4,7 @@
 namespace App\Console\Commands;
 
 use Laracord\Console\Commands\TokenMakeCommand as BaseTokenMakeCommand;
+use Laravel\Sanctum\Contracts\HasApiTokens;
 
 class TokenMakeCommand extends BaseTokenMakeCommand
 {
@@ -31,6 +32,11 @@ class TokenMakeCommand extends BaseTokenMakeCommand
 <<<<<<< ours
             $this->components->error("The user <fg=red>{$this->user->getKey()}</> already has a token.");
 
+||||||| ancestor
+            $this->components->error("The user <fg=red>{$this->user->id}</> already has a token.");
+=======
+            $this->components->error("The user <fg=red>{$this->user->getKey()}</> already has a token.");
+>>>>>>> theirs
 
 
             return;
