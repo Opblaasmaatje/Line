@@ -11,7 +11,7 @@ class TeamService
 {
     public function __construct(
         protected AccountService $accountService
-    ){
+    ) {
     }
 
     public function create(GooseBoard $board, array $data): Team
