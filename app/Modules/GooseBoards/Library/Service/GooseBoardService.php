@@ -3,6 +3,7 @@
 namespace App\Modules\GooseBoards\Library\Service;
 
 use App\Modules\GooseBoards\Library\Repository\GooseBoardRepository;
+use App\Modules\GooseBoards\Library\Service\Leaderboard\Leaderboard;
 use App\Modules\GooseBoards\Models\GooseBoard;
 use Illuminate\Support\Arr;
 
@@ -30,5 +31,12 @@ class GooseBoardService
         });
 
         return $board->load(['teams', 'tiles']);
+    }
+
+    public function leaderboard(GooseBoard $gooseBoard): Leaderboard
+    {
+        $gooseBoard->load('teams');
+
+        return new Leaderboard($gooseBoard->teams);
     }
 }
