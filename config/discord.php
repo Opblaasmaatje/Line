@@ -37,6 +37,11 @@ return [
         '173783209069248512',
     ],
 
+    'admin-developer' => [
+        'discord-id' => env('BOT_ADMIN_DEVELOPER_DISCORD_ID'),
+        'wise-old-man-id' => env('BOT_ADMIN_DEVELOPER_WISE_OLD_MAN_ID')
+    ],
+
     'commands' => [
         SetAccount::class,
         GetPoints::class,
