@@ -20,6 +20,7 @@ class TokenMakeCommand extends BaseTokenMakeCommand
         if ($tokens->isNotEmpty() && ! $force) {
             $this->components->error("The user <fg=red>{$this->user->getKey()}</> already has a token.");
 
+
             return;
         }
 
