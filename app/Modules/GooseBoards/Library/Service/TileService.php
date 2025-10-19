@@ -9,6 +9,8 @@ class TileService
 {
     public function create(GooseBoard $board, array $data, int $index): Tile
     {
-        return $board->tiles()->create($data + ['index' => $index]);
+        return $board->tiles()->create($data + [
+            'index' => $index,
+        ]);
     }
 }

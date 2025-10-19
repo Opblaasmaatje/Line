@@ -16,7 +16,7 @@ class TeamResource extends JsonResource
         return [
             'name' => $this->name,
             'position' => $this->position,
-            'accounts' => AccountResource::collection($this->accounts)
+            'accounts' => AccountResource::collection($this->accounts),
         ];
     }
 }

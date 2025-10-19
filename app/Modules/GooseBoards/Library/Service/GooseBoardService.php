@@ -12,7 +12,7 @@ class GooseBoardService
         protected CompetitionEndpoint $competitionEndpoint,
         protected TeamService $teamService,
         protected TileService $tileService,
-    ){
+    ) {
     }
 
     public function create(array $data): GooseBoard
