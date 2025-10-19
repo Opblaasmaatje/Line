@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae3a1fc6924541aa78411f53d67df98c",
+    "content-hash": "c711ae0be57a7dc1ef1c73125c82be12",
     "packages": [
         {
             "name": "brick/json-mapper",
@@ -283,16 +283,16 @@
         },
         {
             "name": "discord-php/http",
-            "version": "v10.7.1",
+            "version": "v10.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/discord-php/DiscordPHP-Http",
-                "reference": "25978480691d5a19beb70ea136c2dfd914969d7e"
+                "reference": "9a4ba75ffb137bc0d649a604b097fad863f39d06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/discord-php/DiscordPHP-Http/zipball/25978480691d5a19beb70ea136c2dfd914969d7e",
-                "reference": "25978480691d5a19beb70ea136c2dfd914969d7e",
+                "url": "https://api.github.com/repos/discord-php/DiscordPHP-Http/zipball/9a4ba75ffb137bc0d649a604b097fad863f39d06",
+                "reference": "9a4ba75ffb137bc0d649a604b097fad863f39d06",
                 "shasum": ""
             },
             "require": {
@@ -331,7 +331,7 @@
                 }
             ],
             "description": "Handles HTTP requests to Discord servers",
-            "time": "2025-09-23T11:05:50+00:00"
+            "time": "2025-10-19T14:56:06+00:00"
         },
         {
             "name": "discord/interactions",
@@ -8680,16 +8680,16 @@
         },
         {
             "name": "team-reflex/discord-php",
-            "version": "v10.36.36",
+            "version": "v10.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/discord-php/DiscordPHP",
-                "reference": "98a641f15a070b0a5d7839ae851115a8b7bbc834"
+                "reference": "cefdf0be4850d12a3203ae4c9028c13db284fca9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/discord-php/DiscordPHP/zipball/98a641f15a070b0a5d7839ae851115a8b7bbc834",
-                "reference": "98a641f15a070b0a5d7839ae851115a8b7bbc834",
+                "url": "https://api.github.com/repos/discord-php/DiscordPHP/zipball/cefdf0be4850d12a3203ae4c9028c13db284fca9",
+                "reference": "cefdf0be4850d12a3203ae4c9028c13db284fca9",
                 "shasum": ""
             },
             "require": {
@@ -8753,7 +8753,7 @@
                 "issues": "https://github.com/discord-php/DiscordPHP/issues",
                 "wiki": "https://github.com/discord-php/DiscordPHP/wiki"
             },
-            "time": "2025-10-17T16:56:02+00:00"
+            "time": "2025-10-19T15:03:17+00:00"
         },
         {
             "name": "trafficcophp/bytebuffer",
@@ -12096,7 +12096,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.4"
+        "php": "^8.4",
+        "ext-gd": "*"
     },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
