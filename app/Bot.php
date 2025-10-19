@@ -20,6 +20,8 @@ class Bot extends Laracord
 
     public function routes(): void
     {
-        Route::post('goose-board', [GooseBoardController::class, 'create']);
+        Route::middleware('api')->group(function () {
+            Route::post('goose-board', [GooseBoardController::class, 'create']);
+        });
     }
 }
