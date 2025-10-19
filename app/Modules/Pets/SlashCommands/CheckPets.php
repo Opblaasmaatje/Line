@@ -5,6 +5,7 @@ namespace App\Modules\Pets\SlashCommands;
 use App\Laracord\SlashCommands\BaseSlashCommand;
 use App\Modules\Pets\Library\AcquiredPets\AcquiredPet;
 use App\Modules\Pets\Library\Services\PetService;
+use App\Modules\Pets\Models\Enums\PetName;
 use App\Wise\SlashCommands\Parameters\HasAccount;
 use Illuminate\Support\Facades\App;
 
@@ -28,13 +29,15 @@ class CheckPets extends BaseSlashCommand
         $collection = $this->getPetService()->getAcquiredPets($this->account);
 
         $message = $this
-            ->message("A total of {$collection->onlyGotten()->count()}/{$collection->acquiredPets->count()}")
+            ->message("")
             ->title("These are all the pets {$this->account->username} has!")
             ->success();
 
-        $collection->onlyGotten()->each(function (AcquiredPet $pet) use ($message) {
-            return $message->field($pet->name->value, '✅');
+        $collection->onlyGotten()->shuffle()->take(25)->each(function (AcquiredPet $pet) use ($message) {
+            return $message->field("{$pet->name->value} ✅", ' ');
         });
+
+        $message->footerText("A total of {$collection->onlyGotten()->count()}/{$collection->acquiredPets->count()} | Displayed pets are limited to 25 and are shuffled.");
 
         return $interaction->respondWithMessage($message->build());
     }
