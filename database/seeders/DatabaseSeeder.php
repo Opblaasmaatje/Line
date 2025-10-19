@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
         $this->command->info("HTTP TOKEN: " . $token);
 
         $board = GooseBoardFactory::new()
-            ->has(TeamFactory::new(['position' => 1]))
+            ->has(TeamFactory::new())
             ->has(TileFactory::new(['index' => 1]))
             ->has(TileFactory::new(['index' => 2]))
             ->has(TileFactory::new(['index' => 3]))

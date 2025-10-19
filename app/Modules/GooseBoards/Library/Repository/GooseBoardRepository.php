@@ -5,7 +5,7 @@ namespace App\Modules\GooseBoards\Library\Repository;
 use App\Modules\GooseBoards\Models\GooseBoard;
 use Illuminate\Database\Eloquent\Collection;
 
-class GooseBoardRespository
+class GooseBoardRepository
 {
     public function searchByName(mixed $value): Collection
     {
