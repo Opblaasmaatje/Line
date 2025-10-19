@@ -5,7 +5,6 @@ namespace App\Modules\Pets\SlashCommands;
 use App\Laracord\SlashCommands\BaseSlashCommand;
 use App\Modules\Pets\Library\AcquiredPets\AcquiredPet;
 use App\Modules\Pets\Library\Services\PetService;
-use App\Modules\Pets\Models\Enums\PetName;
 use App\Wise\SlashCommands\Parameters\HasAccount;
 use Illuminate\Support\Facades\App;
 
@@ -29,7 +28,7 @@ class CheckPets extends BaseSlashCommand
         $collection = $this->getPetService()->getAcquiredPets($this->account);
 
         $message = $this
-            ->message("")
+            ->message('')
             ->title("These are all the pets {$this->account->username} has!")
             ->success();
 
