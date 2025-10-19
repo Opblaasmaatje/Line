@@ -26,10 +26,4 @@ jobs:
         run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: Running Code Style
-        run: ./vendor/bin/ecs --fix
-
-      - uses: EndBug/add-and-commit@v9
-        with:
-          message: Updating files
-          committer_name: GitHub Actions
-          committer_email: actions@github.com
+        run: ./vendor/bin/ecs
