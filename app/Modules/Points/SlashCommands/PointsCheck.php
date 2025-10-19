@@ -9,13 +9,13 @@ use Illuminate\Support\Collection;
 use QuickChart;
 use React\Promise\PromiseInterface;
 
-class GetPoints extends BaseSlashCommand
+class PointsCheck extends BaseSlashCommand
 {
     use HasAccount;
 
-    protected $name = 'points';
+    protected $name = 'points-check';
 
-    protected $description = 'Check user stats';
+    protected $description = 'Check user points';
 
     protected $permissions = [];
 

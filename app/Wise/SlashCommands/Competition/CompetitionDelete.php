@@ -7,11 +7,11 @@ use App\Library\Services\CompetitionService;
 use App\Wise\SlashCommands\Parameters\HasCompetition;
 use Illuminate\Support\Facades\App;
 
-class DeleteCompetition extends BaseSlashCommand
+class CompetitionDelete extends BaseSlashCommand
 {
     use HasCompetition;
 
-    protected $name = 'delete-competition';
+    protected $name = 'competition-delete';
 
     protected $description = 'Delete a competition';
 
