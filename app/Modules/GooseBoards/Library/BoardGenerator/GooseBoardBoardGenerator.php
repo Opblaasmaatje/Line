@@ -6,6 +6,7 @@ use App\Modules\GooseBoards\Models\GooseBoard;
 use App\Modules\GooseBoards\Models\Tile;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class GooseBoardBoardGenerator
@@ -16,6 +17,9 @@ class GooseBoardBoardGenerator
 
     protected const VERTICAL_RUN = 2;
 
+    /**
+     * @var Collection<int, Tile>
+     */
     protected Collection $tiles;
 
     public readonly string $filename;
@@ -76,8 +80,11 @@ class GooseBoardBoardGenerator
             ->append('.png')
             ->value();
 
-        $path = storage_path('app/public/'.$filename);
-        imagepng($image, $path);
+        ob_start();
+        imagepng($image);
+        $imageData = (string) ob_get_clean();
+
+        Storage::disk('public')->put($filename, $imageData);
 
         return $filename;
     }
