@@ -31,7 +31,7 @@ class GooseBoard extends Model
      */
     public function tiles(): HasMany
     {
-        return $this->hasMany(Tile::class);
+        return $this->hasMany(Tile::class)->orderBy('index');
     }
 
     /**

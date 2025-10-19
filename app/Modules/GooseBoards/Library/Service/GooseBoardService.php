@@ -3,11 +3,13 @@
 namespace App\Modules\GooseBoards\Library\Service;
 
 use App\Modules\GooseBoards\Models\GooseBoard;
+use App\Wise\Client\Endpoints\Competition\CompetitionEndpoint;
 use Illuminate\Support\Arr;
 
 class GooseBoardService
 {
     public function __construct(
+        protected CompetitionEndpoint $competitionEndpoint,
         protected TeamService $teamService,
         protected TileService $tileService,
     ){
