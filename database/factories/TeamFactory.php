@@ -16,4 +16,9 @@ class TeamFactory extends Factory
             'position' => 1
         ];
     }
+
+    public function position(int $position): self
+    {
+        return $this->set('position', $position);
+    }
 }
