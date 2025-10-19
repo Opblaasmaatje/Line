@@ -7,6 +7,12 @@ use App\Modules\GooseBoards\Models\Team;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
+/**
+ * @property int $account_id
+ * @property int $team_id
+ * @property-read Account $account
+ * @property-read Team $team
+ */
 class AccountTeam extends Pivot
 {
     public function account(): BelongsTo
