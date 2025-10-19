@@ -28,13 +28,15 @@ class CheckPets extends BaseSlashCommand
         $collection = $this->getPetService()->getAcquiredPets($this->account);
 
         $message = $this
-            ->message("A total of {$collection->onlyGotten()->count()}/{$collection->acquiredPets->count()}")
+            ->message('')
             ->title("These are all the pets {$this->account->username} has!")
             ->success();
 
-        $collection->onlyGotten()->each(function (AcquiredPet $pet) use ($message) {
-            return $message->field($pet->name->value, '✅');
+        $collection->onlyGotten()->shuffle()->take(25)->each(function (AcquiredPet $pet) use ($message) {
+            return $message->field("{$pet->name->value} ✅", ' ');
         });
+
+        $message->footerText("A total of {$collection->onlyGotten()->count()}/{$collection->acquiredPets->count()} | Displayed pets are limited to 25 and are shuffled.");
 
         return $interaction->respondWithMessage($message->build());
     }
