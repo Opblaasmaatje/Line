@@ -4,7 +4,6 @@
 namespace App\Console\Commands;
 
 use Laracord\Console\Commands\TokenMakeCommand as BaseTokenMakeCommand;
-use Laravel\Sanctum\Contracts\HasApiTokens;
 
 class TokenMakeCommand extends BaseTokenMakeCommand
 {
