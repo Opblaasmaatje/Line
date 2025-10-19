@@ -23,6 +23,7 @@ class Team extends Model
 {
     protected $fillable = [
         'name',
+        'position',
     ];
 
     public function gooseBoard(): BelongsTo

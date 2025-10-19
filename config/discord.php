@@ -3,6 +3,7 @@
 use App\Cron\AddSnapshotToUser;
 use App\Cron\ApplyPointAllocation;
 use App\Cron\UpdateBotActivity;
+use App\Modules\GooseBoards\SlashCommands\GooseBoardLeaderboard;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardObjective;
 use App\Modules\Pets\SlashCommands\CheckPets;
 use App\Modules\Pets\SlashCommands\ProofPet;
@@ -56,6 +57,7 @@ return [
         CheckPets::class,
         ProofPet::class,
         GooseBoardObjective::class,
+        GooseBoardLeaderboard::class,
     ],
 
     'menus' => [

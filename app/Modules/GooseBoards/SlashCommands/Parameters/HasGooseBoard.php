@@ -83,7 +83,7 @@ trait HasGooseBoard
                 ->toArray();
     }
 
-    protected function getGooseBoardService()
+    protected function getGooseBoardService(): GooseBoardService
     {
         return App::make(GooseBoardService::class);
     }
