@@ -32,6 +32,7 @@ class TokenMakeCommand extends BaseTokenMakeCommand
             $this->components->error("The user <fg=red>{$this->user->getKey()}</> already has a token.");
 
 
+
             return;
         }
 
