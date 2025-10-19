@@ -58,8 +58,12 @@ class CreateTest extends ApplicationCase
         $accounts = AccountFactory::new()
             ->for(UserFactory::new())
             ->forEachSequence(
-                ['username' =>  'name'],
-                ['username' =>  'other name'],
+                [
+                    'username' => 'name',
+                ],
+                [
+                    'username' => 'other name',
+                ],
             )
             ->count(2)
             ->create();
@@ -68,7 +72,7 @@ class CreateTest extends ApplicationCase
             ...TeamFactory::new()->raw([
                 'name' => 'team name',
             ]),
-            'accounts' => $accounts->map(fn(Account $account) => $account->username)->toArray(),
+            'accounts' => $accounts->map(fn (Account $account) => $account->username)->toArray(),
         ];
 
         return [
@@ -80,17 +84,39 @@ class CreateTest extends ApplicationCase
             ]),
             'tiles' => TileFactory::new()
                 ->forEachSequence(
-                    ['name' => 'A'],
-                    ['name' => 'B'],
-                    ['name' => 'C'],
-                    ['name' => 'D'],
-                    ['name' => 'E'],
-                    ['name' => 'F'],
-                    ['name' => 'G'],
-                    ['name' => 'H'],
-                    ['name' => 'I'],
-                    ['name' => 'J'],
-                )->raw(['description' => 'some-description']),
+                    [
+                        'name' => 'A',
+                    ],
+                    [
+                        'name' => 'B',
+                    ],
+                    [
+                        'name' => 'C',
+                    ],
+                    [
+                        'name' => 'D',
+                    ],
+                    [
+                        'name' => 'E',
+                    ],
+                    [
+                        'name' => 'F',
+                    ],
+                    [
+                        'name' => 'G',
+                    ],
+                    [
+                        'name' => 'H',
+                    ],
+                    [
+                        'name' => 'I',
+                    ],
+                    [
+                        'name' => 'J',
+                    ],
+                )->raw([
+                    'description' => 'some-description',
+                ]),
             'teams' => [$team],
         ];
     }

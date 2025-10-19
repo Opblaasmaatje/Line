@@ -3,7 +3,6 @@
 namespace App\Modules\GooseBoards\Http\Requests;
 
 use App\Models\Account;
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
@@ -52,7 +51,7 @@ class GooseBoardRequest
                 'array',
                 'min:1',
                 Rule::exists(Account::class, 'username'),
-            ]
+            ],
         ];
     }
 
