@@ -2,6 +2,7 @@
 
 namespace App\Modules\GooseBoards\Library\Service;
 
+use App\Modules\GooseBoards\Library\BoardGenerator\GooseBoardBoardGenerator;
 use App\Modules\GooseBoards\Library\Repository\GooseBoardRepository;
 use App\Modules\GooseBoards\Library\Service\Leaderboard\Leaderboard;
 use App\Modules\GooseBoards\Models\GooseBoard;
@@ -30,6 +31,8 @@ class GooseBoardService
             return $this->teamService->create($board, $team);
         });
 
+        $board = $this->generateBoard($board);
+
         return $board->load(['teams', 'tiles']);
     }
 
@@ -38,5 +41,17 @@ class GooseBoardService
         $gooseBoard->load('teams');
 
         return new Leaderboard($gooseBoard->teams);
+    }
+
+    public function generateBoard(GooseBoard $gooseBoard): GooseBoard
+    {
+      $generator = new GooseBoardBoardGenerator($gooseBoard);
+
+      $gooseBoard->fill([
+          'image' => $generator->filename,
+      ])
+          ->save();
+
+      return $gooseBoard;
     }
 }

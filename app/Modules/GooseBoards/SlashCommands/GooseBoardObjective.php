@@ -47,6 +47,7 @@ class GooseBoardObjective extends BaseSlashCommand
                 ->info()
                 ->title("The current objective of team [{$team->name}] is to get [{$team->objective->name}], go get it! 🔥")
                 ->content("The current tile for [{$team->name}] is $team->position/{$this->gooseBoard->tiles->count()}")
+                ->imageUrl($team->objective->image_url)
                 ->build(), true
         );
     }

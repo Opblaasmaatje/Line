@@ -16,6 +16,7 @@ class GooseBoardFactory extends Factory
             'name' => $this->faker->name,
             'starts_at' => Carbon::now()->addMonth()->toDateString(),
             'ends_at' => fn (array $attributes) => Carbon::make($attributes['starts_at'])->addMonth()->toDateString(),
+            'image' => null,
         ];
     }
 }

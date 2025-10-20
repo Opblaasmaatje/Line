@@ -38,6 +38,12 @@ class GooseBoardRequest
                 'required',
                 'string',
             ],
+            'tiles.*.image_url' => [
+                'nullable',
+                'present',
+                'string',
+                'url',
+            ],
             'teams' => [
                 'array',
                 'min:1',

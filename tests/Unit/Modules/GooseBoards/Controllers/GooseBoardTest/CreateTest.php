@@ -16,6 +16,7 @@ use Database\Factories\UserFactory;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 use PHPUnit\Framework\Attributes\Test;
 use Spatie\Snapshots\MatchesSnapshots;
 use Tests\ApplicationCase;
@@ -29,6 +30,7 @@ class CreateTest extends ApplicationCase
     #[Test]
     public function it_creates_a_goose_board()
     {
+        Storage::fake('public');
         GooseBoard::query()->truncate();
 
         Http::fake([
@@ -83,6 +85,7 @@ class CreateTest extends ApplicationCase
                 'ends_at' => '2023-03-02',
             ]),
             'tiles' => TileFactory::new()
+                ->withoutImage()
                 ->forEachSequence(
                     [
                         'name' => 'A',
