@@ -24,7 +24,9 @@ class AsHeadlineTest extends ApplicationCase
             )
                 ->map(fn (string $enumClass) => $enumClass::cases())
                 ->flatten()
-                ->map(fn (CanHeadline $canHeadline) => [$canHeadline])
+                ->flatMap(fn (CanHeadline $canHeadline) => [
+                    $canHeadline->toHeadline() => [$canHeadline],
+                ])
                 ->toArray(),
         ];
     }
