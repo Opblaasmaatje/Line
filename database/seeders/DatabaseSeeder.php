@@ -39,9 +39,18 @@ class DatabaseSeeder extends Seeder
 
         $board = GooseBoardFactory::new()
             ->has(TeamFactory::new())
-            ->has(TileFactory::new(['index' => 1]))
-            ->has(TileFactory::new(['index' => 2]))
-            ->has(TileFactory::new(['index' => 3]))
+            ->has(TileFactory::new())
+            ->has(TileFactory::new())
+            ->has(TileFactory::new())
+            ->has(TileFactory::new())
+            ->has(TileFactory::new())
+            ->has(TileFactory::new())
+            ->has(TileFactory::new())
+            ->has(TileFactory::new())
+            ->has(TileFactory::new())
+            ->has(TileFactory::new())
+            ->has(TileFactory::new())
+            ->has(TileFactory::new())
             ->create([
                 'starts_at' => Carbon::now(),
                 'ends_at' => Carbon::now()->addMonth(),

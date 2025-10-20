@@ -3,6 +3,7 @@
 namespace App\Modules\GooseBoards\SlashCommands;
 
 use App\Laracord\SlashCommands\BaseSlashCommand;
+use App\Modules\GooseBoards\Library\Service\GooseBoardService;
 use App\Modules\GooseBoards\SlashCommands\Parameters\HasGooseBoard;
 
 class GooseBoardCheck extends BaseSlashCommand
@@ -27,15 +28,36 @@ class GooseBoardCheck extends BaseSlashCommand
         ];
     }
 
-    public function handle($interaction)
+    protected function getBoard(): string
     {
+        if(! $this->gooseBoard->image){
+            $this->getGooseBoardService()->generateBoard($this->gooseBoard);
+        }
+
+        $this->gooseBoard->refresh();
+
         $path = storage_path('app/public/'.$this->gooseBoard->image);
 
-        if (is_null($this->gooseBoard->image) || ! file_exists($path)) {
+        if(file_exists($path)){
+            return $path;
+        }
+
+        $this->getGooseBoardService()->generateBoard($this->gooseBoard);
+
+        $this->gooseBoard->refresh();
+
+        return storage_path('app/public/'.$this->gooseBoard->image);
+    }
+
+    public function handle($interaction)
+    {
+        $path = $this->getBoard();
+
+        if (! file_exists($path)) {
             return $interaction->respondWithMessage(
                 $this
-                    ->message('Goose board check!')
-                    ->content('No board image found yet. Please generate a board first.')
+                    ->message('Could not get goose board!')
+                    ->content(':fire: Please contact the developer. :fire:')
                     ->warning()
                     ->build()
             );

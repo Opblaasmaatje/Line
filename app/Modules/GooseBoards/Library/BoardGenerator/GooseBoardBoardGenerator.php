@@ -4,11 +4,15 @@ namespace App\Modules\GooseBoards\Library\BoardGenerator;
 
 use App\Modules\GooseBoards\Models\GooseBoard;
 use App\Modules\GooseBoards\Models\Tile;
+use GdImage;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
+/**
+ * This is a horrible class and I hate it.
+ */
 class GooseBoardBoardGenerator
 {
     protected const TILE_SIZE = 250;
@@ -65,6 +69,7 @@ class GooseBoardBoardGenerator
                 yPx: $drawY,
                 colors: $this->allocateColors($image),
                 label: $index + 1,
+                imageUrl: $tile->image_url,
             );
 
             if (($index + 1) % $cycleLength === 0) {
@@ -82,7 +87,7 @@ class GooseBoardBoardGenerator
 
         ob_start();
         imagepng($image);
-        $imageData = (string) ob_get_clean();
+        $imageData = ob_get_clean();
 
         Storage::disk('public')->put($filename, $imageData);
 
@@ -94,6 +99,9 @@ class GooseBoardBoardGenerator
         return $positionInCycle < self::HORIZONTAL_RUN;
     }
 
+    /**
+     * @return array{0:int,1:int} [width, height] in pixels
+     */
     protected function computeImageDimensions(int $totalTiles): array
     {
         $width = self::HORIZONTAL_RUN * self::TILE_SIZE;
@@ -105,9 +113,10 @@ class GooseBoardBoardGenerator
     }
 
     /**
+     * @param GdImage $image
      * @return array{background: false|int, black: false|int, square: false|int}
      */
-    protected function allocateColors($image): array
+    protected function allocateColors(GdImage $image): array
     {
         return [
             'background' => imagecolorallocate($image, 72, 60, 50),
@@ -116,16 +125,19 @@ class GooseBoardBoardGenerator
         ];
     }
 
+    /**
+     * @param array{background: false|int, black: false|int, square: false|int} $colors
+     */
     protected function drawTile(
-        $image,
+        GdImage $image,
         int $xPx,
         int $yPx,
         array $colors,
         int $label,
+        ?string $imageUrl = null,
     ): void {
-        //TODO: we want to try to apply images of the tile onto the board.
-
         imagefilledrectangle($image, $xPx, $yPx, $xPx + self::TILE_SIZE, $yPx + self::TILE_SIZE, $colors['square']);
+        $this->addImageUrl($imageUrl, $xPx, $yPx, $image);
         imagerectangle($image, $xPx, $yPx, $xPx + self::TILE_SIZE, $yPx + self::TILE_SIZE, $colors['black']);
         imagestring($image, 3, $xPx + 5, $yPx + 5, (string) $label, $colors['black']);
     }
@@ -135,6 +147,10 @@ class GooseBoardBoardGenerator
         return self::HORIZONTAL_RUN + self::VERTICAL_RUN;
     }
 
+    /**
+     * @param 'left'|'right' $direction
+     * @return array{0:int,1:int}
+     */
     protected function getVerticalCoordinates(int $positionInCycle, string $direction, int $xGrid, int $yGrid): array
     {
         $j = $positionInCycle - self::HORIZONTAL_RUN;
@@ -145,6 +161,10 @@ class GooseBoardBoardGenerator
         return [$drawX, $drawY];
     }
 
+    /**
+     * @param 'left'|'right' $direction
+     * @return array{0:int,1:int}
+     */
     protected function getHorizontalCoordinates(int $positionInCycle, string $direction, int $xGrid, int $yGrid): array
     {
         $columnIndex = ($direction === 'right')
@@ -155,5 +175,58 @@ class GooseBoardBoardGenerator
         $drawY = $yGrid * self::TILE_SIZE;
 
         return [$drawX, $drawY];
+    }
+
+    protected function addImageUrl(?string $imageUrl, int $xPx, int $yPx, GdImage $image): void
+    {
+        if ($imageUrl === null || $imageUrl === '') {
+            return;
+        }
+
+        $contents = @file_get_contents($imageUrl);
+
+        if ($contents === false) {
+            return;
+        }
+
+        $src = @imagecreatefromstring($contents);
+
+        if (!$src instanceof GdImage) {
+            return;
+        }
+
+        $srcW = imagesx($src);
+        $srcH = imagesy($src);
+
+        if ($srcW > 0 && $srcH > 0) {
+            $padding = 10;
+            $dstW = self::TILE_SIZE - (2 * $padding);
+            $dstH = self::TILE_SIZE - (2 * $padding);
+
+            $scale = min($dstW / $srcW, $dstH / $srcH);
+            $newW = (int)floor($srcW * $scale);
+            $newH = (int)floor($srcH * $scale);
+
+            $offsetX = $xPx + (int)floor((self::TILE_SIZE - $newW) / 2);
+            $offsetY = $yPx + (int)floor((self::TILE_SIZE - $newH) / 2);
+
+            imagealphablending($image, true);
+            imagesavealpha($image, true);
+
+            imagecopyresampled(
+                $image,
+                $src,
+                $offsetX,
+                $offsetY,
+                0,
+                0,
+                $newW,
+                $newH,
+                $srcW,
+                $srcH
+            );
+        }
+
+        imagedestroy($src);
     }
 }

@@ -49,7 +49,8 @@ class GooseBoardService
 
       $gooseBoard->fill([
           'image' => $generator->filename,
-      ]);
+      ])
+          ->save();
 
       return $gooseBoard;
     }

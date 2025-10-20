@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('goose_board_id');
             $table->string('name');
             $table->longText('description');
+            $table->string('image_url')->nullable();
             $table->integer('index')->default(0);
             $table->timestamps();
             $table->unique(['goose_board_id', 'index']);

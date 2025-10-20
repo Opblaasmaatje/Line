@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $id
  * @property string $name
  * @property string $description
- * @property string $image_url
+ * @property string|null $image_url
  * @property int $index
  * @property int $goose_board_id
  * @property-read GooseBoard $gooseBoard
@@ -23,6 +23,7 @@ class Tile extends Model
         'name',
         'description',
         'index',
+        'image_url',
     ];
 
     public function gooseBoard(): BelongsTo

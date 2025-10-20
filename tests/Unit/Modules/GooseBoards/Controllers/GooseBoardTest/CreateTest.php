@@ -85,6 +85,7 @@ class CreateTest extends ApplicationCase
                 'ends_at' => '2023-03-02',
             ]),
             'tiles' => TileFactory::new()
+                ->withoutImage()
                 ->forEachSequence(
                     [
                         'name' => 'A',
