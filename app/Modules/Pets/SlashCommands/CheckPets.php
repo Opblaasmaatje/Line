@@ -28,8 +28,7 @@ class CheckPets extends BaseSlashCommand
         $collection = $this->getPetService()->getAcquiredPets($this->account);
 
         $message = $this
-            ->message('')
-            ->title("These are all the pets {$this->account->username} has!")
+            ->message("These are all the pets {$this->account->username} has!")
             ->success();
 
         $collection->onlyGotten()->shuffle()->take(25)->each(function (AcquiredPet $pet) use ($message) {
