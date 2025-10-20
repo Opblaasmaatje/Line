@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property int $id
@@ -24,6 +25,7 @@ class Team extends Model
     protected $fillable = [
         'name',
         'position',
+        'code',
     ];
 
     public function gooseBoard(): BelongsTo
@@ -37,6 +39,14 @@ class Team extends Model
             ->belongsToMany(Account::class)
             ->using(AccountTeam::class)
             ->withTimestamps();
+    }
+
+    /**
+     * @return HasMany<Submission, $this>
+     */
+    public function submissions(): HasMany
+    {
+        return $this->hasMany(Submission::class);
     }
 
     public function objective(): Attribute

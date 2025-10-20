@@ -9,7 +9,7 @@ class TeamFactory extends Factory
 {
     protected $model = Team::class;
 
-    public function definition()
+    public function definition(): array
     {
         return [
             'name' => $this->faker->name,
