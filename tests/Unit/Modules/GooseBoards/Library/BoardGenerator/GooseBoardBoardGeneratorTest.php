@@ -143,7 +143,7 @@ class GooseBoardBoardGeneratorTest extends TestCase
         imagepng($src, $tmp);
         imagedestroy($src);
 
-        $url = 'file://' . $tmp;
+        $url = 'file://'.$tmp;
 
         // Draw tile with overlay
         $this->invoke($sut, 'drawTile', [$canvas, 0, 0, $colors, 1, $url]);

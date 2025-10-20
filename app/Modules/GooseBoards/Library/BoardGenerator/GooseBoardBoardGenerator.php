@@ -113,7 +113,6 @@ class GooseBoardBoardGenerator
     }
 
     /**
-     * @param GdImage $image
      * @return array{background: false|int, black: false|int, square: false|int}
      */
     protected function allocateColors(GdImage $image): array
@@ -191,41 +190,39 @@ class GooseBoardBoardGenerator
 
         $src = @imagecreatefromstring($contents);
 
-        if (!$src instanceof GdImage) {
+        if (! $src instanceof GdImage) {
             return;
         }
 
         $srcW = imagesx($src);
         $srcH = imagesy($src);
 
-        if ($srcW > 0 && $srcH > 0) {
-            $padding = 10;
-            $dstW = self::TILE_SIZE - (2 * $padding);
-            $dstH = self::TILE_SIZE - (2 * $padding);
+        $padding = 10;
+        $dstW = self::TILE_SIZE - (2 * $padding);
+        $dstH = self::TILE_SIZE - (2 * $padding);
 
-            $scale = min($dstW / $srcW, $dstH / $srcH);
-            $newW = (int)floor($srcW * $scale);
-            $newH = (int)floor($srcH * $scale);
+        $scale = min($dstW / $srcW, $dstH / $srcH);
+        $newW = (int) floor($srcW * $scale);
+        $newH = (int) floor($srcH * $scale);
 
-            $offsetX = $xPx + (int)floor((self::TILE_SIZE - $newW) / 2);
-            $offsetY = $yPx + (int)floor((self::TILE_SIZE - $newH) / 2);
+        $offsetX = $xPx + (int) floor((self::TILE_SIZE - $newW) / 2);
+        $offsetY = $yPx + (int) floor((self::TILE_SIZE - $newH) / 2);
 
-            imagealphablending($image, true);
-            imagesavealpha($image, true);
+        imagealphablending($image, true);
+        imagesavealpha($image, true);
 
-            imagecopyresampled(
-                $image,
-                $src,
-                $offsetX,
-                $offsetY,
-                0,
-                0,
-                $newW,
-                $newH,
-                $srcW,
-                $srcH
-            );
-        }
+        imagecopyresampled(
+            $image,
+            $src,
+            $offsetX,
+            $offsetY,
+            0,
+            0,
+            $newW,
+            $newH,
+            $srcW,
+            $srcH
+        );
 
         imagedestroy($src);
     }

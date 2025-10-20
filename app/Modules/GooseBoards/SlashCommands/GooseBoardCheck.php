@@ -3,7 +3,6 @@
 namespace App\Modules\GooseBoards\SlashCommands;
 
 use App\Laracord\SlashCommands\BaseSlashCommand;
-use App\Modules\GooseBoards\Library\Service\GooseBoardService;
 use App\Modules\GooseBoards\SlashCommands\Parameters\HasGooseBoard;
 
 class GooseBoardCheck extends BaseSlashCommand
@@ -30,7 +29,7 @@ class GooseBoardCheck extends BaseSlashCommand
 
     protected function getBoard(): string
     {
-        if(! $this->gooseBoard->image){
+        if (! $this->gooseBoard->image) {
             $this->getGooseBoardService()->generateBoard($this->gooseBoard);
         }
 
@@ -38,7 +37,7 @@ class GooseBoardCheck extends BaseSlashCommand
 
         $path = storage_path('app/public/'.$this->gooseBoard->image);
 
-        if(file_exists($path)){
+        if (file_exists($path)) {
             return $path;
         }
 
