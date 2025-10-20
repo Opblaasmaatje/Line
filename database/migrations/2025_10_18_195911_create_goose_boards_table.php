@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('goose_boards', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('image')->nullable();
             $table->uuid('wise_old_man_id')->nullable()->unique(); //TODO probably not nullable make a competition at wise first.
             $table->date('starts_at');
             $table->date('ends_at');

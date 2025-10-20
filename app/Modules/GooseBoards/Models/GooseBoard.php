@@ -10,6 +10,7 @@ use Illuminate\Support\Carbon;
 /**
  * @property int $id
  * @property string $name
+ * @property string|null $image
  * @property string $wise_old_man_id ?? might have the be nullable?
  * @property Carbon $starts_at
  * @property Carbon $ends_at
@@ -20,6 +21,7 @@ class GooseBoard extends Model
 {
     protected $fillable = [
         'name',
+        'image',
         'wise_old_man_id',
         'starts_at',
         'ends_at',
