@@ -10,7 +10,9 @@ trait TestsPetNames
     {
         return [
             ...collect(PetName::cases())
-                ->map(fn (PetName $petName) => [$petName]),
+                ->flatMap(fn (PetName $petName) => [
+                    $petName->value => [$petName],
+                ]),
         ];
     }
 }
