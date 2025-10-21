@@ -7,12 +7,10 @@ use App\Laracord\Button;
 use App\Laracord\SlashCommands\BaseSlashCommand;
 use App\Modules\GooseBoards\Library\Services\SubmissionService;
 use App\Modules\GooseBoards\Library\Services\TeamService;
-use App\Modules\GooseBoards\Library\Services\TileService;
 use App\Modules\GooseBoards\Models\Submission;
 use App\Modules\GooseBoards\SlashCommands\Parameters\HasGooseBoard;
 use App\Wise\SlashCommands\Parameters\HasImage;
 use App\Wise\SlashCommands\Parameters\HasYourself;
-use Discord\Interaction;
 use Discord\Parts\Interactions\MessageComponent;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
@@ -32,7 +30,7 @@ class GooseBoardTileSubmit extends BaseSlashCommand
     {
         return [
             $this->getGooseBoardOption($this->discord()),
-            $this->getImageOption($this->discord())
+            $this->getImageOption($this->discord()),
         ];
     }
 
@@ -43,12 +41,12 @@ class GooseBoardTileSubmit extends BaseSlashCommand
             $this->gooseBoard
         );
 
-        if(! $team){
+        if (! $team) {
             return $interaction->respondWithMessage(
             $this
-                    ->message('You are not in a team for this goose board!')
-                    ->warning()
-                    ->build(),
+                ->message('You are not in a team for this goose board!')
+                ->warning()
+                ->build(),
                 true
             );
         }
@@ -68,6 +66,7 @@ class GooseBoardTileSubmit extends BaseSlashCommand
                 ->build()
         )
             ->then(fn () => $interaction->respondWithMessage(
+            /* @phpstan-ignore-next-line */
                 $this
                     ->message('Please review the following submission.')
                     ->title('Please review the following submission.')
@@ -130,7 +129,7 @@ class GooseBoardTileSubmit extends BaseSlashCommand
         $this->notifySuccessfulAction(
             interaction: $interaction,
             submission: $submission,
-            action: "approved"
+            action: 'approved'
         );
     }
 
@@ -145,7 +144,7 @@ class GooseBoardTileSubmit extends BaseSlashCommand
         $this->notifySuccessfulAction(
             interaction: $interaction,
             submission: $submission,
-            action: "rejected"
+            action: 'rejected'
         );
     }
 
@@ -154,6 +153,7 @@ class GooseBoardTileSubmit extends BaseSlashCommand
         $interaction->deleteFollowUpMessage($interaction->message->id);
 
         $interaction->respondWithMessage(
+            /* @phpstan-ignore-next-line */
             $this
                 ->message("Successfully {$action} submission!")
                 ->title("Successfully {$action} submission")

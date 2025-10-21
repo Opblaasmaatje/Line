@@ -43,7 +43,7 @@ class TeamService
         $submission = $team->submissions()->make([
             'status' => Status::IN_PROCESS,
             'image_url' => $imageUrl,
-            'verification_code' => $team->verification_code
+            'verification_code' => $team->verification_code,
         ]);
 
         $submission->account()->associate($account);

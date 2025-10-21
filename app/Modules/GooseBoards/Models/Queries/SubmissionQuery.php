@@ -10,5 +10,4 @@ use Illuminate\Database\Eloquent\Builder;
  */
 class SubmissionQuery extends Builder
 {
-
 }

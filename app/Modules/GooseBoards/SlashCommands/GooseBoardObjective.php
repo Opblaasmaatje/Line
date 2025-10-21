@@ -3,13 +3,11 @@
 namespace App\Modules\GooseBoards\SlashCommands;
 
 use App\Helpers\Motivation;
-use App\Laracord\Button;
 use App\Laracord\SlashCommands\BaseSlashCommand;
 use App\Modules\GooseBoards\Library\Services\TeamService;
 use App\Modules\GooseBoards\SlashCommands\Parameters\HasGooseBoard;
 use App\Wise\SlashCommands\Parameters\HasAccount;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Config;
 
 class GooseBoardObjective extends BaseSlashCommand
 {
@@ -40,8 +38,7 @@ class GooseBoardObjective extends BaseSlashCommand
                 $this
                     ->message('This user does not have a team for this goose board!')
                     ->warning()
-                    ->build()
-                , true
+                    ->build(), true
             );
         }
 
