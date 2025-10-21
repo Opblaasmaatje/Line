@@ -6,6 +6,7 @@ use App\Modules\GooseBoards\Models\Observers\TileObserver;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property int $id
@@ -29,5 +30,13 @@ class Tile extends Model
     public function gooseBoard(): BelongsTo
     {
         return $this->belongsTo(GooseBoard::class);
+    }
+
+    /**
+     * @return HasMany<Submission, $this>
+     */
+    public function submission(): HasMany
+    {
+        return $this->hasMany(Submission::class);
     }
 }

@@ -4,7 +4,7 @@ namespace App\Modules\GooseBoards\Http\Controllers;
 
 use App\Modules\GooseBoards\Http\Requests\GooseBoardRequest;
 use App\Modules\GooseBoards\Http\Resources\GooseBoardResource;
-use App\Modules\GooseBoards\Library\Service\GooseBoardService;
+use App\Modules\GooseBoards\Library\Services\GooseBoardService;
 use Illuminate\Http\Request;
 use Laracord\Http\Controllers\Controller;
 

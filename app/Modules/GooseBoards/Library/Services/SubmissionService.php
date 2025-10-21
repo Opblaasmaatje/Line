@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\GooseBoards\Library\Service;
+namespace App\Modules\GooseBoards\Library\Services;
 
 use App\Modules\GooseBoards\Models\Enums\Status;
 use App\Modules\GooseBoards\Models\Submission;

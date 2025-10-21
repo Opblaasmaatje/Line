@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\GooseBoards\Library\Service;
+namespace App\Modules\GooseBoards\Library\Services;
 
 use App\Library\Services\AccountService;
 use App\Models\Account;
@@ -11,6 +11,7 @@ use App\Modules\GooseBoards\Models\Submission;
 use App\Modules\GooseBoards\Models\Team;
 use App\Modules\GooseBoards\Models\Tile;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 
 class TeamService
 {
@@ -54,9 +55,10 @@ class TeamService
     public function nextTile(Team $team): Team
     {
         $team->fill([
-            'code' => str()->random(6),
+            'code' => Str::random(6),
             'position' => $team->position + 1, //TODO figure out how to do this better
-        ])->save();
+        ])
+            ->save();
 
         return $team;
     }

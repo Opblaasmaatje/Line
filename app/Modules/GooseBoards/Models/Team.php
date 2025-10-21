@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property int $id
  * @property string $name
  * @property int $position
+ * @property string $code
  * @property-read int $goose_board_id
  * @property-read GooseBoard $gooseBoard
  * @property-read Collection<Account> $accounts
