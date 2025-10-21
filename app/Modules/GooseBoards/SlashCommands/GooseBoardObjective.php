@@ -38,8 +38,7 @@ class GooseBoardObjective extends BaseSlashCommand
                 $this
                     ->message('This user does not have a team for this goose board!')
                     ->warning()
-                    ->build()
-                , true
+                    ->build(), true
             );
         }
 
