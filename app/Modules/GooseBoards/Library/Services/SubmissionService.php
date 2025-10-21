@@ -17,9 +17,7 @@ class SubmissionService
     public function approve(Submission $submission): Submission
     {
         $submission
-            ->fill([
-                'status' => Status::APPROVED,
-            ])
+            ->fill(['status' => Status::APPROVED])
             ->save();
 
         $this->teamService->nextTile($submission->team);
@@ -30,9 +28,7 @@ class SubmissionService
     public function reject(Submission $submission): Submission
     {
         $submission
-            ->fill([
-                'status' => Status::REJECTED,
-            ])
+            ->fill(['status' => Status::REJECTED])
             ->save();
 
         return $submission;
