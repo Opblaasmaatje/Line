@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('team_id');
             $table->string('image_url');
             $table->string('status');
+            $table->string('verification_code');
             $table->timestamps();
         });
     }

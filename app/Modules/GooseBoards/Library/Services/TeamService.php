@@ -43,6 +43,7 @@ class TeamService
         $submission = $team->submissions()->make([
             'status' => Status::IN_PROCESS,
             'image_url' => $imageUrl,
+            'verification_code' => $team->verification_code
         ]);
 
         $submission->account()->associate($account);
@@ -55,7 +56,7 @@ class TeamService
     public function nextTile(Team $team): Team
     {
         $team->fill([
-            'code' => Str::random(6),
+            'verification_code' => Str::random(6),
             'position' => $team->position + 1, //TODO figure out how to do this better
         ])
             ->save();

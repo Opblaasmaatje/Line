@@ -34,7 +34,7 @@ class RejectTest extends ApplicationCase
         $submission = $this->subjectUnderTesting()->reject($submission);
 
         $this->assertEquals(Status::REJECTED, $submission->status);
-        $this->assertEquals('something', $submission->team->code);
+        $this->assertEquals('something', $submission->team->verification_code);
     }
 
     protected function subjectUnderTesting(): SubmissionService

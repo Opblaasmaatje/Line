@@ -6,6 +6,7 @@ use App\Cron\UpdateBotActivity;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardCheck;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardLeaderboard;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardObjective;
+use App\Modules\GooseBoards\SlashCommands\GooseBoardTileSubmit;
 use App\Modules\Pets\SlashCommands\CheckPets;
 use App\Modules\Pets\SlashCommands\ProofPet;
 use App\Modules\Pets\SlashCommands\SubmitPet;
@@ -60,6 +61,7 @@ return [
         GooseBoardObjective::class,
         GooseBoardLeaderboard::class,
         GooseBoardCheck::class,
+        GooseBoardTileSubmit::class,
     ],
 
     'menus' => [

@@ -10,7 +10,7 @@ class TeamObserver
     public function creating(Team $team): void
     {
         $team->fill([
-            'code' => Str::random(6),
+            'verification_code' => Str::random(6),
         ]);
     }
 }

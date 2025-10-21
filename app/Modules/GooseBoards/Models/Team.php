@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property int $id
  * @property string $name
  * @property int $position
- * @property string $code
+ * @property string $verification_code
  * @property-read int $goose_board_id
  * @property-read GooseBoard $gooseBoard
  * @property-read Collection<Account> $accounts
@@ -29,7 +29,7 @@ class Team extends Model
     protected $fillable = [
         'name',
         'position',
-        'code',
+        'verification_code',
     ];
 
     public function gooseBoard(): BelongsTo

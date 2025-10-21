@@ -2,11 +2,14 @@
 
 namespace App\Modules\GooseBoards\SlashCommands;
 
+use App\Helpers\Motivation;
+use App\Laracord\Button;
 use App\Laracord\SlashCommands\BaseSlashCommand;
 use App\Modules\GooseBoards\Library\Services\TeamService;
 use App\Modules\GooseBoards\SlashCommands\Parameters\HasGooseBoard;
 use App\Wise\SlashCommands\Parameters\HasAccount;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Config;
 
 class GooseBoardObjective extends BaseSlashCommand
 {
@@ -15,7 +18,7 @@ class GooseBoardObjective extends BaseSlashCommand
 
     protected $name = 'goose-board-objective';
 
-    protected $description = 'Get the objective of a team for the goose board';
+    protected $description = 'Get the objective of a team for the goose board.';
 
     public function options(): array
     {
@@ -38,17 +41,26 @@ class GooseBoardObjective extends BaseSlashCommand
                     ->message('This user does not have a team for this goose board!')
                     ->warning()
                     ->build()
+                , true
             );
         }
+
+        $motivation = Motivation::get($team->objective->name);
 
         return $interaction->respondWithMessage(
             $this
                 ->message()
                 ->info()
-                ->title("The current objective of team [{$team->name}] is to get [{$team->objective->name}], go get it! 🔥")
-                ->content("The current tile for [{$team->name}] is $team->position/{$this->gooseBoard->tiles->count()}")
+                ->title($motivation)
+                ->content("
+                :small_blue_diamond: Team: {$team->name}
+                :small_blue_diamond: Objective {$team->objective->name}
+                :small_blue_diamond: Position: ($team->position/{$this->gooseBoard->tiles->count()})
+
+                :warning: Code: {$team->verification_code}
+            ")
                 ->imageUrl($team->objective->image_url)
-                ->build(), true
+                ->build()
         );
     }
 
