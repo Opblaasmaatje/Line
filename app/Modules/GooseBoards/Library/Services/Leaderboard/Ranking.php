@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\GooseBoards\Library\Service\Leaderboard;
+namespace App\Modules\GooseBoards\Library\Services\Leaderboard;
 
 use App\Modules\GooseBoards\Models\Team;
 

@@ -4,7 +4,7 @@ namespace App\Modules\GooseBoards\SlashCommands\Parameters;
 
 use App\Laracord\Option;
 use App\Laracord\SlashCommands\ValidatableCallback;
-use App\Modules\GooseBoards\Library\Service\GooseBoardService;
+use App\Modules\GooseBoards\Library\Services\GooseBoardService;
 use App\Modules\GooseBoards\Models\GooseBoard;
 use Closure;
 use Discord\DiscordCommandClient;

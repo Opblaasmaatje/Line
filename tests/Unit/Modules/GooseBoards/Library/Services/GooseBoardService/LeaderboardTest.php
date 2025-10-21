@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\Modules\GooseBoards\Library\Services\GooseBoardService;
 
-use App\Modules\GooseBoards\Library\Service\GooseBoardService;
-use App\Modules\GooseBoards\Library\Service\Leaderboard\Ranking;
+use App\Modules\GooseBoards\Library\Services\GooseBoardService;
+use App\Modules\GooseBoards\Library\Services\Leaderboard\Ranking;
 use Database\Factories\GooseBoardFactory;
 use Database\Factories\TeamFactory;
 use Database\Factories\TileFactory;

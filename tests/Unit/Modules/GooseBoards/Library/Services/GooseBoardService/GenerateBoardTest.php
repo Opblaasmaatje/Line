@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Modules\GooseBoards\Library\Services\GooseBoardService;
 
-use App\Modules\GooseBoards\Library\Service\GooseBoardService;
+use App\Modules\GooseBoards\Library\Services\GooseBoardService;
 use Database\Factories\GooseBoardFactory;
 use Database\Factories\TileFactory;
 use Illuminate\Support\Facades\Storage;

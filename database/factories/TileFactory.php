@@ -18,6 +18,11 @@ class TileFactory extends Factory
         ];
     }
 
+    public function withoutGooseBoard(): self
+    {
+        return $this->set('goose_board_id', 1);
+    }
+
     public function withoutImage(): self
     {
         return $this->set('image_url', null);

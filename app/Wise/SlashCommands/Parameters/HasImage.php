@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Pets\SlashCommands\Parameters;
+namespace App\Wise\SlashCommands\Parameters;
 
 use App\Laracord\Option;
 use App\Laracord\SlashCommands\ValidatableCallback;

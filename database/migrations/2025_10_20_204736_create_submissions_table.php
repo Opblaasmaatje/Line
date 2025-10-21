@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('teams', function (Blueprint $table) {
+        Schema::create('submissions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('goose_board_id');
-            $table->string('name');
-            $table->integer('position')->default(1);
+            $table->foreignId('account_id');
+            $table->foreignId('tile_id');
+            $table->foreignId('team_id');
+            $table->string('image_url');
+            $table->string('status');
             $table->string('verification_code');
             $table->timestamps();
         });
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('teams');
+        Schema::dropIfExists('submissions');
     }
 };

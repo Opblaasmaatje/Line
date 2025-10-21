@@ -3,7 +3,7 @@
 namespace App\Modules\GooseBoards\SlashCommands;
 
 use App\Laracord\SlashCommands\BaseSlashCommand;
-use App\Modules\GooseBoards\Library\Service\Leaderboard\Ranking;
+use App\Modules\GooseBoards\Library\Services\Leaderboard\Ranking;
 use App\Modules\GooseBoards\SlashCommands\Parameters\HasGooseBoard;
 
 class GooseBoardLeaderboard extends BaseSlashCommand
@@ -12,7 +12,7 @@ class GooseBoardLeaderboard extends BaseSlashCommand
 
     protected $name = 'goose-board-leaderboard';
 
-    protected $description = 'Get the leaderboard for a goose board';
+    protected $description = 'Get the leaderboard for a goose board.';
 
     public function options(): array
     {

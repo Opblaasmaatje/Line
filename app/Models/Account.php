@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Modules\GooseBoards\Models\Pivot\AccountTeam;
+use App\Modules\GooseBoards\Models\Submission;
 use App\Modules\GooseBoards\Models\Team;
 use App\Modules\Pets\Models\Pet;
 use App\Modules\Points\Models\Point;
@@ -58,6 +59,14 @@ class Account extends Model
     public function pets(): HasMany
     {
         return $this->hasMany(Pet::class);
+    }
+
+    /**
+     * @return HasMany<Submission, $this>
+     */
+    public function submissions(): HasMany
+    {
+        return $this->hasMany(Submission::class);
     }
 
     public function teams(): BelongsToMany

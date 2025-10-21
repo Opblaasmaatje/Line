@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Modules\GooseBoards\Library\Service;
+namespace App\Modules\GooseBoards\Library\Services;
 
 use App\Modules\GooseBoards\Library\BoardGenerator\GooseBoardBoardGenerator;
 use App\Modules\GooseBoards\Library\Repository\GooseBoardRepository;
-use App\Modules\GooseBoards\Library\Service\Leaderboard\Leaderboard;
+use App\Modules\GooseBoards\Library\Services\Leaderboard\Leaderboard;
 use App\Modules\GooseBoards\Models\GooseBoard;
 use Illuminate\Support\Arr;
 
