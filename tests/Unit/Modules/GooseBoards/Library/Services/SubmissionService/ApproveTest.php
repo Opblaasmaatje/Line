@@ -16,11 +16,10 @@ use Tests\ApplicationCase;
 
 class ApproveTest extends ApplicationCase
 {
-
     #[Test]
     public function it_can_be_approved_and_auto_rolls_the_code_for_the_team()
     {
-        Str::createRandomStringsUsingSequence(['bar']);
+        Str::createRandomStringsUsingSequence(['bar', 'bar']);
 
         $account = AccountFactory::new()->for(UserFactory::new())->create();
         $board = GooseBoardFactory::new()->create();
@@ -34,7 +33,7 @@ class ApproveTest extends ApplicationCase
 
         $submission = $this->subjectUnderTesting()->approve($submission);
 
-        $this->assertEquals(Status::APPROVED, $submission->status);;
+        $this->assertEquals(Status::APPROVED, $submission->status);
         $this->assertEquals('bar', $submission->team->code);
     }
 
@@ -43,4 +42,3 @@ class ApproveTest extends ApplicationCase
         return $this->app->make(SubmissionService::class);
     }
 }
-

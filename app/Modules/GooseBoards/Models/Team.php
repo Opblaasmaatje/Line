@@ -3,7 +3,9 @@
 namespace App\Modules\GooseBoards\Models;
 
 use App\Models\Account;
+use App\Modules\GooseBoards\Models\Observers\TeamObserver;
 use App\Modules\GooseBoards\Models\Pivot\AccountTeam;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
@@ -21,6 +23,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property-read Collection<Account> $accounts
  * @property-read Tile|null $objective
  */
+#[ObservedBy(TeamObserver::class)]
 class Team extends Model
 {
     protected $fillable = [

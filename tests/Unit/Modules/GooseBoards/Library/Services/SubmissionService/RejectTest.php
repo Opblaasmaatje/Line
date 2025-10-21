@@ -19,7 +19,7 @@ class RejectTest extends ApplicationCase
     #[Test]
     public function it_can_reject_a_submission()
     {
-        Str::createRandomStringsUsingSequence(['bar']);
+        Str::createRandomStringsUsingSequence(['something']);
 
         $account = AccountFactory::new()->for(UserFactory::new())->create();
         $board = GooseBoardFactory::new()->create();
@@ -28,12 +28,12 @@ class RejectTest extends ApplicationCase
             ->inProcess()
             ->for($account)
             ->for(TileFactory::new()->for($board))
-            ->for(TeamFactory::new(['code' => 'something'])->for($board)->hasAttached($account))
+            ->for(TeamFactory::new()->for($board)->hasAttached($account))
             ->create();
 
         $submission = $this->subjectUnderTesting()->reject($submission);
 
-        $this->assertEquals(Status::REJECTED, $submission->status);;
+        $this->assertEquals(Status::REJECTED, $submission->status);
         $this->assertEquals('something', $submission->team->code);
     }
 
