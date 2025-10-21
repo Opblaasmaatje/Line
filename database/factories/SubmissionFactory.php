@@ -15,6 +15,7 @@ class SubmissionFactory extends Factory
         return [
             'status' => $this->faker->randomElement(Status::cases()),
             'image_url' => $this->faker->imageUrl(),
+            'verification_code' => $this->faker->uuid(),
         ];
     }
 

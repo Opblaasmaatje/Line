@@ -34,7 +34,7 @@ class ApproveTest extends ApplicationCase
         $submission = $this->subjectUnderTesting()->approve($submission);
 
         $this->assertEquals(Status::APPROVED, $submission->status);
-        $this->assertEquals('bar', $submission->team->code);
+        $this->assertEquals('bar', $submission->team->verification_code);
     }
 
     protected function subjectUnderTesting(): SubmissionService

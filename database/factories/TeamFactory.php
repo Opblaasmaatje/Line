@@ -14,7 +14,7 @@ class TeamFactory extends Factory
         return [
             'name' => $this->faker->name,
             'position' => 1,
-            'code' => $this->faker->word,
+            'verification_code' => $this->faker->word,
         ];
     }
 

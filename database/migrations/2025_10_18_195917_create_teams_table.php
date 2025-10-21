@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('goose_board_id');
             $table->string('name');
             $table->integer('position')->default(1);
-            $table->string('code');
+            $table->string('verification_code');
             $table->timestamps();
         });
     }

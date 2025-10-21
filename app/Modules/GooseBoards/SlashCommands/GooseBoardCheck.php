@@ -11,7 +11,7 @@ class GooseBoardCheck extends BaseSlashCommand
 
     protected $name = 'goose-board-check';
 
-    protected $description = 'Check the current goose board!';
+    protected $description = 'Check the current goose board.';
 
     public function options(): array
     {
@@ -29,21 +29,9 @@ class GooseBoardCheck extends BaseSlashCommand
 
     protected function getBoard(): string
     {
-        if (! $this->gooseBoard->image) {
+        if (! $this->gooseBoard->image || ! file_exists(storage_path('app/public/'.$this->gooseBoard->image))) {
             $this->getGooseBoardService()->generateBoard($this->gooseBoard);
         }
-
-        $this->gooseBoard->refresh();
-
-        $path = storage_path('app/public/'.$this->gooseBoard->image);
-
-        if (file_exists($path)) {
-            return $path;
-        }
-
-        $this->getGooseBoardService()->generateBoard($this->gooseBoard);
-
-        $this->gooseBoard->refresh();
 
         return storage_path('app/public/'.$this->gooseBoard->image);
     }

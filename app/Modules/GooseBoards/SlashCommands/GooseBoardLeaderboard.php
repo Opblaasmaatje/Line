@@ -12,7 +12,7 @@ class GooseBoardLeaderboard extends BaseSlashCommand
 
     protected $name = 'goose-board-leaderboard';
 
-    protected $description = 'Get the leaderboard for a goose board';
+    protected $description = 'Get the leaderboard for a goose board.';
 
     public function options(): array
     {
