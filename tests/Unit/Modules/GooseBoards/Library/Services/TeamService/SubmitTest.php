@@ -36,6 +36,8 @@ class SubmitTest extends ApplicationCase
 
         $service = $this->subjectUnderTesting();
 
+        $assertSubmissionVerificationCode = $team->verification_code;
+
         $submission = $service->submit(
             account: $account,
             team: $team,
@@ -46,6 +48,7 @@ class SubmitTest extends ApplicationCase
         $this->assertInstanceOf(Submission::class, $submission);
         $this->assertTrue($submission->exists);
         $this->assertEquals(Status::IN_PROCESS, $submission->status);
+        $this->assertEquals($assertSubmissionVerificationCode, $submission->verification_code);
 
         $this->assertSame($team->getKey(), $submission->team_id);
         $this->assertSame($account->getKey(), $submission->account_id);
