@@ -3,7 +3,7 @@
 namespace App\Modules\GooseBoards\SlashCommands;
 
 use App\Laracord\SlashCommands\BaseSlashCommand;
-use App\Modules\GooseBoards\Library\Service\TeamService;
+use App\Modules\GooseBoards\Library\Services\TeamService;
 use App\Modules\GooseBoards\SlashCommands\Parameters\HasGooseBoard;
 use App\Wise\SlashCommands\Parameters\HasAccount;
 use Illuminate\Support\Facades\App;

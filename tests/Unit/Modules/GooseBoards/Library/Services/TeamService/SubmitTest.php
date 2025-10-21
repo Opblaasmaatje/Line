@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Unit\Modules\GooseBoards\Library\Service\TeamService;
+namespace Tests\Unit\Modules\GooseBoards\Library\Services\TeamService;
 
 use App\Models\Account;
-use App\Modules\GooseBoards\Library\Service\TeamService;
+use App\Modules\GooseBoards\Library\Services\TeamService;
 use App\Modules\GooseBoards\Models\Enums\Status;
 use App\Modules\GooseBoards\Models\Submission;
 use App\Modules\GooseBoards\Models\Team;

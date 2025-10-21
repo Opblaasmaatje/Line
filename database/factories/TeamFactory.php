@@ -13,7 +13,8 @@ class TeamFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'position' => 1
+            'position' => 1,
+            'code' => $this->faker->word,
         ];
     }
 

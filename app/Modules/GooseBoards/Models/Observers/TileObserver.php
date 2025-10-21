@@ -10,6 +10,7 @@ class TileObserver
     {
          $tile->fill([
              'index' => $tile->gooseBoard->tiles->count(),
-         ])->save();
+         ])
+             ->save();
     }
 }
