@@ -14,7 +14,10 @@ class UpdateBotActivity extends Service
 
     public function handle(): void
     {
-        self::applyActivity($this->discord(), $this->console());
+        self::applyActivity(
+            $this->discord(),
+            $this->console()
+        );
     }
 
     public static function applyActivity(DiscordCommandClient $client, BootCommand|null $console): void
