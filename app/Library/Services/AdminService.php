@@ -9,7 +9,7 @@ class AdminService
 {
     public function __construct(
         public UserRepository $userRepository
-    ){
+    ) {
     }
 
     public function allAdmins(): \Illuminate\Database\Eloquent\Collection
@@ -19,6 +19,10 @@ class AdminService
 
     public function setAdmin(string $discordId, bool $isAdmin): User
     {
-        return $this->userRepository->query->updateOrCreate(['discord_id' => $discordId], ['is_admin' => $isAdmin]);
+        return $this->userRepository->query->updateOrCreate([
+            'discord_id' => $discordId,
+        ], [
+            'is_admin' => $isAdmin,
+        ]);
     }
 }

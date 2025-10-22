@@ -3,12 +3,12 @@
 namespace App\Modules\Points\SlashCommands\Admin;
 
 use App\Laracord\Option;
+use App\Laracord\SlashCommands\BaseSlashCommand;
 use App\Laracord\SlashCommands\Concerns\AdminCommand;
 use App\Modules\Points\Jobs\Actions\ApplyPoints;
 use App\SlashCommands\Parameters\HasAccount;
-use Laracord\Commands\SlashCommand;
 
-class PointsGive extends SlashCommand
+class PointsGive extends BaseSlashCommand
 {
     use HasAccount;
     use AdminCommand;

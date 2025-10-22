@@ -13,7 +13,7 @@ class StringList
         }
 
         return Collection::make(explode("\n", $string))
-            ->map(fn($item) => trim($item))
+            ->map(fn ($item) => trim($item))
             ->filter()
             ->values()
             ->toArray();

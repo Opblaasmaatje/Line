@@ -9,7 +9,6 @@ use Tests\ApplicationCase;
 
 class StringListTest extends ApplicationCase
 {
-
     public static function stringFormats(): array
     {
         return [
@@ -36,8 +35,7 @@ class StringListTest extends ApplicationCase
             'Null value' => [
                 null,
                 [],
-            ]
-
+            ],
         ];
     }
 
@@ -45,8 +43,8 @@ class StringListTest extends ApplicationCase
     #[DataProvider('stringFormats')]
     public function it_can_format_to_array(string|null $value, array $assertion)
     {
-        $array = Stringlist::format($value);
+        $array = StringList::format($value);
 
-        $this->assertSame($assertion, $array);;
+        $this->assertSame($assertion, $array);
     }
 }

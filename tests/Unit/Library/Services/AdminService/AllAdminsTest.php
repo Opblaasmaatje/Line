@@ -17,7 +17,7 @@ class AllAdminsTest extends ApplicationCase
         $admin = UserFactory::new()->asAdmin()->create();
         UserFactory::new()->notAdmin()->create();
 
-        $this->assertCount(1, $this->subjectUnderTesting()->allAdmins());;
+        $this->assertCount(1, $this->subjectUnderTesting()->allAdmins());
         $this->assertTrue($admin->is($this->subjectUnderTesting()->allAdmins()->sole()));
     }
 
@@ -27,10 +27,10 @@ class AllAdminsTest extends ApplicationCase
         Config::set('discord.admins', ['some-id']);
 
         $admin = UserFactory::new()->notAdmin()->create([
-            'discord_id' => 'some-id'
+            'discord_id' => 'some-id',
         ]);
 
-        $this->assertCount(1, $this->subjectUnderTesting()->allAdmins());;
+        $this->assertCount(1, $this->subjectUnderTesting()->allAdmins());
         $this->assertTrue($admin->is($this->subjectUnderTesting()->allAdmins()->sole()));
     }
 

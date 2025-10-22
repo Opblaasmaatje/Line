@@ -25,7 +25,7 @@ class SetAdmin extends BaseSlashCommand
 
         return $interaction->respondWithMessage(
             $this
-                ->message("Successfully changed admin status")
+                ->message('Successfully changed admin status')
                 ->title("User with ID [{$user->discord_id}] is now Admin")
                 ->field('Is admin: ', $user->is_admin ? 'Yes' : 'No')
                 ->success()

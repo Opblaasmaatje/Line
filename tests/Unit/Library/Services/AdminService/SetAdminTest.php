@@ -11,7 +11,6 @@ use Tests\ApplicationCase;
 
 class SetAdminTest extends ApplicationCase
 {
-
     public static function adminConfiguration(): array
     {
         return [
@@ -24,7 +23,7 @@ class SetAdminTest extends ApplicationCase
     #[DataProvider('adminConfiguration')]
     public function an_admin_can_be_set(bool $isAlreadyAdmin, bool $becameAdmin)
     {
-        $user =  UserFactory::new()->set('is_admin', $isAlreadyAdmin)->create();
+        $user = UserFactory::new()->set('is_admin', $isAlreadyAdmin)->create();
 
         $value = $this->subjectUnderTesting()->setAdmin(
             $user->discord_id,
@@ -41,7 +40,6 @@ class SetAdminTest extends ApplicationCase
 
         $this->assertModelExists($user);
     }
-
 
     protected function subjectUnderTesting(): AdminService
     {

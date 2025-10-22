@@ -3,6 +3,7 @@
 namespace App\Library\Repository;
 
 use App\Models\Account;
+use App\Models\Queries\UserQuery;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Config;
 
 class UserRepository
 {
-    public readonly Builder $query;
+    public readonly UserQuery $query;
 
     public function __construct()
     {
@@ -26,7 +27,7 @@ class UserRepository
 
     public function setUserByDiscordId(string $discordId): User
     {
-        return User::query()
+        return $this->query
             ->with('account')
             ->updateOrCreate([
                 'discord_id' => $discordId,
