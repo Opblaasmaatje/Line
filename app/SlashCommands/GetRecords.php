@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Wise\SlashCommands\Account;
+namespace App\SlashCommands;
 
 use App\Laracord\SlashCommands\BaseSlashCommand;
 use App\Library\Services\AccountService;
+use App\SlashCommands\Parameters\HasAccount;
+use App\SlashCommands\Parameters\HasMetric;
 use App\Wise\Client\Endpoints\Players\DTO\Snapshot\Record;
-use App\Wise\SlashCommands\Parameters\HasAccount;
-use App\Wise\SlashCommands\Parameters\HasMetric;
 use Illuminate\Support\Facades\App;
 use React\Promise\PromiseInterface;
 

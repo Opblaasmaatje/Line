@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Wise\SlashCommands\Competition;
+namespace App\SlashCommands;
 
 use App\Laracord\SlashCommands\BaseSlashCommand;
 use App\Library\Services\CompetitionService;
+use App\SlashCommands\Parameters\HasCompetition;
+use App\SlashCommands\Parameters\HasMetric;
 use App\Wise\Client\Endpoints\Competition\DTO\ParticipantHistory;
-use App\Wise\SlashCommands\Parameters\HasCompetition;
-use App\Wise\SlashCommands\Parameters\HasMetric;
 use Illuminate\Support\Facades\App;
 use React\Promise\PromiseInterface;
 

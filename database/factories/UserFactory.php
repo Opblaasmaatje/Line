@@ -21,4 +21,9 @@ class UserFactory extends Factory
     {
         return $this->set('is_admin', true);
     }
+
+    public function notAdmin(): self
+    {
+        return $this->set('is_admin', false);
+    }
 }

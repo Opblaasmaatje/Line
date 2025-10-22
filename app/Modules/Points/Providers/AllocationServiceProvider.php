@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
 
 class AllocationServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         $this->app->bind(PointAllocationConfiguration::class, function () {
             return new PointAllocationConfiguration(

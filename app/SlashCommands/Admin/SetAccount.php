@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Wise\SlashCommands\Account;
+namespace App\SlashCommands\Admin;
 
 use App\Laracord\Option;
+use App\Laracord\SlashCommands\Concerns\AdminCommand;
 use App\Laracord\SlashCommands\SlashCommandWithRuleValidation;
 use App\Library\Repository\UserRepository;
 use App\Library\Services\AccountService;
@@ -16,15 +17,11 @@ use React\Promise\PromiseInterface;
 
 class SetAccount extends SlashCommandWithRuleValidation
 {
+    use AdminCommand;
+
     protected $name = 'set-account';
 
     protected $description = 'Set an account to a discord user.';
-
-    protected $permissions = [];
-
-    protected $admin = false;
-
-    protected $hidden = false;
 
     public function options(): array
     {

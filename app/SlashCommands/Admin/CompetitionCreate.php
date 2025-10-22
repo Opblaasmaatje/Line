@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Wise\SlashCommands\Competition;
+namespace App\SlashCommands\Admin;
 
 use App\Laracord\Option;
+use App\Laracord\SlashCommands\Concerns\AdminCommand;
 use App\Laracord\SlashCommands\SlashCommandWithRuleValidation;
 use App\Library\Services\CompetitionService;
 use App\Models\Competition;
-use App\Wise\SlashCommands\Parameters\HasMetric;
+use App\SlashCommands\Parameters\HasMetric;
 use Carbon\CarbonPeriod;
 use Discord\Parts\Interactions\ApplicationCommand;
 use Discord\Parts\Interactions\Ping;
@@ -17,16 +18,11 @@ use React\Promise\PromiseInterface;
 class CompetitionCreate extends SlashCommandWithRuleValidation
 {
     use HasMetric;
+    use AdminCommand;
 
     protected $name = 'competition-create';
 
     protected $description = 'Create a competition';
-
-    protected $permissions = [];
-
-    protected $admin = false;
-
-    protected $hidden = false;
 
     public function options(): array
     {

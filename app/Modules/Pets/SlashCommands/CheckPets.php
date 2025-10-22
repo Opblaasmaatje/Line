@@ -5,7 +5,7 @@ namespace App\Modules\Pets\SlashCommands;
 use App\Laracord\SlashCommands\BaseSlashCommand;
 use App\Modules\Pets\Library\AcquiredPets\AcquiredPet;
 use App\Modules\Pets\Library\Services\PetService;
-use App\Wise\SlashCommands\Parameters\HasAccount;
+use App\SlashCommands\Parameters\HasAccount;
 use Illuminate\Support\Facades\App;
 
 class CheckPets extends BaseSlashCommand

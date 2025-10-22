@@ -5,7 +5,7 @@ namespace App\Modules\Pets\SlashCommands;
 use App\Laracord\SlashCommands\BaseSlashCommand;
 use App\Modules\Pets\Library\Services\PetService;
 use App\Modules\Pets\SlashCommands\Parameters\HasPetName;
-use App\Wise\SlashCommands\Parameters\HasAccount;
+use App\SlashCommands\Parameters\HasAccount;
 use Illuminate\Support\Facades\App;
 
 class ProofPet extends BaseSlashCommand
@@ -13,7 +13,7 @@ class ProofPet extends BaseSlashCommand
     use HasAccount;
     use HasPetName;
 
-    protected $name = 'proof-pet';
+    protected $name = 'pet-proof';
 
     protected $description = 'View proof of a pet submission';
 

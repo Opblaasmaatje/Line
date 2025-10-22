@@ -3,6 +3,7 @@
 use App\Cron\AddSnapshotToUser;
 use App\Cron\ApplyPointAllocation;
 use App\Cron\UpdateBotActivity;
+use App\Helpers\StringList;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardCheck;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardLeaderboard;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardObjective;
@@ -10,14 +11,15 @@ use App\Modules\GooseBoards\SlashCommands\GooseBoardTileSubmit;
 use App\Modules\Pets\SlashCommands\CheckPets;
 use App\Modules\Pets\SlashCommands\ProofPet;
 use App\Modules\Pets\SlashCommands\SubmitPet;
+use App\Modules\Points\SlashCommands\Admin\PointsGive;
 use App\Modules\Points\SlashCommands\PointsCheck;
-use App\Modules\Points\SlashCommands\PointsGive;
 use App\Modules\Points\SlashCommands\PointsLeaderboard;
-use App\Wise\SlashCommands\Account\GetRecords;
-use App\Wise\SlashCommands\Account\SetAccount;
-use App\Wise\SlashCommands\Competition\CompetitionCreate;
-use App\Wise\SlashCommands\Competition\CompetitionDelete;
-use App\Wise\SlashCommands\Competition\CompetitionLeaderboard;
+use App\SlashCommands\Admin\CompetitionCreate;
+use App\SlashCommands\Admin\CompetitionDelete;
+use App\SlashCommands\Admin\SetAccount;
+use App\SlashCommands\Admin\SetAdmin;
+use App\SlashCommands\CompetitionLeaderboard;
+use App\SlashCommands\GetRecords;
 use Discord\WebSockets\Intents;
 
 return [
@@ -37,9 +39,7 @@ return [
 
     'timestamp' => 'h:i:s A',
 
-    'admins' => [
-        '173783209069248512',
-    ],
+    'admins' => StringList::format(env('BOT_ADMINS', '')),
 
     'admin-developer' => [
         'discord-id' => env('BOT_ADMIN_DEVELOPER_DISCORD_ID'),
@@ -53,6 +53,7 @@ return [
 
     'commands' => [
         SetAccount::class,
+        SetAdmin::class,
         PointsCheck::class,
         PointsGive::class,
         PointsLeaderboard::class,

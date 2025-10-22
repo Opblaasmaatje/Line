@@ -1,25 +1,21 @@
 <?php
 
-namespace App\Wise\SlashCommands\Competition;
+namespace App\SlashCommands\Admin;
 
 use App\Laracord\SlashCommands\BaseSlashCommand;
+use App\Laracord\SlashCommands\Concerns\AdminCommand;
 use App\Library\Services\CompetitionService;
-use App\Wise\SlashCommands\Parameters\HasCompetition;
+use App\SlashCommands\Parameters\HasCompetition;
 use Illuminate\Support\Facades\App;
 
 class CompetitionDelete extends BaseSlashCommand
 {
     use HasCompetition;
+    use AdminCommand;
 
     protected $name = 'competition-delete';
 
     protected $description = 'Delete a competition';
-
-    protected $permissions = [];
-
-    protected $admin = false;
-
-    protected $hidden = false;
 
     public function options(): array
     {
