@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 /**
  * @property int $id
@@ -19,6 +20,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property int $position
  * @property string $verification_code
  * @property-read int $goose_board_id
+ * @property-read string $current_position
  * @property-read GooseBoard $gooseBoard
  * @property-read Collection<Account> $accounts
  * @property-read Tile|null $objective
@@ -57,6 +59,15 @@ class Team extends Model
     {
         return Attribute::get(function () {
             return $this->gooseBoard->tiles->firstWhere('index', $this->position);
+        });
+    }
+
+    public function currentPosition(): Attribute
+    {
+        return Attribute::get(function (){
+            return Str::of($this->position)
+                ->append('/')
+                ->append($this->gooseBoard->tiles->count());
         });
     }
 }

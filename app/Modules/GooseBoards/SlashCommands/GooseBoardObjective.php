@@ -49,13 +49,10 @@ class GooseBoardObjective extends BaseSlashCommand
                 ->message()
                 ->info()
                 ->title($motivation)
-                ->content("
-                :small_blue_diamond: Team: {$team->name}
-                :small_blue_diamond: Objective {$team->objective->name}
-                :small_blue_diamond: Position: ($team->position/{$this->gooseBoard->tiles->count()})
-
-                :warning: Code: {$team->verification_code}
-            ")
+                ->field(":small_blue_diamond: Team: {$team->name}", '', false)
+                ->field(":small_blue_diamond: Objective: {$team->objective?->name}", '', false)
+                ->field(":small_blue_diamond: Position: {$team->current_position}", '', false)
+                ->field(":warning: Code: {$team->verification_code}", '', false)
                 ->imageUrl($team->objective->image_url)
                 ->build()
         );
