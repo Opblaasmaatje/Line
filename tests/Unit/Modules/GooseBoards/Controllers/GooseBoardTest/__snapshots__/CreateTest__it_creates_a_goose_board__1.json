@@ -1,0 +1,75 @@
+{
+    "data": {
+        "id": 1,
+        "wise_old_man_id": null,
+        "name": "some-name",
+        "starts_at": "2023-02-01",
+        "ends_at": "2023-03-02",
+        "tiles": [
+            {
+                "name": "A",
+                "description": "some-description",
+                "index": 1
+            },
+            {
+                "name": "B",
+                "description": "some-description",
+                "index": 2
+            },
+            {
+                "name": "C",
+                "description": "some-description",
+                "index": 3
+            },
+            {
+                "name": "D",
+                "description": "some-description",
+                "index": 4
+            },
+            {
+                "name": "E",
+                "description": "some-description",
+                "index": 5
+            },
+            {
+                "name": "F",
+                "description": "some-description",
+                "index": 6
+            },
+            {
+                "name": "G",
+                "description": "some-description",
+                "index": 7
+            },
+            {
+                "name": "H",
+                "description": "some-description",
+                "index": 8
+            },
+            {
+                "name": "I",
+                "description": "some-description",
+                "index": 9
+            },
+            {
+                "name": "J",
+                "description": "some-description",
+                "index": 10
+            }
+        ],
+        "teams": [
+            {
+                "name": "team name",
+                "position": 1,
+                "accounts": [
+                    {
+                        "username": "name"
+                    },
+                    {
+                        "username": "other name"
+                    }
+                ]
+            }
+        ]
+    }
+}

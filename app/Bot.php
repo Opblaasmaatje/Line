@@ -3,6 +3,8 @@
 namespace App;
 
 use App\Cron\UpdateBotActivity;
+use App\Modules\GooseBoards\Http\Controllers\GooseBoardController;
+use Illuminate\Support\Facades\Route;
 use Laracord\Laracord;
 
 class Bot extends Laracord
@@ -18,6 +20,8 @@ class Bot extends Laracord
 
     public function routes(): void
     {
-        //
+        Route::middleware('api')->group(function () {
+            Route::post('goose-board', [GooseBoardController::class, 'create']);
+        });
     }
 }

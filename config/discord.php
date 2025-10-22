@@ -3,6 +3,10 @@
 use App\Cron\AddSnapshotToUser;
 use App\Cron\ApplyPointAllocation;
 use App\Cron\UpdateBotActivity;
+use App\Modules\GooseBoards\SlashCommands\GooseBoardCheck;
+use App\Modules\GooseBoards\SlashCommands\GooseBoardLeaderboard;
+use App\Modules\GooseBoards\SlashCommands\GooseBoardObjective;
+use App\Modules\GooseBoards\SlashCommands\GooseBoardTileSubmit;
 use App\Modules\Pets\SlashCommands\CheckPets;
 use App\Modules\Pets\SlashCommands\ProofPet;
 use App\Modules\Pets\SlashCommands\SubmitPet;
@@ -37,6 +41,16 @@ return [
         '173783209069248512',
     ],
 
+    'admin-developer' => [
+        'discord-id' => env('BOT_ADMIN_DEVELOPER_DISCORD_ID'),
+        'wise-old-man-id' => env('BOT_ADMIN_DEVELOPER_WISE_OLD_MAN_ID'),
+        'team-channel' => env('BOT_ADMIN_DEVELOPER_TEAM_CHANNEL'),
+    ],
+
+    'channel' => [
+        'review' => env('BOT_REVIEW_CHANNEL'),
+    ],
+
     'commands' => [
         SetAccount::class,
         PointsCheck::class,
@@ -49,6 +63,10 @@ return [
         SubmitPet::class,
         CheckPets::class,
         ProofPet::class,
+        GooseBoardObjective::class,
+        GooseBoardLeaderboard::class,
+        GooseBoardCheck::class,
+        GooseBoardTileSubmit::class,
     ],
 
     'menus' => [
