@@ -23,7 +23,7 @@ class GooseBoardController extends Controller
         );
 
         return new GooseBoardResource(
-            $this->service->create($validated)
+            $this->service->createApi($validated)
         );
     }
 }

@@ -21,7 +21,10 @@ class TeamService
     ) {
     }
 
-    public function create(GooseBoard $board, array $data): Team
+    /**
+     * @deprecated
+     */
+    public function createApi(GooseBoard $board, array $data): Team
     {
         /** @var Team $team */
         $team = $board->teams()->create(
@@ -35,6 +38,14 @@ class TeamService
         }
 
         return $team;
+    }
+
+    public function create(GooseBoard $board, string $teamName, $channelId): Team
+    {
+        return $board->teams()->create([
+            'name' => $teamName,
+            'channel_id' => $channelId,
+        ]);
     }
 
     public function submit(Account $account, Team $team, Tile $tile, string $imageUrl): Submission
@@ -62,5 +73,19 @@ class TeamService
             ->save();
 
         return $team;
+    }
+
+    public function addTeamMember(Account $account, Team $team): true
+    {
+        $team->accounts()->attach($account);
+
+        return true;
+    }
+
+    public function removeTeamMember(Account $account, Team $team): true
+    {
+        $team->accounts()->detach($account);
+
+        return true;
     }
 }

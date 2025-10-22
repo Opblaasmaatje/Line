@@ -4,6 +4,10 @@ use App\Cron\AddSnapshotToUser;
 use App\Cron\ApplyPointAllocation;
 use App\Cron\UpdateBotActivity;
 use App\Helpers\StringList;
+use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardAddTeamMember;
+use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardCreate;
+use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardRemoveTeamMember;
+use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardTeamCreate;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardCheck;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardLeaderboard;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardObjective;
@@ -68,6 +72,10 @@ return [
         GooseBoardLeaderboard::class,
         GooseBoardCheck::class,
         GooseBoardTileSubmit::class,
+        GooseBoardCreate::class,
+        GooseBoardTeamCreate::class,
+        GooseBoardAddTeamMember::class,
+        GooseBoardRemoveTeamMember::class,
     ],
 
     'menus' => [
