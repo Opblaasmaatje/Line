@@ -28,16 +28,11 @@ class TeamTest extends ApplicationCase
         $team = TeamFactory::new()
             ->for(
                 GooseBoardFactory::new()
-                    ->has(TileFactory::new([
-                    ]))
-                    ->has(TileFactory::new([
-                    ]))
-                    ->has(TileFactory::new([
-                    ]))
-                    ->has(TileFactory::new([
-                    ]))
-                    ->has(TileFactory::new([
-                    ]))
+                    ->has(TileFactory::new())
+                    ->has(TileFactory::new())
+                    ->has(TileFactory::new())
+                    ->has(TileFactory::new())
+                    ->has(TileFactory::new())
             )
             ->create([
                 'position' => $index,
@@ -72,5 +67,24 @@ class TeamTest extends ApplicationCase
 
         $this->assertModelExists($team->objective);
         $this->assertSame(6, $team->objective->index);
+    }
+
+    #[Test]
+    public function it_can_get_the_current_position()
+    {
+        $team = TeamFactory::new()
+            ->for(
+                GooseBoardFactory::new()
+                    ->has(TileFactory::new())
+                    ->has(TileFactory::new())
+                    ->has(TileFactory::new())
+                    ->has(TileFactory::new())
+                    ->has(TileFactory::new())
+            )
+            ->create([
+                'position' => 4,
+            ]);
+
+        $this->assertEquals('4/5', $team->current_position);
     }
 }

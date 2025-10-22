@@ -52,6 +52,10 @@ class GooseBoardRequest
                 'required',
                 'string',
             ],
+            'teams.*.channel_id' => [
+                'required',
+                'string',
+            ],
             'teams.*.accounts' => [
                 'required',
                 'array',

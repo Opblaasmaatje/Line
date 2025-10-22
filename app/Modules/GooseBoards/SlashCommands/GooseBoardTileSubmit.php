@@ -168,8 +168,8 @@ class GooseBoardTileSubmit extends BaseSlashCommand
                         ->field(":small_blue_diamond: Team: {$submission->team->name}", '', false)
                         ->field(":small_blue_diamond: Objective: {$submission->team->objective?->name}", '', false)
                         ->field(":small_blue_diamond: Position: {$submission->team->current_position}", '', false)
-                        ->field(":warning: Code: {$submission->team->verification_code}", ''. false)
-                        ->imageUrl("{$submission->team->objective?->image_url}", '')
+                        ->field(":warning: Code: {$submission->team->verification_code}", ''.false)
+                        ->imageUrl("{$submission->team->objective->image_url}")
                         ->info()
                         ->send($submission->team->channel_id);
                 }

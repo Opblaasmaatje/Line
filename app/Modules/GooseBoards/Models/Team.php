@@ -33,7 +33,7 @@ class Team extends Model
         'name',
         'position',
         'verification_code',
-        'channel_id'
+        'channel_id',
     ];
 
     public function gooseBoard(): BelongsTo
@@ -67,9 +67,9 @@ class Team extends Model
     public function currentPosition(): Attribute
     {
         return Attribute::get(function () {
-            return Str::of($this->position)
+            return Str::of((string) $this->position)
                 ->append('/')
-                ->append($this->gooseBoard->tiles->count());
+                ->append((string) $this->gooseBoard->tiles->count());
         });
     }
 }
