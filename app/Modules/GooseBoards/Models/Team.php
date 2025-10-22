@@ -64,7 +64,7 @@ class Team extends Model
 
     public function currentPosition(): Attribute
     {
-        return Attribute::get(function (){
+        return Attribute::get(function () {
             return Str::of($this->position)
                 ->append('/')
                 ->append($this->gooseBoard->tiles->count());

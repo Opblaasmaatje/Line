@@ -108,11 +108,11 @@ class GooseBoardTileSubmit extends BaseSlashCommand
         ];
     }
 
-    protected function handleReviewSubmission(Interaction $interaction, Submission $submission): \React\Promise\PromiseInterface
+    protected function handleReviewSubmission(Interaction $interaction, Submission $submission): PromiseInterface
     {
         $message = $this
-            ->message("Please review the following submission.")
-            ->title("Please review the following submission.")
+            ->message('Please review the following submission.')
+            ->title('Please review the following submission.')
             ->imageUrl($submission->image_url)
             ->button(
                 label: 'Approve',
