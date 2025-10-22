@@ -127,9 +127,8 @@ class GooseBoardTileSubmit extends BaseSlashCommand
 
         $message = $this->buildFields($message, $submission);
 
-        return $interaction->respondWithMessage(
-        /* @phpstan-ignore-next-line */
-            $message->send(Config::get('app.pet.discord-channel'))
+        return $message->send(
+            Config::get('discord.channel.review')
         );
     }
 
@@ -160,10 +159,21 @@ class GooseBoardTileSubmit extends BaseSlashCommand
 
         $message = $this->buildFields($message, $submission);
 
-        $interaction->respondWithMessage(
-            /* @phpstan-ignore-next-line */
-            $message->send(Config::get('app.pet.discord-channel'))
-        );
+        $message->send(Config::get('discord.channel.review'))
+            ->then(
+                function () use ($action, $submission) {
+                    return $this
+                        ->message("The current objective is {$submission->team->objective?->name}!")
+                        ->title("Submission was $action!")
+                        ->field(":small_blue_diamond: Team: {$submission->team->name}", '', false)
+                        ->field(":small_blue_diamond: Objective: {$submission->team->objective?->name}", '', false)
+                        ->field(":small_blue_diamond: Position: {$submission->team->current_position}", '', false)
+                        ->field(":warning: Code: {$submission->team->verification_code}", ''. false)
+                        ->imageUrl("{$submission->team->objective?->image_url}", '')
+                        ->info()
+                        ->send($submission->team->channel_id);
+                }
+            );
     }
 
     protected function buildFields(Message $message, Submission $submission): Message

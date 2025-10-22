@@ -15,6 +15,7 @@ class TeamFactory extends Factory
             'name' => $this->faker->name,
             'position' => 1,
             'verification_code' => $this->faker->word,
+            'channel_id' => $this->faker->uuid(),
         ];
     }
 

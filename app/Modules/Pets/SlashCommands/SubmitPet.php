@@ -71,7 +71,7 @@ class SubmitPet extends BaseSlashCommand
                             style: Button::STYLE_DANGER,
                             route: "deny:{$pet->getKey()}",
                         )
-                        ->send(Config::get('app.pet.discord-channel')),
+                        ->send(Config::get('discord.channel.review')),
                 );
             }
         );

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('position')->default(1);
             $table->string('verification_code');
+            $table->string('channel_id');
             $table->timestamps();
         });
     }

@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
+use App\Modules\GooseBoards\Models\GooseBoard;
 use App\Modules\GooseBoards\Models\Team;
 use Database\Factories\AccountFactory;
 use Database\Factories\GooseBoardFactory;
@@ -21,6 +23,17 @@ class DatabaseSeeder extends Seeder
             throw new LogicException('Cannot seed database without admin developer!');
         }
 
+        $user = $this->seedDevAccount();
+
+        if(! Config::has('discord.admin-developer.team-channel')){
+            throw new LogicException('Cannot seed gooseboard without team channel!');
+        }
+
+        $this->seedGooseBoard($user);
+    }
+
+    protected function seedDevAccount(): \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Collection|array|\App\Models\User|\LaravelIdea\Helper\App\Models\_IH_User_C
+    {
         $user = UserFactory::new()
             ->has(AccountFactory::new(
                 [
@@ -37,8 +50,13 @@ class DatabaseSeeder extends Seeder
 
         $this->command->info("HTTP TOKEN: " . $token);
 
+        return $user;
+    }
+
+    protected function seedGooseBoard(User $user): GooseBoard
+    {
         $board = GooseBoardFactory::new()
-            ->has(TeamFactory::new())
+            ->has(TeamFactory::new(['channel_id' => Config::get('discord.admin-developer.team-channel')]))
             ->has(TileFactory::new())
             ->has(TileFactory::new())
             ->has(TileFactory::new())
@@ -60,5 +78,7 @@ class DatabaseSeeder extends Seeder
         $team = $board->teams->sole();
 
         $team->accounts()->attach($user->account);
+
+        return $board;
     }
 }

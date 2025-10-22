@@ -44,6 +44,11 @@ return [
     'admin-developer' => [
         'discord-id' => env('BOT_ADMIN_DEVELOPER_DISCORD_ID'),
         'wise-old-man-id' => env('BOT_ADMIN_DEVELOPER_WISE_OLD_MAN_ID'),
+        'team-channel' => env('BOT_ADMIN_DEVELOPER_TEAM_CHANNEL')
+    ],
+
+    'channel' => [
+        'review' => env('BOT_REVIEW_CHANNEL'),
     ],
 
     'commands' => [

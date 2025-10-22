@@ -19,6 +19,7 @@ use Illuminate\Support\Str;
  * @property string $name
  * @property int $position
  * @property string $verification_code
+ * @property string $channel_id
  * @property-read int $goose_board_id
  * @property-read string $current_position
  * @property-read GooseBoard $gooseBoard
@@ -32,6 +33,7 @@ class Team extends Model
         'name',
         'position',
         'verification_code',
+        'channel_id'
     ];
 
     public function gooseBoard(): BelongsTo
