@@ -4,7 +4,7 @@ namespace App\Modules\Points\SlashCommands;
 
 use App\Laracord\SlashCommands\BaseSlashCommand;
 use App\Modules\Points\Models\Point;
-use App\Wise\SlashCommands\Parameters\HasAccount;
+use App\SlashCommands\Parameters\HasAccount;
 use Illuminate\Support\Collection;
 use QuickChart;
 use React\Promise\PromiseInterface;
@@ -16,12 +16,6 @@ class PointsCheck extends BaseSlashCommand
     protected $name = 'points-check';
 
     protected $description = 'Check user points';
-
-    protected $permissions = [];
-
-    protected $admin = false;
-
-    protected $hidden = false;
 
     public function options(): array
     {

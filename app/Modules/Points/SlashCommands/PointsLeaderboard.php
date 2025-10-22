@@ -13,12 +13,6 @@ class PointsLeaderboard extends SlashCommand
 
     protected $description = 'Get the points leaderboard!';
 
-    protected $permissions = [];
-
-    protected $admin = false;
-
-    protected $hidden = false;
-
     public function handle($interaction)
     {
         $accounts = Account::query()
