@@ -36,7 +36,7 @@ abstract class BaseSlashCommand extends SlashCommand
     public function maybeHandle($interaction): void
     {
         /** @phpstan-ignore-next-line */
-        if ($this->isAdminCommand() && ! $this->isAdmin($interaction->member->user)) {
+        if ($this->isAdminCommand() && ! $this->isAdmin($interaction->member?->user)) {
             $interaction->respondWithMessage(
                 $this
                     ->message('You do not have permission to run this command.')
