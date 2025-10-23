@@ -36,6 +36,19 @@ abstract class BaseSlashCommand extends SlashCommand
     public function maybeHandle($interaction): void
     {
         /** @phpstan-ignore-next-line */
+        if (is_null($interaction->member?->user)) {
+            $interaction->respondWithMessage(
+            $this
+                ->message('You can only use this command in a server.')
+                ->title('You must be in a server')
+                ->error()
+                ->build(), true
+            );
+
+            return;
+        }
+
+        /** @phpstan-ignore-next-line */
         if ($this->isAdminCommand() && ! $this->isAdmin($interaction->member?->user)) {
             $interaction->respondWithMessage(
                 $this
