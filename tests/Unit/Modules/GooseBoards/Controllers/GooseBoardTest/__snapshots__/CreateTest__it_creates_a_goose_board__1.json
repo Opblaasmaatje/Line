@@ -9,52 +9,52 @@
             {
                 "name": "A",
                 "description": "some-description",
-                "index": 1
+                "position": 1
             },
             {
                 "name": "B",
                 "description": "some-description",
-                "index": 2
+                "position": 2
             },
             {
                 "name": "C",
                 "description": "some-description",
-                "index": 3
+                "position": 3
             },
             {
                 "name": "D",
                 "description": "some-description",
-                "index": 4
+                "position": 4
             },
             {
                 "name": "E",
                 "description": "some-description",
-                "index": 5
+                "position": 5
             },
             {
                 "name": "F",
                 "description": "some-description",
-                "index": 6
+                "position": 6
             },
             {
                 "name": "G",
                 "description": "some-description",
-                "index": 7
+                "position": 7
             },
             {
                 "name": "H",
                 "description": "some-description",
-                "index": 8
+                "position": 8
             },
             {
                 "name": "I",
                 "description": "some-description",
-                "index": 9
+                "position": 9
             },
             {
                 "name": "J",
                 "description": "some-description",
-                "index": 10
+                "position": 10
             }
         ],
         "teams": [

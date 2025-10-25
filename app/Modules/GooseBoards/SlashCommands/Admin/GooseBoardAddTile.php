@@ -27,7 +27,7 @@ class GooseBoardAddTile extends BaseSlashCommand
             $this->gooseBoard,
             $this->value('objective'),
             $this->getImage($interaction)->url,
-            $this->value('index')
+            $this->value('position')
         );
 
         $message = $this
@@ -36,10 +36,10 @@ class GooseBoardAddTile extends BaseSlashCommand
 
         $this->gooseBoard->tiles->each(function (Tile $tile) use ($message, $newTile) {
             if($tile->is($newTile)){
-                return $message->field("{$tile->name} at position: {$tile->index} :point_left:", '', false);
+                return $message->field("{$tile->name} at position: {$tile->position} :point_left:", '', false);
             }
 
-            return $message->field("{$tile->name} at position: {$tile->index}", '', false);
+            return $message->field("{$tile->name} at position: {$tile->position}", '', false);
         });
 
         return $interaction->respondWithMessage(
@@ -60,9 +60,9 @@ class GooseBoardAddTile extends BaseSlashCommand
                 ->setRequired(true),
 
             Option::make($this->discord())
-                ->setName('index')
+                ->setName('position')
                 ->setType(Option::INTEGER)
-                ->setDescription('The index of the tile, when the index already exists the tile will be inserted in the given spot')
+                ->setDescription('The position of the tile, when the position already exists the tile will be inserted in the given spot')
                 ->setRequired(true),
         ];
     }

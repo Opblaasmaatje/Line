@@ -8,9 +8,9 @@ class TileObserver
 {
     public function created(Tile $tile): void
     {
-         $tile->fill([
-             'index' => $tile->gooseBoard->tiles->count(),
-         ])
-             ->save();
+//         $tile->fill([
+//             'position' => $tile->gooseBoard->tiles->count(),
+//         ])
+//             ->save();
     }
 }
