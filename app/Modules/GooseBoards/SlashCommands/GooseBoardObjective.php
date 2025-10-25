@@ -28,7 +28,7 @@ class GooseBoardObjective extends BaseSlashCommand
 
     public function handle($interaction)
     {
-        $team = $this->getTeamService()->repository->findTeam(
+        $team = $this->getTeamService()->repository->findTeamByAccount(
             $this->account,
             $this->gooseBoard,
         );

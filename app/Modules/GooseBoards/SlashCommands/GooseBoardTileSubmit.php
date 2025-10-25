@@ -41,7 +41,7 @@ class GooseBoardTileSubmit extends BaseSlashCommand
      */
     public function handle($interaction): PromiseInterface
     {
-        $team = $this->getTeamService()->repository->findTeam(
+        $team = $this->getTeamService()->repository->findTeamByAccount(
             $this->yourself,
             $this->gooseBoard
         );
