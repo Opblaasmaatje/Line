@@ -3,6 +3,7 @@
 namespace App\Modules\GooseBoards\Models;
 
 use App\Modules\GooseBoards\Models\Observers\TileObserver;
+use App\Modules\GooseBoards\Models\Queries\TileQuery;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -17,6 +18,8 @@ use Spatie\EloquentSortable\SortableTrait;
  * @property int $position
  * @property int $goose_board_id
  * @property-read GooseBoard $gooseBoard
+ *
+ * @method static TileQuery query()
  */
 #[ObservedBy(TileObserver::class)]
 class Tile extends Model implements Sortable
@@ -45,5 +48,10 @@ class Tile extends Model implements Sortable
     public function submission(): HasMany
     {
         return $this->hasMany(Submission::class);
+    }
+
+    public function newEloquentBuilder($query): TileQuery
+    {
+        return new TileQuery($query);
     }
 }

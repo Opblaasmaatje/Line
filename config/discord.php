@@ -8,6 +8,7 @@ use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardAddTeamMember;
 use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardAddTile;
 use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardCreate;
 use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardRemoveTeamMember;
+use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardRemoveTile;
 use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardTeamCreate;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardCheck;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardLeaderboard;
@@ -78,6 +79,7 @@ return [
         GooseBoardAddTeamMember::class,
         GooseBoardRemoveTeamMember::class,
         GooseBoardAddTile::class,
+        GooseBoardRemoveTile::class,
     ],
 
     'menus' => [

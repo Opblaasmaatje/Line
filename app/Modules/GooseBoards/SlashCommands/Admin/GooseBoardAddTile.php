@@ -19,7 +19,7 @@ class GooseBoardAddTile extends BaseSlashCommand
 
     protected $name = 'goose-board-add-tile';
 
-    protected $description = 'Add tile';
+    protected $description = 'Add a tile to a goose board.';
 
     public function handle($interaction)
     {
@@ -62,7 +62,7 @@ class GooseBoardAddTile extends BaseSlashCommand
             Option::make($this->discord())
                 ->setName('position')
                 ->setType(Option::INTEGER)
-                ->setDescription('The position of the tile, when the position already exists the tile will be inserted in the given spot')
+                ->setDescription('The spot of the tile. When the position already exists the tile will be inserted in the given spot')
                 ->setRequired(true),
         ];
     }

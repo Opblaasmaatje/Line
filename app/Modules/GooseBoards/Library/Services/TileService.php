@@ -2,12 +2,17 @@
 
 namespace App\Modules\GooseBoards\Library\Services;
 
+use App\Modules\GooseBoards\Library\Repository\TileRepository;
 use App\Modules\GooseBoards\Models\GooseBoard;
 use App\Modules\GooseBoards\Models\Tile;
-use Illuminate\Support\Facades\DB;
 
 class TileService
 {
+    public function __construct(
+        public readonly TileRepository $repository,
+    ){
+    }
+
     public function create(GooseBoard $board, array $data): Tile
     {
         return $board->tiles()->create($data);
@@ -34,5 +39,16 @@ class TileService
         $tile->fill(['position' => $position])->save();
 
         return $tile;
+    }
+
+    public function remove(Tile $tile): void
+    {
+        $gooseBoard = $tile->load('gooseBoard')->gooseBoard;
+
+        $tile->delete();
+
+        $gooseBoard->load('tiles');
+
+        Tile::setNewOrder($gooseBoard->tiles()->pluck('id')->toArray());
     }
 }
