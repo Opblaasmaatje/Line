@@ -11,7 +11,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 /**
  * @property int $id
  * @property string $name
- * @property string $description
  * @property string|null $image_url
  * @property int $index
  * @property int $goose_board_id
@@ -22,7 +21,6 @@ class Tile extends Model
 {
     protected $fillable = [
         'name',
-        'description',
         'index',
         'image_url',
     ];

@@ -13,7 +13,6 @@ class TileFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'description' => $this->faker->text,
             'image_url' => $this->faker->randomElement($this->getImageSelection()),
         ];
     }

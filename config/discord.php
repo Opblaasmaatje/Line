@@ -5,6 +5,7 @@ use App\Cron\ApplyPointAllocation;
 use App\Cron\UpdateBotActivity;
 use App\Helpers\StringList;
 use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardAddTeamMember;
+use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardAddTile;
 use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardCreate;
 use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardRemoveTeamMember;
 use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardTeamCreate;
@@ -76,6 +77,7 @@ return [
         GooseBoardTeamCreate::class,
         GooseBoardAddTeamMember::class,
         GooseBoardRemoveTeamMember::class,
+        GooseBoardAddTile::class,
     ],
 
     'menus' => [

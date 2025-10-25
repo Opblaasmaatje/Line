@@ -181,7 +181,7 @@ class GooseBoardTileSubmit extends BaseSlashCommand
         $message->field(":small_blue_diamond: Team: {$submission->team->name}", '', false);
         $message->field(":small_blue_diamond: Submitter: {$submission->account->username}", '', false);
         $message->field(":small_blue_diamond: Objective: {$submission->tile->name}", '', false);
-        $message->field(":small_blue_diamond: Code: {$submission->team->verification_code}", '', false);
+        $message->field(":small_blue_diamond: Code: {$submission->verification_code}", '', false);
         $message->field(":small_blue_diamond: Position: ({$submission->team->position}/{$this->gooseBoard->tiles->count()})", '');
 
         return $message;

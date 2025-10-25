@@ -15,7 +15,6 @@ class TileResource extends JsonResource
     {
         return [
             'name' => $this->name,
-            'description' => $this->description,
             'index' => $this->index,
         ];
     }
