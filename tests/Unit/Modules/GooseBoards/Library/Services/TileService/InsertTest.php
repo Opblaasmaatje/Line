@@ -35,10 +35,10 @@ class InsertTest extends ApplicationCase
         $this->assertEquals('inserted-tile.png', $tile->image_url);
 
         $this->assertEquals([
-                'inserted tile' => 1,
-                'john test tile' => 2,
-                'new test tile' => 3,
-            ], $tile->gooseBoard->tiles()->pluck('position', 'name')->toArray()
+            'inserted tile' => 1,
+            'john test tile' => 2,
+            'new test tile' => 3,
+        ], $tile->gooseBoard->tiles()->pluck('position', 'name')->toArray()
         );
     }
 
