@@ -32,7 +32,13 @@ class GooseBoardCreate extends SlashCommandWithRuleValidation
         );
 
         return $this
-            ->message("Successfully created goose board {$gooseBoard->name}")
+            ->message('Use the following commands to configure the goose board!')
+            ->field('Add tile', '', false)
+            ->field('Remove tile', '', false)
+            ->field('Add team', '', false)
+            ->field('Remove team', '', false)
+            ->field('Add team member', '', false)
+            ->field('Remove team member', '', false)
             ->success()
             ->reply($interaction);
     }

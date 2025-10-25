@@ -92,4 +92,13 @@ class TeamService
 
         return true;
     }
+
+    public function remove(Team $team): true
+    {
+        $team->accounts()->detach();
+
+        $team->delete();
+
+        return true;
+    }
 }

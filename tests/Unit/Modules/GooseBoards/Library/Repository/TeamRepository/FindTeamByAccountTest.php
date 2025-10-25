@@ -10,7 +10,7 @@ use Database\Factories\TeamFactory;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 
-class FindTeamByAccount extends ApplicationCase
+class FindTeamByAccountTest extends ApplicationCase
 {
     #[Test]
     public function it_can_find_a_team_by_account_and_goose_board()

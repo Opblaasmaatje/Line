@@ -16,9 +16,9 @@ class GooseBoardRemoveTeamMember extends BaseSlashCommand
 
     protected $description = 'Remove accounts from a team.';
 
-    public function handle($interaction): void
+    public function handle($interaction)
     {
-        $this->getTeamService()->removeTeamMember(
+        $this->teamService()->removeTeamMember(
             $this->account,
             $this->team
         );
@@ -32,9 +32,7 @@ class GooseBoardRemoveTeamMember extends BaseSlashCommand
             return $message->field(":small_blue_diamond: $account->username", '', false);
         });
 
-        $interaction->respondWithMessage(
-            $message->build(),
-        );
+        return $message->reply($interaction);
     }
 
     public function options(): array

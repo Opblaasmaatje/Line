@@ -18,9 +18,27 @@ class InsertTest extends ApplicationCase
         $tile = $this->subjectUnderTesting()->insert($gooseBoard, 'john test tile', 'john-test-tile.png', 1);
 
         $this->assertModelExists($tile);
+        $this->assertEquals(1, $tile->position);
+        $this->assertEquals('john test tile', $tile->name);
+        $this->assertEquals('john-test-tile.png', $tile->image_url);
 
-        $this->assertTrue(
-            $tile->is($gooseBoard->tiles()->sole())
+        $tile = $this->subjectUnderTesting()->insert($gooseBoard, 'new test tile', 'new-test-tile.png', 2);
+        $this->assertModelExists($tile);
+        $this->assertEquals(2, $tile->position);
+        $this->assertEquals('new test tile', $tile->name);
+        $this->assertEquals('new-test-tile.png', $tile->image_url);
+
+        $tile = $this->subjectUnderTesting()->insert($gooseBoard, 'inserted tile', 'inserted-tile.png', 1);
+        $this->assertModelExists($tile);
+        $this->assertEquals(1, $tile->position);
+        $this->assertEquals('inserted tile', $tile->name);
+        $this->assertEquals('inserted-tile.png', $tile->image_url);
+
+        $this->assertEquals([
+            'inserted tile' => 1,
+            'john test tile' => 2,
+            'new test tile' => 3,
+        ], $tile->gooseBoard->tiles()->pluck('position', 'name')->toArray()
         );
     }
 

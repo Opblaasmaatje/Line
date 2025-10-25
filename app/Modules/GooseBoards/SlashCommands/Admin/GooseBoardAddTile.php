@@ -42,9 +42,7 @@ class GooseBoardAddTile extends BaseSlashCommand
             return $message->field("{$tile->name} at position: {$tile->position}", '', false);
         });
 
-        return $interaction->respondWithMessage(
-            $message->build()
-        );
+        return $message->reply($interaction);
     }
 
     public function options(): array

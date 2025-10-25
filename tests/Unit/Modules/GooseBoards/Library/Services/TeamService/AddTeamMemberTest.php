@@ -12,7 +12,7 @@ use Database\Factories\UserFactory;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\ApplicationCase;
 
-class AddTeamMember extends ApplicationCase
+class AddTeamMemberTest extends ApplicationCase
 {
     #[Test]
     public function it_adds_a_account_to_a_team()

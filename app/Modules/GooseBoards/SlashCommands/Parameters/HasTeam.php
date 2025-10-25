@@ -30,7 +30,7 @@ trait HasTeam
                 return false;
             }
 
-            $team = $this->getTeamService()->repository->find(
+            $team = $this->teamService()->repository->find(
                 $this->value('team')
             );
 
@@ -68,14 +68,14 @@ trait HasTeam
     public function getTeamAutocompleteCallback(): Closure
     {
         return fn (ApplicationCommandAutocomplete $autocomplete, mixed $value) => $value
-            ? $this->getTeamService()
+            ? $this->teamService()
                 ->repository
                 ->searchByName($value)
                 ->take(25)
                 ->pluck('name')
                 ->toArray()
             : $this
-                ->getTeamService()
+                ->teamService()
                 ->repository
                 ->get()
                 ->take(25)
@@ -83,7 +83,7 @@ trait HasTeam
                 ->toArray();
     }
 
-    protected function getTeamService(): TeamService
+    protected function teamService(): TeamService
     {
         return App::make(TeamService::class);
     }

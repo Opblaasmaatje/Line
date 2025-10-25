@@ -10,12 +10,12 @@ use App\Modules\GooseBoards\SlashCommands\Parameters\HasGooseBoard;
 use Illuminate\Support\Facades\App;
 use React\Promise\PromiseInterface;
 
-class GooseBoardTeamCreate extends BaseSlashCommand
+class GooseBoardCreateTeam extends BaseSlashCommand
 {
     use AdminCommand;
     use HasGooseBoard;
 
-    protected $name = 'goose-board-team-create';
+    protected $name = 'goose-board-create-team';
 
     protected $description = 'Create a goose board team.';
 

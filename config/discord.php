@@ -7,9 +7,10 @@ use App\Helpers\StringList;
 use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardAddTeamMember;
 use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardAddTile;
 use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardCreate;
+use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardCreateTeam;
+use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardRemoveTeam;
 use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardRemoveTeamMember;
 use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardRemoveTile;
-use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardTeamCreate;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardCheck;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardLeaderboard;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardObjective;
@@ -75,7 +76,8 @@ return [
         GooseBoardCheck::class,
         GooseBoardTileSubmit::class,
         GooseBoardCreate::class,
-        GooseBoardTeamCreate::class,
+        GooseBoardCreateTeam::class,
+        GooseBoardRemoveTeam::class,
         GooseBoardAddTeamMember::class,
         GooseBoardRemoveTeamMember::class,
         GooseBoardAddTile::class,

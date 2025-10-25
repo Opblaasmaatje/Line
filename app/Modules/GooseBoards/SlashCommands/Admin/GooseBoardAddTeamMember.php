@@ -18,7 +18,7 @@ class GooseBoardAddTeamMember extends BaseSlashCommand
 
     public function handle($interaction): void
     {
-        $success = $this->getTeamService()->addTeamMember(
+        $success = $this->teamService()->addTeamMember(
             $this->account,
             $this->team
         );
@@ -38,9 +38,7 @@ class GooseBoardAddTeamMember extends BaseSlashCommand
             return $message->field(":small_blue_diamond: $account->username", '', false);
         });
 
-        $interaction->respondWithMessage(
-            $message->build(),
-        );
+        $message->reply($interaction);
     }
 
     public function options(): array
