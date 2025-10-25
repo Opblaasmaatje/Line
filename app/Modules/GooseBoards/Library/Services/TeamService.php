@@ -77,7 +77,7 @@ class TeamService
 
     public function addTeamMember(Account $account, Team $team): bool
     {
-        if($this->repository->alreadyAssigned($account, $team->gooseBoard)) {
+        if ($this->repository->alreadyAssigned($account, $team->gooseBoard)) {
             return false;
         }
 

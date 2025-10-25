@@ -12,7 +12,6 @@ use Tests\ApplicationCase;
 
 class RemoveTest extends ApplicationCase
 {
-
     public static function positions(): array
     {
         return [
@@ -36,7 +35,7 @@ class RemoveTest extends ApplicationCase
              ->has(TileFactory::new())
              ->has(TileFactory::new())
              ->has(TileFactory::new())
-            ->create();
+             ->create();
 
          /** @var Tile $tile */
          $tile = $gooseBoard->tiles->get($position);
@@ -45,7 +44,7 @@ class RemoveTest extends ApplicationCase
 
          $gooseBoard->load('tiles');
 
-         $this->assertEquals([1,2,3,4], $gooseBoard->tiles->pluck('position')->toArray());
+         $this->assertEquals([1, 2, 3, 4], $gooseBoard->tiles->pluck('position')->toArray());
     }
 
     protected function subjectUnderTesting(): TileService

@@ -28,13 +28,13 @@ class GooseBoardAddTeamMember extends BaseSlashCommand
             ->title("Added {$this->account->username} to team {$this->team->name} :white_check_mark:")
             ->info();
 
-        if(! $success) {
+        if (! $success) {
             $message
                 ->error()
                 ->title("Could not add {$this->account->username} to team {$this->team->name}");
         }
 
-        $this->team->accounts->take(25)->each(function (Account $account) use ($message) {
+        $this->team->accounts()->take(25)->each(function (Account $account) use ($message) {
             return $message->field(":small_blue_diamond: $account->username", '', false);
         });
 

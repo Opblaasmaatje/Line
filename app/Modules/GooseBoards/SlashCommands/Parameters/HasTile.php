@@ -4,9 +4,7 @@ namespace App\Modules\GooseBoards\SlashCommands\Parameters;
 
 use App\Laracord\Option;
 use App\Laracord\SlashCommands\ValidatableCallback;
-use App\Modules\GooseBoards\Library\Services\TeamService;
 use App\Modules\GooseBoards\Library\Services\TileService;
-use App\Modules\GooseBoards\Models\Team;
 use App\Modules\GooseBoards\Models\Tile;
 use Closure;
 use Discord\DiscordCommandClient;
@@ -79,7 +77,6 @@ trait HasTile
                 ->tileService()
                 ->repository
                 ->query
-                ->get()
                 ->take(25)
                 ->pluck('name')
                 ->toArray();

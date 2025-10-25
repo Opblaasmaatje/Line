@@ -10,7 +10,7 @@ class TileService
 {
     public function __construct(
         public readonly TileRepository $repository,
-    ){
+    ) {
     }
 
     public function create(GooseBoard $board, array $data): Tile
@@ -36,7 +36,9 @@ class TileService
             ->where('position', '>=', $position)
             ->increment('position');
 
-        $tile->fill(['position' => $position])->save();
+        $tile->fill([
+            'position' => $position,
+        ])->save();
 
         return $tile;
     }

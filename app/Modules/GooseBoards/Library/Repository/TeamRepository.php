@@ -22,7 +22,7 @@ class TeamRepository
     {
         return $account
             ->teams()
-            ->whereHas('gooseBoard', fn(Builder $query) => $query->whereKey($board->getKey()))
+            ->whereHas('gooseBoard', fn (Builder $query) => $query->whereKey($board->getKey()))
             ->exists();
     }
 

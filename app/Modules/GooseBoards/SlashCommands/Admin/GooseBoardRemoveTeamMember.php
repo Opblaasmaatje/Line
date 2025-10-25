@@ -28,7 +28,7 @@ class GooseBoardRemoveTeamMember extends BaseSlashCommand
             ->title("Removed {$this->account->username} removed from {$this->team->name} :x:")
             ->info();
 
-        $this->team->accounts->take(25)->each(function (Account $account) use ($message) {
+        $this->team->accounts()->take(25)->each(function (Account $account) use ($message) {
             return $message->field(":small_blue_diamond: $account->username", '', false);
         });
 

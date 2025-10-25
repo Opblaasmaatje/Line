@@ -4,7 +4,6 @@ namespace App\Modules\GooseBoards\Library\Repository;
 
 use App\Modules\GooseBoards\Models\Queries\TileQuery;
 use App\Modules\GooseBoards\Models\Tile;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 
 class TileRepository

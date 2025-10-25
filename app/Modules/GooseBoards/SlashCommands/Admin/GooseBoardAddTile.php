@@ -34,8 +34,8 @@ class GooseBoardAddTile extends BaseSlashCommand
             ->message('Add a new tile')
             ->success();
 
-        $this->gooseBoard->tiles->each(function (Tile $tile) use ($message, $newTile) {
-            if($tile->is($newTile)){
+        $this->gooseBoard->tiles()->each(function (Tile $tile) use ($message, $newTile) {
+            if ($tile->is($newTile)) {
                 return $message->field("{$tile->name} at position: {$tile->position} :point_left:", '', false);
             }
 

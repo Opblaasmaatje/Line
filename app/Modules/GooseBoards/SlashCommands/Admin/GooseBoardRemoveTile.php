@@ -29,8 +29,8 @@ class GooseBoardRemoveTile extends BaseSlashCommand
             ->title("Tile removed from {$gooseBoard->name}}")
             ->success();
 
-        $gooseBoard->tiles->each(function (Tile $tile) use ($message) {
-            return $message->field("{$tile->name} at position: {$tile->position}", '', false);
+        $gooseBoard->tiles()->each(function (Tile $tile) use ($message) {
+            $message->field("{$tile->name} at position: {$tile->position}", '', false);
         });
 
         return $interaction->respondWithMessage(
