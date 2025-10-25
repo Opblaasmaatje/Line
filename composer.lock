@@ -8682,16 +8682,16 @@
         },
         {
             "name": "team-reflex/discord-php",
-            "version": "v10.38.0",
+            "version": "v10.38.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/discord-php/DiscordPHP",
-                "reference": "c95838a256c1fddee8b7445e0a2332c665ccbc72"
+                "reference": "28d57fc6168c011f61fe627754ceed2a3fd20416"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/discord-php/DiscordPHP/zipball/c95838a256c1fddee8b7445e0a2332c665ccbc72",
-                "reference": "c95838a256c1fddee8b7445e0a2332c665ccbc72",
+                "url": "https://api.github.com/repos/discord-php/DiscordPHP/zipball/28d57fc6168c011f61fe627754ceed2a3fd20416",
+                "reference": "28d57fc6168c011f61fe627754ceed2a3fd20416",
                 "shasum": ""
             },
             "require": {
@@ -8755,7 +8755,7 @@
                 "issues": "https://github.com/discord-php/DiscordPHP/issues",
                 "wiki": "https://github.com/discord-php/DiscordPHP/wiki"
             },
-            "time": "2025-10-21T20:33:47+00:00"
+            "time": "2025-10-23T14:55:51+00:00"
         },
         {
             "name": "trafficcophp/bytebuffer",

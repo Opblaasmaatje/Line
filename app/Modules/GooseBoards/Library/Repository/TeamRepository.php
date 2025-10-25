@@ -12,9 +12,18 @@ class TeamRepository
 {
     public function findTeamByAccount(Account $account, GooseBoard $board): Team|null
     {
-        return $board->teams()
+        return $board
+            ->teams()
             ->whereHas('accounts', fn (Builder $query) => $query->whereKey($account->getKey()))
             ->first();
+    }
+
+    public function alreadyAssigned(Account $account, GooseBoard $board): bool
+    {
+        return $account
+            ->teams()
+            ->whereHas('gooseBoard', fn(Builder $query) => $query->whereKey($board->getKey()))
+            ->exists();
     }
 
     public function searchByName(string $value): Collection

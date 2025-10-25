@@ -18,16 +18,21 @@ class GooseBoardAddTeamMember extends BaseSlashCommand
 
     public function handle($interaction): void
     {
-        $this->getTeamService()->addTeamMember(
+        $success = $this->getTeamService()->addTeamMember(
             $this->account,
             $this->team
         );
 
-
         $message = $this
-            ->message("See current lineup")
+            ->message('See current lineup')
             ->title("Added {$this->account->username} to team {$this->team->name} :white_check_mark:")
-            ->success();
+            ->info();
+
+        if(! $success) {
+            $message
+                ->error()
+                ->title("Could not add {$this->account->username} to team {$this->team->name}");
+        }
 
         $this->team->accounts->take(25)->each(function (Account $account) use ($message) {
             return $message->field(":small_blue_diamond: $account->username", '', false);
@@ -49,7 +54,7 @@ class GooseBoardAddTeamMember extends BaseSlashCommand
     public function autocomplete(): array
     {
         return [
-            'team' => $this->getTeamAutocompleteCallback()
+            'team' => $this->getTeamAutocompleteCallback(),
         ];
     }
 }

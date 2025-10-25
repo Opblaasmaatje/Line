@@ -24,9 +24,9 @@ class GooseBoardRemoveTeamMember extends BaseSlashCommand
         );
 
         $message = $this
-            ->message("See current lineup")
+            ->message('See current lineup')
             ->title("Removed {$this->account->username} removed from {$this->team->name} :x:")
-            ->success();
+            ->info();
 
         $this->team->accounts->take(25)->each(function (Account $account) use ($message) {
             return $message->field(":small_blue_diamond: $account->username", '', false);
@@ -48,7 +48,7 @@ class GooseBoardRemoveTeamMember extends BaseSlashCommand
     public function autocomplete(): array
     {
         return [
-            'team' => $this->getTeamAutocompleteCallback()
+            'team' => $this->getTeamAutocompleteCallback(),
         ];
     }
 }

@@ -75,8 +75,12 @@ class TeamService
         return $team;
     }
 
-    public function addTeamMember(Account $account, Team $team): true
+    public function addTeamMember(Account $account, Team $team): bool
     {
+        if($this->repository->alreadyAssigned($account, $team->gooseBoard)) {
+            return false;
+        }
+
         $team->accounts()->attach($account);
 
         return true;
