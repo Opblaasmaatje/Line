@@ -36,9 +36,16 @@ class TileService
             ->where('position', '>=', $position)
             ->increment('position');
 
-        $tile->fill([
-            'position' => $position,
-        ])->save();
+        $tile->fill(['position' => $position])->save();
+
+        Tile::setNewOrder(
+            $tile
+                ->gooseBoard
+                ->tiles()
+                ->orderBy('position')
+                ->pluck('id')
+                ->toArray()
+        );
 
         return $tile;
     }
