@@ -24,7 +24,7 @@ class GooseBoardTileSubmit extends BaseSlashCommand
     use HasGooseBoard;
     use HasImage;
 
-    protected $name = 'goose-board-tile-submit';
+    protected $name = 'gb-tile-submit';
 
     protected $description = 'Submit a tile completion for your team.';
 

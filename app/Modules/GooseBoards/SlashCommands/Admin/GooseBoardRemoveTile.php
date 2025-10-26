@@ -14,7 +14,7 @@ class GooseBoardRemoveTile extends BaseSlashCommand
     use AdminCommand;
     use HasTile;
 
-    protected $name = 'goose-board-remove-tile';
+    protected $name = 'gb-remove-tile';
 
     protected $description = 'Remove a tile from a goose board.';
 

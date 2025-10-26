@@ -15,7 +15,7 @@ class GooseBoardCreateTeam extends BaseSlashCommand
     use AdminCommand;
     use HasGooseBoard;
 
-    protected $name = 'goose-board-create-team';
+    protected $name = 'gb-create-team';
 
     protected $description = 'Create a goose board team.';
 

@@ -12,7 +12,7 @@ class GooseBoardRemoveTeamMember extends BaseSlashCommand
     use HasTeam;
     use HasAccount;
 
-    protected $name = 'goose-board-remove-team-member';
+    protected $name = 'gb-remove-team-member';
 
     protected $description = 'Remove accounts from a team.';
 

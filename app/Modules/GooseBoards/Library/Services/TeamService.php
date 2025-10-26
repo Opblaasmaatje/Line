@@ -82,4 +82,17 @@ class TeamService
 
         return true;
     }
+
+    public function setPosition(Team $team, int $position): Team
+    {
+        $maxPosition = $team->gooseBoard->tiles()->max('position');
+
+        if($position > $maxPosition) {
+            $position = $maxPosition;
+        }
+
+        $team->fill(['position' => $position])->save();
+
+        return $team;
+    }
 }

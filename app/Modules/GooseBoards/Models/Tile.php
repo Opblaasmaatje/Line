@@ -21,7 +21,6 @@ use Spatie\EloquentSortable\SortableTrait;
  *
  * @method static TileQuery query()
  */
-#[ObservedBy(TileObserver::class)]
 class Tile extends Model implements Sortable
 {
     use SortableTrait;

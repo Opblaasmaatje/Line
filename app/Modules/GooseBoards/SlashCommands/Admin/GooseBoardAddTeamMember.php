@@ -12,7 +12,7 @@ class GooseBoardAddTeamMember extends BaseSlashCommand
     use HasTeam;
     use HasAccount;
 
-    protected $name = 'goose-board-add-team-member';
+    protected $name = 'gb-add-team-member';
 
     protected $description = 'Add accounts to a team.';
 

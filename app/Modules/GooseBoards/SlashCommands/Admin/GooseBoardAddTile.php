@@ -17,7 +17,7 @@ class GooseBoardAddTile extends BaseSlashCommand
     use HasImage;
     use HasGooseBoard;
 
-    protected $name = 'goose-board-add-tile';
+    protected $name = 'gb-add-tile';
 
     protected $description = 'Add a tile to a goose board.';
 

@@ -17,7 +17,7 @@ class GooseBoardCreate extends SlashCommandWithRuleValidation
 {
     use AdminCommand;
 
-    protected $name = 'goose-board-create';
+    protected $name = 'gb-create';
 
     protected $description = 'Create a goose board.';
 

@@ -13,7 +13,7 @@ class GooseBoardRemoveTeam extends BaseSlashCommand
     use AdminCommand;
     use HasTeam;
 
-    protected $name = 'goose-board-remove-team';
+    protected $name = 'gb-remove-team';
 
     protected $description = 'Create a goose board team.';
 

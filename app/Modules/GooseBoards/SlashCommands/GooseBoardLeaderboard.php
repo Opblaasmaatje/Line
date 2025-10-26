@@ -10,7 +10,7 @@ class GooseBoardLeaderboard extends BaseSlashCommand
 {
     use HasGooseBoard;
 
-    protected $name = 'goose-board-leaderboard';
+    protected $name = 'gb-leaderboard';
 
     protected $description = 'Get the leaderboard for a goose board.';
 
@@ -23,7 +23,7 @@ class GooseBoardLeaderboard extends BaseSlashCommand
 
     public function handle($interaction)
     {
-        $leaderboard = $this->getGooseBoardService()->leaderboard($this->gooseBoard);
+        $leaderboard = $this->gooseBoardService()->leaderboard($this->gooseBoard);
 
         $message = $this->message()->info()->title(":trophy: Leaderboard for {$this->gooseBoard->name}!");
 

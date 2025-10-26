@@ -30,7 +30,7 @@ trait HasGooseBoard
                 return false;
             }
 
-            $gooseBoard = $this->getGooseBoardService()->repository->find(
+            $gooseBoard = $this->gooseBoardService()->repository->find(
                 $this->value('goose-board')
             );
 
@@ -68,14 +68,14 @@ trait HasGooseBoard
     public function getGooseBoardAutocompleteCallback(): Closure
     {
         return fn (ApplicationCommandAutocomplete $autocomplete, mixed $value) => $value
-            ? $this->getGooseBoardService()
+            ? $this->gooseBoardService()
                 ->repository
                 ->searchByName($value)
                 ->take(25)
                 ->pluck('name')
                 ->toArray()
             : $this
-                ->getGooseBoardService()
+                ->gooseBoardService()
                 ->repository
                 ->get()
                 ->take(25)
@@ -83,7 +83,7 @@ trait HasGooseBoard
                 ->toArray();
     }
 
-    protected function getGooseBoardService(): GooseBoardService
+    protected function gooseBoardService(): GooseBoardService
     {
         return App::make(GooseBoardService::class);
     }
