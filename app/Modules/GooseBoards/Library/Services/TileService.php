@@ -13,11 +13,6 @@ class TileService
     ) {
     }
 
-    public function create(GooseBoard $board, array $data): Tile
-    {
-        return $board->tiles()->create($data);
-    }
-
     public function insert(GooseBoard $board, string $objective, string $imageUrl, int $position): Tile
     {
         $tile = $board->tiles()->create([

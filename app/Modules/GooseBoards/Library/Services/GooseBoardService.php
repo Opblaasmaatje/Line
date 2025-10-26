@@ -18,28 +18,6 @@ class GooseBoardService
     ) {
     }
 
-    /**
-     * @deprecated
-     */
-    public function createApi(array $data): GooseBoard
-    {
-        $board = GooseBoard::query()->create(
-            Arr::only($data['goose_board'], (new GooseBoard)->getFillable())
-        );
-
-        collect($data['tiles'])->each(function (array $tile) use ($board) {
-            return $this->tileService->create($board, $tile);
-        });
-
-        collect($data['teams'])->each(function (array $team) use ($board) {
-            return $this->teamService->createApi($board, $team);
-        });
-
-        $board = $this->generateBoard($board);
-
-        return $board->load(['teams', 'tiles']);
-    }
-
     public function create(string $name, CarbonPeriodImmutable $period): GooseBoard
     {
         $board = new GooseBoard()->fill([

@@ -21,25 +21,6 @@ class TeamService
     ) {
     }
 
-    /**
-     * @deprecated
-     */
-    public function createApi(GooseBoard $board, array $data): Team
-    {
-        /** @var Team $team */
-        $team = $board->teams()->create(
-            Arr::only($data, (new Team)->getFillable())
-        );
-
-        foreach ($data['accounts'] as $account) {
-            $account = $this->accountService->accountRepository->findByUsername($account);
-
-            $team->accounts()->attach($account);
-        }
-
-        return $team;
-    }
-
     public function create(GooseBoard $board, string $teamName, $channelId): Team
     {
         return $board->teams()->create([
