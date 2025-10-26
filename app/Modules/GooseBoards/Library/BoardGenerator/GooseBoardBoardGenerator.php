@@ -17,7 +17,7 @@ class GooseBoardBoardGenerator
 {
     protected const TILE_SIZE = 250;
 
-    protected const HORIZONTAL_RUN = 6;
+    protected const HORIZONTAL_RUN = 4;
 
     protected const VERTICAL_RUN = 2;
 

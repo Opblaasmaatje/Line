@@ -10,7 +10,6 @@ use App\Modules\GooseBoards\Models\GooseBoard;
 use App\Modules\GooseBoards\Models\Submission;
 use App\Modules\GooseBoards\Models\Team;
 use App\Modules\GooseBoards\Models\Tile;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
 class TeamService
@@ -21,20 +20,12 @@ class TeamService
     ) {
     }
 
-    public function create(GooseBoard $board, array $data): Team
+    public function create(GooseBoard $board, string $teamName, $channelId): Team
     {
-        /** @var Team $team */
-        $team = $board->teams()->create(
-            Arr::only($data, (new Team)->getFillable())
-        );
-
-        foreach ($data['accounts'] as $account) {
-            $account = $this->accountService->accountRepository->findByUsername($account);
-
-            $team->accounts()->attach($account);
-        }
-
-        return $team;
+        return $board->teams()->create([
+            'name' => $teamName,
+            'channel_id' => $channelId,
+        ]);
     }
 
     public function submit(Account $account, Team $team, Tile $tile, string $imageUrl): Submission
@@ -60,6 +51,48 @@ class TeamService
             'position' => $team->position + 1, //TODO figure out how to do this better
         ])
             ->save();
+
+        return $team;
+    }
+
+    public function addTeamMember(Account $account, Team $team): bool
+    {
+        if ($this->repository->alreadyAssigned($account, $team->gooseBoard)) {
+            return false;
+        }
+
+        $team->accounts()->attach($account);
+
+        return true;
+    }
+
+    public function removeTeamMember(Account $account, Team $team): true
+    {
+        $team->accounts()->detach($account);
+
+        return true;
+    }
+
+    public function remove(Team $team): true
+    {
+        $team->accounts()->detach();
+
+        $team->delete();
+
+        return true;
+    }
+
+    public function setPosition(Team $team, int $position): Team
+    {
+        $maxPosition = $team->gooseBoard->tiles()->max('position');
+
+        if ($position > $maxPosition) {
+            $position = $maxPosition;
+        }
+
+        $team->fill([
+            'position' => $position,
+        ])->save();
 
         return $team;
     }

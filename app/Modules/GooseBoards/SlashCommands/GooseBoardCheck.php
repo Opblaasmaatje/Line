@@ -9,7 +9,7 @@ class GooseBoardCheck extends BaseSlashCommand
 {
     use HasGooseBoard;
 
-    protected $name = 'goose-board-check';
+    protected $name = 'gb-check';
 
     protected $description = 'Check the current goose board.';
 
@@ -30,7 +30,7 @@ class GooseBoardCheck extends BaseSlashCommand
     protected function getBoard(): string
     {
         if (! $this->gooseBoard->image || ! file_exists(storage_path('app/public/'.$this->gooseBoard->image))) {
-            $this->getGooseBoardService()->generateBoard($this->gooseBoard);
+            $this->gooseBoardService()->generateBoard($this->gooseBoard);
         }
 
         return storage_path('app/public/'.$this->gooseBoard->image);

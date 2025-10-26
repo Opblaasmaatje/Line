@@ -4,6 +4,15 @@ use App\Cron\AddSnapshotToUser;
 use App\Cron\ApplyPointAllocation;
 use App\Cron\UpdateBotActivity;
 use App\Helpers\StringList;
+use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardAddTeamMember;
+use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardAddTile;
+use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardCreate;
+use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardCreateTeam;
+use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardRefreshBoard;
+use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardRemoveTeam;
+use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardRemoveTeamMember;
+use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardRemoveTile;
+use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardSetTeamPosition;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardCheck;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardLeaderboard;
 use App\Modules\GooseBoards\SlashCommands\GooseBoardObjective;
@@ -68,6 +77,15 @@ return [
         GooseBoardLeaderboard::class,
         GooseBoardCheck::class,
         GooseBoardTileSubmit::class,
+        GooseBoardCreate::class,
+        GooseBoardCreateTeam::class,
+        GooseBoardRemoveTeam::class,
+        GooseBoardAddTeamMember::class,
+        GooseBoardRemoveTeamMember::class,
+        GooseBoardAddTile::class,
+        GooseBoardRemoveTile::class,
+        GooseBoardSetTeamPosition::class,
+        GooseBoardRefreshBoard::class,
     ],
 
     'menus' => [

@@ -4,49 +4,49 @@ namespace App\Modules\GooseBoards\SlashCommands\Parameters;
 
 use App\Laracord\Option;
 use App\Laracord\SlashCommands\ValidatableCallback;
-use App\Modules\GooseBoards\Library\Services\GooseBoardService;
-use App\Modules\GooseBoards\Models\GooseBoard;
+use App\Modules\GooseBoards\Library\Services\TeamService;
+use App\Modules\GooseBoards\Models\Team;
 use Closure;
 use Discord\DiscordCommandClient;
 use Discord\Parts\Interactions\ApplicationCommandAutocomplete;
 use Illuminate\Support\Facades\App;
 
-trait HasGooseBoard
+trait HasTeam
 {
-    protected GooseBoard $gooseBoard;
+    protected Team $team;
 
-    public function bootHasGooseBoard(): void
+    public function bootHasTeam(): void
     {
         $validatableCallback = new ValidatableCallback(function ($interaction) {
-            if (! $this->value('goose-board')) {
+            if (! $this->value('team')) {
                 $interaction->respondWithMessage(
                     $this
-                        ->message('goose-board not given as parameter!')
+                        ->message('team not given as parameter!')
                         ->error()
-                        ->content('goose-board not given as parameter!')
+                        ->content('team not given as parameter!')
                         ->build()
                 );
 
                 return false;
             }
 
-            $gooseBoard = $this->gooseBoardService()->repository->find(
-                $this->value('goose-board')
+            $team = $this->teamService()->repository->find(
+                $this->value('team')
             );
 
-            if (is_null($gooseBoard)) {
+            if (is_null($team)) {
                 $interaction->respondWithMessage(
                     $this
-                        ->message('Goose-board is not valid!')
+                        ->message('team is not valid!')
                         ->warning()
-                        ->content('Goose-board is not valid!')
+                        ->content('team is not valid!')
                         ->build()
                 );
 
                 return false;
             }
 
-            $this->gooseBoard = $gooseBoard;
+            $this->team = $team;
 
             return true;
         });
@@ -54,28 +54,28 @@ trait HasGooseBoard
         $this->addBeforeCallback($validatableCallback);
     }
 
-    public function getGooseBoardOption(DiscordCommandClient $client)
+    public function getTeamOption(DiscordCommandClient $client)
     {
         return Option::make($client)
-            ->setName('goose-board')
+            ->setName('team')
             ->setRequired(true)
             ->setType(Option::STRING)
             ->setAutoComplete(true)
-            ->setDescription('Define the goose board');
+            ->setDescription('Define the team');
 
     }
 
-    public function getGooseBoardAutocompleteCallback(): Closure
+    public function getTeamAutocompleteCallback(): Closure
     {
         return fn (ApplicationCommandAutocomplete $autocomplete, mixed $value) => $value
-            ? $this->gooseBoardService()
+            ? $this->teamService()
                 ->repository
                 ->searchByName($value)
                 ->take(25)
                 ->pluck('name')
                 ->toArray()
             : $this
-                ->gooseBoardService()
+                ->teamService()
                 ->repository
                 ->get()
                 ->take(25)
@@ -83,8 +83,8 @@ trait HasGooseBoard
                 ->toArray();
     }
 
-    protected function gooseBoardService(): GooseBoardService
+    protected function teamService(): TeamService
     {
-        return App::make(GooseBoardService::class);
+        return App::make(TeamService::class);
     }
 }

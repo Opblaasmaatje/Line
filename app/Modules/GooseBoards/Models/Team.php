@@ -60,7 +60,7 @@ class Team extends Model
     public function objective(): Attribute
     {
         return Attribute::get(function () {
-            return $this->gooseBoard->tiles->firstWhere('index', $this->position);
+            return $this->gooseBoard->tiles->firstWhere('position', $this->position);
         });
     }
 

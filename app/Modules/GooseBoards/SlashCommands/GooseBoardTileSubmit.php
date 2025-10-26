@@ -24,7 +24,7 @@ class GooseBoardTileSubmit extends BaseSlashCommand
     use HasGooseBoard;
     use HasImage;
 
-    protected $name = 'goose-board-tile-submit';
+    protected $name = 'gb-tile-submit';
 
     protected $description = 'Submit a tile completion for your team.';
 
@@ -41,7 +41,7 @@ class GooseBoardTileSubmit extends BaseSlashCommand
      */
     public function handle($interaction): PromiseInterface
     {
-        $team = $this->getTeamService()->repository->findTeam(
+        $team = $this->getTeamService()->repository->findTeamByAccount(
             $this->yourself,
             $this->gooseBoard
         );
@@ -181,7 +181,7 @@ class GooseBoardTileSubmit extends BaseSlashCommand
         $message->field(":small_blue_diamond: Team: {$submission->team->name}", '', false);
         $message->field(":small_blue_diamond: Submitter: {$submission->account->username}", '', false);
         $message->field(":small_blue_diamond: Objective: {$submission->tile->name}", '', false);
-        $message->field(":small_blue_diamond: Code: {$submission->team->verification_code}", '', false);
+        $message->field(":small_blue_diamond: Code: {$submission->verification_code}", '', false);
         $message->field(":small_blue_diamond: Position: ({$submission->team->position}/{$this->gooseBoard->tiles->count()})", '');
 
         return $message;
