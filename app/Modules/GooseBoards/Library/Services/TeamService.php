@@ -10,7 +10,6 @@ use App\Modules\GooseBoards\Models\GooseBoard;
 use App\Modules\GooseBoards\Models\Submission;
 use App\Modules\GooseBoards\Models\Team;
 use App\Modules\GooseBoards\Models\Tile;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
 class TeamService
@@ -87,11 +86,13 @@ class TeamService
     {
         $maxPosition = $team->gooseBoard->tiles()->max('position');
 
-        if($position > $maxPosition) {
+        if ($position > $maxPosition) {
             $position = $maxPosition;
         }
 
-        $team->fill(['position' => $position])->save();
+        $team->fill([
+            'position' => $position,
+        ])->save();
 
         return $team;
     }

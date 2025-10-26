@@ -30,11 +30,11 @@ class GooseBoardSetTeamPosition extends BaseSlashCommand
 
         $message = $this
             ->message("Updated {$team->name}'s position to {$team->position}, the verification code remains the same {$team->verification_code}")
-            ->title("Successfully updated team position")
+            ->title('Successfully updated team position')
             ->success();
 
         $leaderboard->teams->take(25)->each(
-            fn(Ranking $ranking) => $message->field("{$ranking->getIcon()} {$ranking->team->name} {$ranking->getPosition()}", '', false)
+            fn (Ranking $ranking) => $message->field("{$ranking->getIcon()} {$ranking->team->name} {$ranking->getPosition()}", '', false)
         );
 
         return $message->reply($interaction);

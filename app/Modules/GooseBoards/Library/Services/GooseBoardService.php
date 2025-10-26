@@ -7,7 +7,6 @@ use App\Modules\GooseBoards\Library\Repository\GooseBoardRepository;
 use App\Modules\GooseBoards\Library\Services\Leaderboard\Leaderboard;
 use App\Modules\GooseBoards\Models\GooseBoard;
 use Carbon\CarbonPeriodImmutable;
-use Illuminate\Support\Arr;
 
 class GooseBoardService
 {

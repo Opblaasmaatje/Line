@@ -50,4 +50,3 @@ class SetPositionTest extends ApplicationCase
         return $this->app->make(TeamService::class);
     }
 }
-

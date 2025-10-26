@@ -21,7 +21,7 @@ class GooseBoardRefreshBoard extends BaseSlashCommand
 
         $this
             ->message('Use /goose-board-check to view the board!')
-            ->title("successfully regenerated the board!")
+            ->title('successfully regenerated the board!')
             ->success()
             ->reply($interaction);
     }
@@ -29,14 +29,14 @@ class GooseBoardRefreshBoard extends BaseSlashCommand
     public function options(): array
     {
         return [
-            $this->getGooseBoardOption($this->discord())
+            $this->getGooseBoardOption($this->discord()),
         ];
     }
 
     public function autocomplete(): array
     {
         return [
-            'goose-board' => $this->getGooseBoardAutocompleteCallback()
+            'goose-board' => $this->getGooseBoardAutocompleteCallback(),
         ];
     }
 }
