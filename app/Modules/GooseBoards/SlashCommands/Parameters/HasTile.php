@@ -4,49 +4,47 @@ namespace App\Modules\GooseBoards\SlashCommands\Parameters;
 
 use App\Laracord\Option;
 use App\Laracord\SlashCommands\ValidatableCallback;
-use App\Modules\GooseBoards\Library\Services\GooseBoardService;
-use App\Modules\GooseBoards\Models\GooseBoard;
+use App\Modules\GooseBoards\Library\Services\TileService;
+use App\Modules\GooseBoards\Models\Tile;
 use Closure;
 use Discord\DiscordCommandClient;
 use Discord\Parts\Interactions\ApplicationCommandAutocomplete;
 use Illuminate\Support\Facades\App;
 
-trait HasGooseBoard
+trait HasTile
 {
-    protected GooseBoard $gooseBoard;
+    protected Tile $tile;
 
-    public function bootHasGooseBoard(): void
+    public function bootHasTile(): void
     {
         $validatableCallback = new ValidatableCallback(function ($interaction) {
-            if (! $this->value('goose-board')) {
+            if (! $this->value('tile')) {
                 $interaction->respondWithMessage(
                     $this
-                        ->message('goose-board not given as parameter!')
+                        ->message('tile not given as parameter!')
                         ->error()
-                        ->content('goose-board not given as parameter!')
+                        ->content('tile not given as parameter!')
                         ->build()
                 );
 
                 return false;
             }
 
-            $gooseBoard = $this->gooseBoardService()->repository->find(
-                $this->value('goose-board')
-            );
+            $tile = $this->tileService()->repository->find($this->value('tile'));
 
-            if (is_null($gooseBoard)) {
+            if (is_null($tile)) {
                 $interaction->respondWithMessage(
                     $this
-                        ->message('Goose-board is not valid!')
+                        ->message('tile is not valid!')
                         ->warning()
-                        ->content('Goose-board is not valid!')
+                        ->content('tile is not valid!')
                         ->build()
                 );
 
                 return false;
             }
 
-            $this->gooseBoard = $gooseBoard;
+            $this->tile = $tile;
 
             return true;
         });
@@ -54,37 +52,38 @@ trait HasGooseBoard
         $this->addBeforeCallback($validatableCallback);
     }
 
-    public function getGooseBoardOption(DiscordCommandClient $client)
+    public function getTileOption(DiscordCommandClient $client)
     {
         return Option::make($client)
-            ->setName('goose-board')
+            ->setName('tile')
             ->setRequired(true)
             ->setType(Option::STRING)
             ->setAutoComplete(true)
-            ->setDescription('Define the goose board');
+            ->setDescription('Define the tile');
 
     }
 
-    public function getGooseBoardAutocompleteCallback(): Closure
+    public function getTileAutocomplete(): Closure
     {
         return fn (ApplicationCommandAutocomplete $autocomplete, mixed $value) => $value
-            ? $this->gooseBoardService()
+            ? $this->tileService()
                 ->repository
-                ->searchByName($value)
+                ->search($value)
                 ->take(25)
                 ->pluck('name')
                 ->toArray()
+
             : $this
-                ->gooseBoardService()
+                ->tileService()
                 ->repository
-                ->get()
+                ->query
                 ->take(25)
                 ->pluck('name')
                 ->toArray();
     }
 
-    protected function gooseBoardService(): GooseBoardService
+    protected function tileService(): TileService
     {
-        return App::make(GooseBoardService::class);
+        return App::make(TileService::class);
     }
 }

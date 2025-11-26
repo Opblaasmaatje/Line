@@ -14,7 +14,7 @@ class GooseBoardObjective extends BaseSlashCommand
     use HasGooseBoard;
     use HasAccount;
 
-    protected $name = 'goose-board-objective';
+    protected $name = 'gb-objective';
 
     protected $description = 'Get the objective of a team for the goose board.';
 
@@ -28,7 +28,7 @@ class GooseBoardObjective extends BaseSlashCommand
 
     public function handle($interaction)
     {
-        $team = $this->getTeamService()->repository->findTeam(
+        $team = $this->getTeamService()->repository->findTeamByAccount(
             $this->account,
             $this->gooseBoard,
         );

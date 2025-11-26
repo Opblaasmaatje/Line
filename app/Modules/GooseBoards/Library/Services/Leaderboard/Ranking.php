@@ -24,6 +24,6 @@ class Ranking
 
     public function getPosition(): string
     {
-        return "{$this->team->position}/{$this->team->gooseBoard->tiles->count()}";
+        return $this->team->current_position;
     }
 }

@@ -11,7 +11,7 @@ use Tests\ApplicationCase;
 
 class TeamTest extends ApplicationCase
 {
-    public static function indexes(): array
+    public static function positiones(): array
     {
         return [
             [1],
@@ -22,8 +22,8 @@ class TeamTest extends ApplicationCase
     }
 
     #[Test]
-    #[DataProvider('indexes')]
-    public function team_can_get_current_objective_based_on_index(int $index)
+    #[DataProvider('positiones')]
+    public function team_can_get_current_objective_based_on_position(int $position)
     {
         $team = TeamFactory::new()
             ->for(
@@ -35,15 +35,15 @@ class TeamTest extends ApplicationCase
                     ->has(TileFactory::new())
             )
             ->create([
-                'position' => $index,
+                'position' => $position,
             ]);
 
         $this->assertModelExists($team->objective);
-        $this->assertSame($index, $team->objective->index);
+        $this->assertSame($position, $team->objective->position);
     }
 
     #[Test]
-    public function it_resets_the_index_to_the_first_lower_index_when_objective_is_not_found()
+    public function it_resets_the_position_to_the_first_lower_position_when_objective_is_not_found()
     {
         $this->markTestSkipped('Hopefully this will not happen.');
 
@@ -66,7 +66,7 @@ class TeamTest extends ApplicationCase
             ]);
 
         $this->assertModelExists($team->objective);
-        $this->assertSame(6, $team->objective->index);
+        $this->assertSame(6, $team->objective->position);
     }
 
     #[Test]

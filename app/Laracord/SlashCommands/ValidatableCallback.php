@@ -6,9 +6,8 @@ class ValidatableCallback
 {
     protected $callback;
 
-    public function __construct(
-        callable $callback
-    ) {
+    public function __construct(callable $callback)
+    {
         $this->callback = $callback;
     }
 
