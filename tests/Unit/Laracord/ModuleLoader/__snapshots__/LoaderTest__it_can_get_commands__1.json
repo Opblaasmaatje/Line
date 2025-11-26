@@ -1,0 +1,11 @@
+[
+    "App\\SlashCommands\\CompetitionLeaderboard",
+    "App\\SlashCommands\\GetRecords",
+    "App\\SlashCommands\\Admin\\SetAdmin",
+    "App\\SlashCommands\\Admin\\SetAccount",
+    "App\\SlashCommands\\Admin\\CompetitionDelete",
+    "App\\SlashCommands\\Admin\\CompetitionCreate",
+    "App\\Modules\\Pets\\SlashCommands\\CheckPets",
+    "App\\Modules\\Pets\\SlashCommands\\ProofPet",
+    "App\\Modules\\Pets\\SlashCommands\\SubmitPet"
+]
