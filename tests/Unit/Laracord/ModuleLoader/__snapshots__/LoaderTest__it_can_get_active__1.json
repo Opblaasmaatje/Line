@@ -1,0 +1,10 @@
+{
+    "core": [
+        "App\\SlashCommands\\CompetitionLeaderboard",
+        "App\\SlashCommands\\GetRecords",
+        "App\\SlashCommands\\Admin\\SetAdmin",
+        "App\\SlashCommands\\Admin\\SetAccount",
+        "App\\SlashCommands\\Admin\\CompetitionDelete",
+        "App\\SlashCommands\\Admin\\CompetitionCreate"
+    ]
+}

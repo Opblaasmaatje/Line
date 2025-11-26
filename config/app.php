@@ -1,5 +1,7 @@
 <?php
 
+use App\Helpers\StringList;
+
 return [
     'name' => env('APP_NAME', 'Laracord'),
 
@@ -13,5 +15,9 @@ return [
         App\Providers\BotServiceProvider::class,
         App\Wise\Providers\OldManProvider::class,
         App\Modules\Points\Providers\AllocationServiceProvider::class,
+    ],
+
+    'modules' => [
+        'active' => StringList::format(env('APP_MODULES_ACTIVE')),
     ],
 ];

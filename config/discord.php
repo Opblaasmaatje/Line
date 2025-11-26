@@ -4,31 +4,6 @@ use App\Cron\AddSnapshotToUser;
 use App\Cron\ApplyPointAllocation;
 use App\Cron\UpdateBotActivity;
 use App\Helpers\StringList;
-use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardAddTeamMember;
-use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardAddTile;
-use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardCreate;
-use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardCreateTeam;
-use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardRefreshBoard;
-use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardRemoveTeam;
-use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardRemoveTeamMember;
-use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardRemoveTile;
-use App\Modules\GooseBoards\SlashCommands\Admin\GooseBoardSetTeamPosition;
-use App\Modules\GooseBoards\SlashCommands\GooseBoardCheck;
-use App\Modules\GooseBoards\SlashCommands\GooseBoardLeaderboard;
-use App\Modules\GooseBoards\SlashCommands\GooseBoardObjective;
-use App\Modules\GooseBoards\SlashCommands\GooseBoardTileSubmit;
-use App\Modules\Pets\SlashCommands\CheckPets;
-use App\Modules\Pets\SlashCommands\ProofPet;
-use App\Modules\Pets\SlashCommands\SubmitPet;
-use App\Modules\Points\SlashCommands\Admin\PointsGive;
-use App\Modules\Points\SlashCommands\PointsCheck;
-use App\Modules\Points\SlashCommands\PointsLeaderboard;
-use App\SlashCommands\Admin\CompetitionCreate;
-use App\SlashCommands\Admin\CompetitionDelete;
-use App\SlashCommands\Admin\SetAccount;
-use App\SlashCommands\Admin\SetAdmin;
-use App\SlashCommands\CompetitionLeaderboard;
-use App\SlashCommands\GetRecords;
 use Discord\WebSockets\Intents;
 
 return [
@@ -61,31 +36,7 @@ return [
     ],
 
     'commands' => [
-        SetAccount::class,
-        SetAdmin::class,
-        PointsCheck::class,
-        PointsGive::class,
-        PointsLeaderboard::class,
-        CompetitionCreate::class,
-        CompetitionDelete::class,
-        CompetitionLeaderboard::class,
-        GetRecords::class,
-        SubmitPet::class,
-        CheckPets::class,
-        ProofPet::class,
-        GooseBoardObjective::class,
-        GooseBoardLeaderboard::class,
-        GooseBoardCheck::class,
-        GooseBoardTileSubmit::class,
-        GooseBoardCreate::class,
-        GooseBoardCreateTeam::class,
-        GooseBoardRemoveTeam::class,
-        GooseBoardAddTeamMember::class,
-        GooseBoardRemoveTeamMember::class,
-        GooseBoardAddTile::class,
-        GooseBoardRemoveTile::class,
-        GooseBoardSetTeamPosition::class,
-        GooseBoardRefreshBoard::class,
+        //
     ],
 
     'menus' => [
